@@ -1,0 +1,22 @@
+## This file is part of Whonix.
+## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+Source: whonix-tor-config
+Section: misc
+Priority: important
+Maintainer: Patrick Schleizer <adrelanos@riseup.net>
+Build-Depends: debhelper (>= 8), faketime
+Homepage: https://www.whonix.org
+Vcs-Browser: https://github.com/Whonix/whonix-tor-config
+Vcs-Git: https://github.com/Whonix/whonix-tor-config.git
+Standards-Version: 3.9.4
+
+Package: whonix-tor-config
+Architecture: all
+Depends: ${misc:Depends}, remove-torsocks-ld-preload, tor
+Description: Whonix's Tor Configuration and Tweaks
+ .
+ Whonix's Tor config file with distribution defaults (for stream isolation,
+ etc.), example user configurations and other tweaks required. The Tor binary
+ itself does not get modified.
