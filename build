@@ -7,6 +7,7 @@
 set -x
 set -o pipefail
 
+project_name="whonix-tor-config"
 version="0.1"
 
 ./clean
@@ -17,17 +18,17 @@ touch -t "201308151102.35" ./debian
 touch -t "201308151102.35" ./debian/**
 shopt -u globstar
 
-rm --force "../whonix-tor-config_$version.orig.tar.gz"
+rm --force "../${project_name}_${version}.orig.tar.gz"
 
 git archive \
    --format=tar HEAD \
-   | gzip -n > "../whonix-tor-config_$version.orig.tar.gz"
+   | gzip -n > "../${project_name}_${version}.orig.tar.gz"
 
 if [ ! "$?" = "0" ]; then
    exit 1
 fi
 
-ls -la "../whonix-tor-config_$version.orig.tar.gz"
+ls -la "../${project_name}_${version}.orig.tar.gz"
 
 debuild \
    --rootcmd="debian/gain-root-command" \
