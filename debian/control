@@ -14,7 +14,7 @@ Standards-Version: 3.9.4
 
 Package: whonix-tor-config
 Architecture: all
-Depends: ${misc:Depends}, remove-torsocks-ld-preload, tor
+Depends: ${misc:Depends}, torsocks-remove-ld-preload, tor
 Description: Whonix's Tor Configuration and Tweaks
  Whonix's Tor config file with distribution defaults (for stream isolation,
  etc.), example user configurations and other tweaks required. The Tor binary
