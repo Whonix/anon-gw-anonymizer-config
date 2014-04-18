@@ -6,7 +6,7 @@ Source: whonix-tor-config
 Section: misc
 Priority: important
 Maintainer: Patrick Schleizer <adrelanos@riseup.net>
-Build-Depends: debhelper (>= 8), faketime
+Build-Depends: debhelper (>= 8), faketime, config-package-dev
 Homepage: https://www.whonix.org
 Vcs-Browser: https://github.com/Whonix/whonix-tor-config
 Vcs-Git: https://github.com/Whonix/whonix-tor-config.git
