@@ -7,7 +7,7 @@
 set -x
 set -o pipefail
 
-project_name="whonix-tor-config"
+project_name="anonymizer-config-gateway"
 version="0.1"
 
 ./clean

@@ -2,17 +2,17 @@
 ## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
-Source: whonix-tor-config
+Source: anonymizer-config-gateway
 Section: misc
 Priority: important
 Maintainer: Patrick Schleizer <adrelanos@riseup.net>
 Build-Depends: debhelper (>= 8), faketime, config-package-dev
 Homepage: https://www.whonix.org
-Vcs-Browser: https://github.com/Whonix/whonix-tor-config
-Vcs-Git: https://github.com/Whonix/whonix-tor-config.git
+Vcs-Browser: https://github.com/Whonix/anonymizer-config-gateway
+Vcs-Git: https://github.com/Whonix/anonymizer-config-gateway.git
 Standards-Version: 3.9.4
 
-Package: whonix-tor-config
+Package: anonymizer-config-gateway
 Architecture: all
 Depends: ${misc:Depends}, torsocks-remove-ld-preload, tor
 Description: Whonix's Tor Configuration and Tweaks
