@@ -7,7 +7,7 @@
 set -x
 set -o pipefail
 
-project_name="anonymizer-config-gateway"
+package_name="$(basename $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ))"
 version="0.1"
 
 ./clean
@@ -18,17 +18,17 @@ touch -t "201308151102.35" ./debian
 touch -t "201308151102.35" ./debian/**
 shopt -u globstar
 
-rm --force "../${project_name}_${version}.orig.tar.gz"
+rm --force "../${package_name}_${version}.orig.tar.gz"
 
 git archive \
    --format=tar HEAD \
-   | gzip -n > "../${project_name}_${version}.orig.tar.gz"
+   | gzip -n > "../${package_name}_${version}.orig.tar.gz"
 
 if [ ! "$?" = "0" ]; then
    exit 1
 fi
 
-ls -la "../${project_name}_${version}.orig.tar.gz"
+ls -la "../${package_name}_${version}.orig.tar.gz"
 
 debuild \
    --rootcmd="debian/gain-root-command" \
