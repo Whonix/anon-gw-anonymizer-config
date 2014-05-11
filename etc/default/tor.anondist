@@ -70,8 +70,8 @@ if [ -e /etc/default/tor.vidalia ] && [ -x /usr/bin/vidalia ]; then
 	. /etc/default/tor.vidalia
 fi
 
-# Begin of modifications for Whonix.
+# Begin of modifications for Anonymity Distributions.
 
-source /usr/lib/whonix/remove_torsocks_ld_preload
+source /usr/lib/anonymizer-helper-scripts/torsocks-remove-ld-preload
 
-# End of modifications for Whonix.
+# End of modifications for Anonymity Distributions.

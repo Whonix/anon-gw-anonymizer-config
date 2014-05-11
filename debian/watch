@@ -4,4 +4,4 @@
 
 version=3
 opts=filenamemangle=s/.+\/v?(.*)\.tar\.gz/<project>-$1.tar.gz/ \
-  https://github.com/Whonix/anonymizer-config-gateway/tags .*/v?(\d[\d\.]+)\.tar\.gz
+  https://github.com/Whonix/anon-gw-anonymizer-config/tags .*/v?(\d[\d\.]+)\.tar\.gz

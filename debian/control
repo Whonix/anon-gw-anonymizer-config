@@ -2,20 +2,20 @@
 ## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
-Source: anonymizer-config-gateway
+Source: anon-gw-anonymizer-config
 Section: misc
 Priority: important
 Maintainer: Patrick Schleizer <adrelanos@riseup.net>
 Build-Depends: debhelper (>= 8), faketime, config-package-dev
 Homepage: https://www.whonix.org
-Vcs-Browser: https://github.com/Whonix/anonymizer-config-gateway
-Vcs-Git: https://github.com/Whonix/anonymizer-config-gateway.git
+Vcs-Browser: https://github.com/Whonix/anon-gw-anonymizer-config
+Vcs-Git: https://github.com/Whonix/anon-gw-anonymizer-config.git
 Standards-Version: 3.9.4
 
-Package: anonymizer-config-gateway
+Package: anon-gw-anonymizer-config
 Architecture: all
-Depends: ${misc:Depends}, torsocks-remove-ld-preload, tor
-Description: Whonix's Tor Configuration and Tweaks
- Whonix's Tor config file with distribution defaults (for stream isolation,
- etc.), example user configurations and other tweaks required. The Tor binary
+Depends: ${misc:Depends}, anon-shared-helper-scripts, tor
+Description: Tor Configuration and Tweaks for Anonymity Distributions
+ Tor config file with distribution defaults (for stream isolation, etc.),
+ example user configurations and other tweaks required. The Tor binary
  itself does not get modified.

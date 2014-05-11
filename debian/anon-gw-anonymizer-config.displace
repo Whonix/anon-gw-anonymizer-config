@@ -2,6 +2,6 @@
 ## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
-/etc/tor/torrc.whonix
-/usr/share/tor/tor-service-defaults-torrc.whonix
-/etc/default/tor.whonix
+/etc/tor/torrc.anondist
+/usr/share/tor/tor-service-defaults-torrc.anondist
+/etc/default/tor.anondist
