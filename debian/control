@@ -15,6 +15,8 @@ Standards-Version: 3.9.4
 Package: anon-gw-anonymizer-config
 Architecture: all
 Depends: ${misc:Depends}, anon-shared-helper-scripts, tor
+Provides: ${diverted-files}
+Conflicts: ${diverted-files}
 Description: Tor Configuration and Tweaks for Anonymity Distributions
  Tor config file with distribution defaults (for stream isolation, etc.),
  example user configurations and other tweaks required. The Tor binary
