@@ -130,7 +130,7 @@ AutomapHostsOnResolve 1
 
 ## (comment mirrored from /usr/bin/whonix_firewall)
 ## Transparent Proxy Port for Workstation
-## TRANS_PORT_WHONIXW="9040"
+## TRANS_PORT_WORKSTATION="9040"
 ##+# #OptionalFeatureNr.5# Best possible protection against Identity correlation through circuit sharing. ^5^
 ##
 ## TransPort is not used for anything preinstalled by default.
@@ -146,8 +146,7 @@ AutomapHostsOnResolve 1
 TransPort 192.168.0.10:9040
 
 ## (comment mirrored from /usr/bin/whonix_firewall)
-## DnsPort_WHONIXW
-## DNS_PORT_WHONIXW="53"
+## DNS_PORT_WORKSTATION="53"
 ##+# #OptionalFeatureNr.5# Best possible protection against Identity correlation through circuit sharing. ^5^
 ##
 ## DnsPort is not used for anything preinstalled by default.
@@ -427,8 +426,8 @@ SocksPort 192.168.0.10:9189 IsolateDestAddr IsolateDestPort
 ##
 ## (comment mirrored from /usr/bin/whonix_firewall)
 ## Transparent Proxy Ports for Gateway
-## TRANS_PORT_WHONIXG="9041"
-## DNS_PORT_WHONIXG="54"
+## TRANS_PORT_GATEWAY="9041"
+## DNS_PORT_GATEWAY="54"
 ##TransPort 127.0.0.1:9041
 ##DnsPort 127.0.0.1:54
 
