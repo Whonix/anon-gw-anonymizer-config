@@ -72,6 +72,6 @@ fi
 
 # Begin of modifications for Anonymity Distributions.
 
-source /usr/lib/anonymizer-helper-scripts/torsocks-remove-ld-preload
+source /usr/lib/anon-shared-helper-scripts/torsocks-remove-ld-preload
 
 # End of modifications for Anonymity Distributions.

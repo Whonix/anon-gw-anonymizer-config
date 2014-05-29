@@ -3,11 +3,11 @@
 ## See the file COPYING for copying conditions.
 
 # Please use "/etc/tor/torrc" for your custom configuration,
-# which will override the defaults found here. When Whonix is updated, this
-# file may be overwritten.
+# which will override the defaults found here. When this package is updated,
+# this file may be overwritten.
 
 ## You can find the original upstream tor-service-defaults-torrc under
-## /usr/share/tor/tor-service-defaults-torrc.whonix-orig
+## /usr/share/tor/tor-service-defaults-torrc.anondist-orig
 
 ######################################################################
 ## DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU ARE DOING! #
@@ -17,17 +17,17 @@
 ## DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU ARE DOING! #
 ######################################################################
 
-   ##########################
-#### Whonix Internals torrc #
+   ###################
+#### Internals torrc #
    ######################################
     # Upstream Defaults File            #
     # Enable / Disable Tor              #
     # Leak Tests                        #
     # General Settings                  #
-    # Whonix-Workstation Trans/Dns-Port #
-    # Whonix-Workstation SocksPorts     #
-    # Whonix-Gateway Trans/Dns-Port     #
-    # Whonix-Gateway SocksPorts         #
+    # Workstation Trans/Dns-Port        #
+    # Workstation SocksPorts            #
+    # Gateway Trans/Dns-Port            #
+    # Gateway SocksPorts                #
     #####################################
 
 #########################################
@@ -74,9 +74,8 @@ DisableNetwork 1
 ##+# If you change the following two lines, beside removing the hash (#),
 ##+# beside commenting them in, you break the integrated leaktest script.
 ##+# See leaktest_whonix_gateway() ed.
-##+# See /whonix/LeakTests
+##+# See https://www.whonix.org/wiki/Dev/Leak_Tests
 ##+# on information, how to use the integrated leaktest script.
-##+#
 #ReachableDirAddresses *:80
 #ReachableORAddresses *:443
 #FascistFirewall 1
@@ -91,9 +90,9 @@ DisableNetwork 1
 ## - Arm autodetects the Control Cookie. (Useful terminal Tor controller.)
 ## - Tor Control Port Filter Proxy
 ## - Not using HashedControlPassword or CookieAuthentication.
-##   Whonix-Gateway is no multi purpose machine. It is solely a
+##   Gateway is no multi purpose machine. It is solely a
 ##   Tor Gateway. As soon as an adversary has physical access
-##   or compromised Whonix-Gateway, it's Game Over anyway.
+##   or compromised Gateway, it's Game Over anyway.
 ControlPort 9051
 ControlListenAddress 127.0.0.1
 
@@ -125,12 +124,12 @@ mapaddress 2.2.2.2 gbhpq7eihle4btsn.onion
 VirtualAddrNetwork 10.192.0.0/10
 AutomapHostsOnResolve 1
 
-######################################
-## Whonix-Workstation Trans/Dns-Port #
-######################################
+###############################
+## Workstation Trans/Dns-Port #
+###############################
 
-## (comment mirrored from /usr/share/whonix_firewall)
-## Transparent Proxy Port for Whonix-Workstation
+## (comment mirrored from /usr/bin/whonix_firewall)
+## Transparent Proxy Port for Workstation
 ## TRANS_PORT_WHONIXW="9040"
 ##+# #OptionalFeatureNr.5# Best possible protection against Identity correlation through circuit sharing. ^5^
 ##
@@ -146,7 +145,7 @@ AutomapHostsOnResolve 1
 ## uses random ports.
 TransPort 192.168.0.10:9040
 
-## (comment mirrored from /usr/share/whonix_firewall)
+## (comment mirrored from /usr/bin/whonix_firewall)
 ## DnsPort_WHONIXW
 ## DNS_PORT_WHONIXW="53"
 ##+# #OptionalFeatureNr.5# Best possible protection against Identity correlation through circuit sharing. ^5^
@@ -159,11 +158,11 @@ TransPort 192.168.0.10:9040
 ## IsolateDestPort has probably very little effect, since most DNS servers listen on port 53.
 DnsPort 192.168.0.10:53 IsolateDestPort
 
-##################################
-## Whonix-Workstation SocksPorts #
-##################################
+###########################
+## Workstation SocksPorts #
+###########################
 
-## (comment mirrored from /usr/share/whonix_firewall)
+## (comment mirrored from /usr/bin/whonix_firewall)
 ## Socks Ports for per application circuits.
 ## SOCKS_PORT_TOR_DEFAULT="9050"
 ## SOCKS_PORT_TB="9100"
@@ -328,6 +327,7 @@ SocksPort 192.168.0.10:9120 IsolateDestAddr IsolateDestPort
 
 ## mixmaster
 ## This port is currently not in use. See Whonix mixmaster integration.
+## https://www.whonix.org/wiki/Dev/Mixmaster
 ## Few users expected to use it.
 ## Since it only connects to one or very few servers using
 ## IsolateDestAddr IsolateDestPort.
@@ -352,8 +352,9 @@ SocksPort 192.168.0.10:9124
 
 ## Tor Browser Bundle Default Port
 ## This port gets used if someone uses the default Tor Browser Bundle.
-## (rinetd runs on Whonix-Workstation and forwards connections from
-##  127.0.0.1:9150 to 192.168.0.10:9150.)
+## (rinetd runs on Workstation and forwards connections from
+##  127.0.0.1:9150 to 192.168.0.10:9150 [as part of the
+## anon-ws-disable-stacked-tor package].)
 ## Not using IsolateDestAddr IsolateDestPort, because too much
 ## performance loss, too much load on Tor network and not secure.
 ## Ticket https://trac.torproject.org/projects/tor/ticket/3455
@@ -418,22 +419,22 @@ SocksPort 192.168.0.10:9187 IsolateDestAddr IsolateDestPort
 SocksPort 192.168.0.10:9188 IsolateDestAddr IsolateDestPort
 SocksPort 192.168.0.10:9189 IsolateDestAddr IsolateDestPort
 
-##################################
-## Whonix-Gateway Trans/Dns-Port #
-##################################
+###########################
+## Gateway Trans/Dns-Port #
+###########################
 
-## TransPort and DnsPort are no longer used on Whonix-Gateway by default.
+## TransPort and DnsPort are no longer used on Gateway by default.
 ##
-## (comment mirrored from /usr/share/whonix_firewall)
-## Transparent Proxy Ports for Whonix-Gateway
+## (comment mirrored from /usr/bin/whonix_firewall)
+## Transparent Proxy Ports for Gateway
 ## TRANS_PORT_WHONIXG="9041"
 ## DNS_PORT_WHONIXG="54"
 ##TransPort 127.0.0.1:9041
 ##DnsPort 127.0.0.1:54
 
-##############################
-## Whonix-Gateway SocksPorts #
-##############################
+#######################
+## Gateway SocksPorts #
+#######################
 
 ## Developer comment:
 ##
@@ -443,7 +444,7 @@ SocksPort 192.168.0.10:9189 IsolateDestAddr IsolateDestPort
 ## with less exceptions.
 ##
 ## Comments why we (not) use IsolateDestAddr and/or IsolateDestPort
-## are the same as in section Whonix-Workstation SocksPorts.
+## are the same as in section Workstation SocksPorts.
 
 SocksPort 127.0.0.1:9050
 SocksPort 127.0.0.1:9100
@@ -473,6 +474,6 @@ SocksPort 127.0.0.1:9123
 SocksPort 127.0.0.1:9124
 SocksPort 127.0.0.1:9150
 
-############################################################
-## End of Whonix /usr/share/tor/tor-service-defaults-torrc #
-############################################################
+#####################################################
+## End of /usr/share/tor/tor-service-defaults-torrc #
+#####################################################
