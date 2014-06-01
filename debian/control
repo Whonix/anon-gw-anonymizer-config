@@ -14,7 +14,7 @@ Standards-Version: 3.9.4
 
 Package: anon-gw-anonymizer-config
 Architecture: all
-Depends: ${misc:Depends}, anon-shared-helper-scripts, tor
+Depends: anon-shared-helper-scripts, tor, sudo, ${misc:Depends}
 Recommends: control-filter-proxy
 Provides: ${diverted-files}
 Conflicts: ${diverted-files}
