@@ -30,6 +30,13 @@ case "$1" in
 
       ## 70_tor }}
 
+      ## force-reload Tor, if running.
+      service_tor_status_exit_code="0"
+      service tor status || { service_tor_status_exit_code="$?" ; true; };
+      if [ "$service_tor_status_exit_code" = "0" ]; then
+         service tor force-reload
+      fi
+
       true "INFO: End configuring $DPKG_MAINTSCRIPT_PACKAGE."
 
       ;;
