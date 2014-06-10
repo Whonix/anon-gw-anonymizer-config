@@ -143,7 +143,7 @@ AutomapHostsOnResolve 1
 ##
 ## For the same reason IsolateDestPort should not be activated by default, since BitTorrent (in some cases)
 ## uses random ports.
-TransPort 192.168.0.10:9040
+TransPort 10.152.152.10:9040
 
 ## (comment mirrored from /usr/bin/whonix_firewall)
 ## DNS_PORT_WORKSTATION="53"
@@ -155,7 +155,7 @@ TransPort 192.168.0.10:9040
 ##
 ## Not sure about IsolateDestAddr.
 ## IsolateDestPort has probably very little effect, since most DNS servers listen on port 53.
-DnsPort 192.168.0.10:53 IsolateDestPort
+DnsPort 10.152.152.10:53 IsolateDestPort
 
 ###########################
 ## Workstation SocksPorts #
@@ -193,63 +193,63 @@ DnsPort 192.168.0.10:53 IsolateDestPort
 
 ## Tor Default Port
 ## Only for applications, which expect Tor to be running on port 9050.
-SocksPort 192.168.0.10:9050
+SocksPort 10.152.152.10:9050
 
 ## Web: Tor Browser
 ## Not using IsolateDestAddr IsolateDestPort, because too much
 ## performance loss, too much load on Tor network and not secure.
 ## Ticket https://trac.torproject.org/projects/tor/ticket/3455
 ## is the right way to solve this issue. Waiting for upstream.
-SocksPort 192.168.0.10:9100
-#SocksPort 192.168.0.10:9100 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9100
+#SocksPort 10.152.152.10:9100 IsolateDestAddr IsolateDestPort
 
 ## IRC: XChat
 ## People are normally not connected to too many IRC servers,
 ## so they can use one circuit per server.
-SocksPort 192.168.0.10:9101 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9101 IsolateDestAddr IsolateDestPort
 
 ## Mail: Thunderbird with TorBirdy
 ## Not preinstalled.
 ## Not used by too many people. Most users do not connect to
 ## too many servers.
-SocksPort 192.168.0.10:9102 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9102 IsolateDestAddr IsolateDestPort
 
 ## Instant Messenger
 ## People are normally not connected to too many IM servers,
 ## so they can use one circuit per server.
-SocksPort 192.168.0.10:9103 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9103 IsolateDestAddr IsolateDestPort
 
 ## Operating system updates: apt-get
 ## Not using IsolateDestAddr IsolateDestPort, because too much
 ## performance loss, too much load on Tor network and no gain
 ## in security.
-SocksPort 192.168.0.10:9104
+SocksPort 10.152.152.10:9104
 
 ## gpg
 ## Not used by too many people. Most users do not connect to
 ## too many servers.
-SocksPort 192.168.0.10:9105 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9105 IsolateDestAddr IsolateDestPort
 
 ## ssh
 ## Not used by too many people. Most users do not connect to
 ## too many servers.
-SocksPort 192.168.0.10:9106 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9106 IsolateDestAddr IsolateDestPort
 
 ## git
 ## Not preinstalled.
 ## Not used by too many people. Most users do not connect to
 ## too many servers.
-SocksPort 192.168.0.10:9107 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9107 IsolateDestAddr IsolateDestPort
 
 ## Network Time Synchronization
 ## There are only three different connections.
-SocksPort 192.168.0.10:9108 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9108 IsolateDestAddr IsolateDestPort
 
 ## command line downloader: wget
 ## Only manually and by very few applications used. Should not
 ## hurt performance or Tor network. Very few connections are
 ## expected.
-SocksPort 192.168.0.10:9109 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9109 IsolateDestAddr IsolateDestPort
 
 ## whonixcheck
 ## Only connects to https://check.torproject.org and checks IP
@@ -257,13 +257,13 @@ SocksPort 192.168.0.10:9109 IsolateDestAddr IsolateDestPort
 ## Only one server and only one port.
 ## Would be fine without IsolateDestAddr IsolateDestPort,
 ## but add it anyway to have less exceptions.
-SocksPort 192.168.0.10:9110 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9110 IsolateDestAddr IsolateDestPort
 
 ## BitCoin
 ## Not using IsolateDestAddr IsolateDestPort.
 ## Makes too many connections to different servers. Should not
 ## hurt if they get through the same circuit.
-SocksPort 192.168.0.10:9111
+SocksPort 10.152.152.10:9111
 
 ## http to socks converter: privoxy
 ## Not in use for anything preinstalled.
@@ -271,13 +271,13 @@ SocksPort 192.168.0.10:9111
 ## as mentioned under Web: Tor Browser.
 ## Only used for Thunderbird with TorBirdy, which is not
 ## preinstalled.
-SocksPort 192.168.0.10:9112
+SocksPort 10.152.152.10:9112
 
 ## http to socks converter: polipo
 ## Not in use for anything preinstalled.
 ## Not using IsolateDestAddr IsolateDestPort for the same reasons
 ## as mentioned under Web: Tor Browser.
-SocksPort 192.168.0.10:9113
+SocksPort 10.152.152.10:9113
 
 ## Whonix news download
 ## Only connects to the Whonix homepage and downloads a small file with
@@ -285,44 +285,44 @@ SocksPort 192.168.0.10:9113
 ## Only one server and only one port.
 ## Would be fine without IsolateDestAddr IsolateDestPort,
 ## but add it anyway to have less exceptions.
-SocksPort 192.168.0.10:9114 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9114 IsolateDestAddr IsolateDestPort
 
 ## Tor Browser bundle download
 ## Rarely used.
 ## Only one server and only one port.
 ## Would be fine without IsolateDestAddr IsolateDestPort,
 ## but add it anyway to have less exceptions.
-SocksPort 192.168.0.10:9115 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9115 IsolateDestAddr IsolateDestPort
 
 ## Tor Browser gpg public key download
 ## Rarely used.
 ## Only one server and only one port.
 ## Would be fine without IsolateDestAddr IsolateDestPort,
 ## but add it anyway to have less exceptions.
-SocksPort 192.168.0.10:9116 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9116 IsolateDestAddr IsolateDestPort
 
 ## Curl
 ## Only manually and by very few applications used. Should not
 ## hurt performance or Tor network. Very few connections are
 ## expected.
-SocksPort 192.168.0.10:9117 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9117 IsolateDestAddr IsolateDestPort
 
 ## RSS
 ## By default only for the Whonix Blog and for the torproject.org blog.
 ## Few users expected to add their own feeds.
-SocksPort 192.168.0.10:9118 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9118 IsolateDestAddr IsolateDestPort
 
 ## TorChat
 ## Not using IsolateDestAddr or IsolateDestPort, because upstream
 ## TorChat also does not do it. Since it only connects to
 ## hidden services it would perhaps not make a difference anyway.
-SocksPort 192.168.0.10:9119
+SocksPort 10.152.152.10:9119
 
 ## mixmaster-update
 ## Few users expected to use it.
 ## Since it only connects to one or very few servers using
 ## IsolateDestAddr IsolateDestPort.
-SocksPort 192.168.0.10:9120 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9120 IsolateDestAddr IsolateDestPort
 
 ## mixmaster
 ## This port is currently not in use. See Whonix mixmaster integration.
@@ -330,93 +330,93 @@ SocksPort 192.168.0.10:9120 IsolateDestAddr IsolateDestPort
 ## Few users expected to use it.
 ## Since it only connects to one or very few servers using
 ## IsolateDestAddr IsolateDestPort.
-SocksPort 192.168.0.10:9121 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9121 IsolateDestAddr IsolateDestPort
 
 ## KDE application wide proxy.
 ## Not using IsolateDestAddr or IsolateDestPort, because also browsers
 ## could use this port.
-SocksPort 192.168.0.10:9122
+SocksPort 10.152.152.10:9122
 
 ## GNOME application wide proxy.
 ## This port is currently not in use.
 ## Not using IsolateDestAddr or IsolateDestPort, because also browsers
 ## could use this port.
-SocksPort 192.168.0.10:9123
+SocksPort 10.152.152.10:9123
 
 ## Operating system updates: aptitude
 ## Not using IsolateDestAddr IsolateDestPort, because too much
 ## performance loss, too much load on Tor network and no gain
 ## in security.
-SocksPort 192.168.0.10:9124
+SocksPort 10.152.152.10:9124
 
 ## Tor Browser Bundle Default Port
 ## This port gets used if someone uses the default Tor Browser Bundle.
 ## (rinetd runs on Workstation and forwards connections from
-##  127.0.0.1:9150 to 192.168.0.10:9150 [as part of the
+##  127.0.0.1:9150 to 10.152.152.10:9150 [as part of the
 ## anon-ws-disable-stacked-tor package].)
 ## Not using IsolateDestAddr IsolateDestPort, because too much
 ## performance loss, too much load on Tor network and not secure.
 ## Ticket https://trac.torproject.org/projects/tor/ticket/3455
 ## is the right way to solve this issue. Waiting for upstream.
-SocksPort 192.168.0.10:9150
+SocksPort 10.152.152.10:9150
 
 ##+# #OptionalFeatureNr.4# More Socks Ports.
 ## Custom Ports #1:
 ## without IsolateDestAddr
 ## without IsolateDestPort
-SocksPort 192.168.0.10:9152
-SocksPort 192.168.0.10:9153
-SocksPort 192.168.0.10:9154
-SocksPort 192.168.0.10:9155
-SocksPort 192.168.0.10:9156
-SocksPort 192.168.0.10:9157
-SocksPort 192.168.0.10:9158
-SocksPort 192.168.0.10:9159
+SocksPort 10.152.152.10:9152
+SocksPort 10.152.152.10:9153
+SocksPort 10.152.152.10:9154
+SocksPort 10.152.152.10:9155
+SocksPort 10.152.152.10:9156
+SocksPort 10.152.152.10:9157
+SocksPort 10.152.152.10:9158
+SocksPort 10.152.152.10:9159
 
 ##+# #OptionalFeatureNr.4# More Socks Ports.
 ## Custom Ports #2:
 ## with IsolateDestAddr
 ## without IsolateDestPort
-SocksPort 192.168.0.10:9160 IsolateDestAddr
-SocksPort 192.168.0.10:9161 IsolateDestAddr
-SocksPort 192.168.0.10:9162 IsolateDestAddr
-SocksPort 192.168.0.10:9163 IsolateDestAddr
-SocksPort 192.168.0.10:9164 IsolateDestAddr
-SocksPort 192.168.0.10:9165 IsolateDestAddr
-SocksPort 192.168.0.10:9166 IsolateDestAddr
-SocksPort 192.168.0.10:9167 IsolateDestAddr
-SocksPort 192.168.0.10:9168 IsolateDestAddr
-SocksPort 192.168.0.10:9169 IsolateDestAddr
+SocksPort 10.152.152.10:9160 IsolateDestAddr
+SocksPort 10.152.152.10:9161 IsolateDestAddr
+SocksPort 10.152.152.10:9162 IsolateDestAddr
+SocksPort 10.152.152.10:9163 IsolateDestAddr
+SocksPort 10.152.152.10:9164 IsolateDestAddr
+SocksPort 10.152.152.10:9165 IsolateDestAddr
+SocksPort 10.152.152.10:9166 IsolateDestAddr
+SocksPort 10.152.152.10:9167 IsolateDestAddr
+SocksPort 10.152.152.10:9168 IsolateDestAddr
+SocksPort 10.152.152.10:9169 IsolateDestAddr
 
 ##+# #OptionalFeatureNr.4# More Socks Ports.
 ## Custom Ports #3:
 ## without IsolateDestAddr
 ## with IsolateDestPort
-SocksPort 192.168.0.10:9170 IsolateDestPort
-SocksPort 192.168.0.10:9171 IsolateDestPort
-SocksPort 192.168.0.10:9172 IsolateDestPort
-SocksPort 192.168.0.10:9173 IsolateDestPort
-SocksPort 192.168.0.10:9174 IsolateDestPort
-SocksPort 192.168.0.10:9175 IsolateDestPort
-SocksPort 192.168.0.10:9176 IsolateDestPort
-SocksPort 192.168.0.10:9177 IsolateDestPort
-SocksPort 192.168.0.10:9178 IsolateDestPort
-SocksPort 192.168.0.10:9179 IsolateDestPort
+SocksPort 10.152.152.10:9170 IsolateDestPort
+SocksPort 10.152.152.10:9171 IsolateDestPort
+SocksPort 10.152.152.10:9172 IsolateDestPort
+SocksPort 10.152.152.10:9173 IsolateDestPort
+SocksPort 10.152.152.10:9174 IsolateDestPort
+SocksPort 10.152.152.10:9175 IsolateDestPort
+SocksPort 10.152.152.10:9176 IsolateDestPort
+SocksPort 10.152.152.10:9177 IsolateDestPort
+SocksPort 10.152.152.10:9178 IsolateDestPort
+SocksPort 10.152.152.10:9179 IsolateDestPort
 
 ##+# #OptionalFeatureNr.4# More Socks Ports.
 ## Custom Ports #4:
 ## with IsolateDestAddr
 ## with IsolateDestPort
-SocksPort 192.168.0.10:9180 IsolateDestAddr IsolateDestPort
-SocksPort 192.168.0.10:9181 IsolateDestAddr IsolateDestPort
-SocksPort 192.168.0.10:9182 IsolateDestAddr IsolateDestPort
-SocksPort 192.168.0.10:9183 IsolateDestAddr IsolateDestPort
-SocksPort 192.168.0.10:9184 IsolateDestAddr IsolateDestPort
-SocksPort 192.168.0.10:9185 IsolateDestAddr IsolateDestPort
-SocksPort 192.168.0.10:9186 IsolateDestAddr IsolateDestPort
-SocksPort 192.168.0.10:9187 IsolateDestAddr IsolateDestPort
-SocksPort 192.168.0.10:9188 IsolateDestAddr IsolateDestPort
-SocksPort 192.168.0.10:9189 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9180 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9181 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9182 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9183 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9184 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9185 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9186 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9187 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9188 IsolateDestAddr IsolateDestPort
+SocksPort 10.152.152.10:9189 IsolateDestAddr IsolateDestPort
 
 ###########################
 ## Gateway Trans/Dns-Port #

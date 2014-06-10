@@ -156,7 +156,7 @@ Hidden Services
       accessible to others.
 
 HiddenServiceDir /var/lib/tor/webserver/
-HiddenServicePort 80 192.168.0.11:80
+HiddenServicePort 80 10.152.152.11:80
 
       Find the .onion address for this service:
           sudo cat /var/lib/tor/webserver/hostname
@@ -167,7 +167,7 @@ HiddenServicePort 80 192.168.0.11:80
     -------
 
 HiddenServiceDir /var/lib/tor/torchat/
-HiddenServicePort 11009 192.168.0.11:11009
+HiddenServicePort 11009 10.152.152.11:11009
 
       Find the .onion address for this service:
           sudo cat /var/lib/tor/torchat/hostname
@@ -178,7 +178,7 @@ HiddenServicePort 11009 192.168.0.11:11009
     -------------
 
 HiddenServiceDir /var/lib/tor/mumble/
-HiddenServicePort 80 192.168.0.11:80
+HiddenServicePort 80 10.152.152.11:80
 
       Find the .onion address for this service:
           sudo cat /var/lib/tor/mumble/hostname
