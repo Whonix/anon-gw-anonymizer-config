@@ -22,7 +22,7 @@ case "$1" in
 
       ## force-reload Tor, if running.
       service_tor_status_exit_code="0"
-      service tor status || { service_tor_status_exit_code="$?" ; true; };
+      service tor status >/dev/null 2>&1 || { service_tor_status_exit_code="$?" ; true; };
       if [ "$service_tor_status_exit_code" = "0" ]; then
          ## || true to avoid an error in case Tor's init script has been
          ## chmodded -x in meanwhile or
