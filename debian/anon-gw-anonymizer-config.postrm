@@ -20,22 +20,12 @@ case "$1" in
    configure)
       true "INFO: Configuring $DPKG_MAINTSCRIPT_PACKAGE..."
 
-      ## 70_tor {{
-
-      addgroup --quiet debian-tor 2>/dev/null || true
-
-      ## Add user "user" to the group "debian-tor", so user "user" can access Tor's control port.
-      ## User "user" already exists thanks to the anon-base-files package.
-      addgroup --quiet user debian-tor
-
-      ## 70_tor }}
-
       ## force-reload Tor, if running.
       service_tor_status_exit_code="0"
       service tor status || { service_tor_status_exit_code="$?" ; true; };
       if [ "$service_tor_status_exit_code" = "0" ]; then
          ## || true to avoid an error in case Tor's init script has been
-         ## chmodded -x in meanwhile or in case the original config is erroneous.
+         ## chmodded -x in meanwhile or
          service tor force-reload || true
       fi
 
