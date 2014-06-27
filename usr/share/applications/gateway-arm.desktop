@@ -6,8 +6,8 @@
 Type=Application
 Terminal=true
 Exec=/usr/lib/gateway-shortcuts/arm
-Name=Tor Controller
+Name=Arm - Tor Controller
 GenericName=anonymizing relay monitor (arm)
-Comment=Tor Controller
+Comment=anonymizing relay monitor (arm)
 Categories=System
 Icon=/usr/share/icons/anon-icon-pack/arm.ico

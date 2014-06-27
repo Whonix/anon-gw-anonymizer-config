@@ -5,7 +5,7 @@
 [Desktop Entry]
 Type=Application
 Exec=/usr/lib/gateway-shortcuts/torrc
-Name=Tor Configuration
+Name=Tor User Config
 GenericName=Torrc
 Comment=Open /etc/tor/torrc configuration file in kwrite
 Categories=System

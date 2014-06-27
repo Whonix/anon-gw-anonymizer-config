@@ -5,7 +5,7 @@
 [Desktop Entry]
 Type=Application
 Exec=/usr/lib/gateway-shortcuts/torrcexamples
-Name=Tor Configuration examples
+Name=Tor Examples
 GenericName=/etc/tor/torrc.examples
 Comment=Open /etc/tor/torrc.examples in kwrite as read-only
 Categories=System
