@@ -14,6 +14,8 @@
   ## Anonymity Distributions
   /etc/hosts.anondist r,
   /etc/resolv.conf.anondist r,
+  /run/tor r,
+  /run/tor/log rwk,
 
 ## Add permissions for obfsproxy and flashproxy.
 ## AUDIT:
