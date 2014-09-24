@@ -32,7 +32,8 @@
   /dev/random r,
   /usr/** r,
   /etc/python2.7/sitecustomize.py r,
-  /usr/bin/obfsproxy rix,
+  ## https://www.whonix.org/forum/index.php/topic,559.30.html
+  #/usr/bin/obfsproxy rix,
 
   ## flashproxy
   /home/user/tor-browser_en-US/App/flashproxy-client rix,
