@@ -72,6 +72,8 @@ fi
 
 # Begin of modifications for Anonymity Distributions.
 
-source /usr/lib/anon-shared-helper-scripts/torsocks-remove-ld-preload
+## Must be "." rather than "source". Even though /etc/init.d/tor is a bash
+## script, /etc/cron.weekly/tor is an sh script, which sources this script.
+. /usr/lib/anon-shared-helper-scripts/torsocks-remove-ld-preload
 
 # End of modifications for Anonymity Distributions.
