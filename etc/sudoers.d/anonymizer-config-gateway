@@ -3,6 +3,6 @@
 ## See the file COPYING for copying conditions.
 
 ## Required for Tor restart and reload desktop icons.
-sudo ALL=NOPASSWD: /usr/sbin/service tor restart
-sudo ALL=NOPASSWD: /usr/sbin/service tor reload
-sudo ALL=NOPASSWD: /usr/sbin/service tor status
+%sudo ALL=NOPASSWD: /usr/sbin/service tor restart
+%sudo ALL=NOPASSWD: /usr/sbin/service tor reload
+%sudo ALL=NOPASSWD: /usr/sbin/service tor status
