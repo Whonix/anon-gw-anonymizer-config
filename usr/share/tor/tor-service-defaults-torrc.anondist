@@ -361,11 +361,17 @@ SocksPort 10.152.152.10:9124
 ## is the right way to solve this issue. Waiting for upstream.
 SocksPort 10.152.152.10:9150
 
+## Tor Messenger's default port
+## This port gets used if someone uses the default Tor Messenger.
+## (rinetd runs on Workstation and forwards connections from
+##  127.0.0.1:9152 to 10.152.152.10:9152 [as part of the
+## anon-ws-disable-stacked-tor package].)
+SocksPort 10.152.152.10:9152
+
 ##+# #OptionalFeatureNr.4# More Socks Ports.
 ## Custom Ports #1:
 ## without IsolateDestAddr
 ## without IsolateDestPort
-SocksPort 10.152.152.10:9152
 SocksPort 10.152.152.10:9153
 SocksPort 10.152.152.10:9154
 SocksPort 10.152.152.10:9155
