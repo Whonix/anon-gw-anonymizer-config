@@ -1,0 +1,301 @@
+commit caf5968af72d797305439708aa008bca4d3bacd4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Feb 4 00:40:18 2015 +0000
+
+    updated makefile generic to version 1.3
+
+commit abdb56772880564c2fe77a1f07f42d144415468d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Feb 3 23:58:25 2015 +0000
+
+    Added creation of upstream changelog to debian/rules
+
+commit 672b3e3430c09c53a3e53ca25d46e5530edbb7da
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jan 24 18:15:22 2015 +0000
+
+    reserved SocksPort 10.152.152.10:9152 for Tor Messenger
+
+commit ae79b18b91477c9d58d624d6bb96b9034697f8cb
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 7 19:33:22 2015 +0000
+
+    bumped compat from 8 to 9
+
+commit 9adb5974d399f9b1202e6072500fe56b0d38271b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Dec 5 19:01:02 2014 +0000
+
+    updated generic makefile
+
+commit 07973fb6aee7a15f3e38841b2ca92ae7b12c6ae6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Nov 21 01:27:49 2014 +0000
+
+    fix
+
+commit 82e3d1e50ecd4a7efa516e398b58b8d5b1ded60b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Nov 14 19:37:58 2014 +0000
+
+    more restrictive sudoers settings
+
+commit 239522786d38937052556f78f06003b5cb4ceb97
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Oct 28 22:35:09 2014 +0000
+
+    makefile: refactoring, avoid using IFS
+
+commit 808267e9486c79093d7b82c16ec61a6ed900f9e0
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Oct 25 01:58:47 2014 +0000
+
+    makefile:
+    - make debdist; make undebdist
+    - cleanup
+    - refactoring
+
+commit 46c3232f7e569f3848e7fb8a7067b23329017000
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Oct 23 22:42:59 2014 +0000
+
+    makefile:
+    - new target "make undist", which deletes the upstream tarball
+    - $DISTDIR variable for make (un)dist, which defaults to ".." and can be used to create upstream tarballs in arbitrary locations
+    - refactoring, all function names and global variables now start with "make_" to make the script `source`ing friendly
+    - made `source`able
+
+commit 65648da69af23dadada9fd1ace5dfadd6f4385aa
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Oct 13 12:36:46 2014 +0000
+
+    readme
+
+commit 47b7f62e373df93d35b195a8c1983cd88dd33a83
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Sep 28 20:07:49 2014 +0000
+
+    Fixed execution of /etc/cron.weeky/tor as per https://www.whonix.org/forum/index.php/topic,584.0.html, thanks to ir1s (https://www.whonix.org/forum/index.php?action=profile;u=335) for the bug report!
+
+commit 2777d2e899789d930d3c16beccbbc37c16a0bdd8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Sep 24 17:41:38 2014 +0000
+
+    bumped version number
+
+commit 86a708a2e40bfc01aaefc142fcf9299ed039095a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Sep 24 17:41:02 2014 +0000
+
+    anon-gw-anonymizer-config: Fixed startup of Tor due to an AppArmor conflict as per bug reports in the forums https://www.whonix.org/forum/index.php/topic,559.0.html. Needed to out commented "/usr/bin/obfsproxy rix," in file "/etc/apparmor.d/local/system_tor.anondist" because The Tor Project added "/usr/bin/obfsproxy PUx," to file "/etc/apparmor.d/abstractions/tor". Therefore users of obfsproxy will now end up running obfsproxy unconfined, because we would now require a standalone obfsproxy AppArmor profile. Note, that this is not a Whonix specific issue. Also if you were using plain Debian, no one redistributes an obfsproxy AppArmor profile at time of writing.
+
+commit c0a0d1454670968cc12af79ad550d404e7d44520
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Aug 19 18:52:22 2014 +0000
+
+    makefile: added new feature "make deb-chl-bumpup" - Bump upstream version number in debian/changelog.
+
+commit 5369dfa88c77ea3e76ad537d0246345cf5c336ae
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Aug 17 20:54:19 2014 +0000
+
+    Updated debian/changelog.
+
+commit 532a0a8da7667dc72b152d51e78b03398073bdf6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Aug 17 20:47:22 2014 +0000
+
+    Fixed changelog date.
+
+commit ffb65f1d593d66e77999cfbad504f44b19e56ee8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Aug 17 18:03:19 2014 +0000
+
+    bump version number
+
+commit 15e8e86d4136a52d9358339e42ce30fbd7c98324
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Aug 14 13:35:09 2014 +0000
+
+    Implemented make deb-icup: Combination of make deb-pkg, make deb-pkg-install and make deb-pkg-cleanup.
+
+commit df2c607e096622c8ad21246bc4b9e7df2fd33679
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Aug 10 13:28:17 2014 +0000
+
+    fixed, Recommends: control-filter-proxy -> Recommends: control-port-filter
+
+commit 7941467ee8caa4d19dab6fae7d9579a277c5897d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 27 12:42:21 2014 +0000
+
+    packaging
+
+commit e1c4805d6f92ea5ee7cdab39e31f9bae3e0174c0
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 27 04:01:05 2014 +0000
+
+    packaging
+
+commit f70f103be2a68dae1d31c48f0599ef3691256c76
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jul 26 15:26:31 2014 +0000
+
+    packaging
+
+commit 4761638455b3dfe74df1a61bb7ea74f582132e64
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jul 12 17:10:56 2014 +0000
+
+    packaging
+
+commit 19217e5bceacc89c1ae68c513fb8baae1e58b6b9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jul 12 15:34:11 2014 +0000
+
+    packaging
+
+commit 61ff5d61a13c26311801c927c5c090622da036da
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jul 11 16:13:42 2014 +0000
+
+    Added extra log file /run/tor/log that won't survive reboot. (Existing log file /var/log/tor/log that survives reboot will continue to exist.) And added necessary AppArmor rules. Thanks to @troubadoour who figured out the AppArmor rules (https://www.whonix.org/forum/index.php/topic,372.0/topicseen.html). This is useful, so whonixcheck can grep the log for clock specific warnings.
+
+commit 92b0f66b2146e5f37175ec14abd8e761284affa4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jul 5 08:09:39 2014 +0000
+
+    Bumped debian revision number to avoid lintian warning "new-package-should-close-itp-bug" so we can use lintian --fail-on-warnings as sanity test.
+
+commit a964eba7d9c584f1f52ec118862de2139ad04449
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 27 15:55:18 2014 +0000
+
+    start menu entries
+
+commit 61b862466606f7d513ec74f79740c54f4355288a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jun 24 15:45:07 2014 +0000
+
+    added debian epoch; added dotglob
+
+commit fb274cd3b9e3773cc6812fdd5c5f8d124ade357c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 20 17:12:15 2014 +0000
+
+    hide unnecessary output in maintainer scripts
+
+commit 2d533adec207be7bce624bc1b91a73b0b6d2faa3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 20 08:30:02 2014 +0000
+
+    postinst: added || true to avoid an error in case the init script has been chmodded -x in meanwhile or in case the original config is erroneous.;
+    added postrm: restart init script after uninstalling this config package
+
+commit 02067a40f5edeabb2e30ab57acce3885e0a66ee5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jun 10 14:11:34 2014 +0000
+
+    update IP as per https://www.whonix.org/forum/index.php/topic,107.0.html
+
+commit d7eab91944c1e26da9685fde759a112c2aa104b2
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jun 4 21:13:11 2014 +0000
+
+    force-reload Tor, if running
+
+commit 40380e259d4cec2e902ea66bef469637469c1405
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jun 3 18:27:19 2014 +0000
+
+    readme
+
+commit 44d492790a7f709c5f3964a60422be14f9ea7121
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jun 2 14:33:22 2014 +0000
+
+    packaging
+
+commit 20f910c7459320fba69701b5185ea04ff9d66cce
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jun 1 15:26:00 2014 +0000
+
+    readme
+
+commit df14dc9a716294fcf43e4b3d05030aee4de22483
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jun 1 15:25:54 2014 +0000
+
+    packaging
+
+commit 559d0e4f780fea3c54e5c60965d1b5499fcf4120
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu May 29 11:03:43 2014 +0000
+
+    comments
+
+commit 7097f02beffb28b734c1c6e3dfe72d35afa31fa6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu May 29 10:55:24 2014 +0000
+
+    packaging
+
+commit d91afa3e04026b91d50e1e3ab274bb6eabfde629
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun May 11 17:29:37 2014 +0200
+
+    .
+
+commit e6b0b59adacf06d9682b2732ba029c265b57f43f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun May 11 17:20:51 2014 +0200
+
+    .
+
+commit 3199d7b3356db639463116627baf0b04cac7b7cc
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Apr 29 19:40:32 2014 +0000
+
+    refactoring
+
+commit 62f4e5603ffd6a7ee3b30000bfbdb421073008f9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Apr 20 15:32:57 2014 +0000
+
+    .
+
+commit c23c7ae0564bd9f89d58c87eda1cae4ea0503114
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Apr 20 14:05:50 2014 +0000
+
+    renamed from whonix-tor-config to anonymizer-config-gateway
+
+commit d83bc1a8119c06770cd02dc9cec24d957336892f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 18 12:55:09 2014 +0000
+
+    .
+
+commit c68ee888ddb330b84e895252497867d9e84aeed9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Apr 6 18:26:32 2014 +0000
+
+    .
+
+commit 728c37c5786d7e5a7042986c6e84caf67bbcf6f5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Apr 6 18:11:30 2014 +0000
+
+    refactoring
+
+commit be4b8cce0c67123049cb9b584e797dbbf4a0a2ee
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Mar 13 22:16:19 2014 +0000
+
+    fixed package description
+
+commit 0c3eabda82bf0d5fe4a4c71a6735c2d60fd5af3e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Mar 13 22:10:36 2014 +0000
+
+    initial implementation
