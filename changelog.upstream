@@ -1,3 +1,27 @@
+commit e1b4aa460bf42d0c7f1c5b72dd8043373d65a7ee
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Mar 24 17:26:11 2015 +0000
+
+    updated makefile generic to version 1.4
+
+commit 05c065ad9cc44fd757ec93fd2c4a6864e8e5d349
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Feb 10 01:09:32 2015 +0000
+
+    recommend control-port-filter-python rather than control-port-filter
+
+commit 199d5bde13cdf13343f311f3a2929ea8989ee451
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Feb 6 04:21:19 2015 +0000
+
+    maintainer script output
+
+commit 1ba36b67729785e45ac8fa898864108db23dac8e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Feb 4 00:55:54 2015 +0000
+
+    bumped changelog version
+
 commit 45b4ac51dbcb3cef154c40f7765bb3aaab5c532b
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Feb 4 00:44:34 2015 +0000
