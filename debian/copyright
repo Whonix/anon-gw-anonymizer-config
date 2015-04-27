@@ -20,7 +20,7 @@ License: GPL-3+
  License version 3 can be found in the file
  `/usr/share/common-licenses/GPL-3'.
 
-Files: /etc/default/tor.anondist
+Files: etc/default/tor.anondist
 Comment: Downloaded from: http://packages.debian.org/jessie/tor
                           http://metadata.ftp-master.debian.org/changelogs//main/t/tor/tor_0.2.3.25-1_copyright
                           http://www.webcitation.org/6Pn35Nro1
