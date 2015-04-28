@@ -34,7 +34,7 @@ Copyright: Copyright (c) 2001 Matej Pfajfar
            ht.h: Copyright (c) 2002, Christopher Clark, 2006 Nick Mathewson
            OpenBSD_malloc_Linux.c: phk@FreeBSD.ORG
            Modifications for Debian: Copyright (c) 2004, 2005, 2006, 2007, 2008 Peter Palfrader
-License: BSD 3-Clause
+License: BSD-3-Clause
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are
  met:
