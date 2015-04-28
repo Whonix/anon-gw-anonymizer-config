@@ -11,3 +11,4 @@ GenericName=anonymizing relay monitor (arm)
 Comment=anonymizing relay monitor (arm)
 Categories=System
 Icon=/usr/share/icons/anon-icon-pack/arm.ico
+Keywords=system;tor;controller;Arm;

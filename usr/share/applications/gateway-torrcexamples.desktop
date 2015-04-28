@@ -10,3 +10,4 @@ GenericName=/etc/tor/torrc.examples
 Comment=Open /etc/tor/torrc.examples in kwrite as read-only
 Categories=System
 Icon=/usr/share/icons/anon-icon-pack/text_x_makefile.ico
+Keywords=system;tor;

@@ -11,3 +11,4 @@ GenericName=Restart Tor
 Comment=Shut down Tor and start Tor again using "sudo service tor restart"
 Categories=System
 Icon=/usr/share/icons/anon-icon-pack/restart.ico
+Keywords=system;tor;

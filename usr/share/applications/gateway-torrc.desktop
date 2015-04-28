@@ -10,3 +10,4 @@ GenericName=Torrc
 Comment=Open /etc/tor/torrc configuration file in kwrite
 Categories=System
 Icon=/usr/share/icons/anon-icon-pack/text_x_makefile.ico
+Keywords=system;tor;
