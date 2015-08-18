@@ -49,7 +49,7 @@ Bridges
 
       A sophisticated user you trust -- outside the reach of
       the censors but accessible from your location -- must
-      run a bridge service configured with obfsproxy 3 (to
+      run a bridge service configured with obfsproxy (to
       help avoid detection) and the option
       "PublishServerDescriptor 0" (to not be listed by The
       Tor Project). However, since even private obfuscated
@@ -61,6 +61,7 @@ Bridges
 
 UseBridges 1
 ClientTransportPlugin obfs2,obfs3 exec /usr/bin/obfsproxy managed
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy managed
 
       You must also add the IPs for your bridges. The
       following lines are an example of how it should look:
@@ -69,6 +70,7 @@ bridge 23.22.110.133:443
 bridge 24.22.1.54:443
 bridge obfs2 209.176.111.47:42105
 bridge obfs3 199.241.31.96:12873
+bridge obfs4 141.201.27.48:420 gibberish cert=more-gibberish iat-mode=0
 
 
 Firewall
