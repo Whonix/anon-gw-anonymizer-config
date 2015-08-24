@@ -1,3 +1,64 @@
+commit 4313babb7bf3a91dbbe41e977cd5dfbf4c0f7f64
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Aug 20 00:37:41 2015 +0000
+
+    Migrated from port Tor's DnsPort 53 to 5300. No longer listening on port 53 but rather on a port higher than 1024 to avoid issues with reloading Tor. (Tor drops privileges and is then unable to create listeners below 1024.)
+
+commit 64812ce936a34ae7ec6eeff62dbfd83c9ca2a5f0
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Aug 18 01:24:49 2015 +0000
+
+    added obfs4 bridge example to /etc/tor/torrc.examples
+
+commit bac763816f16cc5fd9dbd0c7ab261db8f351289a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jul 10 14:15:24 2015 +0000
+
+    chmod +x usr/lib/gateway-shortcuts/tordata
+
+commit 03ddf500f913576364c737dfd8788c503ebc4685
+Merge: 769873b aef3117
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jul 10 14:14:45 2015 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit aef3117adfaa440cb57fc45eedf15007f1f31222
+Merge: b0b35d2 abc4bb4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jul 10 16:14:01 2015 +0200
+
+    Merge pull request #1 from HulaHoopWhonix/patch-2
+    
+    Tor data desktop file
+
+commit b0b35d2b02dd13976bc6be04f9ae65e3bc66ee83
+Merge: 769873b f975ee3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jul 10 16:13:55 2015 +0200
+
+    Merge pull request #2 from HulaHoopWhonix/patch-3
+    
+    Create tordata
+
+commit f975ee319d13f5972779a22c329dc91dc417a33b
+Author: HulaHoopWhonix <bancfc@openmailbox.org>
+Date:   Sun Jun 21 03:02:55 2015 +0000
+
+    Create tordata
+
+commit abc4bb4c26fa2ab752c32ff6c1b4c7a076a7160e
+Author: HulaHoopWhonix <bancfc@openmailbox.org>
+Date:   Sun Jun 21 02:56:31 2015 +0000
+
+    Tor data desktop file
+
+commit 769873b67879d5e8cae005d7de33a8c0a71b2dc1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jun 3 14:58:52 2015 +0000
+
+    bumped changelog version
+
 commit 72f659646130865fba47699245e73396be9c2745
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Apr 30 17:55:31 2015 +0000
