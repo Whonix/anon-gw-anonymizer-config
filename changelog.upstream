@@ -1,3 +1,15 @@
+commit a2aa9e90b344cb4fc01cacc73ac2007b47e3f42e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Sep 3 12:57:01 2015 +0000
+
+    added Tor SocksPort 9125 for yum
+
+commit c162702b866022ef8397f4e03b2a74a57dfc752e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Aug 25 14:07:31 2015 +0000
+
+    bumped changelog version
+
 commit fedc389dceffb4018e32c5d7fa9a19da45c41fa1
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Aug 24 17:47:08 2015 +0000
