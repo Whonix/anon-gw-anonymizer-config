@@ -445,7 +445,7 @@ SocksPort 10.152.152.10:9189 IsolateDestAddr IsolateDestPort
 ## (comment mirrored from /usr/bin/whonix_firewall)
 ## Transparent Proxy Ports for Gateway
 ## TRANS_PORT_GATEWAY="9041"
-## DNS_PORT_GATEWAY="54"
+## DNS_PORT_GATEWAY="5400"
 ##TransPort 127.0.0.1:9041
 ##DnsPort 127.0.0.1:5400
 
