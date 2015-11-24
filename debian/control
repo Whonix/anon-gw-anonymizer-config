@@ -22,6 +22,7 @@ Architecture: all
 ## (1700_install-packages) The Tor Project's deb repository with Tor 0.2.7 is
 ## added only afterwards. (2300_run-chroot-scripts-post-d) This workaround can
 ## likely be removed once Whonix is based on Debian stretch.
+## https://phabricator.whonix.org/T436
 Depends: anon-shared-helper-scripts, tor, sudo, anon-base-files,
  ${misc:Depends}
 Recommends: control-port-filter-python
