@@ -35,6 +35,14 @@
   ## https://www.whonix.org/forum/index.php/topic,559.30.html
   #/usr/bin/obfsproxy rix,
 
+  # Qubes-Whonix.
+  /rw/usrlocal/lib/python2.7/dist-packages/ r,
+
+  /var/lib/tor/pt_state/ rwk,
+  /var/lib/tor/pt_state/scramblesuit/ r,
+  /var/lib/tor/pt_state/scramblesuit/* rwk,
+
+
   ## flashproxy
   /home/user/tor-browser_en-US/App/flashproxy-client rix,
   /home/user/tor-browser_en-US/App/flashproxy-reg-appspot rix,
