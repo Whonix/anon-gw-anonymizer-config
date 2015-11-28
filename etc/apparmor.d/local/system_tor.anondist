@@ -36,18 +36,18 @@
   #/usr/bin/obfsproxy rix,
 
   ## flashproxy
-  /home/user/tor-browser_en-US/App/flashproxy-client rix,
-  /home/user/tor-browser_en-US/App/flashproxy-reg-appspot rix,
-  /home/user/tor-browser_en-US/App/flashproxy-reg-url rix,
-  /home/user/tor-browser_en-US/App/flashproxy-reg-http rix,
-  /home/user/tor-browser_en-US/App/flashproxy-reg-email rix,
+  /home/user/.tb/tor-browser/App/flashproxy-client rix,
+  /home/user/.tb/tor-browser/App/flashproxy-reg-appspot rix,
+  /home/user/.tb/tor-browser/App/flashproxy-reg-url rix,
+  /home/user/.tb/tor-browser/App/flashproxy-reg-http rix,
+  /home/user/.tb/tor-browser/App/flashproxy-reg-email rix,
+  /home/user/.tb/tor-browser/App/** rm,
   /usr/bin/python2.7 rix,
   /usr/lib/python2.7/dist-packages/** m,
   /usr/lib/python2.7/lib-dynload/** m,
   /usr/lib/pyshared/python2.7/OpenSSL/** m,
   /usr/lib/python2.7/lib-dynload/** m,
   /usr/lib/pyshared/python2.7/numpy/** m,
-  /home/user/tor-browser_en-US/App/** rm,
   /proc/*/mounts r,
 
 ## End Tor Local AppArmor Profile for Anonymity Distributions
