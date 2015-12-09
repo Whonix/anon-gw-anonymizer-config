@@ -4,8 +4,7 @@
 
 [Desktop Entry]
 Type=Application
-Terminal=true
-Exec=/usr/lib/gateway-shortcuts/reloadtor
+Exec=konsole --fullscreen -e /usr/lib/gateway-shortcuts/reloadtor
 Name=Reload Tor
 GenericName=Reload Tor
 Comment=Reload Tor using "sudo service tor reload"

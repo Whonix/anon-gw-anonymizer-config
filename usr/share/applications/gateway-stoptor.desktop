@@ -4,8 +4,7 @@
 
 [Desktop Entry]
 Type=Application
-Terminal=true
-Exec=/usr/lib/gateway-shortcuts/stoptor
+Exec=konsole --fullscreen -e /usr/lib/gateway-shortcuts/stoptor
 Name=Stop Tor
 GenericName=Stop Tor
 Comment=Stop Tor using "sudo service tor stop"

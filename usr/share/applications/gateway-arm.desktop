@@ -4,8 +4,7 @@
 
 [Desktop Entry]
 Type=Application
-Terminal=true
-Exec=/usr/lib/gateway-shortcuts/arm
+Exec=konsole --fullscreen -e /usr/lib/gateway-shortcuts/arm
 Name=Arm - Tor Controller
 GenericName=anonymizing relay monitor (arm)
 Comment=anonymizing relay monitor (arm)
