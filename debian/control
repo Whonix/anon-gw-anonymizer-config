@@ -23,7 +23,7 @@ Architecture: all
 ## added only afterwards. (2300_run-chroot-scripts-post-d) This workaround can
 ## likely be removed once Whonix is based on Debian stretch.
 ## https://phabricator.whonix.org/T436
-Depends: anon-shared-helper-scripts, tor, sudo, anon-base-files,
+Depends: anon-shared-helper-scripts, tor, sudo, anon-base-files, kwrite,
  ${misc:Depends}
 Recommends: control-port-filter-python
 Provides: ${diverted-files}
