@@ -36,12 +36,12 @@
   #/usr/bin/obfsproxy rix,
 
   ## flashproxy
-  /home/user/.tb/tor-browser/App/flashproxy-client rix,
-  /home/user/.tb/tor-browser/App/flashproxy-reg-appspot rix,
-  /home/user/.tb/tor-browser/App/flashproxy-reg-url rix,
-  /home/user/.tb/tor-browser/App/flashproxy-reg-http rix,
-  /home/user/.tb/tor-browser/App/flashproxy-reg-email rix,
-  /home/user/.tb/tor-browser/App/** rm,
+  @{HOME}/.tb/tor-browser/App/flashproxy-client rix,
+  @{HOME}/.tb/tor-browser/App/flashproxy-reg-appspot rix,
+  @{HOME}/.tb/tor-browser/App/flashproxy-reg-url rix,
+  @{HOME}/.tb/tor-browser/App/flashproxy-reg-http rix,
+  @{HOME}/.tb/tor-browser/App/flashproxy-reg-email rix,
+  @{HOME}/.tb/tor-browser/App/** rm,
   /usr/bin/python2.7 rix,
   /usr/lib/python2.7/dist-packages/** m,
   /usr/lib/python2.7/lib-dynload/** m,
