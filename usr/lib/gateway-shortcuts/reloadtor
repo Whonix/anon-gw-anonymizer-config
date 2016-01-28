@@ -8,9 +8,9 @@ set -x
 
 cat /etc/motd
 
-sudo service tor reload
+sudo service tor@default reload
 
-sudo service tor status
+sudo service tor@default status
 true "$?"
 
 true "Feel free to close this window."

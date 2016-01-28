@@ -8,9 +8,9 @@ set -x
 
 cat /etc/motd
 
-sudo service tor restart
+sudo service tor@default restart
 
-sudo service tor status
+sudo service tor@default status
 
 true "$?"
 

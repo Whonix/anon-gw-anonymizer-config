@@ -8,9 +8,9 @@ set -x
 
 cat /etc/motd
 
-sudo service tor stop
+sudo service tor@default stop
 
-sudo service tor status
+sudo service tor@default status
 true "$?"
 
 true "Feel free to close this window."
