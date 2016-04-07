@@ -1,3 +1,145 @@
+commit 8db878bb634f01e6789c4e44ee10ce2d24f3d1d1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 6 20:10:59 2016 +0000
+
+    download packages tor and tor-geoipdb from The The Project's apt repository
+    
+    using apt-during-apt
+    
+    thereby abolished previous chroot scripts for doing that
+
+commit 51cc21ec024cd28b690936386b59f8051ba2770a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Jan 28 11:15:21 2016 +0100
+
+    tor -> tor@default
+
+commit 1917a99edaaf99187910f3e544b26b007d6ba38b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Dec 10 19:54:53 2015 +0000
+
+    system_tor.anondist: use @{HOME} rather than hardcoding /home/user
+
+commit c02c2f8ceedcf6a05073849e253b9ddf80caaf34
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Dec 9 19:16:27 2015 +0000
+
+    open Tor reload/restart/stop and tor-arm starters maximized by default in Konsole
+    
+    https://phabricator.whonix.org/T451
+
+commit a93be97087ee78edf5239550baf95cab8d14f02b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Dec 9 19:06:45 2015 +0000
+
+    added missing dependency kwrite - required for opening files from starters
+
+commit 1323788cc668d859144559ca47d6933297796060
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Nov 28 19:52:32 2015 +0000
+
+    path updates for flashproxy
+
+commit 230e0ad4b9504510c905c47dd1c09df12e04c889
+Merge: 3db10c8 4f1c421
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Nov 28 19:46:05 2015 +0000
+
+    Merge remote-tracking branch 'troubadoour/master'
+
+commit 4f1c421ef23b08d7fdb52f3cb3787b93d2dd3e1f
+Author: troubadoour <trobador@riseup.net>
+Date:   Fri Nov 27 21:48:17 2015 +0000
+
+    usr.bin.obffproxy.anondist
+    
+    Separate anondist profile for obfsproxy.
+    When in system_tor anondist, the additional apparmor lines
+    are not read on first use of scramblesuit.
+
+commit 3db10c81dc292577130dd7171a915da20ab248aa
+Merge: 877721a 8ff911f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Nov 26 22:37:12 2015 +0000
+
+    Merge remote-tracking branch 'troubadoour/master'
+
+commit 8ff911fcdc27ec9e34a08ed4efee70ef38411d3e
+Author: troubadoour <trobador@riseup.net>
+Date:   Thu Nov 26 21:23:51 2015 +0000
+
+    fix apparmor denied messages for obfs3 / scramblesuit transports
+
+commit 877721a442aac45e55a7a2ee504f35b2cb1f6dba
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Nov 24 12:28:33 2015 +0000
+
+    comment
+
+commit 70b9436b9178e0b8b79b42625ec7ff2886be017b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Nov 24 12:24:38 2015 +0000
+
+    Workaround: Not using versioned 'Depends:' on 'tor'.
+    Ideally we would depend on 'tor (>= 0.2.7.3)' because we are using,
+    'KeepAliveIsolateSOCKSAuth' which is not available in earlier versions.
+    It would break the build. Debian jessie only has 'tor' '0.2.5'. Which is
+    the only available repository at anon-gw-anonymizer install time.
+    (1700_install-packages) The Tor Project's deb repository with Tor 0.2.7 is
+    added only afterwards. (2300_run-chroot-scripts-post-d) This workaround can
+    likely be removed once Whonix is based on Debian stretch.
+    
+    https://github.com/Whonix/anon-gw-anonymizer-config/pull/3
+
+commit 5309347a9fe9a63569eafb22aee1474732dba6d0
+Merge: 5d78a39 ec8665c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Nov 24 11:56:30 2015 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit ec8665c85c7e030904391ff7f163005cd34d127c
+Merge: 5d78a39 50057f7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Nov 24 11:54:28 2015 +0000
+
+    Merge pull request #3 from rustybird/KeepAliveIsolateSOCKSAuth
+    
+    Use KeepAliveIsolateSOCKSAuth against TB fingerprinting
+
+commit 50057f729b099bb0a356c12474295fd897acdf03
+Author: Rusty Bird <rustybird@openmailbox.org>
+Date:   Tue Nov 24 10:22:03 2015 +0000
+
+    Synchronize TB SocksPort options against fingerprinting
+
+commit 5d78a39d975a8e586c824c44630c97d2a3a779fa
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Nov 22 23:37:28 2015 +0000
+
+    enable Transparent Proxy Ports for Whonix-Gateway by default
+    
+    TransPort 127.0.0.1:9041
+    DnsPort 127.0.0.1:5400
+    
+    But still not enable transparent proxying by default in Whonix-Gateway firewall
+    settings. This is required so we can
+    'redirect tinyproxy traffic to 127.0.0.1 instead to qubes-netvm-gateway'.
+    
+    https://phabricator.whonix.org/T434
+
+commit 70efe1ca2691bba480391bf10e9ac0fef3d4d2d3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Nov 22 23:34:35 2015 +0000
+
+    fixed comment
+
+commit 16d37202772d33a8d7d6f27f43d0f8e6710104d4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Oct 22 23:12:31 2015 +0000
+
+    bumped changelog version
+
 commit a2aa9e90b344cb4fc01cacc73ac2007b47e3f42e
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Sep 3 12:57:01 2015 +0000
