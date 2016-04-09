@@ -1,0 +1,16 @@
+#!/bin/bash
+
+## This file is part of Whonix.
+## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+if [ ! -e /etc/apt/sources.list.d/torproject.list ]; then
+   echo "INFO: /etc/apt/sources.list.d/torproject.list does not exist."
+else
+   uncommented_lines="$(cat /etc/apt/sources.list.d/torproject.list | grep -v '#' | grep deb)"
+   echo "INFO: /etc/apt/sources.list.d/torproject.list uncommented lines:
+$uncommented_lines"
+fi
+
+tor_version="$(dpkg-query --show --showformat='${Version}' "tor")"
+echo "INFO: version of the 'tor' package: $tor_version"
