@@ -24,7 +24,7 @@ Architecture: all
 ## likely be removed once Whonix is based on Debian stretch.
 ## https://phabricator.whonix.org/T436
 Depends: anon-shared-helper-scripts, tor, sudo, anon-base-files, kwrite,
- konsole, anon-shared-build-apt-sources-tpo, apt-during-apt, ${misc:Depends}
+ konsole, ${misc:Depends}
 Recommends: control-port-filter-python
 Provides: ${diverted-files}
 Conflicts: ${diverted-files}

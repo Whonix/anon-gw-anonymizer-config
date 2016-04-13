@@ -16,24 +16,6 @@ true "
 #####################################################################
 "
 
-postinst_install_first() {
-   if [ -e /var/lib/anon-gw-anonymizer-config/postinst_install_first.skip ]; then
-      return 0
-   fi
-   if [ -e /var/lib/anon-gw-anonymizer-config/postinst_install_first.done ]; then
-      return 0
-   fi
-
-   ## provides:
-   ## apt_get_during_apt_get_download
-   source /usr/lib/apt-during-apt/apt-during-apt.bsh
-
-   apt_get_during_apt_get_download "/etc/apt/sources.list.d/torproject.list" "tor tor-geoipdb"
-
-   mkdir --parents /var/lib/anon-gw-anonymizer-config
-   touch /var/lib/anon-gw-anonymizer-config/postinst_install_first.done
-}
-
 configure_function() {
    addgroup --quiet debian-tor 2>/dev/null || true
 
@@ -55,7 +37,6 @@ case "$1" in
    configure)
       true "INFO: Configuring $DPKG_MAINTSCRIPT_PACKAGE..."
 
-      postinst_install_first
       configure_function
 
       true "INFO: End configuring $DPKG_MAINTSCRIPT_PACKAGE."
