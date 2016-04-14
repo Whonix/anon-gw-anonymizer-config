@@ -377,7 +377,7 @@ SocksPort 10.152.152.10:9150 IPv6Traffic PreferIPv6 KeepAliveIsolateSOCKSAuth
 ## (rinetd runs on Workstation and forwards connections from
 ##  127.0.0.1:9152 to 10.152.152.10:9152 [as part of the
 ## anon-ws-disable-stacked-tor package].)
-SocksPort 10.152.152.10:9152
+SocksPort 10.152.152.10:9152 IsolateDestAddr IsolateDestPort
 
 ##+# #OptionalFeatureNr.4# More Socks Ports.
 ## Custom Ports #1:
