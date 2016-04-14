@@ -1,3 +1,25 @@
+commit 93b31efe6df6f118f66098a47f6d6964e2249a05
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 13 17:02:30 2016 +0000
+
+    no longer download from deb.torproject.org because it gets uploaded to Whonix repo
+    
+    https://phabricator.whonix.org/T472
+
+commit 950b9c4edfc840a89fad630f3df14835c413789f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Apr 9 15:30:00 2016 +0000
+
+    added anon-info - shows Tor apt repository status and Tor package version
+    
+    https://phabricator.whonix.org/T472
+
+commit 026714c9c09934505c6a0180c26e25430d2300e5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 7 22:54:23 2016 +0000
+
+    bumped changelog version
+
 commit 8db878bb634f01e6789c4e44ee10ce2d24f3d1d1
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Apr 6 20:10:59 2016 +0000
