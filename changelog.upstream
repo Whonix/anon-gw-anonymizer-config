@@ -1,3 +1,34 @@
+commit fd7917416ef91e15b99c5ae54ff57a2a9543ce7a
+Merge: 3d3031a 5fa43a4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 14 23:33:19 2016 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 5fa43a42feed0d766d42f946cfb0f21aa5f0b9c8
+Merge: 3d3031a c301753
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 14 23:32:40 2016 +0000
+
+    Merge pull request #4 from 3n7r0p1/patch-1
+    
+    Update tor-service-defaults-torrc.anondist
+
+commit c301753b9c31a429a98d04b4986bfb9966011cdf
+Author: 3n7r0p1 <3n7r0py@riseup.net>
+Date:   Thu Apr 14 23:19:52 2016 +0000
+
+    Update tor-service-defaults-torrc.anondist
+    
+    Provide stream isolation for multiple identities / connections in Tor Messenger.
+    Similar to Instant Messenger SocksPort 9103.
+
+commit 3d3031a9f6e30f42f9feb985e5d5407ad1d52299
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 14 21:14:44 2016 +0000
+
+    bumped changelog version
+
 commit 93b31efe6df6f118f66098a47f6d6964e2249a05
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Apr 13 17:02:30 2016 +0000
