@@ -201,13 +201,8 @@ DnsPort 10.152.152.10:5300 IsolateDestPort
 ## Only for applications, which expect Tor to be running on port 9050.
 SocksPort 10.152.152.10:9050
 
-## Web: Tor Browser
-## Not using IsolateDestAddr IsolateDestPort, because too much
-## performance loss, too much load on Tor network and not secure.
-## Ticket https://trac.torproject.org/projects/tor/ticket/3455
-## is the right way to solve this issue. Waiting for upstream.
+## legacy
 SocksPort 10.152.152.10:9100
-#SocksPort 10.152.152.10:9100 IsolateDestAddr IsolateDestPort
 
 ## IRC: XChat
 ## People are normally not connected to too many IRC servers,
@@ -368,8 +363,8 @@ SocksPort 10.152.152.10:9125
 ## anon-ws-disable-stacked-tor package].)
 ## Not using IsolateDestAddr IsolateDestPort, because too much
 ## performance loss, too much load on Tor network and not secure.
-## Ticket https://trac.torproject.org/projects/tor/ticket/3455
-## is the right way to solve this issue. Waiting for upstream.
+## Instead Tor Browser sets SOCKS username for a request based on first party domain.
+## https://trac.torproject.org/projects/tor/ticket/3455
 SocksPort 10.152.152.10:9150 IPv6Traffic PreferIPv6 KeepAliveIsolateSOCKSAuth
 
 ## Tor Messenger's default port
