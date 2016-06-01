@@ -204,7 +204,7 @@ SocksPort 10.152.152.10:9050
 ## legacy
 SocksPort 10.152.152.10:9100
 
-## IRC: XChat
+## IRC: HexChat
 ## People are normally not connected to too many IRC servers,
 ## so they can use one circuit per server.
 SocksPort 10.152.152.10:9101 IsolateDestAddr IsolateDestPort
