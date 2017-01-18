@@ -1,3 +1,17 @@
+commit 13fadb99bade549d356d45c9339b23a3c4831697
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 18 08:18:51 2017 +0000
+
+    versioned Depends: tor (>= 0.2.7.3)
+    
+    https://phabricator.whonix.org/T436
+
+commit f6b66bce1ef9a4b344b59e26358a7ec293b710aa
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jan 15 15:18:56 2017 +0000
+
+    bumped changelog version
+
 commit 87aeecbac38a998ce2790a6d351c145240d2be56
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Sun Jan 15 08:35:23 2017 +0100
