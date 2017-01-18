@@ -14,16 +14,7 @@ Standards-Version: 3.9.8
 
 Package: anon-gw-anonymizer-config
 Architecture: all
-## Workaround: Not using versioned 'Depends:' on 'tor'.
-## Ideally we would depend on 'tor (>= 0.2.7.3)' because we are using,
-## 'KeepAliveIsolateSOCKSAuth' which is not available in earlier versions.
-## It would break the build. Debian jessie only has 'tor' '0.2.5'. Which is
-## the only available repository at anon-gw-anonymizer install time.
-## (1700_install-packages) The Tor Project's deb repository with Tor 0.2.7 is
-## added only afterwards. (2300_run-chroot-scripts-post-d) This workaround can
-## likely be removed once Whonix is based on Debian stretch.
-## https://phabricator.whonix.org/T436
-Depends: anon-shared-helper-scripts, tor, sudo, anon-base-files, kwrite,
+Depends: anon-shared-helper-scripts, tor (>= 0.2.7.3), sudo, anon-base-files, kwrite,
  konsole, auditd, ${misc:Depends}
 Recommends: control-port-filter-python
 Provides: ${diverted-files}
