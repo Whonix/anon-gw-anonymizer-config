@@ -26,12 +26,12 @@
 ## versus no AppArmor at all.
 
   ## obfsproxy
-  /usr/local/lib/python2.7/** r,
+  /usr/local/lib/python*/** r,
   /var/log/tor/log rw,
   /dev/urandom r,
   /dev/random r,
   /usr/** r,
-  /etc/python2.7/sitecustomize.py r,
+  /etc/python*/sitecustomize.py r,
   ## https://www.whonix.org/forum/index.php/topic,559.30.html
   #/usr/bin/obfsproxy rix,
 
@@ -42,12 +42,12 @@
   @{HOME}/.tb/tor-browser/App/flashproxy-reg-http rix,
   @{HOME}/.tb/tor-browser/App/flashproxy-reg-email rix,
   @{HOME}/.tb/tor-browser/App/** rm,
-  /usr/bin/python2.7 rix,
-  /usr/lib/python2.7/dist-packages/** m,
-  /usr/lib/python2.7/lib-dynload/** m,
-  /usr/lib/pyshared/python2.7/OpenSSL/** m,
-  /usr/lib/python2.7/lib-dynload/** m,
-  /usr/lib/pyshared/python2.7/numpy/** m,
+  /usr/bin/python* rix,
+  /usr/lib/python*/dist-packages/** m,
+  /usr/lib/python*/lib-dynload/** m,
+  /usr/lib/pyshared/python*/OpenSSL/** m,
+  /usr/lib/python*/lib-dynload/** m,
+  /usr/lib/pyshared/python*/numpy/** m,
   /proc/*/mounts r,
 
 ## End Tor Local AppArmor Profile for Anonymity Distributions
