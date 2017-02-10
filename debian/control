@@ -14,7 +14,7 @@ Standards-Version: 3.9.8
 
 Package: anon-gw-anonymizer-config
 Architecture: all
-Depends: anon-shared-helper-scripts, tor (>= 0.2.7.3), sudo, anon-base-files, kwrite,
+Depends: anon-shared-helper-scripts, tor, sudo, anon-base-files, kwrite,
  konsole, auditd, ${misc:Depends}
 Recommends: control-port-filter-python
 Provides: ${diverted-files}
