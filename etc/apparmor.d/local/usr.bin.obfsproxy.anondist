@@ -1,5 +1,5 @@
   # Qubes-Whonix.
-  /rw/usrlocal/lib/python2.7/dist-packages/ r,
+  /rw/usrlocal/lib/python*/dist-packages/ r,
 
   /var/lib/tor/pt_state/ rwk,
   /var/lib/tor/pt_state/scramblesuit/ rwk,
