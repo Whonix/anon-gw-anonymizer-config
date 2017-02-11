@@ -8,7 +8,7 @@
 ## https://github.com/Whonix/Whonix/issues/66
 
 ## A profile /etc/apparmor.d/anondist could not cover the system_tor
-## profile, since that is started by the /etc/init.d/tor init script.
+## profile, since that is started by the Tor systemd unit file.
 ## https://github.com/Whonix/Whonix/issues/67
 
   ## Anonymity Distributions
@@ -21,7 +21,7 @@
 ## AUDIT:
 ## These profile rules may be too permissive. Needs audit and someone dedicated
 ## to work on AppArmor profiles. It's not a serious security issue in any case,
-## because AppArmor isn't enabled by default in Debian jessie yet and little
+## because AppArmor isn't enabled by default in Debian stretch yet and little
 ## work is being done on it at time of writing. So it's a lax AppArmor profile
 ## versus no AppArmor at all.
 
