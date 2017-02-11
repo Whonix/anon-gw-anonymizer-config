@@ -8,7 +8,7 @@
 ## https://github.com/Whonix/Whonix/issues/66
 
 ## A profile /etc/apparmor.d/anondist could not cover the system_tor
-## profile, since that is started by the Tor systemd unit file.
+## profile, since that is enforced by the Tor systemd unit file.
 ## https://github.com/Whonix/Whonix/issues/67
 
   ## Anonymity Distributions
