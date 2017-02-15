@@ -4,7 +4,7 @@
 
 [Desktop Entry]
 Type=Application
-Exec=konsole --fullscreen -e /usr/lib/gateway-shortcuts/restarttor
+Exec=/usr/lib/gateway-shortcuts/wrapper /usr/lib/gateway-shortcuts/restarttor
 Name=Restart Tor
 GenericName=Restart Tor
 Comment=Shut down Tor and start Tor again using "sudo service tor@default restart"
