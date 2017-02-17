@@ -1,3 +1,83 @@
+commit ac678cb78b47bf08c5df0b2792d3322280615314
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Feb 15 21:21:35 2017 +0000
+
+    fix starting gateway shortcuts in konsole whole screen in Qubes
+
+commit 6de40fffdb1783e82cc9d766c35611a557309638
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Feb 14 17:30:29 2017 +0000
+
+    "$@"
+
+commit b73d6427e16b0939043a8b637319e2a2e1ad9be7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Feb 14 17:22:08 2017 +0000
+
+    "$@"
+
+commit fdcc63e4f0910574b28d59344739fdf376ae9c8d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 11 07:05:06 2017 +0100
+
+    comment
+
+commit df595f918362cc1176d0a9d2198ec7044298046c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 11 07:03:34 2017 +0100
+
+    comment
+
+commit 98643f5aa590b09d00875927226ea0ed92ce21cd
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Feb 11 05:33:03 2017 +0100
+
+    comment
+
+commit 48d3cbf01d7fef46646a9e8052907d48e67244fa
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Feb 10 15:47:48 2017 +0000
+
+    remove faketime from Build-Depends:
+    
+    since no longer used for reproducible builds
+
+commit 19fcebf486344e8f9cfee03d87bc1539398ab937
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Feb 10 15:35:20 2017 +0000
+
+    remove debian/gain-root-command workaround
+
+commit 1d7584472d4a1e9ba1ce033f8544c13a02f562ba
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Feb 10 15:21:45 2017 +0000
+
+    packaging simplification tor (>= 0.2.7.3) -> tor
+
+commit 954880695eaa226ebd33cd744f4e5841f2bda429
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Feb 10 15:18:00 2017 +0000
+
+    packaging simplification config-package-dev (>= 5.1) -> config-package-dev
+
+commit a2c34bd0738387c249f01a6d943390c788a74bc2
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Feb 10 15:06:45 2017 +0000
+
+    apparmor profile python3 support
+
+commit a0159874eefc54d6164570dbb27b14dfc0dbe8e8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Feb 10 15:05:41 2017 +0000
+
+    apparmor profile python3 support
+
+commit a58592cfa74111c9e686905e1def1e37d0c59d0c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 18 14:30:22 2017 +0000
+
+    bumped changelog version
+
 commit 13fadb99bade549d356d45c9339b23a3c4831697
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Jan 18 08:18:51 2017 +0000
