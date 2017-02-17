@@ -1,5 +1,0 @@
-## konsole is a dependency of this package.
-anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-stoptor.desktop konsole
-anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-restarttor.desktop konsole
-anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-reloadtor.desktop konsole
-anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-arm.desktop konsole
