@@ -1,3 +1,15 @@
+commit 959ee2845ac03ee1f3081acb4528959534630090
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Feb 17 14:33:30 2017 +0000
+
+    remove no longer required lintian overrides
+
+commit 88da32ad9c3a14fc3f3dd749d91d01e31600de3a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Feb 17 13:40:22 2017 +0000
+
+    bumped changelog version
+
 commit ac678cb78b47bf08c5df0b2792d3322280615314
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Feb 15 21:21:35 2017 +0000
