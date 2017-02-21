@@ -22,11 +22,11 @@ case "$1" in
 
       ## force-reload Tor, if running.
       service_tor_status_exit_code="0"
-      service tor@default status >/dev/null 2>&1 || { service_tor_status_exit_code="$?" ; true; };
+      systemctl --no-pager --no-block status tor@default >/dev/null 2>&1 || { service_tor_status_exit_code="$?" ; true; };
       if [ "$service_tor_status_exit_code" = "0" ]; then
          ## || true to avoid an error in case Tor's init script has been
          ## chmodded -x in meanwhile or
-         service tor@default force-reload || true
+         systemctl --no-pager --no-block force-reload tor@default || true
       fi
 
       true "INFO: End configuring $DPKG_MAINTSCRIPT_PACKAGE."
