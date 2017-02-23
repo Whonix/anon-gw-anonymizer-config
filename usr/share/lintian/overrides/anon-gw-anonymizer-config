@@ -1,0 +1,3 @@
+## Debian systemd packaging does not reload daemons yet when drop-ins where added.
+## Need to use systemctl directly so --no-pager --no-block can be used.
+anon-gw-anonymizer-config: maintainer-script-calls-systemctl
