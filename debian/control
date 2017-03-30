@@ -16,7 +16,7 @@ Package: anon-gw-anonymizer-config
 Architecture: all
 Depends: anon-shared-helper-scripts, tor, sudo, anon-base-files, kwrite,
  konsole, auditd, ${misc:Depends}
-Recommends: control-port-filter-python
+Recommends: onion-grater
 Provides: ${diverted-files}
 Conflicts: ${diverted-files}
 Description: Tor Configuration and Tweaks for Anonymity Distributions
