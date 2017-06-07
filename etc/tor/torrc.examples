@@ -61,7 +61,7 @@ Bridges
 
 UseBridges 1
 ClientTransportPlugin obfs2,obfs3 exec /usr/bin/obfsproxy managed
-ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy managed
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
 
       You must also add the IPs for your bridges. The
       following lines are an example of how it should look:
