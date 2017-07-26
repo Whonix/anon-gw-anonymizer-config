@@ -1,8 +1,45 @@
+commit 750b40185c426c9df557447e1234e15fca3bfe0d
+Merge: 3fbd589 3b163e5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jul 26 15:28:11 2017 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 3fbd589afe253a35bfd0581247a6ac3a95f5f516
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jul 26 14:05:35 2017 +0000
+
+    bumped changelog version
+
 commit d4d412296b7b7156b527225a0c4a65ae3005427e
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Jul 26 14:05:21 2017 +0000
 
     signed commit
+
+commit 3b163e5008c1ef1e38f8a581754991ef85955615
+Author: Jason J. Ayala P <JasonJAyalaP+Github@Gmail.com>
+Date:   Thu Jul 6 10:52:27 2017 -0500
+
+    phab link
+
+commit 17912c30390ef46b97226e65ee14598e26c78b8d
+Author: Jason J. Ayala P <JasonJAyalaP+Github@Gmail.com>
+Date:   Wed Jul 5 16:38:32 2017 -0500
+
+    typo
+
+commit b51a568e474ab8092a26cb196f8669f5a7238899
+Author: Jason J. Ayala P <JasonJAyalaP+Github@Gmail.com>
+Date:   Wed Jul 5 16:38:10 2017 -0500
+
+    40_obfs workaround notes
+
+commit bfe28e340d03cc4d77e4f49e24bcc0a9da42da06
+Author: JasonJAyalaP <JasonJAyalaP+Github@Gmail.com>
+Date:   Wed Jul 5 16:30:51 2017 -0500
+
+    Added NoNewPriviliges= workaround
 
 commit 91d64faef2168e3fc985df2e683ee1fbbef89c09
 Merge: ea339b1 f71d47e
