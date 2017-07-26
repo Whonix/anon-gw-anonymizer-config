@@ -1,3 +1,64 @@
+commit d4d412296b7b7156b527225a0c4a65ae3005427e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jul 26 14:05:21 2017 +0000
+
+    signed commit
+
+commit 91d64faef2168e3fc985df2e683ee1fbbef89c09
+Merge: ea339b1 f71d47e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jun 7 12:18:33 2017 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit f71d47eb74c14816580d3220c215ade21ab2a317
+Merge: ea339b1 42c3573
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jun 7 12:12:29 2017 +0000
+
+    Merge pull request #6 from irykoon/master
+    
+    delete "managed" option in obfs4 line
+
+commit 42c3573f4a40d51768553aa45bbf0064b79e5bdd
+Author: irykoon <irykoon@gmail.com>
+Date:   Wed Jun 7 04:33:57 2017 +0000
+
+    delete "managed" option in obfs4 line
+
+commit ea339b1cea5175e53c4c04e2d78447c1e6188f69
+Merge: 2af4688 da97060
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jun 5 14:35:58 2017 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit da97060dc075328ee12a489efba3d9e16bd0a57b
+Merge: 2af4688 3a553a4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jun 5 14:35:32 2017 +0200
+
+    Merge pull request #5 from irykoon/master
+    
+    use a better URL to bridge
+
+commit 3a553a41045fa50e56f4409e7745b19b9bca0e96
+Author: irykoon <irykoon@gmail.com>
+Date:   Sun Jun 4 03:10:55 2017 +0000
+
+    use a better URL to bridge
+
+commit 2af4688004ae91cfab496de7e3dfa9e24586feae
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Mar 30 03:11:20 2017 +0200
+
+    control-port-filter-python -> onion-grater
+
+commit 0fd57318c0e3a10d2d57367b7ba66518d12e22ed
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Feb 27 01:35:36 2017 +0000
+
+    bumped changelog version
 
 commit 07edd17785698255cc5415fbb3aaab246506e300
 Author: Patrick Schleizer <adrelanos@riseup.net>
@@ -10,7 +71,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Feb 21 22:09:34 2017 +0000
 
     use systemctl --no-pager to prevent blocking due to systemctl interactivity
-
+    
     https://phabricator.whonix.org/T637
 
 commit bed0954fc94e8d2057cb0e860ea14416e4680576
@@ -72,7 +133,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Feb 10 15:47:48 2017 +0000
 
     remove faketime from Build-Depends:
-
+    
     since no longer used for reproducible builds
 
 commit 19fcebf486344e8f9cfee03d87bc1539398ab937
@@ -116,7 +177,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Jan 18 08:18:51 2017 +0000
 
     versioned Depends: tor (>= 0.2.7.3)
-
+    
     https://phabricator.whonix.org/T436
 
 commit f6b66bce1ef9a4b344b59e26358a7ec293b710aa
@@ -148,11 +209,11 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Sep 23 00:24:52 2016 +0000
 
     No longer open Tor ControlPort 9051 on Whonix-Gateway.
-
+    
     No longer required, since tor-arm now supports Tor cookie file authentication.
-
+    
     We don't care about Vidalia, since it has long been deprecated and removed from Debian.
-
+    
     control-port-filter-python also uses Tor cookie file authentication.
 
 commit 4c87a6aa5a079932186f9fe797fe54e37197b762
@@ -166,7 +227,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Aug 4 23:04:38 2016 +0000
 
     monitor /var/lib/tor/lock using access rights modifications
-
+    
     https://phabricator.whonix.org/T537
 
 commit 7fb0b9c86c71df9fdb607e5aa1fcf05834b671cc
@@ -174,21 +235,21 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Aug 3 22:22:01 2016 +0000
 
     update /usr/share/tor/tor-service-defaults-torrc
-
+    
     For compatibility with Tor version 0.2.8.6-1~d80.jessie+1.
-
+    
     /var/run/tor/control was no longer created and Tor throwing a warning.
-
+    
     Aug 03 21:56:34.000 [warn] Permissions on directory /var/run/tor are too permissive.
     Aug 03 21:56:34.000 [warn] Before Tor can create a control socket in "/var/run/tor/control", the directory "/var/run/tor" needs to exist, and to be accessible only by the user and group account that is running Tor.  (On some Unix systems, anybody who can list a socket can connect to it, so Tor is being careful.)
-
+    
     Which resulted in a follow up issues:
     - control-port-filter-proxy-python no longer working
     - whonixcheck error: Tor's Control Port could not be reached!
     - broken Tor Browser new identity button
-
+    
     Thanks to freeman, torjunkie and temple for reporting this issue!
-
+    
     https://forums.whonix.org/t/error-tor-bootstrap-result
 
 commit 5703999aa7b2dd98d86a4b1b231c38bc95ec167f
@@ -208,9 +269,9 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Jun 1 16:42:17 2016 +0000
 
     Updated Tor Browser port comments.
-
+    
     Thanks to singsong for the report!
-
+    
     https://forums.whonix.org/t/tor-browser-tor-browser-bundle-ports
 
 commit e97314a24166718351a35a82b599e827c01d9fdc
@@ -232,7 +293,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Apr 14 23:32:40 2016 +0000
 
     Merge pull request #4 from 3n7r0p1/patch-1
-
+    
     Update tor-service-defaults-torrc.anondist
 
 commit c301753b9c31a429a98d04b4986bfb9966011cdf
@@ -240,7 +301,7 @@ Author: 3n7r0p1 <3n7r0py@riseup.net>
 Date:   Thu Apr 14 23:19:52 2016 +0000
 
     Update tor-service-defaults-torrc.anondist
-
+    
     Provide stream isolation for multiple identities / connections in Tor Messenger.
     Similar to Instant Messenger SocksPort 9103.
 
@@ -255,7 +316,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Apr 13 17:02:30 2016 +0000
 
     no longer download from deb.torproject.org because it gets uploaded to Whonix repo
-
+    
     https://phabricator.whonix.org/T472
 
 commit 950b9c4edfc840a89fad630f3df14835c413789f
@@ -263,7 +324,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Sat Apr 9 15:30:00 2016 +0000
 
     added anon-info - shows Tor apt repository status and Tor package version
-
+    
     https://phabricator.whonix.org/T472
 
 commit 026714c9c09934505c6a0180c26e25430d2300e5
@@ -277,9 +338,9 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Apr 6 20:10:59 2016 +0000
 
     download packages tor and tor-geoipdb from The The Project's apt repository
-
+    
     using apt-during-apt
-
+    
     thereby abolished previous chroot scripts for doing that
 
 commit 51cc21ec024cd28b690936386b59f8051ba2770a
@@ -299,7 +360,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Dec 9 19:16:27 2015 +0000
 
     open Tor reload/restart/stop and tor-arm starters maximized by default in Konsole
-
+    
     https://phabricator.whonix.org/T451
 
 commit a93be97087ee78edf5239550baf95cab8d14f02b
@@ -326,7 +387,7 @@ Author: troubadoour <trobador@riseup.net>
 Date:   Fri Nov 27 21:48:17 2015 +0000
 
     usr.bin.obffproxy.anondist
-
+    
     Separate anondist profile for obfsproxy.
     When in system_tor anondist, the additional apparmor lines
     are not read on first use of scramblesuit.
@@ -362,7 +423,7 @@ Date:   Tue Nov 24 12:24:38 2015 +0000
     (1700_install-packages) The Tor Project's deb repository with Tor 0.2.7 is
     added only afterwards. (2300_run-chroot-scripts-post-d) This workaround can
     likely be removed once Whonix is based on Debian stretch.
-
+    
     https://github.com/Whonix/anon-gw-anonymizer-config/pull/3
 
 commit 5309347a9fe9a63569eafb22aee1474732dba6d0
@@ -378,7 +439,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Nov 24 11:54:28 2015 +0000
 
     Merge pull request #3 from rustybird/KeepAliveIsolateSOCKSAuth
-
+    
     Use KeepAliveIsolateSOCKSAuth against TB fingerprinting
 
 commit 50057f729b099bb0a356c12474295fd897acdf03
@@ -392,14 +453,14 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Sun Nov 22 23:37:28 2015 +0000
 
     enable Transparent Proxy Ports for Whonix-Gateway by default
-
+    
     TransPort 127.0.0.1:9041
     DnsPort 127.0.0.1:5400
-
+    
     But still not enable transparent proxying by default in Whonix-Gateway firewall
     settings. This is required so we can
     'redirect tinyproxy traffic to 127.0.0.1 instead to qubes-netvm-gateway'.
-
+    
     https://phabricator.whonix.org/T434
 
 commit 70efe1ca2691bba480391bf10e9ac0fef3d4d2d3
@@ -463,7 +524,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Jul 10 16:14:01 2015 +0200
 
     Merge pull request #1 from HulaHoopWhonix/patch-2
-
+    
     Tor data desktop file
 
 commit b0b35d2b02dd13976bc6be04f9ae65e3bc66ee83
@@ -472,7 +533,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Jul 10 16:13:55 2015 +0200
 
     Merge pull request #2 from HulaHoopWhonix/patch-3
-
+    
     Create tordata
 
 commit f975ee319d13f5972779a22c329dc91dc417a33b
