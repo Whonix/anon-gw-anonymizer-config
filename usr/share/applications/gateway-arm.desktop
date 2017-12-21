@@ -4,7 +4,7 @@
 
 [Desktop Entry]
 Type=Application
-Exec=/usr/lib/gateway-shortcuts/wrapper /usr/lib/gateway-shortcuts/arm
+Exec=/usr/lib/anon-shared-helper-scripts/terminal-wrapper /usr/lib/gateway-shortcuts/arm
 Name=Arm - Tor Controller
 GenericName=anonymizing relay monitor (arm)
 Comment=anonymizing relay monitor (arm)
