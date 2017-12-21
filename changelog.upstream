@@ -1,3 +1,16 @@
+commit 87bb37dba8ac07692bb39a8f4d04a9f41b4ccbfd
+Merge: e4f6dc9 d95be43
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Dec 21 20:00:34 2017 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit e4f6dc978799ac724aa3cd4e8d88c546c05bc1ef
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Dec 21 19:59:13 2017 +0000
+
+    bumped changelog version
+
 commit 676c5c1145a330f0ea10692d17b319ca4062aeb6
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Dec 21 19:58:59 2017 +0000
@@ -27,6 +40,18 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Dec 21 18:42:40 2017 +0000
 
     update paths
+
+commit d95be4367dd17323fac132bdbc511888acf1ef79
+Author: Jason J. Ayala P <JasonJAyalaP+Github@Gmail.com>
+Date:   Wed Sep 6 13:17:37 2017 -0500
+
+    lower case consistency for the OCD
+
+commit 4c904a48d80a1cc566999248a9befb4183e50cd3
+Author: Jason J. Ayala P <JasonJAyalaP+Github@Gmail.com>
+Date:   Mon Sep 4 16:03:51 2017 -0500
+
+    fixing parsing error
 
 commit 21e3aae16893dd0b5b7610178b1793e7e255f051
 Author: Patrick Schleizer <adrelanos@riseup.net>
