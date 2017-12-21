@@ -1,3 +1,5 @@
-## Debian systemd packaging does not reload daemons yet when drop-ins where added.
-## Need to use systemctl directly so --no-pager --no-block can be used.
-anon-gw-anonymizer-config: maintainer-script-calls-systemctl
+## usr/lib/anon-shared-helper-scripts/terminal-wrapper gets by anon-shared-helper-scripts
+anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-arm.desktop usr/lib/anon-shared-helper-scripts/terminal-wrapper
+anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-reloadtor.desktop usr/lib/anon-shared-helper-scripts/terminal-wrapper
+anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-restarttor.desktop usr/lib/anon-shared-helper-scripts/terminal-wrapper
+anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-stoptor.desktop usr/lib/anon-shared-helper-scripts/terminal-wrapper
