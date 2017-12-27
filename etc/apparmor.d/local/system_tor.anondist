@@ -30,6 +30,9 @@
   /etc/torrc.d/ r,
   /etc/torrc.d/* r,
 
+  /usr/local/etc/torrc.d/ r,
+  /usr/local/etc/torrc.d/* r,
+
   ## obfsproxy
   /usr/local/lib/python*/** r,
   /var/log/tor/log rw,
