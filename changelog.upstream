@@ -1,3 +1,28 @@
+commit 49c9aaaf2c9e917086f71141fc286581b1023d1c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Dec 27 19:14:24 2017 +0100
+
+    apparmor /usr/local/etc/torrc.d
+
+commit f7277e25544b346af7daa44a7bbaf10cca113309
+Merge: 77d06d8 4965ce5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Dec 26 22:44:02 2017 +0100
+
+    Merge remote-tracking branch 'troubadoour/master'
+
+commit 4965ce527c1b099875146246d6c8ce775e85444f
+Author: troubadoour <trobador@riseup.net>
+Date:   Tue Dec 26 19:49:07 2017 +0000
+
+    Allow read/write in /etc. Give permissions to /etc/torrc.d/
+
+commit 77d06d8391ab691ad98e0000426e6c29abe91a1a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Dec 21 20:01:18 2017 +0000
+
+    bumped changelog version
+
 commit 87bb37dba8ac07692bb39a8f4d04a9f41b4ccbfd
 Merge: e4f6dc9 d95be43
 Author: Patrick Schleizer <adrelanos@riseup.net>
