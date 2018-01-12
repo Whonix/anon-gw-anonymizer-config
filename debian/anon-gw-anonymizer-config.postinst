@@ -17,6 +17,8 @@ true "
 "
 
 configure_function() {
+   mkdir -p /usr/local/etc/torrc.d
+
    addgroup --quiet debian-tor 2>/dev/null || true
 
    ## Add user "user" to the group "debian-tor", so user "user" can access Tor's control port.
