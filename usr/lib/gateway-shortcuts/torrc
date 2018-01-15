@@ -6,4 +6,4 @@
 
 set -x
 
-kdesudo kwrite /etc/tor/torrc
+kdesudo kwrite /usr/local/etc/torrc.d/50_user.torrc
