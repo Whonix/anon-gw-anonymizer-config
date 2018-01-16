@@ -6,8 +6,8 @@
 Type=Application
 Exec=/usr/lib/gateway-shortcuts/torrcexamples
 Name=Tor Examples
-GenericName=/etc/tor/torrc.examples
-Comment=Open /etc/tor/torrc.examples in kwrite as read-only
+GenericName=Tor Configuratoin Examples
+Comment=Open /etc/torrc.d/torrc.examples in kwrite as read-only
 Categories=System
 Icon=/usr/share/icons/anon-icon-pack/text_x_makefile.ico
 Keywords=system;tor;
