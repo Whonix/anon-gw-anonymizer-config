@@ -1,3 +1,61 @@
+commit d5dc63c2cc746d8b9deffa72d7a727a7a4c381ef
+Merge: e16ff10 6dc6ab7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Jan 18 16:59:47 2018 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 6dc6ab7e78a331cd59acdc8a2e8e8f26b5f795ee
+Merge: e16ff10 31d78a3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Jan 18 04:10:07 2018 +0100
+
+    Merge pull request #8 from irykoon/master
+    
+    Better instructions in comments
+
+commit 31d78a368da83ef74628649d49b913f9aa651ab7
+Author: irykoon <irykoon@gmail.com>
+Date:   Thu Jan 18 02:01:16 2018 +0000
+
+    Better instructions in comments
+
+commit e16ff107a49d75c776334164cb81ca22cc450c01
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jan 16 22:11:54 2018 +0100
+
+    /usr/local/etc/torrc.d/
+
+commit 22f75da9f6eee1d305ace8d50415b7fe0936aa4c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 15 22:53:51 2018 +0000
+
+    torrc.d
+
+commit 858e7890754893334e1d61d8b0021ba40bebb174
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 15 21:02:17 2018 +0000
+
+    rm_conffile /etc/tor/torrc.examples
+
+commit 1f5836257634ab028d7a8e844b9e5199bc7493b7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 15 21:01:09 2018 +0000
+
+    move etc/tor/torrc.examples -> etc/torrc.d/torrc.examples
+
+commit f42a8b434759e63da605f55d886e9d3565ff38d0
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 15 20:09:51 2018 +0100
+
+    comment
+
+commit 8c6d6299d9f82f8a734ddd07e2a90302b142b0e4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jan 12 20:07:57 2018 +0000
+
+    bumped changelog version
+
 commit befa4e43ed9e1fb108c5715ffdd973384b828798
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Jan 12 19:21:32 2018 +0000
