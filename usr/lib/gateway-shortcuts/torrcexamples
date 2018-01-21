@@ -6,4 +6,4 @@
 
 set -x
 
-kwrite /etc/torrc.d/torrc.examples
+kwrite /usr/share/anon-gw-anonymizer-config/torrc.examples
