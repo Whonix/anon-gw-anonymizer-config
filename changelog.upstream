@@ -1,3 +1,23 @@
+commit 11ed7d897677bcb7ce055a9067796faa82d31e26
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jan 21 13:43:54 2018 +0100
+
+    fix
+
+commit 9e9ed704408ab2726207a56830c7df44638483ee
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jan 21 13:41:27 2018 +0100
+
+    fix, renamed:    etc/torrc.d/torrc.examples -> usr/share/anon-gw-anonymizer-config/torrc.examples
+    
+    to prevent Tor config parsing error
+
+commit a5687aeb9bfe66b3fb8c0bb0a2c233e467cb6aa7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Jan 18 17:29:56 2018 +0000
+
+    bumped changelog version
+
 commit d5dc63c2cc746d8b9deffa72d7a727a7a4c381ef
 Merge: e16ff10 6dc6ab7
 Author: Patrick Schleizer <adrelanos@riseup.net>
