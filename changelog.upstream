@@ -1,3 +1,15 @@
+commit 0a0b3d5a58e821bbec6d368ddf5ca400ab8a5dea
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jan 21 13:44:58 2018 +0000
+
+    rm_conffile /etc/torrc.d/torrc.examples
+
+commit 4c8ff69e438c20a2a6f413052c3ec1d630b074be
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jan 21 13:33:35 2018 +0000
+
+    bumped changelog version
+
 commit 11ed7d897677bcb7ce055a9067796faa82d31e26
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Sun Jan 21 13:43:54 2018 +0100
