@@ -1,3 +1,19 @@
+commit 946d2b444f93cf5316bf3e2966eddddde82fd770
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Feb 5 22:58:37 2018 +0000
+
+    Revert "parse only *.conf"
+    
+    This reverts commit 7c9bbde4d0669b198f9f16af5488f0bd03878257.
+    
+    Thanks to @iry for the bug report!
+
+commit 3fa30e8ae650de1fe0db676eb931ebf446286b13
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Feb 5 21:54:24 2018 +0000
+
+    bumped changelog version
+
 commit 7c9bbde4d0669b198f9f16af5488f0bd03878257
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Feb 5 21:33:21 2018 +0000
