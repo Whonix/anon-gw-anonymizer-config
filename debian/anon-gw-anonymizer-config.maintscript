@@ -1,2 +1,7 @@
 rm_conffile /etc/tor/torrc.examples
 rm_conffile /etc/torrc.d/torrc.examples
+
+## '.torrc' was in development version of Whonix only
+rm_conffile /etc/torrc.d/40_anon_connection_wizard.torrc
+rm_conffile /etc/torrc.d/50_user.torrc
+rm_conffile /etc/torrc.d/95_whonix.torrc
