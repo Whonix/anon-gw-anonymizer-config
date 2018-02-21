@@ -1,3 +1,15 @@
+commit eeb02d516803fa10c376eb18ac4506acfbcb7ab6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Feb 20 16:13:36 2018 +0000
+
+    clean up '.torrc' files
+
+commit 014d0cfc98f3e571c8a7f92b97462fa2f940e9d5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Feb 5 22:59:38 2018 +0000
+
+    bumped changelog version
+
 commit 946d2b444f93cf5316bf3e2966eddddde82fd770
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Feb 5 22:58:37 2018 +0000
