@@ -8,4 +8,4 @@ User=root
 ExecStart=/usr/lib/anon-gw-anonymizer-config/make-sure-torrc-exist
 
 [Install]
-WantedBy=tor.service
+WantedBy=multi-user.target
