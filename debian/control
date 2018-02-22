@@ -5,7 +5,7 @@ Source: anon-gw-anonymizer-config
 Section: misc
 Priority: optional
 Maintainer: Patrick Schleizer <adrelanos@riseup.net>
-Build-Depends: debhelper (>= 9), genmkfile, config-package-dev, ruby-ronn
+Build-Depends: debhelper (>= 9), genmkfile, config-package-dev, ruby-ronn, dh-systemd
 Homepage: https://github.com/Whonix/anon-gw-anonymizer-config
 Vcs-Browser: https://github.com/Whonix/anon-gw-anonymizer-config
 Vcs-Git: https://github.com/Whonix/anon-gw-anonymizer-config.git

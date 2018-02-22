@@ -1,0 +1,11 @@
+[Unit]
+Description=Make Sure Torrc Files Exist
+Before=tor.service
+
+[Service]
+User=root
+
+ExecStart=/usr/lib/anon-gw-anonymizer-config/make-sure-torrc-exist
+
+[Install]
+WantedBy=tor.service
