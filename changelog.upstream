@@ -1,8 +1,152 @@
+commit 64d64d566fe30a307c65904ecd4b5c736ac793d8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 01:57:14 2018 +0000
+
+    copyright
+
+commit 2708b81c50157b6b5afb754af91cfa2e99a7c07f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 01:57:00 2018 +0000
+
+    copyright
+
+commit 90f335c7ce41df91cc00bbc18a9070bdcc32faaf
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 01:56:20 2018 +0000
+
+    RemainAfterExit=yes
+
+commit eb53d79691e422bd22949edfb338764dc7bd99d5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 01:51:41 2018 +0000
+
+    Type=oneshot
+
+commit fedee4b7f94915635f171ceb1a80944c2377a4e6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 01:39:25 2018 +0000
+
+    don't run in Qubes TemplateVM
+
+commit 60e57a7b46fb2e79bb32ea6c8ecafc912878b3e7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 01:38:43 2018 +0000
+
+    fix lintian warning
+
+commit 1f9a2bf8220b0d4e7f8ef4229c36e3b014e038c7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 02:34:45 2018 +0100
+
+    fill usr/share/anon-gw-anonymizer-config/anon_connection_wizard_torrc_template.conf
+
+commit 733ae6d413666750b29dd69957792960529042da
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 02:32:04 2018 +0100
+
+    typo
+
+commit 73d756bed4091fffd90e7e352c8da03edeb0f781
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 02:26:36 2018 +0100
+
+    no need for User=root
+
+commit 964a8d5be143a8233f15cd6b72e913634f3dc3cf
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 02:24:17 2018 +0100
+
+    WantedBy=multi-user.target
+
+commit cba55a78ec8aa32aeed4875a07ccf85c02d7d50e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 02:22:51 2018 +0100
+
+    no required
+    
+    lib/systemd/system/anon-gw-anonymizer-config.service
+    
+    Before=tor.service
+    
+    is sufficient. Doesn't need to be both way.
+
+commit 7456e1718990c5584ae969bb047de2cb7f581bff
+Merge: 05b6fb3 65d8947
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 02:21:52 2018 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 65d89474ebb2fa31e4a3d8a59f8807ffcf166c12
+Merge: 05b6fb3 17c3df9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 01:13:41 2018 +0000
+
+    Merge pull request #9 from irykoon/master
+    
+    Control Port workaround & Make sure torrc files exist before starting Tor
+
+commit 17c3df9b7eb4d2ec496df8a262573fb85bb59379
+Author: irykoon <irykoon@gmail.com>
+Date:   Wed Feb 21 23:16:14 2018 +0000
+
+    /etc/torrc.d -> /etc/torrc.d/95_whonix.conf
+    
+    We should avoid any `%include directory` for now before this feature is available in Tor stable: https://trac.torproject.org/projects/tor/ticket/25140#ticket
+
+commit e37d7736fa3b48a03972a81872a1e43b2ba5d12e
+Author: irykoon <irykoon@gmail.com>
+Date:   Wed Feb 21 22:22:10 2018 +0000
+
+    Make sure torrc files exist before starting Tor
+
+commit 6b238e85f543c15a41c1eef592c5ac1bd6f9b8b0
+Author: irykoon <irykoon@gmail.com>
+Date:   Wed Feb 21 18:34:58 2018 +0000
+
+    usr/bin/make-sure-torrc-exist -> usr/lib/anon-gw-anonymizer-config/make-sure-torrc-exist
+    
+    Thanks to the suggestion by Patrick: "[o]therwise we’d have to create and ship a man page (otherwise lintian warning).
+
+commit 85f3602580687d3fb442f748f68706d4ccaa5156
+Merge: ae80ee0 05b6fb3
+Author: irykoon <irykoon@gmail.com>
+Date:   Wed Feb 21 18:29:55 2018 +0000
+
+    Merge branch 'master' of https://github.com/Whonix/anon-gw-anonymizer-config
+
+commit 05b6fb3efb194d5fae42a0171795b6d3b2238297
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Feb 21 15:41:49 2018 +0000
+
+    bumped changelog version
+
 commit eeb02d516803fa10c376eb18ac4506acfbcb7ab6
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Feb 20 16:13:36 2018 +0000
 
     clean up '.torrc' files
+
+commit ae80ee09df893f0226b879002b2c04cd9da41c4e
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Feb 19 18:59:29 2018 +0000
+
+    Attempt to make sure all torrc files exist
+    
+    However, this does not work as epected. This commit is only for demonstration purpose.
+
+commit 9a9c921ac23731beccbae11ccd64002e42710026
+Merge: 75f65d2 014d0cf
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Feb 19 17:32:45 2018 +0000
+
+    Merge branch 'master' of https://github.com/Whonix/anon-gw-anonymizer-config
+
+commit 75f65d29d762746ef729cd0e3aee6cdf1f93374d
+Author: irykoon <irykoon@gmail.com>
+Date:   Wed Feb 14 01:48:30 2018 +0000
+
+    ControlSocket workaround
 
 commit 014d0cfc98f3e571c8a7f92b97462fa2f940e9d5
 Author: Patrick Schleizer <adrelanos@riseup.net>
@@ -43,6 +187,14 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Feb 5 21:30:01 2018 +0000
 
     .torrc -> .conf
+
+commit 7e3e9c149cb0fea21c956d6363a577022733f761
+Author: irykoon <irykoon@gmail.com>
+Date:   Sun Feb 4 20:46:45 2018 +0000
+
+    ControlSocket workaround
+    
+    When both User option and DisabkeNetwork 1 are set as part of the Tor configurations, the Tor control socket will not be opened unless reloading Tor: https://lists.torproject.org/pipermail/tor-dev/2018-February/012887.html
 
 commit 45239a239bd05e7bb59f3d2d91a4e4d26f87f5ea
 Author: Patrick Schleizer <adrelanos@riseup.net>
