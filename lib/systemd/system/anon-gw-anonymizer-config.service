@@ -5,6 +5,7 @@ ConditionPathExists=!/var/run/qubes/this-is-templatevm
 Before=tor.service
 
 [Service]
+Type=oneshot
 ExecStart=/usr/lib/anon-gw-anonymizer-config/make-sure-torrc-exist
 
 [Install]
