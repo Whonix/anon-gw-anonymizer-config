@@ -6,6 +6,7 @@ Before=tor.service
 
 [Service]
 Type=oneshot
+RemainAfterExit=yes
 ExecStart=/usr/lib/anon-gw-anonymizer-config/make-sure-torrc-exist
 
 [Install]
