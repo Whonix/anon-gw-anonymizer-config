@@ -26,10 +26,10 @@
 
   ## anon-connection-wizard
   /etc/ r,
-  /etc/torrc.d/ rw,
+  /etc/torrc.d/ r,
   /etc/torrc.d/* rw,
 
-  /usr/local/etc/torrc.d/ rw,
+  /usr/local/etc/torrc.d/ r,
   /usr/local/etc/torrc.d/* rw,
 
   ## obfsproxy
