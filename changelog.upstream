@@ -1,3 +1,22 @@
+commit 5a50250190b287cd39f711c9711cfe57ff778a3e
+Merge: 33ec466 cd85983
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Apr 2 12:54:43 2018 +0200
+
+    Merge remote-tracking branch 'troubadoour/master'
+
+commit cd85983c9e61eacbf1e353de0d0aaf2e70bc1fd3
+Author: troubadoour <trobador@riseup.net>
+Date:   Sun Apr 1 19:30:56 2018 +0000
+
+    change apparmor rules for directories
+
+commit 33ec466d8ef01edb34acf27fbd2cfc6bbbc380dc
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 22 01:59:59 2018 +0000
+
+    bumped changelog version
+
 commit 64d64d566fe30a307c65904ecd4b5c736ac793d8
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Feb 22 01:57:14 2018 +0000
