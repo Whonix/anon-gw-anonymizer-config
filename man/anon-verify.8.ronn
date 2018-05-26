@@ -3,8 +3,8 @@ anon-verify(8) -- shows Tor configuration verification info
 
 <span class="comment">
 # This file is part of Whonix.
-# Copyright (C) 2018 Iry Koon <iry@riseup.net>
 # Copyright (C) 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+# Copyright (C) 2018 Iry Koon <iry@riseup.net>
 # See the file COPYING for copying conditions.
 </span>
 
