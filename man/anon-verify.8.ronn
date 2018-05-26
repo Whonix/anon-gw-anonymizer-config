@@ -1,4 +1,4 @@
-anon-info(8) -- shows Tor configuration verification info
+anon-verify(8) -- shows Tor configuration verification info
 =============================================
 
 <span class="comment">
