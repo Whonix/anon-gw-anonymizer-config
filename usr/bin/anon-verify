@@ -1,5 +1,9 @@
 #!/bin/bash
 
+## Copyright (C) 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## Copyright (C) 2018 Iry Koon <iry@riseup.net>
+## See the file COPYING for copying conditions.
+
 ## get_tor_start_command() will set the $tor_start_command to the command
 ## used in Whonix to start Tor. If it did not successfully extra the
 ## command, it will exit with exit code 1.  If Whonix get rid of
