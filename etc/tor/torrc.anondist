@@ -2,4 +2,4 @@
 ## Please create and add modifications to the following file instead:
 ## /usr/local/etc/torrc.d/50_user.conf
 
-%include /etc/torrc.d/95_whonix.conf
+%include /etc/torrc.d/
