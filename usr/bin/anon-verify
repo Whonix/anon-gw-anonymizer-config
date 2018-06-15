@@ -57,7 +57,7 @@ sudo service tor@default restart
     fi
 
     ## TODO: grep the invalid option for user and specify which file
-    ## is corrupted for better fixing suggrestion
+    ## is corrupted for better fixing suggestion
 
     ## TODO: $anon_verify_report_html is used by whonixcheck
     ## we need to find a way to merge it with $anon_verify_report
