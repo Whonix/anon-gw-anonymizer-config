@@ -8,3 +8,6 @@
 %sudo ALL=NOPASSWD: /usr/sbin/service tor@default restart
 %sudo ALL=NOPASSWD: /usr/sbin/service tor@default reload
 %sudo ALL=NOPASSWD: /usr/sbin/service tor@default status
+
+## Required by /usr/bin/anon-verify.
+%sudo ALL=NOPASSWD: /usr/bin/tor --defaults-torrc /usr/share/tor/tor-service-defaults-torrc -f /etc/tor/torrc --RunAsDaemon 0 --verify-config
