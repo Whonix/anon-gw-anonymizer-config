@@ -57,4 +57,7 @@
   /usr/lib/pyshared/python*/numpy/** m,
   /proc/*/mounts r,
 
+  ## snowflake
+  /usr/bin/snowflake-client rix,
+
 ## End Tor Local AppArmor Profile for Anonymity Distributions
