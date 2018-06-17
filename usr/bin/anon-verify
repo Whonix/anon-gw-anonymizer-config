@@ -57,7 +57,7 @@ sudo service tor@default restart
     fi
 
     ## TODO: grep the invalid option for user and specify which file
-    ## is corrupted for better fixing suggrestion
+    ## is corrupted for better fixing suggestion
 
     ## TODO: $anon_verify_report_html is used by whonixcheck
     ## we need to find a way to merge it with $anon_verify_report
@@ -103,7 +103,7 @@ tor_verify="$tor_start_command --verify-config"
 ## execute the verification
 ## This should have a /etc/sudoers.d exception.
 tor_verify_config_exit_code="0"
-tor_verify_config_output="$(eval $tor_verify)" || { tor_verify_config_exit_code="$?" ; true; };
+tor_verify_config_output="$($tor_verify)" || { tor_verify_config_exit_code="$?" ; true; };
 
 ## generate the report
 generate_report
