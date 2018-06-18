@@ -11,24 +11,24 @@ temp_verbose_torrc=$(mktemp)
 declare -a torrc_files
 
 function parser() {
-    for abs_path in $@; do
+    for abs_path in "$@"; do
 	local abs="$abs_path"
-	echo "===> Parsing $abs_path" >> $temp_verbose_torrc
+	echo "===> Parsing $abs_path" >> "$temp_verbose_torrc"
 	if [[ -f  "$abs_path" ]]; then
 	    torrc_files+=("$abs_path")
-	    local file_content="$(cat "$abs")"
+	    local file_content
+            file_content="$(cat "$abs")"
 	    IFS=$'\n'
 	    for line in $file_content; do
-		echo "$line" >> $temp_verbose_torrc
+		echo "$line" >> "$temp_verbose_torrc"
 		if [[ "$line" =~ ^%include ]]; then
-                    parser $(echo "$line" | awk '{print $2;}')
+                    parser "$(echo "$line" | awk '{print $2;}')"
 		fi
 	    done
-	else if [[ -d "$abs_path" ]]; then
-		 parser "$(find $abs_path -mindepth 1 | sort -g)"
-             fi
-	fi
-	echo "===> Done parsing $abs" >> $temp_verbose_torrc
+	elif [[ -d "$abs_path" ]]; then
+		 parser "$(find "$abs_path" -mindepth 1 | sort -g)"
+        fi
+	echo "===> Done parsing $abs" >> "$temp_verbose_torrc"
     done
 }
 
@@ -45,7 +45,7 @@ function used_torrc_files(){
 function unknown_option_specifier(){
     for unknown_option in "$@"; do
 	echo "The following files contain unkown option '$unknown_option': "
-	grep -iHn --color "^$unknown_option" ${torrc_files[@]}
+	grep -iHn --color "^$unknown_option" "${torrc_files[@]}"
 	echo "Please modify these files to fix the problem."
     done
 }
