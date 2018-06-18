@@ -98,7 +98,7 @@ $start_menu_instructions_system_first_part Terminal
 	f_torrc="${BASH_REMATCH[2]}"
     fi
 
-    parser $default_torrc $f_torrc
+    parser "$default_torrc" "$f_torrc"
 
     echo "====================================================================="
     used_torrc_files
