@@ -165,8 +165,7 @@ $start_menu_instructions_system_first_part Terminal
 
     ## parsing_order_verbose creates a very long ouput which is not
     ## user-friendly. Therefore, we do not enable it by default and
-    ## only use it with anon-verify -v
-    ## we use anon-verify -vv to show lines starts with # also
+    ## only use it with anon-verify -v and anon-verify -vv
     if [ "$VERBOSE" = "1" ]; then
         echo "/===================================================================\\"
         echo "|                Verbose Tor Configuration Parsing                  |"
