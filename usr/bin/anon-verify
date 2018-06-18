@@ -107,8 +107,6 @@ $start_menu_instructions_system_first_part Terminal
 	echo "====================================================================="
 	unknown_option_specifier "${BASH_REMATCH[2]}"
     fi
-    echo "====================================================================="
-
 
     ## TODO: parsing_order_verbose creates a very long ouput which is
     ## not user-friendly. Therefore, we need to disable it by default
@@ -119,6 +117,7 @@ $start_menu_instructions_system_first_part Terminal
     echo "====================================================================="
     parsing_order_verbose
 
+    echo "====================================================================="
 }
 
 get_tor_start_command
