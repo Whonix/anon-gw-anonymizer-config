@@ -58,6 +58,6 @@
   /proc/*/mounts r,
 
   ## snowflake
-  /usr/bin/snowflake-client rix,
+  /usr/bin/snowflake-client ix,
 
 ## End Tor Local AppArmor Profile for Anonymity Distributions

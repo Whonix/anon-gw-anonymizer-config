@@ -47,17 +47,8 @@ $tor_verify_config_output_concise
 
 Tor full reports:
 $tor_verify_config_output
-=====================================================================
-To try to fix this, please open your Tor config file in Terminal:
-sudo nano /usr/local/etc/torrc.d/50_user.conf
-
-Please restart Tor after fixing this error in Terminal:
-sudo service tor@default restart
-====================================================================="
+"
     fi
-
-    ## TODO: grep the invalid option for user and specify which file
-    ## is corrupted for better fixing suggestion
 
     ## TODO: $anon_verify_report_html is used by whonixcheck
     ## we need to find a way to merge it with $anon_verify_report
@@ -91,6 +82,46 @@ $start_menu_instructions_system_first_part Terminal
 
     ## print out the report
     echo "$anon_verify_report"
+
+    ## torrc-parser will grep the invalid option for user and specify
+    ## which file is corrupted for better fixing suggestion
+    source /usr/lib/anon-gw-anonymizer-config/torrc-parser
+
+    ## extract default_torrc file and -f torrc file
+    if [[ "$tor_start_command" =~ (--defaults-torrc )([^ ]*) ]]; then
+	default_torrc="${BASH_REMATCH[2]}"
+    fi
+
+    if [[ "$tor_start_command" =~ (-f )([^ ]*) ]]; then
+	f_torrc="${BASH_REMATCH[2]}"
+    fi
+
+    # call parser() to parse torrc files, arguments order matters
+    parser "$default_torrc" "$f_torrc"
+
+    echo "====================================================================="
+    echo "================= Used Tor Configuration Files  ====================="
+    echo "====================================================================="
+    used_torrc_files
+
+    ## extract the unknown option complained by Tor
+    if [[ "$tor_verify_config_output" =~ (Unknown option \')([^\']*) ]]; then
+	echo "====================================================================="
+        echo "================== Detailed Suggested Solution  ====================="
+        echo "====================================================================="
+	unknown_option_specifier "${BASH_REMATCH[2]}"
+    fi
+
+    ## TODO: parsing_order_verbose creates a very long ouput which is
+    ## not user-friendly. Therefore, we need to disable it by default
+    ## and only use it with anon-verify -v
+    ## we may even use anon-verify -vv to show lines starts with # also
+    echo "====================================================================="
+    echo "=============== Verbose Tor Configuration Parsing  =================="
+    echo "====================================================================="
+    parsing_order_verbose
+
+    echo "====================================================================="
 }
 
 get_tor_start_command
