@@ -4,6 +4,58 @@
 ## Copyright (C) 2018 Iry Koon <iry@riseup.net>
 ## See the file COPYING for copying conditions.
 
+SCRIPTNAME="$(basename "$BASH_SOURCE")"
+
+## parse_cmd_options is based on code in whonix_repository by Patrick
+parse_cmd_options() {
+    ## Thanks to:
+    ## http://mywiki.wooledge.org/BashFAQ/035
+
+    # Initialize all the option variables.
+    # This ensures we are not contaminated by variables from the environment.
+    VERBOSE=
+    VERY_VERBOSE=
+
+    local HELP_MSG="See:
+    man $SCRIPTNAME"
+
+    while :
+    do
+        case $1 in
+            -h | --help | -\?)
+                echo "$HELP_MSG"
+                exit 0
+                ;;
+            -v | --verbose )
+                echo "$SCRIPTNAME verbose output..."
+                VERBOSE="1"
+                shift
+                ;;
+            -vv | --very-verbose)
+                echo "$SCRIPTNAME very verbose output..."
+                VERBOSE="1"
+                VERY_VERBOSE="1"
+                shift
+                ;;
+            --)
+                shift
+                break
+                ;;
+            -*)
+                echo "$SCRIPTNAME unknown option: $1" >&2
+                exit 1
+                ;;
+            *)
+                break
+                ;;
+        esac
+    done
+
+    ## If there are input files (for example) that follow the options, they
+    ## will remain in the "$@" positional parameters.
+}
+
+
 ## get_tor_start_command() will set the $tor_start_command to the command
 ## used in Whonix to start Tor. If it did not successfully extract the
 ## command, it will exit with exit code 1.  If Whonix get rid of
@@ -112,17 +164,21 @@ $start_menu_instructions_system_first_part Terminal
 	unknown_option_specifier "${BASH_REMATCH[2]}"
     fi
 
-    ## TODO: parsing_order_verbose creates a very long ouput which is
-    ## not user-friendly. Therefore, we need to disable it by default
-    ## and only use it with anon-verify -v
-    ## we may even use anon-verify -vv to show lines starts with # also
-    echo "====================================================================="
-    echo "=============== Verbose Tor Configuration Parsing  =================="
-    echo "====================================================================="
-    parsing_order_verbose
+    ## parsing_order_verbose creates a very long ouput which is not
+    ## user-friendly. Therefore, we do not enable it by default and
+    ## only use it with anon-verify -v
+    ## we use anon-verify -vv to show lines starts with # also
+    if [ "$VERBOSE" = "1" ]; then
+        echo "====================================================================="
+        echo "=============== Verbose Tor Configuration Parsing  =================="
+        echo "====================================================================="
+        parsing_order_verbose
+    fi
 
     echo "====================================================================="
 }
+
+parse_cmd_options "$@"
 
 get_tor_start_command
 
