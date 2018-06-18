@@ -50,9 +50,6 @@ $tor_verify_config_output
 "
     fi
 
-    ## TODO: grep the invalid option for user and specify which file
-    ## is corrupted for better fixing suggestion
-
     ## TODO: $anon_verify_report_html is used by whonixcheck
     ## we need to find a way to merge it with $anon_verify_report
     tor_verify_config_output_html="$(/usr/lib/msgcollector/br_add "$tor_verify_config_output")"
@@ -86,7 +83,8 @@ $start_menu_instructions_system_first_part Terminal
     ## print out the report
     echo "$anon_verify_report"
 
-    ## print out info by torrc-parser
+    ## torrc-parser will grep the invalid option for user and specify
+    ## which file is corrupted for better fixing suggestion
     source /usr/lib/anon-gw-anonymizer-config/torrc-parser
 
     ## extract default_torrc file and -f torrc file
@@ -98,13 +96,19 @@ $start_menu_instructions_system_first_part Terminal
 	f_torrc="${BASH_REMATCH[2]}"
     fi
 
+    # call parser() to parse torrc files, arguments order matters
     parser "$default_torrc" "$f_torrc"
 
     echo "====================================================================="
+    echo "================= Used Tor Configuration Files  ====================="
+    echo "====================================================================="
     used_torrc_files
 
+    ## extract the unknown option complained by Tor
     if [[ "$tor_verify_config_output" =~ (Unknown option \')([^\']*) ]]; then
 	echo "====================================================================="
+        echo "================== Detailed Suggested Solution  ====================="
+        echo "====================================================================="
 	unknown_option_specifier "${BASH_REMATCH[2]}"
     fi
 
@@ -113,7 +117,7 @@ $start_menu_instructions_system_first_part Terminal
     ## and only use it with anon-verify -v
     ## we may even use anon-verify -vv to show lines starts with # also
     echo "====================================================================="
-    echo "============ Verbose Tor Configuration Parsing  ====================="
+    echo "=============== Verbose Tor Configuration Parsing  =================="
     echo "====================================================================="
     parsing_order_verbose
 
