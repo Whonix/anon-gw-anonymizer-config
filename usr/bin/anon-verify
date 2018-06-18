@@ -87,7 +87,7 @@ function generate_report() {
         echo "Tor verify exit code: $tor_verify_config_exit_code"
         tor_verify_config_output_concise="Tor configuration was valid."
     else
-        echo "Your Tor config file contains at least one error."
+        echo "Your Tor config files contain at least one error."
         echo "Tor verify exit code: $tor_verify_config_exit_code"
 
         ## concise report which only contains complains with [warn] or [err] tags
@@ -108,7 +108,7 @@ function generate_report() {
     ## we need to find a way to merge it with $anon_verify_report
     tor_verify_config_output_html="$(/usr/lib/msgcollector/br_add "$tor_verify_config_output")"
     anon_verify_report_html="<p>Tor Config Check Result:
-<br></br><b>Your Tor config file contains at least one error.</b></p>
+<br></br><b>Your Tor config files contain at least one error.</b></p>
 
 <p>(Tor exit code: $tor_verify_config_exit_code)</p>
 
