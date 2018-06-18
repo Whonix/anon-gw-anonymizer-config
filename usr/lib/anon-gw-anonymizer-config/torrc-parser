@@ -19,9 +19,15 @@ function parser() {
 	    local file_content
             file_content="$(cat "$abs")"
 	    IFS=$'\n'
+            # only show comments in torrc files when $VERY_VERBOSE is "1"
 	    for line in $file_content; do
-		echo "$line" >> "$temp_verbose_torrc"
-		if [[ "$line" =~ ^%include ]]; then
+                if [[ "$line" =~ ^[[:space:]]*# && "$VERY_VERBOSE" != "1" ]]; then
+                    continue
+                else
+		    echo "$line" >> "$temp_verbose_torrc"
+                fi
+
+		if [[ "$line" =~ ^[[:space:]]*%include ]]; then
                     parser "$(echo "$line" | awk '{print $2;}')"
 		fi
 	    done

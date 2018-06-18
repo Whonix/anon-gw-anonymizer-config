@@ -1,4 +1,4 @@
-anon-verify(8) -- shows Tor configuration verification info
+anon-verify(8) -- Tor configuration verification tool
 =============================================
 
 <span class="comment">
@@ -8,14 +8,30 @@ anon-verify(8) -- shows Tor configuration verification info
 # See the file COPYING for copying conditions.
 </span>
 
-## NAME
-anon-verify - a wrapper around Tor configuration verification in Whonix
-
 ## SYNOPSIS
-`anon-verify`
+`anon-verify [OPTION]`
 
 ## DESCRIPTION
-anon-verify is a user-friendly wrapper around the Tor --verify-config in Whonix. It will do a proper Tor configuration verification and then generate an easy to understand report.
+anon-verify is a user-friendly wrapper around the Tor --verify-config in Whonix. It will do a proper Tor configuration verification and then generate an easy to understand report with useful suggestions.
+
+-h, --help
+
+    display this help and exit
+
+-v, --verbose
+
+    show an additional report on how Tor configuration is parsed, excluding comments in the configuration files
+
+-vv, --very-verbose
+
+    show an additional report on how Tor configuration is parsed, including comments in the configuration files
 
 ## AUTHOR
 This man page has been written by Iry Koon (iry@riseup.net).
+
+## COPYRIGHT
+Copyright (C) 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+
+Copyright (C) 2018 Iry Koon <iry@riseup.net>
+
+See the file COPYING for copying conditions.
