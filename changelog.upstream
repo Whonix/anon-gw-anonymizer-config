@@ -1,3 +1,237 @@
+commit 6b3e06b6d8145a68aa77d43ccafbde89a623aa82
+Merge: 56fd963 e57b8f6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jun 18 22:27:13 2018 +0800
+
+    Merge remote-tracking branch 'irykoon/master'
+
+commit e57b8f6872b6b180cb354b9136857f016bb7b7bc
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Jun 18 12:06:01 2018 +0000
+
+    Support -v and -vv options for anon-verify
+    
+    -v and -vv will show an additional report on how Tor configuration is
+    parsed, excluding and including comments in the configuration files
+    respectively
+
+commit 56fd963e75c707d0bf779e262b95765a5a22a991
+Merge: 5552975 2304bfa
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jun 18 08:16:02 2018 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 2304bfae8fa8ef431fa17dc23eebb1a22b32bd41
+Merge: 6d40d20 cfa862c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jun 18 08:13:04 2018 +0200
+
+    Merge pull request #13 from irykoon/parser
+    
+     Support verbose parsing and smart suggestion for anon-verify
+
+commit cfa862c27bf55cd65a2fbb23091fbb4a2cfb13e9
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Jun 18 05:59:39 2018 +0000
+
+    Better report format and comments on code
+
+commit 73a12c25063eb5fd89e68bfe8a33d3b023858566
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Jun 18 05:40:04 2018 +0000
+
+    Better format for anon-verify report
+
+commit f98282e914833bd53ddbadcc201b020902b6295a
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Jun 18 05:39:17 2018 +0000
+
+    Better bash practice for anon-verify
+
+commit 617f1ed2c8fab1ebfe0256cea9e6898ac8e7ac44
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Jun 18 05:34:07 2018 +0000
+
+    Better bash practice for torrc-parser
+    
+    Quote like a manic.
+
+commit fe889c8e740226508b9d2d726b2a39ace8e1fa96
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Jun 18 05:20:49 2018 +0000
+
+    Add license headers
+
+commit 6d40d2059f0973991f12b5ee9248aa5d50e37683
+Merge: 5552975 c603f7d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jun 18 02:24:58 2018 +0200
+
+    Merge pull request #12 from irykoon/master
+    
+    More strict permission on snowflake-client
+
+commit 7d43e77da21e52e9d904ae4c13b74b66afddb5ed
+Author: irykoon <irykoon@gmail.com>
+Date:   Sun Jun 17 17:50:17 2018 +0000
+
+    Support verbose parsing and smart suggestion for anon-verify
+    
+    The configuration file parsing for system Tor is complex. It is hard
+    for a daily user to figure out what exact command is used by systemd
+    to start Tor. Moreover, it can be overwhelming for a human being to
+    follow the logic of Tor configuration parsing since the %include line
+    can appear any where in a file and the included path can be either a
+    directory or a file.
+    
+    Therefore, anon-verify is now upgraded to free user from these
+    overwhelming work by support verbose parsing and smart suggestion.
+    
+    For the verbose parsing, anon-verify will automatically extract the torrc
+    files used in systemd that starts Tor. And then, it will show user the
+    parsing of torrc files step by step, following the exact same logic
+    Tor used.
+    
+    In terms of the smart suggestion, anon-verify will try to offer an
+    specific and useful suggestion when there is something wrong with the
+    Tor configuration. For example, when a wrong option is included by
+    user, Tor will simply complain:
+    
+    '''
+    [warn] Failed to parse/validate config: Unknown option 'dsafklj'. Failing.
+    '''
+    
+    But anon-verify will tell user:
+    
+    '''
+    The following files contain unkown option 'dsafklj':
+    /etc/tor/torrc:5:dsafklj
+    Please modify these files to fix the problem.
+    '''
+    
+    anon-verify can also tell users how many and which files have been
+    used the Tor configuration files, making them suddenly realize if they
+    have included any file they don't want to use:
+    
+    '''
+    7 files are used as Tor configuration files:
+    /usr/share/tor/tor-service-defaults-torrc /etc/tor/torrc /etc/torrc.d/95_whonix.conf /usr/local/etc/torrc.d/40_anon_connection_wizard.conf /usr/local/etc/torrc.d/40_anon_connection_wizard.conf~ /usr/local/etc/torrc.d/50_user.conf /usr/local/etc/torrc.d/50_user.conf~
+    '''
+
+commit c603f7dca2b53504b88b0b741ea52bd9bed15e59
+Merge: adbccf8 5552975
+Author: irykoon <irykoon@gmail.com>
+Date:   Sun Jun 17 09:44:13 2018 +0000
+
+    Merge branch 'master' of https://github.com/Whonix/anon-gw-anonymizer-config
+
+commit adbccf816ee0f4b2c511bb23dc505c1936a2ca3d
+Author: irykoon <irykoon@gmail.com>
+Date:   Sat Jun 16 16:31:07 2018 +0000
+
+    More strict permission on snowflake-client
+    
+    ix is enough as what is used by dcf in this ticket:
+    https://trac.torproject.org/projects/tor/ticket/24203#comment:8
+
+commit 5552975058a088424945d283413906f38406b685
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 15 04:36:16 2018 +0200
+
+    anon-verify sudoers.d
+    
+    https://github.com/Whonix/anon-gw-anonymizer-config/pull/10
+
+commit 49618b4e8b7d553abee3d8bce11b9827f7a95ae5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 15 04:32:04 2018 +0200
+
+    anon-verify: no need for `eval`
+
+commit cd9a4c4f9bf4ff8b89787f251faa08e91e5e12ef
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 15 04:27:45 2018 +0200
+
+    typo
+
+commit 3709b1edc9b404715e451c5791cb089cf10cec75
+Merge: c842f68 73d10a6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 15 04:26:56 2018 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 73d10a699ca847bdbf2e098b29f2a1a15e8dd5b0
+Merge: c842f68 f6dc584
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 15 04:25:04 2018 +0200
+
+    Merge pull request #10 from irykoon/master
+    
+     Add anon-verify as a user-friendly wrapper
+
+commit f6dc5849d7f209b2bc0bae6335e70e91e0311bf1
+Author: irykoon <irykoon@gmail.com>
+Date:   Thu Jun 14 16:06:24 2018 +0000
+
+    Allow apparmor execute snowflake-client
+    
+    Without the fix, Tor will complain "Pemission Denied" when trying to
+    execute snowflake-client.
+
+commit 029aa688beaa125a0a2d8f99b9d4a31a09ec671f
+Author: irykoon <irykoon@gmail.com>
+Date:   Thu Jun 14 16:05:50 2018 +0000
+
+    Fix a typo
+
+commit 7bb733d6fbd5c3c4b9b8d2ed6f1f3a6ff8a737e8
+Author: irykoon <irykoon@gmail.com>
+Date:   Sun May 27 02:53:36 2018 +0000
+
+    Add license header
+
+commit 10567ae794564b27d000602ba49dd31ec0ceb6f6
+Author: irykoon <irykoon@gmail.com>
+Date:   Sat May 26 09:29:26 2018 +0000
+
+    Swap the copyright lines
+    
+    Not sure if this is what @adrelanos means?
+
+commit 61dba7159af0dabadf468566ea5b1e649ca76e39
+Author: irykoon <irykoon@gmail.com>
+Date:   Sat May 26 09:25:21 2018 +0000
+
+    Fix a typo
+    
+    Thanks @adrelanos for the careful review and pointing this out.
+
+commit 9edc72ec4f83a82f52f14b5c4f254cd564f3436a
+Merge: 97378c6 c842f68
+Author: irykoon <irykoon@gmail.com>
+Date:   Sun Apr 15 03:20:52 2018 +0000
+
+    Merge branch 'master' of https://github.com/Whonix/anon-gw-anonymizer-config
+
+commit 97378c656baa85980e3409a17f11689d8274b63d
+Author: irykoon <irykoon@gmail.com>
+Date:   Sun Apr 15 03:15:35 2018 +0000
+
+    Add anon-verify as a user-friendly wrapper
+    
+    anon-verify is a user-friendly wrapper around the Tor --verify-config
+    in Whonix. It will do a proper Tor configuration verification and then
+    generate an easy to understand report. It will also be used by other
+    Whonix conponents, for example, whonixcheck.
+
+commit c842f6851f77cc65877a4ad578dd53d388035ce9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Apr 2 12:51:07 2018 +0000
+
+    bumped changelog version
+
 commit 5a50250190b287cd39f711c9711cfe57ff778a3e
 Merge: 33ec466 cd85983
 Author: Patrick Schleizer <adrelanos@riseup.net>
