@@ -78,35 +78,37 @@ function get_tor_start_command() {
 ## $tor_verify_config_output and $tor_verify_config_exit_code
 function generate_report() {
     ## generate concise report
-    if [ "$tor_verify_config_exit_code" = "0" ]; then
-        tor_verify_config_output_concise="Tor configuration was valid."
-        anon_verify_report="=====================================================================
-Tor Config Check Result: (Tor verify exit code: $tor_verify_config_exit_code)
-No error detected in your Tor configuration.
-=====================================================================
-Tor full reports:
-$tor_verify_config_output
-====================================================================="
-    else
-        ## concise report which only contains complains with [warn] or [err] tags
-        tor_verify_config_output_concise="$(grep -E -w -h -i '\[warn\]|\[err\]' <<< "$tor_verify_config_output" 2>&1)" || true
-        anon_verify_report="=====================================================================
-Tor Config Check Result: (Tor verify exit code: $tor_verify_config_exit_code)
-Your Tor config file contains at least one error.
-=====================================================================
-Tor concise reports (below warns and errors must be fixed before you can use Tor):
-$tor_verify_config_output_concise
+    echo "/===================================================================\\"
+    echo "|                      Report Summary                               |"
+    echo "\\===================================================================/"
 
-Tor full reports:
-$tor_verify_config_output
-"
+    if [ "$tor_verify_config_exit_code" = "0" ]; then
+        echo "No error detected in your Tor configuration."
+        echo "Tor verify exit code: $tor_verify_config_exit_code"
+        tor_verify_config_output_concise="Tor configuration was valid."
+    else
+        echo "Your Tor config files contain at least one error."
+        echo "Tor verify exit code: $tor_verify_config_exit_code"
+
+        ## concise report which only contains complains with [warn] or [err] tags
+        echo "/===================================================================\\"
+        echo "|                    Tor Concise Report                             |"
+        echo "\\===================================================================/"
+        echo "Below warns and errors must be fixed before you can use Tor:"
+        grep -E -w -h -i --color '\[warn\]|\[err\]' <<< "$tor_verify_config_output"
+        tor_verify_config_output_concise="$(grep -E -w -h -i --color '\[warn\]|\[err\]' <<< "$tor_verify_config_output" 2>&1)" || true
     fi
+
+    echo "/===================================================================\\"
+    echo "|                      Tor Full Report                              |"
+    echo "\\===================================================================/"
+    echo "$tor_verify_config_output"
 
     ## TODO: $anon_verify_report_html is used by whonixcheck
     ## we need to find a way to merge it with $anon_verify_report
     tor_verify_config_output_html="$(/usr/lib/msgcollector/br_add "$tor_verify_config_output")"
     anon_verify_report_html="<p>Tor Config Check Result:
-<br></br><b>Your Tor config file contains at least one error.</b></p>
+<br></br><b>Your Tor config files contain at least one error.</b></p>
 
 <p>(Tor exit code: $tor_verify_config_exit_code)</p>
 
@@ -132,9 +134,6 @@ $start_menu_instructions_system_first_part Terminal
 <blockquote>    $start_menu_instructions_system_first_part Restart Tor</blockquote>
     <br></br>or in Terminal: <code>sudo service tor@default restart</code></p>"
 
-    ## print out the report
-    echo "$anon_verify_report"
-
     ## torrc-parser will grep the invalid option for user and specify
     ## which file is corrupted for better fixing suggestion
     source /usr/lib/anon-gw-anonymizer-config/torrc-parser
@@ -151,27 +150,29 @@ $start_menu_instructions_system_first_part Terminal
     # call parser() to parse torrc files, arguments order matters
     parser "$default_torrc" "$f_torrc"
 
-    echo "====================================================================="
-    echo "================= Used Tor Configuration Files  ====================="
-    echo "====================================================================="
+    echo "/===================================================================\\"
+    echo "|                 Used Tor Configuration Files                      |"
+    echo "\\===================================================================/"
     used_torrc_files
+
+    ## TODO: More suggestions to different errors can be added in the
+    ## future
 
     ## extract the unknown option complained by Tor
     if [[ "$tor_verify_config_output" =~ (Unknown option \')([^\']*) ]]; then
-	echo "====================================================================="
-        echo "================== Detailed Suggested Solution  ====================="
-        echo "====================================================================="
+	echo "/===================================================================\\"
+        echo "|                 Detailed Suggested Solution                       |"
+        echo "\\===================================================================/"
 	unknown_option_specifier "${BASH_REMATCH[2]}"
     fi
 
     ## parsing_order_verbose creates a very long ouput which is not
     ## user-friendly. Therefore, we do not enable it by default and
-    ## only use it with anon-verify -v
-    ## we use anon-verify -vv to show lines starts with # also
+    ## only use it with anon-verify -v and anon-verify -vv
     if [ "$VERBOSE" = "1" ]; then
-        echo "====================================================================="
-        echo "=============== Verbose Tor Configuration Parsing  =================="
-        echo "====================================================================="
+        echo "/===================================================================\\"
+        echo "|                Verbose Tor Configuration Parsing                  |"
+        echo "\\===================================================================/"
         parsing_order_verbose
     fi
 
