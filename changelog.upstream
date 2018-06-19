@@ -1,9 +1,68 @@
+commit 3f09405dc605454892c70311526a60ed2894d04b
+Merge: 8a8b29e f03994a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jun 19 08:01:33 2018 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8a8b29e9a9e805b44155583855545fae58d0d76a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jun 19 07:59:15 2018 +0000
+
+    bumped changelog version
+
+commit f03994ac117f1d70ccc4923ceabd70e3f94a836a
+Merge: 8a8b29e 1de285a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jun 19 09:59:13 2018 +0200
+
+    Merge pull request #14 from irykoon/master
+    
+     Better format for the anon-verify report and bug fixes
+
+commit 1de285a2e6b025cb45a4d79abce5a5db9e3eed86
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Jun 18 15:56:54 2018 +0000
+
+    Add a TODO comment
+
+commit 44126be2c927f9d0c28903d04459241f237d9aab
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Jun 18 15:56:04 2018 +0000
+
+    Better comments
+
+commit 6bcfd256fae504c5b0a5a7d52e0e126622a8e99d
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Jun 18 15:42:04 2018 +0000
+
+    Fix typos
+
+commit 73c7c8f7f65cf609da27492b48f41aacfccb213c
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Jun 18 15:36:33 2018 +0000
+
+    Better format for the anon-verify report
+
+commit 1f6ceefe607524983e91ccbb251934a1c6a00398
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Jun 18 15:02:25 2018 +0000
+
+    Cover the case where unknown options have leading whitespace
+
 commit 6b3e06b6d8145a68aa77d43ccafbde89a623aa82
 Merge: 56fd963 e57b8f6
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Jun 18 22:27:13 2018 +0800
 
     Merge remote-tracking branch 'irykoon/master'
+
+commit 962c69c933b199033479abaf5adedf67315599db
+Merge: e57b8f6 56fd963
+Author: irykoon <irykoon@gmail.com>
+Date:   Mon Jun 18 14:26:45 2018 +0000
+
+    Merge branch 'master' of https://github.com/Whonix/anon-gw-anonymizer-config
 
 commit e57b8f6872b6b180cb354b9136857f016bb7b7bc
 Author: irykoon <irykoon@gmail.com>
