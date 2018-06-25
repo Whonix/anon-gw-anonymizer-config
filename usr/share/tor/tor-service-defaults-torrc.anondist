@@ -133,6 +133,15 @@ AutomapHostsOnResolve 1
 ##
 ## For the same reason IsolateDestPort should not be activated by default, since BitTorrent (in some cases)
 ## uses random ports.
+## 
+## https://lists.torproject.org/pipermail/tor-dev/2018-June/013236.html
+## Isolation settings summary:
+## * All the isolation flags that aren't specified as defaults are not defaults.
+## * Different socksports/transports are isolated from each other by default, IsolateClientProtocol would 
+## violate this.
+## * IsolateDest + DNSPort negatively impacts performance, network resources and privacy.
+## * SOCKSPort/HTTPTunnelPort are recommended, they include DNS requests in each connection's outgoing data
+## respectively. 
 TransPort 10.152.152.10:9040
 
 ## (comment mirrored from /usr/bin/whonix_firewall)
