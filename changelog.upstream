@@ -1,3 +1,31 @@
+commit 438359721c1bd354a12f7141fe1c1f598250a993
+Merge: 001296b d164839
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jun 26 01:01:38 2018 +0800
+
+    Merge remote-tracking branch 'origin/master'
+
+commit d164839a1a811b4b509a366be0da916c25cfa0e1
+Merge: 001296b f4a485f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jun 25 16:59:28 2018 +0000
+
+    Merge pull request #15 from HulaHoopWhonix/patch-4
+    
+    Added Isolation settings comments
+
+commit f4a485f54165884c4794559f5e0caa5c674899ea
+Author: HulaHoopWhonix <bancfc@openmailbox.org>
+Date:   Mon Jun 25 15:34:14 2018 +0000
+
+    Added Isolation settings comments
+
+commit 001296b753b4facac7431918e51689269420a7a1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jun 19 08:06:26 2018 +0000
+
+    bumped changelog version
+
 commit 3f09405dc605454892c70311526a60ed2894d04b
 Merge: 8a8b29e f03994a
 Author: Patrick Schleizer <adrelanos@riseup.net>
