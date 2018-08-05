@@ -5,4 +5,4 @@
 
 set -x
 
-kwrite /usr/share/anon-gw-anonymizer-config/torrc.examples
+xdg-open /usr/share/anon-gw-anonymizer-config/torrc.examples

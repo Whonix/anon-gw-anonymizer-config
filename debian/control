@@ -13,7 +13,7 @@ Standards-Version: 3.9.8
 
 Package: anon-gw-anonymizer-config
 Architecture: all
-Depends: anon-shared-helper-scripts, tor, sudo, anon-base-files, kwrite,
+Depends: anon-shared-helper-scripts, tor, sudo, anon-base-files,
  konsole, auditd, ${misc:Depends}
 Recommends: onion-grater
 Provides: ${diverted-files}
