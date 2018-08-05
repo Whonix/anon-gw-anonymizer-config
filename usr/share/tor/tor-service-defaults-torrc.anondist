@@ -1,23 +1,23 @@
-## Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
-## See the file COPYING for copying conditions.
+# Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+# See the file COPYING for copying conditions.
 
-## Please use "/usr/local/etc/torrc.d/50_user.conf" for your custom
-## configuration, which will override the defaults found here.
-## When this package is updated, this file may be overwritten.
+# Please use "/usr/local/etc/torrc.d/50_user.conf" for your custom
+# configuration, which will override the defaults found here.
+# When this package is updated, this file may be overwritten.
 
-## You can find the original upstream tor-service-defaults-torrc under
-## /usr/share/tor/tor-service-defaults-torrc.anondist-orig
+# You can find the original upstream tor-service-defaults-torrc under
+# /usr/share/tor/tor-service-defaults-torrc.anondist-orig
 
 ######################################################################
-## DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU ARE DOING! #
-## DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU ARE DOING! #
-## DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU ARE DOING! #
-## DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU ARE DOING! #
-## DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU ARE DOING! #
+# DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU ARE DOING! #
+# DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU ARE DOING! #
+# DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU ARE DOING! #
+# DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU ARE DOING! #
+# DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU ARE DOING! #
 ######################################################################
 
    ###################
-#### Internals torrc #
+### Internals torrc #
    ######################################
     # Upstream Defaults File            #
     # Enable / Disable Tor              #
@@ -30,11 +30,11 @@
     #####################################
 
 #########################################
-## Upstream Defaults File               #
+# Upstream Defaults File               #
 #########################################
 
-## These defaults are taken from /usr/share/tor/tor-service-defaults-torrc
-## from 'tor' package version 0.2.8.6-1~d80.jessie+1 from deb.torproject.org.
+# These defaults are taken from /usr/share/tor/tor-service-defaults-torrc
+# from 'tor' package version 0.2.8.6-1~d80.jessie+1 from deb.torproject.org.
 
 DataDirectory /var/lib/tor
 PidFile /var/run/tor/tor.pid
@@ -53,16 +53,16 @@ CookieAuthFile /var/run/tor/control.authcookie
 Log notice file /var/log/tor/log
 
 #########################
-## Enable / Disable Tor #
+# Enable / Disable Tor #
 #########################
 
-## Tor is disabled by default.
-## Users are supposed to enable Tor through whonixsetup or manually
-## removing the # in front of "DisableNetwork 0" in /etc/tor/torrc.
+# Tor is disabled by default.
+# Users are supposed to enable Tor through whonixsetup or manually
+# removing the # in front of "DisableNetwork 0" in /etc/tor/torrc.
 DisableNetwork 1
 
 #########################################
-## Leak Tests                           #
+# Leak Tests                           #
 #########################################
 
 ##+# #OptionalFeatureNr.6# Leak Testing.
@@ -82,14 +82,14 @@ DisableNetwork 1
 #FascistFirewall 1
 
 #########################################
-## General Settings                     #
+# General Settings                     #
 #########################################
 
 Log notice syslog
 Log notice file /run/tor/log
 #Log notice file /var/log/tor/log
 
-## Not required:
+# Not required:
 #DataDirectory /...
 #PidFile /...
 #ControlSocket /...
@@ -99,281 +99,281 @@ Log notice file /run/tor/log
 #CookieAuthFile /...
 
 #########################################
-## mixmaster remailer                   #
+# mixmaster remailer                   #
 #########################################
 
-## REVIEW: Are the virtual IP addresses 1.1.1.1 and 2.2.2.2 appropriate or are different values better?
+# REVIEW: Are the virtual IP addresses 1.1.1.1 and 2.2.2.2 appropriate or are different values better?
 
 mapaddress 1.1.1.1 k54ids7luh523dbi.onion
 mapaddress 2.2.2.2 gbhpq7eihle4btsn.onion
 
 #########################################
-## Misc Settings                        #
+# Misc Settings                        #
 #########################################
 
 VirtualAddrNetwork 10.192.0.0/10
 AutomapHostsOnResolve 1
 
 ###############################
-## Workstation Trans/Dns-Port #
+# Workstation Trans/Dns-Port #
 ###############################
 
-## (comment mirrored from /usr/bin/whonix_firewall)
-## Transparent Proxy Port for Workstation
-## TRANS_PORT_WORKSTATION="9040"
+# (comment mirrored from /usr/bin/whonix_firewall)
+# Transparent Proxy Port for Workstation
+# TRANS_PORT_WORKSTATION="9040"
 ##+# #OptionalFeatureNr.5# Best possible protection against Identity correlation through circuit sharing. ^5^
-##
-## TransPort is not used for anything preinstalled by default.
-## Only as a catch all for user installed applications,
-## which is documented.
-##
-## IsolateDestAddr should not be activated by default,
-## if people install filesharing software it would be a nightmare if all connections to the massive amount
-## of destination IP's would go through separate circuits.
-##
-## For the same reason IsolateDestPort should not be activated by default, since BitTorrent (in some cases)
-## uses random ports.
-## 
-## https://lists.torproject.org/pipermail/tor-dev/2018-June/013236.html
-## Isolation settings summary:
-## * All the isolation flags that aren't specified as defaults are not defaults.
-## * Different socksports/transports are isolated from each other by default, IsolateClientProtocol would 
-## violate this.
-## * IsolateDest + DNSPort negatively impacts performance, network resources and privacy.
-## * SOCKSPort/HTTPTunnelPort are recommended, they include DNS requests in each connection's outgoing data
-## respectively. 
+#
+# TransPort is not used for anything preinstalled by default.
+# Only as a catch all for user installed applications,
+# which is documented.
+#
+# IsolateDestAddr should not be activated by default,
+# if people install filesharing software it would be a nightmare if all connections to the massive amount
+# of destination IP's would go through separate circuits.
+#
+# For the same reason IsolateDestPort should not be activated by default, since BitTorrent (in some cases)
+# uses random ports.
+#
+# https://lists.torproject.org/pipermail/tor-dev/2018-June/013236.html
+# Isolation settings summary:
+# * All the isolation flags that aren't specified as defaults are not defaults.
+# * Different socksports/transports are isolated from each other by default, IsolateClientProtocol would
+# violate this.
+# * IsolateDest + DNSPort negatively impacts performance, network resources and privacy.
+# * SOCKSPort/HTTPTunnelPort are recommended, they include DNS requests in each connection's outgoing data
+# respectively.
 TransPort 10.152.152.10:9040
 
-## (comment mirrored from /usr/bin/whonix_firewall)
-## DNS_PORT_WORKSTATION="5300"
+# (comment mirrored from /usr/bin/whonix_firewall)
+# DNS_PORT_WORKSTATION="5300"
 ##+# #OptionalFeatureNr.5# Best possible protection against Identity correlation through circuit sharing. ^5^
-##
-## DnsPort is not used for anything preinstalled by default.
-## Only as a catch all for user installed applications,
-## which is documented.
-##
-## Not listening on port 53 but rather on a port higher than 1024 to avoid
-## issues with reloading Tor. (Tor drops privileges and is then unable to
-## create listeners below 1024.)
-##
-## Not sure about IsolateDestAddr.
-## IsolateDestPort has probably very little effect, since most DNS servers listen on port 53.
+#
+# DnsPort is not used for anything preinstalled by default.
+# Only as a catch all for user installed applications,
+# which is documented.
+#
+# Not listening on port 53 but rather on a port higher than 1024 to avoid
+# issues with reloading Tor. (Tor drops privileges and is then unable to
+# create listeners below 1024.)
+#
+# Not sure about IsolateDestAddr.
+# IsolateDestPort has probably very little effect, since most DNS servers listen on port 53.
 DnsPort 10.152.152.10:5300 IsolateDestPort
 
 ###########################
-## Workstation SocksPorts #
+# Workstation SocksPorts #
 ###########################
 
-## (comment mirrored from /usr/bin/whonix_firewall)
-## Socks Ports for per application circuits.
-## SOCKS_PORT_TOR_DEFAULT="9050"
-## SOCKS_PORT_TB="9100"
-## SOCKS_PORT_IRC="9101"
-## SOCKS_PORT_TORBIRDY="9102"
-## SOCKS_PORT_IM="9103"
-## SOCKS_PORT_APT_GET="9104"
-## SOCKS_PORT_GPG="9105"
-## SOCKS_PORT_SSH="9106"
-## SOCKS_PORT_GIT="9107"
-## SOCKS_PORT_SDWDATE="9108"
-## SOCKS_PORT_WGET="9109"
-## SOCKS_PORT_WHONIXCHECK="9110"
-## SOCKS_PORT_BITCOIN="9111"
-## SOCKS_PORT_PRIVOXY="9112"
-## SOCKS_PORT_POLIPO="9113"
-## SOCKS_PORT_WHONIX_NEWS="9114"
-## SOCKS_PORT_TBB_DOWNLOAD="9115"
-## SOCKS_PORT_TBB_GPG="9116"
-## SOCKS_PORT_CURL="9117"
-## SOCKS_PORT_RSS="9118"
-## SOCKS_PORT_TORCHAT="9119"
-## SOCKS_PORT_MIXMASTERUPDATE="9120"
-## SOCKS_PORT_MIXMASTER="9121"
-## SOCKS_PORT_KDE="9122"
-## SOCKS_PORT_GNOME="9123"
-## SOCKS_PORT_APTITUDE="9124"
-## SOCKS_PORT_YUM="9125"
-## SOCKS_PORT_TBB_DEFAULT="9150"
+# (comment mirrored from /usr/bin/whonix_firewall)
+# Socks Ports for per application circuits.
+# SOCKS_PORT_TOR_DEFAULT="9050"
+# SOCKS_PORT_TB="9100"
+# SOCKS_PORT_IRC="9101"
+# SOCKS_PORT_TORBIRDY="9102"
+# SOCKS_PORT_IM="9103"
+# SOCKS_PORT_APT_GET="9104"
+# SOCKS_PORT_GPG="9105"
+# SOCKS_PORT_SSH="9106"
+# SOCKS_PORT_GIT="9107"
+# SOCKS_PORT_SDWDATE="9108"
+# SOCKS_PORT_WGET="9109"
+# SOCKS_PORT_WHONIXCHECK="9110"
+# SOCKS_PORT_BITCOIN="9111"
+# SOCKS_PORT_PRIVOXY="9112"
+# SOCKS_PORT_POLIPO="9113"
+# SOCKS_PORT_WHONIX_NEWS="9114"
+# SOCKS_PORT_TBB_DOWNLOAD="9115"
+# SOCKS_PORT_TBB_GPG="9116"
+# SOCKS_PORT_CURL="9117"
+# SOCKS_PORT_RSS="9118"
+# SOCKS_PORT_TORCHAT="9119"
+# SOCKS_PORT_MIXMASTERUPDATE="9120"
+# SOCKS_PORT_MIXMASTER="9121"
+# SOCKS_PORT_KDE="9122"
+# SOCKS_PORT_GNOME="9123"
+# SOCKS_PORT_APTITUDE="9124"
+# SOCKS_PORT_YUM="9125"
+# SOCKS_PORT_TBB_DEFAULT="9150"
 
-## Tor Default Port
-## Only for applications, which expect Tor to be running on port 9050.
+# Tor Default Port
+# Only for applications, which expect Tor to be running on port 9050.
 SocksPort 10.152.152.10:9050
 
-## legacy
+# legacy
 SocksPort 10.152.152.10:9100
 
-## IRC: HexChat
-## People are normally not connected to too many IRC servers,
-## so they can use one circuit per server.
+# IRC: HexChat
+# People are normally not connected to too many IRC servers,
+# so they can use one circuit per server.
 SocksPort 10.152.152.10:9101 IsolateDestAddr IsolateDestPort
 
-## Mail: Thunderbird with TorBirdy
-## Not preinstalled.
-## Not used by too many people. Most users do not connect to
-## too many servers.
+# Mail: Thunderbird with TorBirdy
+# Not preinstalled.
+# Not used by too many people. Most users do not connect to
+# too many servers.
 SocksPort 10.152.152.10:9102 IsolateDestAddr IsolateDestPort
 
-## Instant Messenger
-## People are normally not connected to too many IM servers,
-## so they can use one circuit per server.
+# Instant Messenger
+# People are normally not connected to too many IM servers,
+# so they can use one circuit per server.
 SocksPort 10.152.152.10:9103 IsolateDestAddr IsolateDestPort
 
-## Operating system updates: apt-get
-## Not using IsolateDestAddr IsolateDestPort, because too much
-## performance loss, too much load on Tor network and no gain
-## in security.
+# Operating system updates: apt-get
+# Not using IsolateDestAddr IsolateDestPort, because too much
+# performance loss, too much load on Tor network and no gain
+# in security.
 SocksPort 10.152.152.10:9104
 
-## gpg
-## Not used by too many people. Most users do not connect to
-## too many servers.
+# gpg
+# Not used by too many people. Most users do not connect to
+# too many servers.
 SocksPort 10.152.152.10:9105 IsolateDestAddr IsolateDestPort
 
-## ssh
-## Not used by too many people. Most users do not connect to
-## too many servers.
+# ssh
+# Not used by too many people. Most users do not connect to
+# too many servers.
 SocksPort 10.152.152.10:9106 IsolateDestAddr IsolateDestPort
 
-## git
-## Not preinstalled.
-## Not used by too many people. Most users do not connect to
-## too many servers.
+# git
+# Not preinstalled.
+# Not used by too many people. Most users do not connect to
+# too many servers.
 SocksPort 10.152.152.10:9107 IsolateDestAddr IsolateDestPort
 
-## Network Time Synchronization
-## There are only three different connections.
+# Network Time Synchronization
+# There are only three different connections.
 SocksPort 10.152.152.10:9108 IsolateDestAddr IsolateDestPort
 
-## command line downloader: wget
-## Only manually and by very few applications used. Should not
-## hurt performance or Tor network. Very few connections are
-## expected.
+# command line downloader: wget
+# Only manually and by very few applications used. Should not
+# hurt performance or Tor network. Very few connections are
+# expected.
 SocksPort 10.152.152.10:9109 IsolateDestAddr IsolateDestPort
 
-## whonixcheck
-## Only connects to https://check.torproject.org and checks IP
-## and Tor Browser version.
-## Only one server and only one port.
-## Would be fine without IsolateDestAddr IsolateDestPort,
-## but add it anyway to have less exceptions.
+# whonixcheck
+# Only connects to https://check.torproject.org and checks IP
+# and Tor Browser version.
+# Only one server and only one port.
+# Would be fine without IsolateDestAddr IsolateDestPort,
+# but add it anyway to have less exceptions.
 SocksPort 10.152.152.10:9110 IsolateDestAddr IsolateDestPort
 
-## BitCoin
-## Not using IsolateDestAddr IsolateDestPort.
-## Makes too many connections to different servers. Should not
-## hurt if they get through the same circuit.
+# BitCoin
+# Not using IsolateDestAddr IsolateDestPort.
+# Makes too many connections to different servers. Should not
+# hurt if they get through the same circuit.
 SocksPort 10.152.152.10:9111
 
-## http to socks converter: privoxy
-## Not in use for anything preinstalled.
-## Not using IsolateDestAddr IsolateDestPort for the same reasons
-## as mentioned under Web: Tor Browser.
-## Only used for Thunderbird with TorBirdy, which is not
-## preinstalled.
+# http to socks converter: privoxy
+# Not in use for anything preinstalled.
+# Not using IsolateDestAddr IsolateDestPort for the same reasons
+# as mentioned under Web: Tor Browser.
+# Only used for Thunderbird with TorBirdy, which is not
+# preinstalled.
 SocksPort 10.152.152.10:9112
 
-## http to socks converter: polipo
-## Not in use for anything preinstalled.
-## Not using IsolateDestAddr IsolateDestPort for the same reasons
-## as mentioned under Web: Tor Browser.
+# http to socks converter: polipo
+# Not in use for anything preinstalled.
+# Not using IsolateDestAddr IsolateDestPort for the same reasons
+# as mentioned under Web: Tor Browser.
 SocksPort 10.152.152.10:9113
 
-## Whonix news download
-## Only connects to the Whonix homepage and downloads a small file with
-## latest important Whonix news.
-## Only one server and only one port.
-## Would be fine without IsolateDestAddr IsolateDestPort,
-## but add it anyway to have less exceptions.
+# Whonix news download
+# Only connects to the Whonix homepage and downloads a small file with
+# latest important Whonix news.
+# Only one server and only one port.
+# Would be fine without IsolateDestAddr IsolateDestPort,
+# but add it anyway to have less exceptions.
 SocksPort 10.152.152.10:9114 IsolateDestAddr IsolateDestPort
 
-## Tor Browser bundle download
-## Rarely used.
-## Only one server and only one port.
-## Would be fine without IsolateDestAddr IsolateDestPort,
-## but add it anyway to have less exceptions.
+# Tor Browser bundle download
+# Rarely used.
+# Only one server and only one port.
+# Would be fine without IsolateDestAddr IsolateDestPort,
+# but add it anyway to have less exceptions.
 SocksPort 10.152.152.10:9115 IsolateDestAddr IsolateDestPort
 
-## Tor Browser gpg public key download
-## Rarely used.
-## Only one server and only one port.
-## Would be fine without IsolateDestAddr IsolateDestPort,
-## but add it anyway to have less exceptions.
+# Tor Browser gpg public key download
+# Rarely used.
+# Only one server and only one port.
+# Would be fine without IsolateDestAddr IsolateDestPort,
+# but add it anyway to have less exceptions.
 SocksPort 10.152.152.10:9116 IsolateDestAddr IsolateDestPort
 
-## Curl
-## Only manually and by very few applications used. Should not
-## hurt performance or Tor network. Very few connections are
-## expected.
+# Curl
+# Only manually and by very few applications used. Should not
+# hurt performance or Tor network. Very few connections are
+# expected.
 SocksPort 10.152.152.10:9117 IsolateDestAddr IsolateDestPort
 
-## RSS
-## By default only for the Whonix Blog and for the torproject.org blog.
-## Few users expected to add their own feeds.
+# RSS
+# By default only for the Whonix Blog and for the torproject.org blog.
+# Few users expected to add their own feeds.
 SocksPort 10.152.152.10:9118 IsolateDestAddr IsolateDestPort
 
-## TorChat
-## Not using IsolateDestAddr or IsolateDestPort, because upstream
-## TorChat also does not do it. Since it only connects to
-## hidden services it would perhaps not make a difference anyway.
+# TorChat
+# Not using IsolateDestAddr or IsolateDestPort, because upstream
+# TorChat also does not do it. Since it only connects to
+# hidden services it would perhaps not make a difference anyway.
 SocksPort 10.152.152.10:9119
 
-## mixmaster-update
-## Few users expected to use it.
-## Since it only connects to one or very few servers using
-## IsolateDestAddr IsolateDestPort.
+# mixmaster-update
+# Few users expected to use it.
+# Since it only connects to one or very few servers using
+# IsolateDestAddr IsolateDestPort.
 SocksPort 10.152.152.10:9120 IsolateDestAddr IsolateDestPort
 
-## mixmaster
-## This port is currently not in use. See Whonix mixmaster integration.
-## https://www.whonix.org/wiki/Dev/Mixmaster
-## Few users expected to use it.
-## Since it only connects to one or very few servers using
-## IsolateDestAddr IsolateDestPort.
+# mixmaster
+# This port is currently not in use. See Whonix mixmaster integration.
+# https://www.whonix.org/wiki/Dev/Mixmaster
+# Few users expected to use it.
+# Since it only connects to one or very few servers using
+# IsolateDestAddr IsolateDestPort.
 SocksPort 10.152.152.10:9121 IsolateDestAddr IsolateDestPort
 
-## KDE application wide proxy.
-## Not using IsolateDestAddr or IsolateDestPort, because also browsers
-## could use this port.
+# KDE application wide proxy.
+# Not using IsolateDestAddr or IsolateDestPort, because also browsers
+# could use this port.
 SocksPort 10.152.152.10:9122
 
-## GNOME application wide proxy.
-## This port is currently not in use.
-## Not using IsolateDestAddr or IsolateDestPort, because also browsers
-## could use this port.
+# GNOME application wide proxy.
+# This port is currently not in use.
+# Not using IsolateDestAddr or IsolateDestPort, because also browsers
+# could use this port.
 SocksPort 10.152.152.10:9123
 
-## Operating system updates: aptitude
-## Not using IsolateDestAddr IsolateDestPort, because too much
-## performance loss, too much load on Tor network and no gain
-## in security.
+# Operating system updates: aptitude
+# Not using IsolateDestAddr IsolateDestPort, because too much
+# performance loss, too much load on Tor network and no gain
+# in security.
 SocksPort 10.152.152.10:9124
 
-## Operating system updates: yum
-## Not using IsolateDestAddr IsolateDestPort, because too much
-## performance loss, too much load on Tor network and no gain
-## in security.
+# Operating system updates: yum
+# Not using IsolateDestAddr IsolateDestPort, because too much
+# performance loss, too much load on Tor network and no gain
+# in security.
 SocksPort 10.152.152.10:9125
 
-## Tor Browser Bundle Default Port
-## This port gets used if someone uses the default Tor Browser Bundle.
-## (anon-ws-disable-stacked-tor runs on Workstation and forwards connections from
-##  127.0.0.1:9150 to 10.152.152.10:9150.)
-## Not using IsolateDestAddr IsolateDestPort, because too much
-## performance loss, too much load on Tor network and not secure.
-## Instead Tor Browser sets SOCKS username for a request based on first party domain.
-## https://trac.torproject.org/projects/tor/ticket/3455
+# Tor Browser Bundle Default Port
+# This port gets used if someone uses the default Tor Browser Bundle.
+# (anon-ws-disable-stacked-tor runs on Workstation and forwards connections from
+#  127.0.0.1:9150 to 10.152.152.10:9150.)
+# Not using IsolateDestAddr IsolateDestPort, because too much
+# performance loss, too much load on Tor network and not secure.
+# Instead Tor Browser sets SOCKS username for a request based on first party domain.
+# https://trac.torproject.org/projects/tor/ticket/3455
 SocksPort 10.152.152.10:9150 IPv6Traffic PreferIPv6 KeepAliveIsolateSOCKSAuth
 
-## Tor Messenger's default port
-## This port gets used if someone uses the default Tor Messenger.
-## (anon-ws-disable-stacked-tor runs on Workstation and forwards connections from
-##  127.0.0.1:9152 to 10.152.152.10:9152.)
+# Tor Messenger's default port
+# This port gets used if someone uses the default Tor Messenger.
+# (anon-ws-disable-stacked-tor runs on Workstation and forwards connections from
+#  127.0.0.1:9152 to 10.152.152.10:9152.)
 SocksPort 10.152.152.10:9152 IsolateDestAddr IsolateDestPort
 
 ##+# #OptionalFeatureNr.4# More Socks Ports.
-## Custom Ports #1:
-## without IsolateDestAddr
-## without IsolateDestPort
+# Custom Ports #1:
+# without IsolateDestAddr
+# without IsolateDestPort
 SocksPort 10.152.152.10:9153
 SocksPort 10.152.152.10:9154
 SocksPort 10.152.152.10:9155
@@ -383,9 +383,9 @@ SocksPort 10.152.152.10:9158
 SocksPort 10.152.152.10:9159
 
 ##+# #OptionalFeatureNr.4# More Socks Ports.
-## Custom Ports #2:
-## with IsolateDestAddr
-## without IsolateDestPort
+# Custom Ports #2:
+# with IsolateDestAddr
+# without IsolateDestPort
 SocksPort 10.152.152.10:9160 IsolateDestAddr
 SocksPort 10.152.152.10:9161 IsolateDestAddr
 SocksPort 10.152.152.10:9162 IsolateDestAddr
@@ -398,9 +398,9 @@ SocksPort 10.152.152.10:9168 IsolateDestAddr
 SocksPort 10.152.152.10:9169 IsolateDestAddr
 
 ##+# #OptionalFeatureNr.4# More Socks Ports.
-## Custom Ports #3:
-## without IsolateDestAddr
-## with IsolateDestPort
+# Custom Ports #3:
+# without IsolateDestAddr
+# with IsolateDestPort
 SocksPort 10.152.152.10:9170 IsolateDestPort
 SocksPort 10.152.152.10:9171 IsolateDestPort
 SocksPort 10.152.152.10:9172 IsolateDestPort
@@ -413,9 +413,9 @@ SocksPort 10.152.152.10:9178 IsolateDestPort
 SocksPort 10.152.152.10:9179 IsolateDestPort
 
 ##+# #OptionalFeatureNr.4# More Socks Ports.
-## Custom Ports #4:
-## with IsolateDestAddr
-## with IsolateDestPort
+# Custom Ports #4:
+# with IsolateDestAddr
+# with IsolateDestPort
 SocksPort 10.152.152.10:9180 IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9181 IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9182 IsolateDestAddr IsolateDestPort
@@ -428,35 +428,35 @@ SocksPort 10.152.152.10:9188 IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9189 IsolateDestAddr IsolateDestPort
 
 ###########################
-## Gateway Trans/Dns-Port #
+# Gateway Trans/Dns-Port #
 ###########################
 
-## TransPort and DnsPort are not enabled in gateway firewall by default.
+# TransPort and DnsPort are not enabled in gateway firewall by default.
 ##
-## (comment mirrored from /usr/bin/whonix_firewall)
-## Transparent Proxy Ports for Whonix-Gateway
-## TRANS_PORT_GATEWAY="9041"
-## DNS_PORT_GATEWAY="5400"
+# (comment mirrored from /usr/bin/whonix_firewall)
+# Transparent Proxy Ports for Whonix-Gateway
+# TRANS_PORT_GATEWAY="9041"
+# DNS_PORT_GATEWAY="5400"
 TransPort 127.0.0.1:9041
 DnsPort 127.0.0.1:5400
 
 #######################
-## Gateway SocksPorts #
+# Gateway SocksPorts #
 #######################
 
-## Developer comment:
+# Developer comment:
 ##
-## We actually do not need all of them,
-## but they do not hurt anyway and
-## it keeps the setup more generic,
-## with less exceptions.
+# We actually do not need all of them,
+# but they do not hurt anyway and
+# it keeps the setup more generic,
+# with less exceptions.
 ##
-## Comments why we (not) use IsolateDestAddr and/or IsolateDestPort
-## are the same as in section Workstation SocksPorts.
+# Comments why we (not) use IsolateDestAddr and/or IsolateDestPort
+# are the same as in section Workstation SocksPorts.
 
-## Already defined above under 'Upstream Defaults File'. Cannot add here again.
-## Otherwise Tor would fail to start.
-## SocksPort 127.0.0.1:9050
+# Already defined above under 'Upstream Defaults File'. Cannot add here again.
+# Otherwise Tor would fail to start.
+# SocksPort 127.0.0.1:9050
 
 SocksPort 127.0.0.1:9100
 SocksPort 127.0.0.1:9101 IsolateDestAddr IsolateDestPort
@@ -487,5 +487,5 @@ SocksPort 127.0.0.1:9125
 SocksPort 127.0.0.1:9150 IPv6Traffic PreferIPv6 KeepAliveIsolateSOCKSAuth
 
 #####################################################
-## End of /usr/share/tor/tor-service-defaults-torrc #
+# End of /usr/share/tor/tor-service-defaults-torrc #
 #####################################################
