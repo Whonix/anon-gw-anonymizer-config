@@ -8,8 +8,8 @@ if [ ! -d /usr/local/etc/torrc.d ]; then
    /usr/bin/install -Z -m 00755 -o root -g root -d /usr/local/etc/torrc.d
 fi
 
-if [ ! -e /usr/local/etc/torrc.d/40_anon_connection_wizard.conf ]; then
-   /usr/bin/install -Z -m 00644 -o root -g root -T /usr/share/anon-gw-anonymizer-config/anon_connection_wizard_torrc_template.conf /usr/local/etc/torrc.d/40_anon_connection_wizard.conf
+if [ ! -e /usr/local/etc/torrc.d/40_tor_control_panel.conf ]; then
+   /usr/bin/install -Z -m 00644 -o root -g root -T /usr/share/anon-gw-anonymizer-config/tor_control_panel_torrc_template.conf /usr/local/etc/torrc.d/40_tor_control_panel.conf
 fi
 
 if [ ! -e /usr/local/etc/torrc.d/50_user.conf ]; then
