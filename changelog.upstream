@@ -1,3 +1,61 @@
+commit b3a65995636440e60bd19e1d0fe57d4adc07e8ba
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Aug 7 18:43:10 2018 +0800
+
+    %include /usr/local/etc/torrc.d/40_tor_control_panel.conf
+
+commit 5fbde9c6656ea849a94635b5af5e9ec1349a0d2d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Aug 7 18:40:33 2018 +0800
+
+    migrate to new config file name /usr/local/etc/torrc.d/40_tor_control_panel.conf
+
+commit 6c61b7d9d7f57ba258f632c5f9fbe9b6b81af6c0
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Aug 5 09:12:30 2018 +0000
+
+    fix mime type
+
+commit 3ca95116c5b2eef6dea8e3fc5f2ecfbc697e18c7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Aug 5 09:09:40 2018 +0000
+
+    fix mime type
+
+commit 478c7819a43a10d05fa8ff32df2c71d338b1c315
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Aug 5 09:05:29 2018 +0000
+
+    fix, remove double hash tag comments to fix mime type
+    
+    use single has tag comments instead
+    
+    before (bug):
+    DE=generic xdg-mime query filetype /usr/local/etc/torrc.d/50_user.conf
+    text/x-matlab
+    
+    after (fixed):
+    DE=generic xdg-mime query filetype ./usr/share/anon-gw-anonymizer-config/user_torrc_template.conf
+    text/plain
+
+commit 268e7d0b55806bd9b13a1f1a42b4e901f14f8e63
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Aug 5 14:41:10 2018 +0800
+
+    remove dependency on konsole
+
+commit 4c6aedc0783bdc981cbf63c66e174b0c969c29c1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Aug 5 14:25:16 2018 +0800
+
+    fix, don't hardcode kwrite, use xdg-open
+
+commit ca24df90f90ffdab67220fb197d98dab5aacad92
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Jul 3 05:36:57 2018 +0000
+
+    bumped changelog version
+
 commit 438359721c1bd354a12f7141fe1c1f598250a993
 Merge: 001296b d164839
 Author: Patrick Schleizer <adrelanos@riseup.net>
