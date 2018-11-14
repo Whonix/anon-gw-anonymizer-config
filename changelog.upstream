@@ -1,3 +1,21 @@
+commit 9559d23edf5e28294632670a2aab8dffd725b0c8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 14 07:53:47 2018 -0500
+
+    minor: port to systemctl --no-pager
+
+commit 252416d91a2158da3b07f1791416ecc8c261f18c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 14 07:44:43 2018 -0500
+
+    add support for XFCE, thunar, gksudo
+
+commit 172cf7978dfef4a29525cec26acf718dd38479b9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Aug 27 15:46:02 2018 +0000
+
+    bumped changelog version
+
 commit 8339cece2639171adfae6be95df259672e731c49
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Aug 21 05:17:48 2018 +0800
