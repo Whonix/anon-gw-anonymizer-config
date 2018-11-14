@@ -5,4 +5,16 @@
 
 set -x
 
-kdesudo dolphin /var/lib/tor
+if command -v thunar &>/dev/null ; then
+   file_manager=thunar
+elif command -v dolphin &>/dev/null ; then
+   file_manager=dolphin
+fi
+
+if command -v kdesudo &>/dev/null ; then
+   x_sudo=kdesudo
+elif command -v gksudo &>/dev/null ; then
+   x_sudo=gksudo
+fi
+
+$x_sudo $file_manager /var/lib/tor
