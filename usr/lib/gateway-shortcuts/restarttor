@@ -7,9 +7,9 @@ set -x
 
 cat /etc/motd
 
-sudo service tor@default restart
+sudo systemctl --no-pager restart tor@default
 
-sudo service tor@default status
+sudo systemctl --no-pager status tor@default
 
 true "$?"
 

@@ -7,9 +7,9 @@ set -x
 
 cat /etc/motd
 
-sudo service tor@default stop
+sudo systemctl --no-pager stop tor@default
 
-sudo service tor@default status
+sudo systemctl --no-pager status tor@default
 true "$?"
 
 true "Feel free to close this window."

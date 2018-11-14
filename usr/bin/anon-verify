@@ -132,7 +132,7 @@ $start_menu_instructions_system_first_part Terminal
 <p>Please restart Tor after fixing this error.
 
 <blockquote>    $start_menu_instructions_system_first_part Restart Tor</blockquote>
-    <br></br>or in Terminal: <code>sudo service tor@default restart</code></p>"
+    <br></br>or in Terminal: <code>sudo systemctl restart tor@default</code></p>"
 
     ## torrc-parser will grep the invalid option for user and specify
     ## which file is corrupted for better fixing suggestion
