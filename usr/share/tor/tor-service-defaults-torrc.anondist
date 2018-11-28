@@ -102,10 +102,13 @@ Log notice file /run/tor/log
 # mixmaster remailer                   #
 #########################################
 
-# REVIEW: Are the virtual IP addresses 1.1.1.1 and 2.2.2.2 appropriate or are different values better?
+# TODO:
+# IP addresses 1.1.1.1 and 2.2.2.2 are inappropriate
+# Different values required.
+# https://phabricator.whonix.org/T878
 
-mapaddress 1.1.1.1 k54ids7luh523dbi.onion
-mapaddress 2.2.2.2 gbhpq7eihle4btsn.onion
+#mapaddress 1.1.1.1 k54ids7luh523dbi.onion
+#mapaddress 2.2.2.2 gbhpq7eihle4btsn.onion
 
 #########################################
 # Misc Settings                        #
