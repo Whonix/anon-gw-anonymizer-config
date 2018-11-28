@@ -1,3 +1,25 @@
+commit 377bbef9585ea067990ee54c1e40a6bb5eabd6da
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 28 05:28:08 2018 +0000
+
+    fix, remove mapaddress entries in torrc for 1.1.1.1 and 2.2.2.2 since these allow fingerprinting Whonix users
+    
+    Thanks to nusenu for the bug report!
+    
+    https://phabricator.whonix.org/T878
+
+commit 2be3b5445a8d6393949f9db183199d2d30820ec8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Nov 19 03:48:05 2018 -0500
+
+    remove restart Tor desktop shortcut because there is tor-restart-gui
+
+commit 140792f1ea0f4b635989ba755066f2115d4ab35a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 14 13:11:55 2018 +0000
+
+    bumped changelog version
+
 commit 9559d23edf5e28294632670a2aab8dffd725b0c8
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Nov 14 07:53:47 2018 -0500
