@@ -1,3 +1,15 @@
+commit a08950df492e3c932351acdf21306844f943b34d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 28 06:33:16 2018 +0000
+
+    remove unused lintian override to fix lintian warning
+
+commit fcea10aa99b11f6387c21973584e79e918553756
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 28 06:30:36 2018 +0000
+
+    bumped changelog version
+
 commit 377bbef9585ea067990ee54c1e40a6bb5eabd6da
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Nov 28 05:28:08 2018 +0000
