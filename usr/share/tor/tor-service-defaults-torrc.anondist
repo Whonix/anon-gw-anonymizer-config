@@ -430,6 +430,62 @@ SocksPort 10.152.152.10:9187 IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9188 IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9189 IsolateDestAddr IsolateDestPort
 
+##############################
+# Workstation HTTPTunnelPort #
+##############################
+
+# without IsolateDestAddr
+# without IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9190
+HTTPTunnelPort 10.152.152.10:9191
+HTTPTunnelPort 10.152.152.10:9192
+HTTPTunnelPort 10.152.152.10:9193
+HTTPTunnelPort 10.152.152.10:9194
+HTTPTunnelPort 10.152.152.10:9195
+HTTPTunnelPort 10.152.152.10:9196
+HTTPTunnelPort 10.152.152.10:9197
+HTTPTunnelPort 10.152.152.10:9198
+HTTPTunnelPort 10.152.152.10:9199
+
+# with IsolateDestAddr
+# without IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9200 IsolateDestAddr
+HTTPTunnelPort 10.152.152.10:9201 IsolateDestAddr
+HTTPTunnelPort 10.152.152.10:9202 IsolateDestAddr
+HTTPTunnelPort 10.152.152.10:9203 IsolateDestAddr
+HTTPTunnelPort 10.152.152.10:9204 IsolateDestAddr
+HTTPTunnelPort 10.152.152.10:9205 IsolateDestAddr
+HTTPTunnelPort 10.152.152.10:9206 IsolateDestAddr
+HTTPTunnelPort 10.152.152.10:9207 IsolateDestAddr
+HTTPTunnelPort 10.152.152.10:9208 IsolateDestAddr
+HTTPTunnelPort 10.152.152.10:9209 IsolateDestAddr
+
+# without IsolateDestAddr
+# with IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9210 IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9211 IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9212 IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9213 IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9214 IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9215 IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9216 IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9217 IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9218 IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9219 IsolateDestPort
+
+# with IsolateDestAddr
+# with IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9220 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9221 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9222 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9223 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9224 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9225 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9226 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9227 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9228 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 10.152.152.10:9229 IsolateDestAddr IsolateDestPort
+
 ###########################
 # Gateway Trans/Dns-Port #
 ###########################
@@ -488,6 +544,62 @@ SocksPort 127.0.0.1:9123
 SocksPort 127.0.0.1:9124
 SocksPort 127.0.0.1:9125
 SocksPort 127.0.0.1:9150 IPv6Traffic PreferIPv6 KeepAliveIsolateSOCKSAuth
+
+##########################
+# Gateway HTTPTunnelPort #
+##########################
+
+# without IsolateDestAddr
+# without IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9190
+HTTPTunnelPort 127.0.0.1:9191
+HTTPTunnelPort 127.0.0.1:9192
+HTTPTunnelPort 127.0.0.1:9193
+HTTPTunnelPort 127.0.0.1:9194
+HTTPTunnelPort 127.0.0.1:9195
+HTTPTunnelPort 127.0.0.1:9196
+HTTPTunnelPort 127.0.0.1:9197
+HTTPTunnelPort 127.0.0.1:9198
+HTTPTunnelPort 127.0.0.1:9199
+
+# with IsolateDestAddr
+# without IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9200 IsolateDestAddr
+HTTPTunnelPort 127.0.0.1:9201 IsolateDestAddr
+HTTPTunnelPort 127.0.0.1:9202 IsolateDestAddr
+HTTPTunnelPort 127.0.0.1:9203 IsolateDestAddr
+HTTPTunnelPort 127.0.0.1:9204 IsolateDestAddr
+HTTPTunnelPort 127.0.0.1:9205 IsolateDestAddr
+HTTPTunnelPort 127.0.0.1:9206 IsolateDestAddr
+HTTPTunnelPort 127.0.0.1:9207 IsolateDestAddr
+HTTPTunnelPort 127.0.0.1:9208 IsolateDestAddr
+HTTPTunnelPort 127.0.0.1:9209 IsolateDestAddr
+
+# without IsolateDestAddr
+# with IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9210 IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9211 IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9212 IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9213 IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9214 IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9215 IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9216 IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9217 IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9218 IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9219 IsolateDestPort
+
+# with IsolateDestAddr
+# with IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9220 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9221 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9222 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9223 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9224 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9225 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9226 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9227 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9228 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort 127.0.0.1:9229 IsolateDestAddr IsolateDestPort
 
 #####################################################
 # End of /usr/share/tor/tor-service-defaults-torrc #
