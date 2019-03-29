@@ -1,3 +1,61 @@
+commit 3e8ffbb8815102d2f8f79bd2050729f0f1f7c013
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Mar 29 09:02:43 2019 +0000
+
+    https://www.whonix.org/wiki/Dev/Licensing
+
+commit 57e3976d9726fc636741865ee90d1bb2bbf3dfad
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 25 02:43:02 2019 -0400
+
+    https://phabricator.whonix.org/T878#18051
+
+commit 3bf87cceb2ff17164b5387d6e099625ac831bfae
+Merge: 68daef8 aec996b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 25 02:39:46 2019 -0400
+
+    Merge remote-tracking branch 'origin/master'
+
+commit aec996baac6eab0058f7720033ed14ba984b1aed
+Merge: 68daef8 611572e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 25 02:38:12 2019 -0400
+
+    Merge pull request #17 from HulaHoopWhonix/patch-5
+    
+    Updated SMTP servers and mapaddress
+
+commit 611572e72021fd5a2437be4d4f89d3b02045faf0
+Author: HulaHoopWhonix <bancfc@openmailbox.org>
+Date:   Sun Mar 24 23:32:26 2019 +0000
+
+     Updated SMTP servers and mapaddress
+
+commit fe0f6d90fea305012291ea963569795fec012289
+Author: HulaHoopWhonix <bancfc@openmailbox.org>
+Date:   Sun Mar 24 23:31:23 2019 +0000
+
+     Updated SMTP servers and mapaddress
+
+commit 5351bd4765476e9522c77cea5a8e30e6c4f94083
+Author: HulaHoopWhonix <bancfc@openmailbox.org>
+Date:   Sun Mar 24 23:27:08 2019 +0000
+
+    Update tor-service-defaults-torrc.anondist
+
+commit 68daef8443eb4845ba07dc33b983df3592d5bccd
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Mar 15 03:22:29 2019 -0400
+
+    HTTPTunnelPort
+
+commit 814bc42c7784a0cc91c48c0493bc9135a16cea50
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Mar 12 11:12:18 2019 +0000
+
+    bumped changelog version
+
 commit 92b763a63f19bad6d41ea310c1ae28a9a01fe575
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Mar 1 14:31:47 2019 +0000
