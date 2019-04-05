@@ -5,4 +5,4 @@
 
 set -x
 
-kdesudo xdg-open /usr/local/etc/torrc.d/50_user.conf
+gksudo xdg-open /usr/local/etc/torrc.d/50_user.conf
