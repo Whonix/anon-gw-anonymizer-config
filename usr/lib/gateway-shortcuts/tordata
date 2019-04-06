@@ -11,7 +11,9 @@ elif command -v dolphin &>/dev/null ; then
    file_manager=dolphin
 fi
 
-if command -v kdesudo &>/dev/null ; then
+if command -v sudo &>/dev/null ; then
+   x_sudo="sudo --set-home"
+elif command -v kdesudo &>/dev/null ; then
    x_sudo=kdesudo
 elif command -v gksudo &>/dev/null ; then
    x_sudo=gksudo
