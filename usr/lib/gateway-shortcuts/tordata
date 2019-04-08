@@ -11,8 +11,8 @@ elif command -v dolphin &>/dev/null ; then
    file_manager=dolphin
 fi
 
-if command -v pkexec &>/dev/null ; then
-   x_sudo="pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY"
+if command -v lxsu &>/dev/null ; then
+   x_sudo=lxsu
 elif command -v kdesudo &>/dev/null ; then
    x_sudo=kdesudo
 elif command -v gksudo &>/dev/null ; then
