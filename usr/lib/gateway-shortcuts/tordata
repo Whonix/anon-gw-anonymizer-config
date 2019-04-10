@@ -5,12 +5,6 @@
 
 set -x
 
-if command -v thunar &>/dev/null ; then
-   file_manager=thunar
-elif command -v dolphin &>/dev/null ; then
-   file_manager=dolphin
-fi
-
 if command -v lxsu &>/dev/null ; then
    x_sudo=lxsu
 elif command -v kdesudo &>/dev/null ; then
@@ -19,4 +13,4 @@ elif command -v gksudo &>/dev/null ; then
    x_sudo=gksudo
 fi
 
-$x_sudo $file_manager /var/lib/tor
+$x_sudo env XDG_CURRENT_DESKTOP=X-Generic xdg-open /var/lib/tor
