@@ -7,7 +7,7 @@ set -x
 
 cat /etc/motd
 
-arm
+nyx
 
 true "Feel free to close this window."
 

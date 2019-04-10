@@ -3,10 +3,10 @@
 
 [Desktop Entry]
 Type=Application
-Exec=/usr/lib/anon-shared-helper-scripts/terminal-wrapper /usr/lib/gateway-shortcuts/arm
-Name=Arm - Tor Controller
-GenericName=anonymizing relay monitor (arm)
-Comment=anonymizing relay monitor (arm)
+Exec=/usr/lib/anon-shared-helper-scripts/terminal-wrapper /usr/lib/gateway-shortcuts/nyx
+Name=Nyx - Status Monitor for Tor
+GenericName=Status Monitor for Tor (Nyx)
+Comment=Status Monitor for Tor (Nyx)
 Categories=System
 Icon=/usr/share/icons/anon-icon-pack/arm.ico
-Keywords=system;tor;controller;Arm;
+Keywords=system;tor;controller;Arm;Nyx;
