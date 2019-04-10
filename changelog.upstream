@@ -1,3 +1,15 @@
+commit 9d40efd3d02b5a9a85ab67695e58fc05254d7121
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 10 15:49:27 2019 -0400
+
+    arm was renamed to nyx
+
+commit 18aaced782a8a3c30f9bd10417c83421c86c4f0a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Apr 8 13:01:52 2019 +0000
+
+    bumped changelog version
+
 commit 98a1e430b67439aba35cc64ca8b8d1e7f04579ac
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Apr 8 12:57:01 2019 +0000
