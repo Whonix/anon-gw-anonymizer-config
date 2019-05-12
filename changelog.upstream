@@ -1,3 +1,21 @@
+commit 68408e7146a04b2622dba7e06c4d00678914c5a6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun May 12 02:58:42 2019 -0400
+
+    update path to pre.bsh
+
+commit acdfe7e9e3b2c1376fcd3b7f280778d250763960
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun May 12 02:50:14 2019 -0400
+
+    anon-shared-helper-scripts -> helper-scripts
+
+commit 83e8579e53ff12cf151f6fdf9e413241df263d03
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri May 3 11:09:35 2019 +0000
+
+    bumped changelog version
+
 commit 8e6ae23041c14bf0127cc1ca873128ced6496eb8
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri May 3 10:56:49 2019 +0000
@@ -1120,7 +1138,7 @@ commit 9dea00bb6786249c541276debabd6e9cc192ba76
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Dec 21 18:42:51 2017 +0000
 
-    remove usr/lib/gateway-shortcuts/wrapper since moved to helper-scripts
+    remove usr/lib/gateway-shortcuts/wrapper since moved to anon-shared-helper-scripts
 
 commit d2cf94c5979589438e05fd939d7ea8e387b90a0d
 Author: Patrick Schleizer <adrelanos@riseup.net>
