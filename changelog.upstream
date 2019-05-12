@@ -1120,7 +1120,7 @@ commit 9dea00bb6786249c541276debabd6e9cc192ba76
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Dec 21 18:42:51 2017 +0000
 
-    remove usr/lib/gateway-shortcuts/wrapper since moved to anon-shared-helper-scripts
+    remove usr/lib/gateway-shortcuts/wrapper since moved to helper-scripts
 
 commit d2cf94c5979589438e05fd939d7ea8e387b90a0d
 Author: Patrick Schleizer <adrelanos@riseup.net>

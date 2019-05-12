@@ -3,7 +3,7 @@
 
 [Desktop Entry]
 Type=Application
-Exec=/usr/lib/anon-shared-helper-scripts/terminal-wrapper /usr/lib/gateway-shortcuts/stoptor
+Exec=/usr/lib/helper-scripts/terminal-wrapper /usr/lib/gateway-shortcuts/stoptor
 Name=Stop Tor
 GenericName=Stop Tor
 Comment=Stop Tor

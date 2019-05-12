@@ -1,7 +1,7 @@
-## usr/lib/anon-shared-helper-scripts/terminal-wrapper gets by anon-shared-helper-scripts
-anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-arm.desktop usr/lib/anon-shared-helper-scripts/terminal-wrapper
-anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-reloadtor.desktop usr/lib/anon-shared-helper-scripts/terminal-wrapper
-anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-stoptor.desktop usr/lib/anon-shared-helper-scripts/terminal-wrapper
+## usr/lib/helper-scripts/terminal-wrapper gets by helper-scripts
+anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-arm.desktop usr/lib/helper-scripts/terminal-wrapper
+anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-reloadtor.desktop usr/lib/helper-scripts/terminal-wrapper
+anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-stoptor.desktop usr/lib/helper-scripts/terminal-wrapper
 
 ## Due to lack of Debian / systemd feature there is no other way to implement this.
 anon-gw-anonymizer-config: maintainer-script-calls-systemctl
