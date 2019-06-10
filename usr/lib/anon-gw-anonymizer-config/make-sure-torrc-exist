@@ -4,6 +4,8 @@
 ## Copyright (C) 2018 Iry Koon <iry@riseup.net>
 ## See the file COPYING for copying conditions.
 
+set -x
+
 if [ ! -d /usr/local/etc/torrc.d ]; then
    /usr/bin/install -Z -m 00755 -o root -g root -d /usr/local/etc/torrc.d
 fi
