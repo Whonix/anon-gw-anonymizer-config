@@ -1,3 +1,15 @@
+commit 160f7ffdaf9340611d7564cb3044b8d6ac0e6d61
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jul 31 03:04:34 2019 -0400
+
+    /var/run -> /run
+
+commit 966466290a0e9f7d5fa6c69d0141745008e2b68b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jun 30 08:18:41 2019 +0000
+
+    bumped changelog version
+
 commit 309ce76fa2390ed4b8f3587e6eea014d2f202c90
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Sat Jun 29 13:45:39 2019 +0000
@@ -1501,10 +1513,10 @@ Date:   Wed Aug 3 22:22:01 2016 +0000
     
     For compatibility with Tor version 0.2.8.6-1~d80.jessie+1.
     
-    /run/tor/control was no longer created and Tor throwing a warning.
+    /var/run/tor/control was no longer created and Tor throwing a warning.
     
-    Aug 03 21:56:34.000 [warn] Permissions on directory /run/tor are too permissive.
-    Aug 03 21:56:34.000 [warn] Before Tor can create a control socket in "/run/tor/control", the directory "/run/tor" needs to exist, and to be accessible only by the user and group account that is running Tor.  (On some Unix systems, anybody who can list a socket can connect to it, so Tor is being careful.)
+    Aug 03 21:56:34.000 [warn] Permissions on directory /var/run/tor are too permissive.
+    Aug 03 21:56:34.000 [warn] Before Tor can create a control socket in "/var/run/tor/control", the directory "/var/run/tor" needs to exist, and to be accessible only by the user and group account that is running Tor.  (On some Unix systems, anybody who can list a socket can connect to it, so Tor is being careful.)
     
     Which resulted in a follow up issues:
     - control-port-filter-proxy-python no longer working
