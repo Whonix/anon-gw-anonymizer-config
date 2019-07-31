@@ -4,7 +4,7 @@
 [Unit]
 Description=Make Sure Torrc Files Exist
 Documentation=https://github.com/Whonix/anon-gw-anonymizer-config
-ConditionPathExists=!/var/run/qubes/this-is-templatevm
+ConditionPathExists=!/run/qubes/this-is-templatevm
 Before=tor.service
 Before=tor@default.service
 
