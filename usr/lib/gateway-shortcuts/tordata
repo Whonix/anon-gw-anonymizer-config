@@ -5,8 +5,8 @@
 
 set -x
 
-if command -v lxsu &>/dev/null ; then
-   x_sudo=lxsu
+if command -v lxsudo &>/dev/null ; then
+   x_sudo=lxsudo
 elif command -v kdesudo &>/dev/null ; then
    x_sudo=kdesudo
 elif command -v gksudo &>/dev/null ; then
