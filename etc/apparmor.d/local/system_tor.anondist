@@ -16,7 +16,7 @@
   /run/tor r,
   /run/tor/log rwk,
 
-## Add permissions for obfsproxy and flashproxy.
+## Add permissions for obfsproxy.
 ## AUDIT:
 ## These profile rules may be too permissive. Needs audit and someone dedicated
 ## to work on AppArmor profiles. It's not a serious security issue in any case,
@@ -41,21 +41,6 @@
   /etc/python*/sitecustomize.py r,
   ## https://forums.whonix.org/t/after-last-apt-get-upgrade-gateway-doesnt-connect-to-tor-anymore
   #/usr/bin/obfsproxy rix,
-
-  ## flashproxy
-  @{HOME}/.tb/tor-browser/App/flashproxy-client rix,
-  @{HOME}/.tb/tor-browser/App/flashproxy-reg-appspot rix,
-  @{HOME}/.tb/tor-browser/App/flashproxy-reg-url rix,
-  @{HOME}/.tb/tor-browser/App/flashproxy-reg-http rix,
-  @{HOME}/.tb/tor-browser/App/flashproxy-reg-email rix,
-  @{HOME}/.tb/tor-browser/App/** rm,
-  /usr/bin/python* rix,
-  /usr/lib/python*/dist-packages/** m,
-  /usr/lib/python*/lib-dynload/** m,
-  /usr/lib/pyshared/python*/OpenSSL/** m,
-  /usr/lib/python*/lib-dynload/** m,
-  /usr/lib/pyshared/python*/numpy/** m,
-  /proc/*/mounts r,
 
   ## snowflake
   /usr/bin/snowflake-client ix,
