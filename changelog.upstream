@@ -1,3 +1,15 @@
+commit eaeefdfd310fb7670c57166425a46522fe34d66a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Sep 21 07:48:28 2019 +0000
+
+    remove flashproxy since deprecated
+
+commit f4386c68e7fdb8c28e063aac9d7d82d8f2bb0d66
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Sep 19 13:01:21 2019 +0000
+
+    bumped changelog version
+
 commit f074ee8f5681d4d2c11bb6140ddf7a30e42c075a
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Sep 18 07:12:26 2019 -0400
