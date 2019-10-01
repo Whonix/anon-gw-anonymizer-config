@@ -55,28 +55,16 @@ parse_cmd_options() {
     ## will remain in the "$@" positional parameters.
 }
 
-
-## get_tor_start_command() will set the $tor_start_command to the command
-## used in Whonix to start Tor. If it did not successfully extract the
-## command, it will exit with exit code 1.  If Whonix get rid of
-## systemd for Tor control in the future, we simply change the content
-## in the tor_start_command
-function get_tor_start_command() {
-    ## Tor use systemd to start
-    tor_start_command=$(grep -i "ExecStart=" /lib/systemd/system/tor@default.service | sed s/ExecStart=//g)
-
-    if [ -z "$tor_start_command" ]; then
-        echo "[error] Failed to extra commands used to start Tor." >&2
-        return 1
-    fi
-
-    ## Tor is run as root, we need to simulate this, too.
-    tor_start_command="sudo $tor_start_command"
-}
-
 ## generate_report will generate a user-friendly report based on
 ## $tor_verify_config_output and $tor_verify_config_exit_code
 function generate_report() {
+    ## extra_specified_torrc() is in torrc-parser which will
+    ## sets: "$default_torrc" and "$f_torrc"
+    extra_specified_torrc
+
+    ## call parser() to parse torrc files, arguments order matters
+    parser "$default_torrc" "$f_torrc"
+
     ## generate concise report
     echo "/===================================================================\\"
     echo "|                      Report Summary                               |"
@@ -86,6 +74,14 @@ function generate_report() {
         echo "No error detected in your Tor configuration."
         echo "Tor verify exit code: $tor_verify_config_exit_code"
         tor_verify_config_output_concise="Tor configuration was valid."
+
+        # value_of_disable_network is provided by torrc-parser
+        value_of_disable_network
+        if [ "$TOR_ENABLED" = "1" ]; then
+            echo "Tor will talk to the Tor network once it is started. (Please make sure this is what you want.)"
+        else
+            echo "Tor will NOT talk to the Tor network even if it is started. (If this is not what you want, please change the value of DisableNetwork to 0.)"
+        fi
     else
         echo "Your Tor config files contain at least one error."
         echo "Tor verify exit code: $tor_verify_config_exit_code"
@@ -134,22 +130,6 @@ $start_menu_instructions_system_first_part Terminal
 <blockquote>    $start_menu_instructions_system_first_part Restart Tor</blockquote>
     <br></br>or in Terminal: <code>sudo systemctl restart tor@default</code></p>"
 
-    ## torrc-parser will grep the invalid option for user and specify
-    ## which file is corrupted for better fixing suggestion
-    source /usr/lib/anon-gw-anonymizer-config/torrc-parser
-
-    ## extract default_torrc file and -f torrc file
-    if [[ "$tor_start_command" =~ (--defaults-torrc )([^ ]*) ]]; then
-	default_torrc="${BASH_REMATCH[2]}"
-    fi
-
-    if [[ "$tor_start_command" =~ (-f )([^ ]*) ]]; then
-	f_torrc="${BASH_REMATCH[2]}"
-    fi
-
-    # call parser() to parse torrc files, arguments order matters
-    parser "$default_torrc" "$f_torrc"
-
     echo "/===================================================================\\"
     echo "|                 Used Tor Configuration Files                      |"
     echo "\\===================================================================/"
@@ -181,6 +161,14 @@ $start_menu_instructions_system_first_part Terminal
 
 parse_cmd_options "$@"
 
+## many functions in this script is provided by torrc-parser
+## provides:  get_tor_start_command
+## provides:  value_of_disable_network
+## provides:  parser
+## provides:  extra_specified_torrc
+source /usr/lib/anon-shared-helper-scripts/torrc-parser
+
+## sets: $tor_start_command
 get_tor_start_command
 
 ## since we should use exactly the same arguments to examine if Tor
