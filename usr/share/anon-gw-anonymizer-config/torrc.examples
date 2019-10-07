@@ -186,3 +186,11 @@ HiddenServicePort 80 10.152.152.11:80
       Find the .onion address for this service:
           sudo cat /var/lib/tor/mumble/hostname
       Backup /var/lib/tor/mumble/private_key
+
+#### meta start
+#### project Whonix
+#### category tor and usability
+#### gateway_only yes
+#### description
+## documentation only
+#### meta end

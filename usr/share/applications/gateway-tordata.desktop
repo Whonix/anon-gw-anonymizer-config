@@ -1,12 +1,22 @@
 ## Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
+#### meta start
+#### project Whonix
+#### category tor and usability
+#### gateway_only yes
+#### description
+## desktop file
+## Tor Data - Open /var/lib/tor folder in file manager
+## <code>/usr/lib/gateway-shortcuts/tordata</code>
+#### meta end
+
 [Desktop Entry]
 Type=Application
 Exec=/usr/lib/gateway-shortcuts/tordata
 Name=Tor Data
 GenericName=Tor Data
-Comment=Open /var/lib/tor folder in dolphin
+Comment=Open /var/lib/tor folder in file manager
 Categories=System
 Icon=/usr/share/icons/oxygen/64x64/places/folder-green.png
 Keywords=system;tor;

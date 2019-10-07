@@ -1,6 +1,16 @@
 ## Copyright (C) 2018 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
+#### meta start
+#### project Whonix
+#### category tor
+#### gateway_only yes
+#### description
+## Runs <code>/usr/lib/anon-gw-anonymizer-config/make-sure-torrc-exist</code>
+## to Make Sure Torrc Files Exist. Runs Before=tor.service and
+## Before=tor@default.service.
+#### meta end
+
 [Unit]
 Description=Make Sure Torrc Files Exist
 Documentation=https://github.com/Whonix/anon-gw-anonymizer-config

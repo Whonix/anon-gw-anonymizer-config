@@ -1,8 +1,18 @@
 ## Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
+#### meta start
+#### project Whonix
+#### category tor
+#### gateway_only yes
+#### description
+## Replace configuration files shipped by the Debian <code>tor</code>
+## package with configuration files by this package.
+
 /etc/tor/torrc.anondist
 /usr/share/tor/tor-service-defaults-torrc.anondist
 /etc/default/tor.anondist
 /etc/apparmor.d/local/system_tor.anondist
 /etc/apparmor.d/local/usr.bin.obfsproxy.anondist
+
+#### meta end

@@ -4,6 +4,16 @@
 ## Copyright (C) 2018 Iry Koon <iry@riseup.net>
 ## See the file COPYING for copying conditions.
 
+#### meta start
+#### project Whonix
+#### category tor
+#### gateway_only yes
+#### description
+## helper script to create folders <code>/usr/local/etc/torrc.d</code> and files
+## * <code>/usr/local/etc/torrc.d/40_tor_control_panel.conf</code>, and
+## * <code>/usr/share/anon-gw-anonymizer-config/user_torrc_template.conf /usr/local/etc/torrc.d/50_user.conf</code> with correct access rights from template folder <code>/usr/share/anon-gw-anonymizer-config</code>.
+#### meta end
+
 set -x
 
 if [ ! -d /usr/local/etc/torrc.d ]; then

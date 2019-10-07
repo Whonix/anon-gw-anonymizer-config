@@ -16,6 +16,16 @@
 # DO NOT CHANGE ANYTHING BELOW, UNLESS YOU KNOW WHAT YOU ARE DOING! #
 ######################################################################
 
+#### meta start
+#### project Whonix
+#### category tor
+#### gateway_only yes
+#### description
+## Whonix Tor configuration
+##
+## * [[Stream Isolation]]
+## * Tor `ControlSocket`, `SocksPort`, `TransPort`, `DnsPort`, `HTTPTunnelPort`
+
    ###################
 ### Internals torrc #
    ######################################
@@ -28,6 +38,8 @@
     # Gateway Trans/Dns-Port            #
     # Gateway SocksPorts                #
     #####################################
+
+#### meta end
 
 #########################################
 # Upstream Defaults File               #

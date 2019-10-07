@@ -1,4 +1,15 @@
 ## Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
+#### meta start
+#### project Whonix
+#### category tor
+#### gateway_only yes
+#### description
+## monitor <code>/var/lib/tor/lock</code> using access rights modifications
+##
+## https://phabricator.whonix.org/T53
+
 -w /var/lib/tor/lock -p wxa
+
+#### meta end

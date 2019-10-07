@@ -1,6 +1,14 @@
 ## Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
+#### meta start
+#### project Whonix
+#### category tor and usability
+#### gateway_only yes
+#### description
+## Nyx - Status Monitor for Tor - desktop file for start menu
+#### meta end
+
 [Desktop Entry]
 Type=Application
 Exec=/usr/lib/helper-scripts/terminal-wrapper /usr/lib/gateway-shortcuts/nyx

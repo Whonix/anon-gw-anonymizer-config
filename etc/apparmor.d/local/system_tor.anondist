@@ -3,6 +3,16 @@
 
 ## Begin Tor Local AppArmor Profile for Anonymity Distributions
 
+#### meta start
+#### project Whonix
+#### category tor and security
+#### gateway_only yes
+#### description
+## Local AppArmor Profile for Anonymity Distributions
+##
+## AUDIT desired.
+#### meta end
+
 ## Workaround for: config-package-dev clashes with AppArmor profiles
 ## https://github.com/Whonix/Whonix/issues/66
 

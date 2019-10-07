@@ -3,6 +3,15 @@
 ## Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
+#### meta start
+#### project Whonix
+#### category tor and usability
+#### gateway_only yes
+#### description
+## wrapper to open folder <code>/var/lib/tor</code> in default file manager
+## using graphical sudo.
+#### meta end
+
 set -x
 
 if command -v lxsudo &>/dev/null ; then

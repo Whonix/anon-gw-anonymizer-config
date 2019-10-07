@@ -4,6 +4,14 @@
 ## Copyright (C) 2018 Iry Koon <iry@riseup.net>
 ## See the file COPYING for copying conditions.
 
+#### meta start
+#### project Whonix
+#### category tor
+#### gateway_only yes
+#### description
+## helper script for <code>anon-verify</code>
+#### meta end
+
 #set -ex
 
 temp_verbose_torrc=$(mktemp)
