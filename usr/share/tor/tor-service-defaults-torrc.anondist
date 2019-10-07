@@ -18,7 +18,7 @@
 
 #### meta start
 #### project Whonix
-#### category tor
+#### category tor and networking
 #### gateway_only yes
 #### description
 ## Whonix Tor configuration
