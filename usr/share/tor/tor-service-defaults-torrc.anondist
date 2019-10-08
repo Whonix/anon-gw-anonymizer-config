@@ -23,22 +23,21 @@
 #### description
 ## Whonix Tor configuration
 ##
-## * [[Stream Isolation]]
-## * Tor `ControlSocket`, `SocksPort`, `TransPort`, `DnsPort`, `HTTPTunnelPort`
-
-   ###################
-### Internals torrc #
-   ######################################
-    # Upstream Defaults File            #
-    # Enable / Disable Tor              #
-    # Leak Tests                        #
-    # General Settings                  #
-    # Workstation Trans/Dns-Port        #
-    # Workstation SocksPorts            #
-    # Gateway Trans/Dns-Port            #
-    # Gateway SocksPorts                #
-    #####################################
-
+## https://www.whonix.org/wiki/Stream_Isolation
+##
+## * <code>ControlSocket</code>
+## * <code>SocksPort</code>
+## * <code>HTTPTunnelPort</code>
+## * <code>TransPort</code>
+## * <code>DnsPort</code>
+## * Upstream Defaults File
+## * Enable / Disable Tor
+## * Leak Tests
+## * General Settings
+## * Workstation Trans/Dns-Port
+## * Workstation SocksPorts
+## * Gateway Trans/Dns-Port
+## * Gateway SocksPorts
 #### meta end
 
 #########################################
