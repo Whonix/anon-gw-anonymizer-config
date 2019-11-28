@@ -1,3 +1,15 @@
+commit 354e519705feb3a2795fb0890e6a92a868a9a950
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Nov 25 14:27:33 2019 +0000
+
+    import etc/onion-grater-merger.d/30_whonix-default.yml from onion-grater
+
+commit d7b14439ae2be33396d17fa9b81115801bdf19ff
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Nov 19 15:01:49 2019 +0000
+
+    bumped changelog version
+
 commit 115afb70840153d1174b92294a5ec18625dc586b
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Nov 19 09:50:19 2019 -0500
