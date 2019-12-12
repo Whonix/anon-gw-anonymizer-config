@@ -1,3 +1,15 @@
+commit d80e344cb34d8709572e5dce2bd7702c7c545b84
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Dec 12 07:51:42 2019 -0500
+
+    start work on torrc-d-cleaner
+
+commit 650cbe1e534983a0edd8a33e8b900a5997d08fe4
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Nov 28 03:13:19 2019 -0500
+
+    bumped changelog version
+
 commit 354e519705feb3a2795fb0890e6a92a868a9a950
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Nov 25 14:27:33 2019 +0000
