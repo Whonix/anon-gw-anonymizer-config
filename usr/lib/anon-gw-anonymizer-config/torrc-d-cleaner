@@ -1,0 +1,31 @@
+#!/bin/bash
+
+## Copyright (C) 2018 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## Copyright (C) 2018 Iry Koon <iry@riseup.net>
+## See the file COPYING for copying conditions.
+
+#### meta start
+#### project Whonix
+#### category tor
+#### gateway_only yes
+#### description
+## Move files in folder /usr/local/etc/torrc.d/ and /etc/torrc.d/ that do not
+## end with '.conf' out of the way.
+#### meta end
+
+set -x
+set -e
+
+shopt -s nullglob
+shopt -s dotglob
+
+# /usr/local/etc/torrc.d/
+
+for file_name in /etc/torrc.d/* ; do
+   echo "$file_name"
+   base_name="${file_name##*/}"
+   file_extension="${base_name##*.}"
+   if [ "$file_extension" = ".conf" ]; then
+      continue
+   fi
+done
