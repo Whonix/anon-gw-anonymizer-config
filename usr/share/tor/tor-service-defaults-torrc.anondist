@@ -68,26 +68,27 @@ Log notice file /var/log/tor/log
 #########################
 
 # Tor is disabled by default.
-# Users are supposed to enable Tor through whonixsetup or manually
-# removing the # in front of "DisableNetwork 0" in /etc/tor/torrc.
+# Users are supposed to enable Tor through whonixsetup which would
+# create file /usr/local/etc/torrc.d/40_tor_control_panel.conf with
+# "DisableNetwork 0" or by removing the # in front of
+# "DisableNetwork 0" in /etc/tor/torrc
 DisableNetwork 1
 
 #########################################
 # Leak Tests                           #
 #########################################
 
-##+# #OptionalFeatureNr.6# Leak Testing.
-##+#
-##+# Manual Leak Testing:
-##+# See Whonix/LeakTests. Activate this while testing for leaks. (Step 0)
-##+# Deactivate after you are done! (Important!) (Step 9)
-##+#
-##+# Scripted Leak Testing:
-##+# If you change the following two lines, beside removing the hash (#),
-##+# beside commenting them in, you break the integrated leaktest script.
-##+# See leaktest_whonix_gateway() ed.
-##+# See https://www.whonix.org/wiki/Dev/Leak_Tests
-##+# on information, how to use the integrated leaktest script.
+# Manual Leak Testing:
+# https://www.whonix.org/wiki/Dev/Leak_Tests_Old
+# Activate this while testing for leaks. (Step 0)
+# Deactivate after you are done! (Important!) (Step 9)
+#
+# Scripted Leak Testing:
+# If you change the following two lines, beside removing the hash (#),
+# beside commenting them in, you break the integrated leaktest script.
+# See leaktest_whonix_gateway() ed.
+# See https://www.whonix.org/wiki/Dev/Leak_Tests#Integrated_tshark_leaktest
+# on information, how to use the integrated leaktest script.
 #ReachableDirAddresses *:80
 #ReachableORAddresses *:443
 #FascistFirewall 1
@@ -96,11 +97,15 @@ DisableNetwork 1
 # General Settings                     #
 #########################################
 
+VirtualAddrNetwork 10.192.0.0/10
+AutomapHostsOnResolve 1
+
 Log notice syslog
 Log notice file /run/tor/log
 #Log notice file /var/log/tor/log
 
-# Not required:
+# Not required since already done by
+# /usr/share/tor/tor-service-defaults-torrc
 #DataDirectory /...
 #PidFile /...
 #ControlSocket /...
@@ -121,21 +126,13 @@ Log notice file /run/tor/log
 #mapaddress 172.24.0.1 gbhpq7eihle4btsn.onion
 #mapaddress 172.24.0.2 sopoccfrkrpuiin5.onion
 
-#########################################
-# Misc Settings                        #
-#########################################
-
-VirtualAddrNetwork 10.192.0.0/10
-AutomapHostsOnResolve 1
-
 ###############################
-# Workstation Trans/Dns-Port #
+# Workstation Trans/Dns-Port  #
 ###############################
 
 # (comment mirrored from /usr/bin/whonix_firewall)
 # Transparent Proxy Port for Workstation
 # TRANS_PORT_WORKSTATION="9040"
-##+# #OptionalFeatureNr.5# Best possible protection against Identity correlation through circuit sharing. ^5^
 #
 # TransPort is not used for anything preinstalled by default.
 # Only as a catch all for user installed applications,
@@ -160,7 +157,6 @@ TransPort 10.152.152.10:9040
 
 # (comment mirrored from /usr/bin/whonix_firewall)
 # DNS_PORT_WORKSTATION="5300"
-##+# #OptionalFeatureNr.5# Best possible protection against Identity correlation through circuit sharing. ^5^
 #
 # DnsPort is not used for anything preinstalled by default.
 # Only as a catch all for user installed applications,
@@ -384,7 +380,6 @@ SocksPort 10.152.152.10:9150 IPv6Traffic PreferIPv6 KeepAliveIsolateSOCKSAuth
 #  127.0.0.1:9152 to 10.152.152.10:9152.)
 SocksPort 10.152.152.10:9152 IsolateDestAddr IsolateDestPort
 
-##+# #OptionalFeatureNr.4# More Socks Ports.
 # Custom Ports #1:
 # without IsolateDestAddr
 # without IsolateDestPort
@@ -396,7 +391,6 @@ SocksPort 10.152.152.10:9157
 SocksPort 10.152.152.10:9158
 SocksPort 10.152.152.10:9159
 
-##+# #OptionalFeatureNr.4# More Socks Ports.
 # Custom Ports #2:
 # with IsolateDestAddr
 # without IsolateDestPort
@@ -411,7 +405,6 @@ SocksPort 10.152.152.10:9167 IsolateDestAddr
 SocksPort 10.152.152.10:9168 IsolateDestAddr
 SocksPort 10.152.152.10:9169 IsolateDestAddr
 
-##+# #OptionalFeatureNr.4# More Socks Ports.
 # Custom Ports #3:
 # without IsolateDestAddr
 # with IsolateDestPort
@@ -426,7 +419,6 @@ SocksPort 10.152.152.10:9177 IsolateDestPort
 SocksPort 10.152.152.10:9178 IsolateDestPort
 SocksPort 10.152.152.10:9179 IsolateDestPort
 
-##+# #OptionalFeatureNr.4# More Socks Ports.
 # Custom Ports #4:
 # with IsolateDestAddr
 # with IsolateDestPort
