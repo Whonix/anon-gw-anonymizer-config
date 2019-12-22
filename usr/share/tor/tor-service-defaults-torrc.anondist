@@ -114,18 +114,6 @@ Log notice file /run/tor/log
 #CookieAuthFileGroupReadable 1
 #CookieAuthFile /...
 
-#########################################
-# mixmaster remailer                   #
-#########################################
-
-# IP addresses 1.1.1.1 and 2.2.2.2 are inappropriate
-# Used addresses in the 172.16.0.0/12 block for private networks
-# https://phabricator.whonix.org/T878
-
-#mapaddress 172.24.0.0 bshc44ac76q3kskw.onion
-#mapaddress 172.24.0.1 gbhpq7eihle4btsn.onion
-#mapaddress 172.24.0.2 sopoccfrkrpuiin5.onion
-
 ###############################
 # Workstation Trans/Dns-Port  #
 ###############################
