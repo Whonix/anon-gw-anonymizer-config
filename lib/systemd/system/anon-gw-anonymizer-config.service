@@ -1,4 +1,4 @@
-## Copyright (C) 2018 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## Copyright (C) 2018 - 2019 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
 #### meta start
@@ -7,12 +7,15 @@
 #### gateway_only yes
 #### description
 ## Runs <code>/usr/lib/anon-gw-anonymizer-config/make-sure-torrc-exist</code>
-## to Make Sure Torrc Files Exist. Runs Before=tor.service and
-## Before=tor@default.service.
+## to Make Sure Torrc Files Exist and runs
+## <code>/usr/lib/anon-gw-anonymizer-config/torrc-d-cleaner</code> to remove
+## files not ending with '.conf' from folders <code>/etc/torrc.d</code> and
+## <code>/usr/local/etc/torrc.d</code>. Runs <code>Before=tor.service</code>
+## and <code>Before=tor@default.service</code>.
 #### meta end
 
 [Unit]
-Description=Make Sure Torrc Files Exist
+Description=Make Sure Torrc Files Exist and Clean Tor Config Folders
 Documentation=https://github.com/Whonix/anon-gw-anonymizer-config
 ConditionPathExists=!/run/qubes/this-is-templatevm
 Before=tor.service
@@ -22,6 +25,7 @@ Before=tor@default.service
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/lib/anon-gw-anonymizer-config/make-sure-torrc-exist
+ExecStartPost=/usr/lib/anon-gw-anonymizer-config/torrc-d-cleaner
 
 [Install]
 WantedBy=multi-user.target
