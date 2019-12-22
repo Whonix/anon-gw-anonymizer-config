@@ -1,7 +1,6 @@
 #!/bin/bash
 
-## Copyright (C) 2018 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
-## Copyright (C) 2018 Iry Koon <iry@riseup.net>
+## Copyright (C) 2019 - 2019 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
 #### meta start
@@ -13,19 +12,34 @@
 ## end with '.conf' out of the way.
 #### meta end
 
-set -x
+#set -x
 set -e
+set -o pipefail
 
 shopt -s nullglob
 shopt -s dotglob
 
-# /usr/local/etc/torrc.d/
+## testing
+# mkdir -p /etc/torrc.d
+# mkdir -p /usr/local/etc/torrc.d
+# touch /etc/torrc.d/30_junk.conf.dpkg-old
+# touch /usr/local/etc/torrc.d/40_junk2.conf.dpkg-olds
 
-for file_name in /etc/torrc.d/* ; do
-   echo "$file_name"
-   base_name="${file_name##*/}"
-   file_extension="${base_name##*.}"
-   if [ "$file_extension" = ".conf" ]; then
+for file_name in /etc/torrc.d/* /usr/local/etc/torrc.d/* ; do
+   true "file_name: $file_name"
+   if [ -d "$file_name" ]; then
+      ## Ignore subfolders such as our own backup folder.
+      true "skip folder: $file_name"
       continue
    fi
+   base_name="${file_name##*/}"
+   file_extension="${base_name##*.}"
+   if [ "$file_extension" = "conf" ]; then
+      true "good: $file_name"
+      continue
+   fi
+   true "extraneous: $file_name"
+   dir_name="${file_name%/*}"
+   mkdir -p "${dir_name}/backup"
+   mv --verbose --backup=numbered "$file_name" "${dir_name}/backup/"
 done
