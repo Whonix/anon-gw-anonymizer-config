@@ -1,3 +1,43 @@
+commit e0d20bd0f598b5bdecfa5f20333e05eb3a626cea
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Dec 22 04:25:04 2019 -0500
+
+    remove mixmaster comment
+    
+    since deprecated in Debian
+    
+    https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=880101
+
+commit 990b6dc083f9955ad8f823f41289051b4cff58d1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Dec 22 04:24:12 2019 -0500
+
+    comments, refactoring
+
+commit cca84ad521e88b384de59e77e3453e54d5be5cc7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Dec 22 04:08:48 2019 -0500
+
+    parse /etc/torrc.d/ and /usr/local/etc/torrc.d/
+
+commit 8b8bf2b197307f5369f4ff30606834d54c4acc96
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Dec 22 04:02:09 2019 -0500
+
+    make systemd run torrc.d cleaner after Make Sure Torrc Files Exist
+
+commit 2aad3b41dc254312853931ff02a5d4389fc5e2c5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Dec 22 03:53:32 2019 -0500
+
+    finish torrd-d-cleaner
+
+commit 8ff58a51bb7daf0ab50f7b50a9caf547c953994d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Dec 12 08:03:26 2019 -0500
+
+    bumped changelog version
+
 commit d80e344cb34d8709572e5dce2bd7702c7c545b84
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Dec 12 07:51:42 2019 -0500
