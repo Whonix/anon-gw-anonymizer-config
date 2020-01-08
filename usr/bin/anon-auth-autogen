@@ -49,10 +49,15 @@ fi
 [ -n "$torunit" ] || torunit="tor@default"
 
 [ -n "$unitaction" ] || unitaction="reload"
+[ -n "$unitruntest" ] || unitruntest="is-active"
 
 [ -n "$unittool" ] || unittool="systemctl"
 
 [ -n "$unitcmd" ] || unitcmd="$unittool $unitaction $torunit"
+
+[ -n "$sleep_seconds_after_reload" ] || sleep_seconds_after_reload="5"
+
+[ -n "$unitruntestcmd" ] || unitruntestcmd="$unittool $unitruntest $torunit"
 
 [ -n "$tor_user" ] || tor_user="debian-tor"
 [ -n "$tor_group" ] || tor_group="debian-tor"
@@ -80,10 +85,15 @@ if [ "$ip" = "" ]; then
    fi
 fi
 
-which basez tail tr cat grep tee openssl mkdir chown cp sudo id groups >/dev/null
+which basez tail tr cat grep tee openssl mkdir chown cp sudo id groups "$unittool" sleep >/dev/null
 
 id "$tor_user" >/dev/null
 groups "$tor_group" >/dev/null
+
+if ! $unitruntestcmd &>/dev/null ; then
+   echo "ERROR: Tor is not running. Start Tor first."
+   exit 1
+fi
 
 test -d "$torconfdir"
 rm -f "$torconffile"
@@ -100,11 +110,16 @@ HiddenServiceVersion ${hsversion}
 " | tee "$torconffile" >/dev/null
 
 echo "INFO: Created torconffile '$torconffile'."
+echo "INFO: Reloading Tor."
 
 ## Reload Tor to so Tor will create onion_url_file.
 ## by default:
 ## systemctl restart tor@default
 $unitcmd
+
+echo "INFO: Giving Tor $sleep_seconds_after_reload seconds to create hidden service file."
+
+sleep "$sleep_seconds_after_reload"
 
 onion_url="$(cat "$onion_url_file")"
 
