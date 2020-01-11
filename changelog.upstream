@@ -1,3 +1,23 @@
+commit 3121179e94e75cc1d9f022b2420421dae81ef484
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 8 03:16:37 2020 -0500
+
+    fix usr/bin/anon-auth-autogen
+
+commit e20cfe64da7b94e1ff5a9e9905fe312b6ebdf1a1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 6 07:30:48 2020 -0500
+
+    add anon-auth-autogen - script to automate creating authenticated onion v3 services
+    
+    https://forums.whonix.org/t/onion-services-authentication/975
+
+commit 4cfec24eb356761f749a15b5a4581acbc34c71f6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Dec 23 02:09:12 2019 -0500
+
+    bumped changelog version
+
 commit e0d20bd0f598b5bdecfa5f20333e05eb3a626cea
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Sun Dec 22 04:25:04 2019 -0500
