@@ -1,0 +1,24 @@
+anon-auth-autogen(8) -- Tor Authenticated Onion Service Configuration Generator
+=============================================
+
+<span class="comment">
+# Copyright (C) 2019 - 2019 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+# See the file COPYING for copying conditions.
+</span>
+
+## SYNOPSIS
+`anon-auth-autogen [OPTION]`
+
+## DESCRIPTION
+Creates Authenticated Onion Service configuration file for Tor.
+
+## Examples
+
+`sudo anon-auth-autogen hsname=hidden_service hsport=80 virtport=80 client=1`
+
+`sudo anon-auth-autogen hsname=hidden_service hsport=80 virtport=80 client=2`
+
+`sudo anon-auth-autogen hsname=mumble hsport=64738 virtport=64738 client=1`
+
+## AUTHOR
+This man page has been written by Patrick Schleizer (adrelanos@riseup.net).
