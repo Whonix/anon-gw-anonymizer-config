@@ -1,3 +1,15 @@
+commit 38f73c4c64daf37e7a2cddc5c954734ebca011b1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jan 11 05:22:55 2020 -0500
+
+    add anon-auth-autogen man page
+
+commit d3765d60fdd7b438e6aa72047b7a9c221ac3372d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jan 11 05:09:52 2020 -0500
+
+    bumped changelog version
+
 commit 3121179e94e75cc1d9f022b2420421dae81ef484
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Jan 8 03:16:37 2020 -0500
