@@ -176,6 +176,8 @@ $tor_user_sudo cp "$client_authorization_full_path" "${authorized_clients_folder
 
 echo "INFO: Copied client_authorization_full_path '$client_authorization_full_path' to '$client_authorization_full_path'."
 
+echo "INFO: Reloading Tor again to activate key for client '$client'."
+
 ## Reload Tor to so Tor will load client_authorization_full_path.
 ## by default:
 ## systemctl restart tor@default
