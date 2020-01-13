@@ -16,6 +16,14 @@
 set -e
 set -o pipefail
 
+trap error_handler ERR
+
+error_handler() {
+   local exit_code="$?"
+   echo "$0 ERROR: exit_code: $exit_code | BASH_COMMAND: $BASH_COMMAND"
+   exit 1
+}
+
 shopt -s nullglob
 shopt -s dotglob
 
@@ -43,3 +51,5 @@ for file_name in /etc/torrc.d/* /usr/local/etc/torrc.d/* ; do
    mkdir -p "${dir_name}/backup"
    mv --verbose --backup=numbered "$file_name" "${dir_name}/backup/"
 done
+
+echo "$0 INFO: success."
