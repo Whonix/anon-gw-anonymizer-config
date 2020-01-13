@@ -1,3 +1,87 @@
+commit e255a51b54cd5afab8ed8fd7279d630b1f05dc71
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 07:01:31 2020 -0500
+
+    simplification
+
+commit 4e593336c3fd9a9d8ab7feac82ad98d98ffd74df
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 06:57:22 2020 -0500
+
+    output
+
+commit 6c246dc8b05aeab8f84ae231d0dd60f847fa7077
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 06:51:57 2020 -0500
+
+    man
+
+commit bc43830481ad88e0b611d7fbec70cd02d856e0be
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 06:51:38 2020 -0500
+
+    man
+
+commit 8ca61e556819b83e29acca1ac97450420248dc63
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 06:49:48 2020 -0500
+
+    add anon-server-to-client-install - Tor Authenticated Onion Service ".auth_private" file (private key) Server to Client Installer
+
+commit 7904dbda0794d51e3b3da9cf147eabe8f646709b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 05:53:41 2020 -0500
+
+    output
+
+commit b3648122f0f83d79be37a51e3f413d69585ce908
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 05:50:20 2020 -0500
+
+    comment
+
+commit c9ac85fa48547ac86c9dd8ffc75ef4a2757997bb
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 05:50:01 2020 -0500
+
+    output
+
+commit e1dea70b230105eef2a435a2055624db83c83000
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 05:43:40 2020 -0500
+
+    output
+
+commit 702dc5191fbc85933b576e64105513c983f0b5e1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 04:42:54 2020 -0500
+
+    torrc.d cleaner: improve error handler and output
+
+commit 3a6b47c6b9c23fceb4ea4d75b78d88e9f4f8ba4b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 04:41:11 2020 -0500
+
+    run torrc.d cleaner on Tor reload
+
+commit a79d06bb982051231f56d1a4ff342f239b880f33
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jan 12 10:31:12 2020 -0500
+
+    quotes
+
+commit 28d4fcaccf66eecc588ddcafa6391463b007767a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jan 12 10:30:46 2020 -0500
+
+    output
+
+commit cd06f14aaf9d05a822e309d6e8cc0f467da1738c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jan 11 05:27:58 2020 -0500
+
+    bumped changelog version
+
 commit 38f73c4c64daf37e7a2cddc5c954734ebca011b1
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Sat Jan 11 05:22:55 2020 -0500
