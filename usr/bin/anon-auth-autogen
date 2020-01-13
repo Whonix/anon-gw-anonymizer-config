@@ -174,7 +174,7 @@ $tor_user_sudo mkdir -p "$authorized_clients_folder"
 
 $tor_user_sudo cp "$client_authorization_full_path" "${authorized_clients_folder}/"
 
-echo "INFO: Installed \".auth\" file (public key) '$client_authorization_full_path' to '$client_authorization_full_path' so client '$client' can access hsname '$hsname' onion_url '$onion_url'."
+echo "INFO: Installed \".auth\" file (public key) '$client_authorization_full_path' to '$client_authorization_full_path' to allow client '$client' to access hsname '$hsname' onion_url '$onion_url'."
 
 echo "INFO: Reloading Tor again to activate \".auth\" (public key) file for client '$client'."
 
