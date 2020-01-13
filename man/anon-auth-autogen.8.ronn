@@ -7,7 +7,7 @@ anon-auth-autogen(8) -- Tor Authenticated Onion Service Configuration Generator
 </span>
 
 ## SYNOPSIS
-`anon-auth-autogen [OPTION]`
+`variable=content anon-auth-autogen`
 
 ## DESCRIPTION
 Creates Authenticated Onion Service configuration file for Tor.
