@@ -1,3 +1,15 @@
+commit 31db7e2acc85659707c8718d7b1dbb834591db8c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 07:23:50 2020 -0500
+
+    fix man page path
+
+commit f09d723b0af8c922260172404f2bc2ed20998579
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 07:22:21 2020 -0500
+
+    bumped changelog version
+
 commit e255a51b54cd5afab8ed8fd7279d630b1f05dc71
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Jan 13 07:01:31 2020 -0500
