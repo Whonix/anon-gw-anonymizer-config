@@ -28,7 +28,9 @@ By default copies `/home/user/1.auth_private` to
 
 `sudo client=2 anon-server-to-client-install`
 
-`sudo auth_private_file_full_source_path=/home/user/user.auth_private anon-server-to-client-install`
+`sudo sourcefile=~/1.auth_private anon-server-to-client-install`
+
+`sudo sourcefile=~/user.auth_private anon-server-to-client-install`
 
 ## AUTHOR
 This man page has been written by Patrick Schleizer (adrelanos@riseup.net).

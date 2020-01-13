@@ -55,7 +55,7 @@ fi
 
 [ -n "$auth_private_file_name" ] || auth_private_file_name="${client}.auth_private"
 
-[ -n "$auth_private_file_full_source_path" ] || auth_private_file_full_source_path="/home/${user_name}/${auth_private_file_name}"
+[ -n "$sourcefile" ] || sourcefile="/home/${user_name}/${auth_private_file_name}"
 
 [ -n "$auth_private_file_full_target_path" ] || auth_private_file_full_target_path="${client_onion_auth_dir}/${auth_private_file_name}"
 
@@ -73,8 +73,8 @@ if ! $unitruntestcmd &>/dev/null ; then
    exit 1
 fi
 
-if ! test -r "$auth_private_file_full_source_path" ; then
-   echo "ERROR: auth_private_file_full_source_path '$auth_private_file_full_source_path' does not exist!" >&2
+if ! test -r "$sourcefile" ; then
+   echo "ERROR: sourcefile '$sourcefile' does not exist!" >&2
    exit 1
 fi
 
@@ -85,10 +85,10 @@ fi
 
 mkdir -p "$client_onion_auth_dir"
 chown "${tor_user}:${tor_group}" "$client_onion_auth_dir"
-cp "$auth_private_file_full_source_path" "$auth_private_file_full_target_path"
+cp "$sourcefile" "$auth_private_file_full_target_path"
 chown "${tor_user}:${tor_group}" "$auth_private_file_full_target_path"
 
-echo "INFO: Installed \".auth_private\" file (private key) '$auth_private_file_full_source_path' to '$auth_private_file_full_target_path'."
+echo "INFO: Installed \".auth_private\" file (private key) '$sourcefile' to '$auth_private_file_full_target_path'."
 
 test -d "$torconfdir"
 rm -f "$torconffile"
