@@ -14,11 +14,11 @@ Creates Authenticated Onion Service configuration file for Tor.
 
 ## Examples
 
-`sudo anon-auth-autogen hsname=hidden_service hsport=80 virtport=80 client=1`
+`sudo hsname=hidden_service hsport=80 virtport=80 client=1 anon-auth-autogen`
 
-`sudo anon-auth-autogen hsname=hidden_service hsport=80 virtport=80 client=2`
+`sudo hsname=hidden_service hsport=80 virtport=80 client=2 anon-auth-autogen`
 
-`sudo anon-auth-autogen hsname=mumble hsport=64738 virtport=64738 client=1`
+`sudo hsname=mumble hsport=64738 virtport=64738 client=1 anon-auth-autogen`
 
 ## AUTHOR
 This man page has been written by Patrick Schleizer (adrelanos@riseup.net).
