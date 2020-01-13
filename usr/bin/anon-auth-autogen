@@ -174,13 +174,13 @@ $tor_user_sudo mkdir -p "$authorized_clients_folder"
 
 $tor_user_sudo cp "$client_authorization_full_path" "${authorized_clients_folder}/"
 
-echo "INFO: Copied client_authorization_full_path '$client_authorization_full_path' to '$client_authorization_full_path'."
+echo "INFO: Copied \".auth\" file (public key) '$client_authorization_full_path' to '$client_authorization_full_path'."
 
-echo "INFO: Reloading Tor again to activate key for client '$client'."
+echo "INFO: Reloading Tor again to activate \".auth\" (public key) file for client '$client'."
 
 ## Reload Tor to so Tor will load client_authorization_full_path.
 ## by default:
 ## systemctl restart tor@default
 $unitcmd
 
-echo "INFO: You probably want to provide client '$client' with auth_private_file '$auth_private_file' for hsname '$hsname' onion_url '$onion_url'."
+echo "INFO: You probably want to provide client '$client' with \".auth_private\" file (private key) '$auth_private_file' for hsname '$hsname' onion_url '$onion_url'."
