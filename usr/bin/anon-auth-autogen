@@ -67,6 +67,8 @@ fi
 [ -n "$private_key_file" ] || private_key_file="${tor_autogen_hs_folder}/${client}_private_key.pem"
 [ -n "$public_key_file" ] || public_key_file="${tor_autogen_hs_folder}/${client}_public_key.pem"
 
+[ -n "$home_folder_auth_private_file" ] || home_folder_auth_private_file="/home/user/${client}.auth_private"
+
 [ -n "$auth_private_file" ] || auth_private_file="${tor_autogen_hs_folder}/${client}.auth_private"
 
 [ -n "$base_32_private" ] || base_32_private="${tor_autogen_hs_folder}/${client}_private_key.base32"
@@ -184,3 +186,5 @@ echo "INFO: Reloading Tor again to activate \".auth\" (public key) file for clie
 $unitcmd
 
 echo "INFO: You need to provide client '$client' with \".auth_private\" file (private key) '$auth_private_file'."
+
+echo "INFO: Visitors that use Whonix could store '$auth_private_file' in '$home_folder_auth_private_file' and then run 'sudo auth_private_file_full_source_path=$home_folder_auth_private_file anon-server-to-client-install'."
