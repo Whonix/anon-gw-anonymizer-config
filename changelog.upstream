@@ -1,3 +1,35 @@
+commit 67da41b14ed534f920c75e03d2c4d6430f76b6f8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 15 09:50:13 2020 -0500
+
+    install vanguards by default
+
+commit dc79ea566534de665b00f1b0d4761f53816fb8f1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 15 06:41:18 2020 -0500
+
+    configure vanguards to use control_socket = /run/tor/control
+
+commit 86d1e69fbdcbfe69e8354f03e0ebf8b36b850e02
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 15 06:30:24 2020 -0500
+
+    vanguards: use /etc/tor/anon-vanguards.conf
+
+commit 144312528a81e15eea23620c39b66d8a981cf832
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 15 06:29:42 2020 -0500
+
+    add from original /etc/tor/vanguards.conf to /etc/tor/anon-vanguards.conf
+    
+    without changes
+
+commit 0858b072659ce4a375ba9b08b84da3d45300336a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 13 07:27:11 2020 -0500
+
+    bumped changelog version
+
 commit 31db7e2acc85659707c8718d7b1dbb834591db8c
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Jan 13 07:23:50 2020 -0500
