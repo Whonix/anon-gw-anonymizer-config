@@ -24,6 +24,18 @@ true "
 #####################################################################
 "
 
+vanguards_enable_and_start_once() {
+   if [ -f "/var/lib/anon-dist/do_once/${FUNCNAME}_version_1" ]; then
+      return 0
+   fi
+   ## enable vanguards systemd unit file by default
+   ## https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=948975
+   systemctl --no-pager --no-block enable vanguards || true
+   systemctl --no-pager --no-block start vanguards || true
+   mkdir --parents "/var/lib/anon-dist/do_once"
+   touch "/var/lib/anon-dist/do_once/${FUNCNAME}_version_1"
+}
+
 configure_function() {
    mkdir -p /usr/local/etc/torrc.d
 
@@ -32,6 +44,8 @@ configure_function() {
    ## Add user "user" to the group "debian-tor", so user "user" can access Tor's control port.
    ## User "user" already exists thanks to the anon-base-files package.
    addgroup --quiet user debian-tor
+
+   vanguards_enable_and_start_once
 
    ## force-reload Tor, if running.
    service_tor_status_exit_code="0"
