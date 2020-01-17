@@ -1,3 +1,17 @@
+commit 496aeea2ac95d833da8bffb07134d9327c74092b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jan 17 04:44:25 2020 -0500
+
+    enable vanguards by default
+    
+    https://forums.whonix.org/t/vanguards-additional-protections-for-tor-onion-services/8064/11
+
+commit 3dbc092e2f2f440349a56565d039d109bf161261
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 15 10:09:50 2020 -0500
+
+    bumped changelog version
+
 commit 67da41b14ed534f920c75e03d2c4d6430f76b6f8
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Jan 15 09:50:13 2020 -0500
