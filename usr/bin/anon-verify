@@ -63,10 +63,9 @@ parse_cmd_options() {
    ## will remain in the "$@" positional parameters.
 }
 
-
 ## get_tor_start_command() will set the $tor_start_command to the command
 ## used in Whonix to start Tor. If it did not successfully extract the
-## command, it will exit with exit code 1.  If Whonix get rid of
+## command, it will exit with exit code 1. If Whonix get rid of
 ## systemd for Tor control in the future, we simply change the content
 ## in the tor_start_command
 function get_tor_start_command() {
@@ -174,7 +173,7 @@ $start_menu_instructions_system_first_part Terminal
       unknown_option_specifier "${BASH_REMATCH[2]}"
    fi
 
-   ## parsing_order_verbose creates a very long ouput which is not
+   ## parsing_order_verbose creates a very long output which is not
    ## user-friendly. Therefore, we do not enable it by default and
    ## only use it with anon-verify -v and anon-verify -vv
    if [ "$VERBOSE" = "1" ]; then
