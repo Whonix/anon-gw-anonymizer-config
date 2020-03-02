@@ -27,7 +27,7 @@ function parser() {
          local file_content
          file_content="$(cat "$abs")"
          IFS=$'\n'
-         # only show comments in torrc files when $VERY_VERBOSE is "1"
+         ## only show comments in torrc files when $VERY_VERBOSE is "1"
          for line in $file_content; do
             if [[ "$line" =~ ^[[:space:]]*# && "$VERY_VERBOSE" != "1" ]]; then
                continue

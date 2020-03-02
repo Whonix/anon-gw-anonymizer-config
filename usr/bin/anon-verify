@@ -19,8 +19,8 @@ parse_cmd_options() {
    ## Thanks to:
    ## http://mywiki.wooledge.org/BashFAQ/035
 
-   # Initialize all the option variables.
-   # This ensures we are not contaminated by variables from the environment.
+   ## Initialize all the option variables.
+   ## This ensures we are not contaminated by variables from the environment.
    VERBOSE=
    VERY_VERBOSE=
 
@@ -155,7 +155,7 @@ $start_menu_instructions_system_first_part Terminal
       f_torrc="${BASH_REMATCH[2]}"
    fi
 
-   # call parser() to parse torrc files, arguments order matters
+   ## call parser() to parse torrc files, arguments order matters
    parser "$default_torrc" "$f_torrc"
 
    echo "/===================================================================\\"
