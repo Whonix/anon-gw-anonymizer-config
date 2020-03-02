@@ -41,6 +41,8 @@ function parser() {
          done
       elif [[ -d "$abs_path" ]]; then
          parser "$(find "$abs_path" -mindepth 1 | sort -g)"
+      else
+         echo "ERROR: invalid file: '$abs_path'"
       fi
       echo "===> Done parsing $abs" >> "$temp_verbose_torrc"
    done
