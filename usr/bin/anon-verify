@@ -162,6 +162,8 @@ $start_menu_instructions_system_first_part Terminal
    echo "\\===================================================================/"
    used_torrc_files
 
+   extraneous_torrc_files
+
    ## TODO: More suggestions to different errors can be added in the
    ## future
 

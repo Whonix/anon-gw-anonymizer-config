@@ -22,13 +22,27 @@ function parser() {
    local abs_path
    for abs_path in "$@"; do
       if [[ -f "$abs_path" ]]; then
-         local file_name first_character
-         file_name="${abs_path##*/}"
-         first_character=${file_name:0:1}
+         local base_name first_character file_extension
+         base_name="${abs_path##*/}"
+         first_character=${base_name:0:1}
+         file_extension="${base_name##*.}"
 
          if [ "$first_character" = "." ]; then
             echo "===> Ignoring file name starting with '.': $abs_path (Quote Tor manual: 'Files starting with a dot are ignored.')" >> "$temp_verbose_torrc"
             continue
+         fi
+
+         if [ "$abs_path" = "/usr/share/tor/tor-service-defaults-torrc" ]; then
+            true "good: $abs_path"
+         elif [ "$abs_path" = "/etc/tor/torrc" ]; then
+            true "good: $abs_path"
+         else
+            if [ "$file_extension" = "conf" ]; then
+               true "good: $abs_path"
+            else
+               true "extraneous: $abs_path"
+               extraneous_torrc+=("$abs_path")
+            fi
          fi
 
          echo "===> Start parsing file $abs_path" >> "$temp_verbose_torrc"
@@ -82,6 +96,19 @@ function unknown_option_specifier(){
       grep -iHnE --color "^([[:space:]])*$unknown_option" "${torrc_files[@]}"
       echo "Please modify these files to fix the problem."
    done
+}
+
+function extraneous_torrc_files(){
+   if [ "$extraneous_torrc" = "" ]; then
+      return 0
+   fi
+   echo "/===================================================================\\"
+   echo "|                 Extraneous Tor Configuration Files                |"
+   echo "\\===================================================================/"
+   echo "${#extraneous_torrc[@]} files are do not end with file extension '.conf': "
+   echo "${extraneous_torrc[@]}"
+   echo "These should be probably removed. To do so, run:"
+   echo "sudo systemctl restart anon-gw-anonymizer-config.service"
 }
 
 #parser $@
