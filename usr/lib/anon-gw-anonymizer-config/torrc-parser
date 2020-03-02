@@ -21,8 +21,8 @@ declare -a torrc_files
 function parser() {
    for abs_path in "$@"; do
       local abs="$abs_path"
-      echo "===> Parsing $abs_path" >> "$temp_verbose_torrc"
       if [[ -f "$abs_path" ]]; then
+         echo "===> Parsing file $abs_path" >> "$temp_verbose_torrc"
          torrc_files+=("$abs_path")
          local file_content
          file_content="$(cat "$abs")"
@@ -40,6 +40,7 @@ function parser() {
             fi
          done
       elif [[ -d "$abs_path" ]]; then
+         echo "===> Parsing folder $abs_path" >> "$temp_verbose_torrc"
          parser "$(find "$abs_path" -mindepth 1 | sort -g)"
       else
          echo "ERROR: invalid file: '$abs_path'"
