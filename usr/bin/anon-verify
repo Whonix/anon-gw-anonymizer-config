@@ -16,51 +16,51 @@ SCRIPTNAME="$(basename "$BASH_SOURCE")"
 
 ## parse_cmd_options is based on code in whonix_repository by Patrick
 parse_cmd_options() {
-    ## Thanks to:
-    ## http://mywiki.wooledge.org/BashFAQ/035
+   ## Thanks to:
+   ## http://mywiki.wooledge.org/BashFAQ/035
 
-    # Initialize all the option variables.
-    # This ensures we are not contaminated by variables from the environment.
-    VERBOSE=
-    VERY_VERBOSE=
+   # Initialize all the option variables.
+   # This ensures we are not contaminated by variables from the environment.
+   VERBOSE=
+   VERY_VERBOSE=
 
-    local HELP_MSG="See:
-    man $SCRIPTNAME"
+   local HELP_MSG="See:
+   man $SCRIPTNAME"
 
-    while :
-    do
-        case $1 in
-            -h | --help | -\?)
-                echo "$HELP_MSG"
-                exit 0
-                ;;
+   while :
+   do
+      case $1 in
+         -h | --help | -\?)
+            echo "$HELP_MSG"
+            exit 0
+         ;;
             -v | --verbose )
-                echo "$SCRIPTNAME verbose output..."
-                VERBOSE="1"
-                shift
-                ;;
+            echo "$SCRIPTNAME verbose output..."
+            VERBOSE="1"
+            shift
+         ;;
             -vv | --very-verbose)
-                echo "$SCRIPTNAME very verbose output..."
-                VERBOSE="1"
-                VERY_VERBOSE="1"
-                shift
-                ;;
+            echo "$SCRIPTNAME very verbose output..."
+            VERBOSE="1"
+            VERY_VERBOSE="1"
+            shift
+         ;;
             --)
-                shift
-                break
-                ;;
+            shift
+            break
+         ;;
             -*)
-                echo "$SCRIPTNAME unknown option: $1" >&2
-                exit 1
-                ;;
+            echo "$SCRIPTNAME unknown option: $1" >&2
+            exit 1
+         ;;
             *)
-                break
-                ;;
-        esac
-    done
+            break
+         ;;
+      esac
+   done
 
-    ## If there are input files (for example) that follow the options, they
-    ## will remain in the "$@" positional parameters.
+   ## If there are input files (for example) that follow the options, they
+   ## will remain in the "$@" positional parameters.
 }
 
 
@@ -70,52 +70,52 @@ parse_cmd_options() {
 ## systemd for Tor control in the future, we simply change the content
 ## in the tor_start_command
 function get_tor_start_command() {
-    ## Tor use systemd to start
-    tor_start_command=$(grep -i "ExecStart=" /lib/systemd/system/tor@default.service | sed s/ExecStart=//g)
+   ## Tor use systemd to start
+   tor_start_command=$(grep -i "ExecStart=" /lib/systemd/system/tor@default.service | sed s/ExecStart=//g)
 
-    if [ -z "$tor_start_command" ]; then
-        echo "[error] Failed to extra commands used to start Tor." >&2
-        return 1
-    fi
+   if [ -z "$tor_start_command" ]; then
+      echo "[error] Failed to extra commands used to start Tor." >&2
+      return 1
+   fi
 
-    ## Tor is run as root, we need to simulate this, too.
-    tor_start_command="sudo $tor_start_command"
+   ## Tor is run as root, we need to simulate this, too.
+   tor_start_command="sudo $tor_start_command"
 }
 
 ## generate_report will generate a user-friendly report based on
 ## $tor_verify_config_output and $tor_verify_config_exit_code
 function generate_report() {
-    ## generate concise report
-    echo "/===================================================================\\"
-    echo "|                      Report Summary                               |"
-    echo "\\===================================================================/"
+   ## generate concise report
+   echo "/===================================================================\\"
+   echo "|                      Report Summary                               |"
+   echo "\\===================================================================/"
 
-    if [ "$tor_verify_config_exit_code" = "0" ]; then
-        echo "No error detected in your Tor configuration."
-        echo "Tor verify exit code: $tor_verify_config_exit_code"
-        tor_verify_config_output_concise="Tor configuration was valid."
-    else
-        echo "Your Tor config files contain at least one error."
-        echo "Tor verify exit code: $tor_verify_config_exit_code"
+   if [ "$tor_verify_config_exit_code" = "0" ]; then
+      echo "No error detected in your Tor configuration."
+      echo "Tor verify exit code: $tor_verify_config_exit_code"
+      tor_verify_config_output_concise="Tor configuration was valid."
+   else
+      echo "Your Tor config files contain at least one error."
+      echo "Tor verify exit code: $tor_verify_config_exit_code"
 
-        ## concise report which only contains complains with [warn] or [err] tags
-        echo "/===================================================================\\"
-        echo "|                    Tor Concise Report                             |"
-        echo "\\===================================================================/"
-        echo "Below warns and errors must be fixed before you can use Tor:"
-        grep -E -w -h -i --color '\[warn\]|\[err\]' <<< "$tor_verify_config_output"
-        tor_verify_config_output_concise="$(grep -E -w -h -i --color '\[warn\]|\[err\]' <<< "$tor_verify_config_output" 2>&1)" || true
-    fi
+      ## concise report which only contains complains with [warn] or [err] tags
+      echo "/===================================================================\\"
+      echo "|                    Tor Concise Report                             |"
+      echo "\\===================================================================/"
+      echo "Below warns and errors must be fixed before you can use Tor:"
+      grep -E -w -h -i --color '\[warn\]|\[err\]' <<< "$tor_verify_config_output"
+      tor_verify_config_output_concise="$(grep -E -w -h -i --color '\[warn\]|\[err\]' <<< "$tor_verify_config_output" 2>&1)" || true
+   fi
 
-    echo "/===================================================================\\"
-    echo "|                      Tor Full Report                              |"
-    echo "\\===================================================================/"
-    echo "$tor_verify_config_output"
+   echo "/===================================================================\\"
+   echo "|                      Tor Full Report                              |"
+   echo "\\===================================================================/"
+   echo "$tor_verify_config_output"
 
-    ## TODO: $anon_verify_report_html is used by whonixcheck
-    ## we need to find a way to merge it with $anon_verify_report
-    tor_verify_config_output_html="$(/usr/lib/msgcollector/br_add "$tor_verify_config_output")"
-    anon_verify_report_html="<p>Tor Config Check Result:
+   ## TODO: $anon_verify_report_html is used by whonixcheck
+   ## we need to find a way to merge it with $anon_verify_report
+   tor_verify_config_output_html="$(/usr/lib/msgcollector/br_add "$tor_verify_config_output")"
+   anon_verify_report_html="<p>Tor Config Check Result:
 <br></br><b>Your Tor config files contain at least one error.</b></p>
 
 <p>(Tor exit code: $tor_verify_config_exit_code)</p>
@@ -142,49 +142,49 @@ $start_menu_instructions_system_first_part Terminal
 <blockquote>    $start_menu_instructions_system_first_part Restart Tor</blockquote>
     <br></br>or in Terminal: <code>sudo systemctl restart tor@default</code></p>"
 
-    ## torrc-parser will grep the invalid option for user and specify
-    ## which file is corrupted for better fixing suggestion
-    source /usr/lib/anon-gw-anonymizer-config/torrc-parser
+   ## torrc-parser will grep the invalid option for user and specify
+   ## which file is corrupted for better fixing suggestion
+   source /usr/lib/anon-gw-anonymizer-config/torrc-parser
 
-    ## extract default_torrc file and -f torrc file
-    if [[ "$tor_start_command" =~ (--defaults-torrc )([^ ]*) ]]; then
-	default_torrc="${BASH_REMATCH[2]}"
-    fi
+   ## extract default_torrc file and -f torrc file
+   if [[ "$tor_start_command" =~ (--defaults-torrc )([^ ]*) ]]; then
+      default_torrc="${BASH_REMATCH[2]}"
+   fi
 
-    if [[ "$tor_start_command" =~ (-f )([^ ]*) ]]; then
-	f_torrc="${BASH_REMATCH[2]}"
-    fi
+   if [[ "$tor_start_command" =~ (-f )([^ ]*) ]]; then
+      f_torrc="${BASH_REMATCH[2]}"
+   fi
 
-    # call parser() to parse torrc files, arguments order matters
-    parser "$default_torrc" "$f_torrc"
+   # call parser() to parse torrc files, arguments order matters
+   parser "$default_torrc" "$f_torrc"
 
-    echo "/===================================================================\\"
-    echo "|                 Used Tor Configuration Files                      |"
-    echo "\\===================================================================/"
-    used_torrc_files
+   echo "/===================================================================\\"
+   echo "|                 Used Tor Configuration Files                      |"
+   echo "\\===================================================================/"
+   used_torrc_files
 
-    ## TODO: More suggestions to different errors can be added in the
-    ## future
+   ## TODO: More suggestions to different errors can be added in the
+   ## future
 
-    ## extract the unknown option complained by Tor
-    if [[ "$tor_verify_config_output" =~ (Unknown option \')([^\']*) ]]; then
-	echo "/===================================================================\\"
-        echo "|                 Detailed Suggested Solution                       |"
-        echo "\\===================================================================/"
-	unknown_option_specifier "${BASH_REMATCH[2]}"
-    fi
+   ## extract the unknown option complained by Tor
+   if [[ "$tor_verify_config_output" =~ (Unknown option \')([^\']*) ]]; then
+      echo "/===================================================================\\"
+      echo "|                 Detailed Suggested Solution                       |"
+      echo "\\===================================================================/"
+      unknown_option_specifier "${BASH_REMATCH[2]}"
+   fi
 
-    ## parsing_order_verbose creates a very long ouput which is not
-    ## user-friendly. Therefore, we do not enable it by default and
-    ## only use it with anon-verify -v and anon-verify -vv
-    if [ "$VERBOSE" = "1" ]; then
-        echo "/===================================================================\\"
-        echo "|                Verbose Tor Configuration Parsing                  |"
-        echo "\\===================================================================/"
-        parsing_order_verbose
-    fi
+   ## parsing_order_verbose creates a very long ouput which is not
+   ## user-friendly. Therefore, we do not enable it by default and
+   ## only use it with anon-verify -v and anon-verify -vv
+   if [ "$VERBOSE" = "1" ]; then
+      echo "/===================================================================\\"
+      echo "|                Verbose Tor Configuration Parsing                  |"
+      echo "\\===================================================================/"
+      parsing_order_verbose
+   fi
 
-    echo "====================================================================="
+   echo "====================================================================="
 }
 
 parse_cmd_options "$@"

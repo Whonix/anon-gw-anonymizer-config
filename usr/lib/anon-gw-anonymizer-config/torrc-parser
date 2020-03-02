@@ -19,49 +19,49 @@ temp_verbose_torrc=$(mktemp)
 declare -a torrc_files
 
 function parser() {
-    for abs_path in "$@"; do
-	local abs="$abs_path"
-	echo "===> Parsing $abs_path" >> "$temp_verbose_torrc"
-	if [[ -f  "$abs_path" ]]; then
-	    torrc_files+=("$abs_path")
-	    local file_content
-            file_content="$(cat "$abs")"
-	    IFS=$'\n'
-            # only show comments in torrc files when $VERY_VERBOSE is "1"
-	    for line in $file_content; do
-                if [[ "$line" =~ ^[[:space:]]*# && "$VERY_VERBOSE" != "1" ]]; then
-                    continue
-                else
-		    echo "$line" >> "$temp_verbose_torrc"
-                fi
+   for abs_path in "$@"; do
+      local abs="$abs_path"
+      echo "===> Parsing $abs_path" >> "$temp_verbose_torrc"
+      if [[ -f  "$abs_path" ]]; then
+         torrc_files+=("$abs_path")
+         local file_content
+         file_content="$(cat "$abs")"
+         IFS=$'\n'
+         # only show comments in torrc files when $VERY_VERBOSE is "1"
+         for line in $file_content; do
+            if [[ "$line" =~ ^[[:space:]]*# && "$VERY_VERBOSE" != "1" ]]; then
+               continue
+            else
+               echo "$line" >> "$temp_verbose_torrc"
+            fi
 
-		if [[ "$line" =~ ^[[:space:]]*%include ]]; then
-                    parser "$(echo "$line" | awk '{print $2;}')"
-		fi
-	    done
-	elif [[ -d "$abs_path" ]]; then
-		 parser "$(find "$abs_path" -mindepth 1 | sort -g)"
-        fi
-	echo "===> Done parsing $abs" >> "$temp_verbose_torrc"
-    done
+            if [[ "$line" =~ ^[[:space:]]*%include ]]; then
+               parser "$(echo "$line" | awk '{print $2;}')"
+            fi
+         done
+      elif [[ -d "$abs_path" ]]; then
+         parser "$(find "$abs_path" -mindepth 1 | sort -g)"
+      fi
+      echo "===> Done parsing $abs" >> "$temp_verbose_torrc"
+   done
 }
 
 function parsing_order_verbose(){
-    echo "The Tor configuration files are parsed in such order: "
-    cat "$temp_verbose_torrc"
+   echo "The Tor configuration files are parsed in such order: "
+   cat "$temp_verbose_torrc"
 }
 
 function used_torrc_files(){
-    echo "${#torrc_files[@]} files are used as Tor configuration files: "
-    echo "${torrc_files[@]}"
+   echo "${#torrc_files[@]} files are used as Tor configuration files: "
+   echo "${torrc_files[@]}"
 }
 
 function unknown_option_specifier(){
-    for unknown_option in "$@"; do
-	echo "The following files contain unkown option '$unknown_option': "
-	grep -iHnE --color "^([[:space:]])*$unknown_option" "${torrc_files[@]}"
-	echo "Please modify these files to fix the problem."
-    done
+   for unknown_option in "$@"; do
+      echo "The following files contain unkown option '$unknown_option': "
+      grep -iHnE --color "^([[:space:]])*$unknown_option" "${torrc_files[@]}"
+      echo "Please modify these files to fix the problem."
+   done
 }
 
 #parser $@
