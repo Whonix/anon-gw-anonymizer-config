@@ -22,6 +22,15 @@ function parser() {
    local abs_path
    for abs_path in "$@"; do
       if [[ -f "$abs_path" ]]; then
+         local file_name first_character
+         file_name="${abs_path##*/}"
+         first_character=${file_name:0:1}
+
+         if [ "$first_character" = "." ]; then
+            echo "===> Ignoring file name starting with '.': $abs_path (Quote Tor manual: 'Files starting with a dot are ignored.')" >> "$temp_verbose_torrc"
+            continue
+         fi
+
          echo "===> Start parsing file $abs_path" >> "$temp_verbose_torrc"
          torrc_files+=("$abs_path")
          local file_content
