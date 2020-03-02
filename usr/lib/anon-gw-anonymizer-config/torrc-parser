@@ -22,7 +22,7 @@ function parser() {
    for abs_path in "$@"; do
       local abs="$abs_path"
       echo "===> Parsing $abs_path" >> "$temp_verbose_torrc"
-      if [[ -f  "$abs_path" ]]; then
+      if [[ -f "$abs_path" ]]; then
          torrc_files+=("$abs_path")
          local file_content
          file_content="$(cat "$abs")"
