@@ -42,9 +42,13 @@ function parser() {
          echo "===> Done parsing file $abs_path" >> "$temp_verbose_torrc"
       elif [[ -d "$abs_path" ]]; then
          echo "===> Start parsing folder: $abs_path" >> "$temp_verbose_torrc"
-         local config_file_name
-         for config_file_name in $(find "$abs_path" -mindepth 1 | sort -g) ; do
-            parser "$config_file_name"
+         local fso
+         for fso in $(find "$abs_path" -mindepth 1 -maxdepth 1 | sort -g) ; do
+            if [ -d "$fso" ]; then
+               echo "===> Ignoring subfolder: $abs_path (Quote Tor manual: 'Files on subfolders are ignored.')" >> "$temp_verbose_torrc"
+               continue
+            fi
+            parser "$fso"
          done
          echo "===> Done parsing folder : $abs_path" >> "$temp_verbose_torrc"
       else
