@@ -19,13 +19,13 @@ temp_verbose_torrc=$(mktemp)
 declare -a torrc_files
 
 function parser() {
+   local abs_path
    for abs_path in "$@"; do
-      local abs="$abs_path"
       if [[ -f "$abs_path" ]]; then
-         echo "===> Parsing file $abs_path" >> "$temp_verbose_torrc"
+         echo "===> Start parsing file $abs_path" >> "$temp_verbose_torrc"
          torrc_files+=("$abs_path")
          local file_content
-         file_content="$(cat "$abs")"
+         file_content="$(cat "$abs_path")"
          IFS=$'\n'
          ## only show comments in torrc files when $VERY_VERBOSE is "1"
          for line in $file_content; do
@@ -39,13 +39,17 @@ function parser() {
                parser "$(echo "$line" | awk '{print $2;}')"
             fi
          done
+         echo "===> Done parsing file $abs_path" >> "$temp_verbose_torrc"
       elif [[ -d "$abs_path" ]]; then
-         echo "===> Parsing folder $abs_path" >> "$temp_verbose_torrc"
-         parser "$(find "$abs_path" -mindepth 1 | sort -g)"
+         echo "===> Start parsing folder: $abs_path" >> "$temp_verbose_torrc"
+         local config_file_name
+         for config_file_name in $(find "$abs_path" -mindepth 1 | sort -g) ; do
+            parser "$config_file_name"
+         done
+         echo "===> Done parsing folder : $abs_path" >> "$temp_verbose_torrc"
       else
          echo "ERROR: invalid file: '$abs_path'"
       fi
-      echo "===> Done parsing $abs" >> "$temp_verbose_torrc"
    done
 }
 
