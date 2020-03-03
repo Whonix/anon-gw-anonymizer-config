@@ -1,3 +1,75 @@
+commit f646bd212be9294982b89a82841468a2f8e704eb
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 2 16:16:24 2020 -0500
+
+    anon-verify: report Extraneous Tor Configuration Files
+    
+    files that do not end with file extension '.conf'
+
+commit 2403c0b06830ac2beccb1b5012f67ac60f9b54f7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 2 15:35:00 2020 -0500
+
+    anon-verify: ignore file names starting with dot (".")
+    
+    Quote Tor manual: 'Files starting with a dot are ignored.'
+
+commit bc98b8efe47641510b85212c1c38360340813f0a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 2 15:29:06 2020 -0500
+
+    anon-verify: ignore subfolders when using %include /path/to/folder
+    
+    Quote Tor manual: 'Files on subfolders are ignored.'
+
+commit 6e0b8a224e9bf4f3eafd5a7c169655d83cd2a1c5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 2 15:07:43 2020 -0500
+
+    anon-verify: fix, check all files in torrc.d folder for issues
+
+commit 4380d4869c983370fc46e1056342dac9f1728a4b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 2 14:55:27 2020 -0500
+
+    output
+
+commit 701f5b406eb418506cf9a6562b195a66f3653682
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 2 14:54:29 2020 -0500
+
+    usr/lib/anon-gw-anonymizer-config/torrc-parser: error handling if neither file nor folder
+
+commit 8c3400a8eede00fbecc4493c40772a3bf26841b5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 2 14:50:16 2020 -0500
+
+    minor
+
+commit a62ef48b75b6c873d91f3bc0c2e4eba8dab962e6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 2 14:43:16 2020 -0500
+
+    minor
+
+commit be294d2c624c077cd9d0b84e64de61dc578f22b7
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 2 14:42:26 2020 -0500
+
+    minor
+
+commit f7932b8e595cadeef16fe13f227b84843fc0d283
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 2 14:40:29 2020 -0500
+
+    indentations
+
+commit 40c48fc0414828f48c5ff9465d839458c8b35b25
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jan 17 05:36:32 2020 -0500
+
+    bumped changelog version
+
 commit 496aeea2ac95d833da8bffb07134d9327c74092b
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Jan 17 04:44:25 2020 -0500
