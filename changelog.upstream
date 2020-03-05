@@ -1,3 +1,50 @@
+commit 211a092ab2b4ca25c6b930d0f4afd0f37d9a3e40
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Mar 5 08:32:21 2020 -0500
+
+    Fix bug in Whonix 15.0.0.8.9 where anon-connection-wizard added
+    `%include /etc/torrc.d/95_whonix.conf` to `/etc/tor/torrc` configuration
+    file even though Whonix was already ported to `%include /etc/torrc.d/`.
+    
+    https://forums.whonix.org/t/configuring-onion-service/9042
+
+commit 504b93473edab61e54f989bd17fbd99f7e399cb8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Mar 5 07:52:30 2020 -0500
+
+    when trying to reload Tor but Tor not yet running, (re)start Tor instead
+    
+    https://forums.whonix.org/t/configuring-onion-service/9042/32
+
+commit fd71c287061cfd7144e2fd92a7c75d6ac9236d55
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Mar 5 07:45:31 2020 -0500
+
+    refactoring
+    
+    provide /usr/lib/anon-gw-anonymizer-config/tor-config-sane
+    
+    which calls both
+    
+    - /usr/lib/anon-gw-anonymizer-config/make-sure-torrc-exist
+    - /usr/lib/anon-gw-anonymizer-config/tor-config-sane
+    
+    Therefore re-usable by anon-connection-wizard.
+
+commit 2e56e190717450a0855adb74596afff178ad07a3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Mar 5 07:32:42 2020 -0500
+
+    make sure files /etc/tor/torrc and /etc/torrc.d/95_whonix.conf exist
+    
+    https://forums.whonix.org/t/configuring-onion-service/9042/29
+
+commit 743e2e0f14d0fb9eca958830334b8e68f4093632
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Mar 3 09:07:49 2020 -0500
+
+    bumped changelog version
+
 commit f646bd212be9294982b89a82841468a2f8e704eb
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Mar 2 16:16:24 2020 -0500
