@@ -59,4 +59,19 @@ if [ ! -e /usr/local/etc/torrc.d/50_user.conf ]; then
    /usr/bin/install -Z -m 00644 -o root -g root -T /usr/share/anon-gw-anonymizer-config/user_torrc_template.conf /usr/local/etc/torrc.d/50_user.conf
 fi
 
+## Fix bug in Whonix 15.0.0.8.9 where anon-connection-wizard added
+## `%include /etc/torrc.d/95_whonix.conf` to `/etc/tor/torrc` configuration
+## file even though Whonix was already ported to `%include /etc/torrc.d/`.
+## https://forums.whonix.org/t/configuring-onion-service/9042
+
+search="\
+%include /etc/torrc.d/
+%include /etc/torrc.d/95_whonix.conf"
+
+replace="%include /etc/torrc.d/"
+
+file_name="/etc/tor/torrc"
+
+str_replace "$search" "$replace" "$file_name"
+
 true $?
