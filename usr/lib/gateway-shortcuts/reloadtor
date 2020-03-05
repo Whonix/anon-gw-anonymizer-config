@@ -15,7 +15,11 @@ set -x
 
 cat /etc/motd
 
-sudo systemctl --no-pager reload tor@default
+if sudo /usr/sbin/service tor@default status &>/dev/null ; then
+   sudo systemctl --no-pager reload tor@default
+else
+   sudo systemctl --no-pager restart tor@default
+fi
 
 sudo systemctl --no-pager status tor@default
 true "$?"
