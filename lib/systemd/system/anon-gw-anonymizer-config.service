@@ -24,8 +24,7 @@ Before=tor@default.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/lib/anon-gw-anonymizer-config/make-sure-torrc-exist
-ExecStartPost=/usr/lib/anon-gw-anonymizer-config/torrc-d-cleaner
+ExecStart=/usr/lib/anon-gw-anonymizer-config/tor-config-sane
 
 [Install]
 WantedBy=multi-user.target

@@ -58,3 +58,5 @@ fi
 if [ ! -e /usr/local/etc/torrc.d/50_user.conf ]; then
    /usr/bin/install -Z -m 00644 -o root -g root -T /usr/share/anon-gw-anonymizer-config/user_torrc_template.conf /usr/local/etc/torrc.d/50_user.conf
 fi
+
+true $?
