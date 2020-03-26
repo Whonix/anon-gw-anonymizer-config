@@ -1,0 +1,54 @@
+#!/bin/bash
+
+## Copyright (C) 2020 - 2020 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+#set -x
+
+set -e
+shopt -s nullglob
+
+error_handler() {
+   local exit_code="$?"
+   echo "ERROR: exit_code: $exit_code | BASH_COMMAND: $BASH_COMMAND"
+   exit 1
+}
+
+trap error_handler ERR
+
+command -v mkdir unlink ln >/dev/null
+
+SCRIPTNAME="$(basename "$BASH_SOURCE")"
+
+if [ "$(id -u)" != "0" ]; then
+    echo "ERROR: This must be run as root (sudo)!"
+    echo "INFO: You can start $SCRIPTNAME by entering..."
+    echo "      sudo $SCRIPTNAME"
+    exit 1
+fi
+
+profile_name="$1"
+
+if [ "$profile_name" = "" ]; then
+   echo "ERROR: syntax: sudo $SCRIPTNAME profile-name"
+   exit 1
+fi
+
+if [ -f "/usr/local/etc/onion-grater-merger.d/${profile_name}.yml" ]; then
+   profile_file_target="/usr/local/etc/onion-grater-merger.d/${profile_name}.yml"
+else
+   for file_name in "/usr/local/etc/onion-grater-merger.d/"*"_${profile_name}.yml" ; do
+      profile_file_target="$file_name"
+      if unlink "$profile_file_target" &>/dev/null ; then
+         removed=true
+         echo "OK: Removed profile_file_target: '$profile_file_target'."
+      fi
+   done
+fi
+
+if [ "$removed" = "true" ]; then
+   systemctl --no-block --no-pager restart onion-grater
+else
+   echo "OK: None removed. (Maybe already removed?)"
+   echo "OK."
+fi

@@ -1,0 +1,65 @@
+#!/bin/bash
+
+## Copyright (C) 2020 - 2020 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+#set -x
+
+set -e
+shopt -s nullglob
+
+error_handler() {
+   local exit_code="$?"
+   echo "ERROR: exit_code: $exit_code | BASH_COMMAND: $BASH_COMMAND"
+   exit 1
+}
+
+trap error_handler ERR
+
+command -v mkdir unlink ln >/dev/null
+
+SCRIPTNAME="$(basename "$BASH_SOURCE")"
+
+if [ "$(id -u)" != "0" ]; then
+    echo "ERROR: This must be run as root (sudo)!"
+    echo "INFO: You can start $SCRIPTNAME by entering..."
+    echo "      sudo $SCRIPTNAME"
+    exit 1
+fi
+
+profile_name="$1"
+
+if [ "$profile_name" = "" ]; then
+   echo "ERROR: syntax: sudo $SCRIPTNAME profile-name"
+   exit 1
+fi
+
+
+if [ -f "/usr/share/doc/onion-grater-merger/examples/${profile_name}.yml" ]; then
+   profile_file_source="/usr/share/doc/onion-grater-merger/examples/${profile_name}.yml"
+else
+   for file_name in "/usr/share/doc/onion-grater-merger/examples/"*"_${profile_name}.yml" ; do
+      ## prefer /usr/share/doc/onion-grater-merger/examples/50_onionshare.yml
+      ## over   /usr/share/doc/onion-grater-merger/examples/40_onionshare.yml
+      profile_file_source="$file_name"
+   done
+fi
+
+if [ ! -f "$profile_file_source" ]; then
+   echo "ERROR: profile_file_source '$profile_file_source' does not exist!"
+   exit 1
+fi
+
+profile_file_source_base_name="$(basename "$profile_file_source")"
+profile_file_target="/usr/local/etc/onion-grater-merger.d/$profile_file_source_base_name"
+
+mkdir -p /usr/local/etc/onion-grater-merger.d/
+
+unlink "$profile_file_target" &>/dev/null || true
+
+ln -s "$profile_file_source" "/usr/local/etc/onion-grater-merger.d/"
+
+systemctl --no-block --no-pager restart onion-grater
+
+echo "OK: Added profile_file_source: '$profile_file_source'."
+echo "OK."

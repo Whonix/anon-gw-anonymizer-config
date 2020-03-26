@@ -1,0 +1,27 @@
+onion-grater-add(8) -- add onion-grater profile to onion-grater configuration
+=============================================
+
+<span class="comment">
+# Copyright (C) 2012 - 2019 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+# See the file COPYING for copying conditions.
+</span>
+
+## SYNOPSIS
+`onion-grater-add` profile-name
+
+## DESCRIPTION
+Adds onion-grater profile to onion-grater configuration.
+
+Adds highest priority symlink that matches
+`/usr/share/doc/onion-grater-merger/examples/*_${profile_name}.yml`
+to `/usr/local/etc/onion-grater-merger.d/`.
+
+Priority in lexical order. For example,
+Prefer `/usr/share/doc/onion-grater-merger/examples/50_profile-name.yml`
+over   `/usr/share/doc/onion-grater-merger/examples/40_profile-name.yml`.
+
+## EXAMPLE
+`sudo onion-grater-add onionshare`
+
+## AUTHOR
+This man page has been written by Patrick Schleizer (adrelanos@riseup.net).
