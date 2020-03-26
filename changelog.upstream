@@ -1,3 +1,18 @@
+commit b83ae5922cc39e24c9290777924351c37ac4f948
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Mar 26 05:49:36 2020 -0400
+
+    add onion-grater-add / onion-grater-remove
+    
+    helper scripts for better usability making it possible to add onion-grater
+    profiles with 1 short command instead of 3 long ones
+
+commit 6c9644c5e2ba88414e76f7f319baba5201b68439
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Mar 5 08:33:52 2020 -0500
+
+    bumped changelog version
+
 commit 211a092ab2b4ca25c6b930d0f4afd0f37d9a3e40
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Mar 5 08:32:21 2020 -0500
