@@ -1,0 +1,18 @@
+.\" generated with Ronn-NG/v0.8.0
+.\" http://github.com/apjanke/ronn-ng/tree/0.8.0
+.TH "ONION\-GRATER\-ADD" "8" "April 2020" "anon-gw-anonymizer-config" "anon-gw-anonymizer-config Manual"
+.SH "NAME"
+\fBonion\-grater\-add\fR \- add onion\-grater profile to onion\-grater configuration
+.P
+.SH "SYNOPSIS"
+\fBonion\-grater\-add\fR profile\-name
+.SH "DESCRIPTION"
+Adds onion\-grater profile to onion\-grater configuration\.
+.P
+Adds highest priority symlink that matches \fB/usr/share/doc/onion\-grater\-merger/examples/*_${profile_name}\.yml\fR to \fB/usr/local/etc/onion\-grater\-merger\.d/\fR\.
+.P
+Priority in lexical order\. For example, Prefer \fB/usr/share/doc/onion\-grater\-merger/examples/50_profile\-name\.yml\fR over \fB/usr/share/doc/onion\-grater\-merger/examples/40_profile\-name\.yml\fR\.
+.SH "EXAMPLE"
+\fBsudo onion\-grater\-add onionshare\fR
+.SH "AUTHOR"
+This man page has been written by Patrick Schleizer (adrelanos@riseup\.net)\.

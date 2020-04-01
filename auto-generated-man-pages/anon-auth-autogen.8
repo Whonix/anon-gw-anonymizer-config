@@ -1,0 +1,18 @@
+.\" generated with Ronn-NG/v0.8.0
+.\" http://github.com/apjanke/ronn-ng/tree/0.8.0
+.TH "ANON\-AUTH\-AUTOGEN" "8" "April 2020" "anon-gw-anonymizer-config" "anon-gw-anonymizer-config Manual"
+.SH "NAME"
+\fBanon\-auth\-autogen\fR \- Tor Authenticated Onion Service Configuration Generator
+.P
+.SH "SYNOPSIS"
+\fBvariable=content anon\-auth\-autogen\fR
+.SH "DESCRIPTION"
+Creates Authenticated Onion Service configuration file for Tor\.
+.SH "Examples"
+\fBsudo hsname=hidden_service hsport=80 virtport=80 client=1 anon\-auth\-autogen\fR
+.P
+\fBsudo hsname=hidden_service hsport=80 virtport=80 client=2 anon\-auth\-autogen\fR
+.P
+\fBsudo hsname=mumble hsport=64738 virtport=64738 client=1 anon\-auth\-autogen\fR
+.SH "AUTHOR"
+This man page has been written by Patrick Schleizer (adrelanos@riseup\.net)\.

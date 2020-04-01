@@ -1,0 +1,26 @@
+.\" generated with Ronn-NG/v0.8.0
+.\" http://github.com/apjanke/ronn-ng/tree/0.8.0
+.TH "ANON\-SERVER\-TO\-CLIENT\-INSTALL" "8" "April 2020" "anon-gw-anonymizer-config" "anon-gw-anonymizer-config Manual"
+.SH "NAME"
+\fBanon\-server\-to\-client\-install\fR \- Tor Authenticated Onion Service "\.auth_private" file (private key) Server to Client Installer
+.P
+.SH "SYNOPSIS"
+\fBvariable=content anon\-server\-to\-client\-install\fR
+.SH "DESCRIPTION"
+Creates Tor config file with \fBClientOnionAuthDir /var/lib/tor/authdir/\fR and installs "\.auth_private" file (private key) provided by Onion Services on client systems\.
+.P
+To be run by users of authenticated onion services who were provided with a "\.auth_private" file by onion service operators\.
+.P
+By default copies \fB/home/user/1\.auth_private\fR to \fB/var/lib/tor/authdir/1\.auth_private\fR\.
+.SH "Examples"
+\fBsudo anon\-server\-to\-client\-install\fR
+.P
+\fBsudo client=1 anon\-server\-to\-client\-install\fR
+.P
+\fBsudo client=2 anon\-server\-to\-client\-install\fR
+.P
+\fBsudo sourcefile=~/1\.auth_private anon\-server\-to\-client\-install\fR
+.P
+\fBsudo sourcefile=~/user\.auth_private anon\-server\-to\-client\-install\fR
+.SH "AUTHOR"
+This man page has been written by Patrick Schleizer (adrelanos@riseup\.net)\.
