@@ -1,3 +1,52 @@
+commit 5917fd9d5ad32879b6de8172bd73a56da658c0e1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 2 07:22:08 2020 -0400
+
+    readme
+
+commit 423e449d4d0954939a0edb86cf97392495d51f3f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 1 17:34:57 2020 -0400
+
+    remove 'Build-Depends: ronn' since no longer required
+
+commit a548cc6405ff4c5a79036f92a2dbb54287abbb87
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 1 16:57:25 2020 -0400
+
+    remove genmkfile
+
+commit da95cdc52393da570d94f0561357ca0d5dd22274
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 1 16:30:03 2020 -0400
+
+    add debian install file
+
+commit aa79933be7279936c16a667b6c4ac4c3d479c757
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 1 15:56:46 2020 -0400
+
+    add man pages (generated using "genmkfile manpages")
+
+commit 981a3c33a9fff47d9c82028f3002e0c2ddbdfc60
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 1 15:48:07 2020 -0400
+
+    no longer create man pages during build process
+    use pre-created man pages
+
+commit 2326163dca35c4558e4ccb8de235c5e8f19143a8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 1 15:41:49 2020 -0400
+
+    code documentation
+
+commit 25abf8c754bc0a91560635a932a58d9df3d71548
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 1 10:16:59 2020 -0400
+
+    bumped changelog version
+
 commit 3605a9611ab7f8f232f882dbd6953dceeb4c19ba
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Apr 1 09:04:00 2020 -0400
