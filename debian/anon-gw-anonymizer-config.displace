@@ -10,7 +10,6 @@
 ## package with configuration files by this package.
 
 /etc/tor/torrc.anondist
-/usr/share/tor/tor-service-defaults-torrc.anondist
 /etc/default/tor.anondist
 /etc/apparmor.d/local/system_tor.anondist
 /etc/apparmor.d/local/usr.bin.obfsproxy.anondist
