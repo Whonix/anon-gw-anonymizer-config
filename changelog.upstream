@@ -1,3 +1,49 @@
+commit 86738cd46625423df9df26bbe628052e41db7991
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 09:47:01 2020 -0400
+
+    readme
+
+commit a8beb9768423e103b361a515a622fe876a6e1c00
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 08:05:20 2020 -0400
+
+    comment
+
+commit 72ef1c1ac4431e2740becd276d20b0918263b43a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 07:56:24 2020 -0400
+
+    remove upstream Tor defaults
+    
+    because was able to revert Tor upstream default config file
+    /usr/share/tor/tor-service-defaults-torrc back to original
+
+commit 6b5afc13f9b0a3dfb00ac9d572f65be85ff616ff
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 07:26:38 2020 -0400
+
+    move usr/share/tor/tor-service-defaults-torrc.anondist -> etc/torrc.d/90_whonix.conf
+
+commit c4c536b1377c4eac0d69592da874eb0dbd2e1ec2
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 07:24:18 2020 -0400
+
+    Reset /usr/share/tor/tor-service-defaults-torrc to original.
+    This is possible since there is now torrc.d support.
+
+commit d3fc308180cf1d1ade12bd7aabd0f5ad7f162e1e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 06:53:53 2020 -0400
+
+    merge ipv4-forward-disable, ipv6-disable into this package
+
+commit 074b1f3d8877c829320f8f2cc965903c05b5e4c0
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 2 07:25:58 2020 -0400
+
+    bumped changelog version
+
 commit 5917fd9d5ad32879b6de8172bd73a56da658c0e1
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Apr 2 07:22:08 2020 -0400
