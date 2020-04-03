@@ -4,6 +4,14 @@ Tor config file with distribution defaults (for stream isolation, etc.),
 example user configurations and other tweaks required. The Tor binary
 itself does not get modified.
 
+Deactivates IPv4 forwarding using /etc/sysctl.d/
+IPv4 forwarding is not required for a Tor based Anonymity Distribution
+Gateways. Deactivating it as defense in depth to prevent leaks.
+
+Deactivates IPv6 using /etc/sysctl.d/
+There are no IPv6 Anonymity Distribution Gateways featuring an IPv6 firewall
+yet. Therefore deactivating it to prevent leaks.
+
 This package is produced independently of, and carries no guarantee from,
 The Tor Project.
 ## How to install `anon-gw-anonymizer-config` using apt-get ##
