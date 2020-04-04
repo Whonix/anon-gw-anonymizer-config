@@ -1,3 +1,57 @@
+commit a4e5b6fbcbfb90eba30ecdf16fcb4c7fd6e0ffff
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 14:49:16 2020 -0400
+
+    sort out Qubes-Whonix vs eth0 dynamic IP
+
+commit b5211d327b7de6a6199c5df6c04e17de4745e254
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 14:17:51 2020 -0400
+
+    move
+
+commit c1741ca3df7444c4c457352e18dc36595a55affb
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 14:17:29 2020 -0400
+
+    comments
+
+commit f86bbac7f2938e780f3e7ea6ce273caf2f7a353a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 14:12:44 2020 -0400
+
+    split Tor config
+
+commit bc649b58dbcafa0ec0c1eb9de2a0bbe47303ac2a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 14:09:11 2020 -0400
+
+    split Tor config
+
+commit 666667f9e8e8aaae66246ca3928622f3ff599be8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 13:41:14 2020 -0400
+
+    remove "Log notice syslog" since already done by /usr/share/tor/tor-service-defaults-torrc
+
+commit 57207b40d243e1dbb7e12886ddcc800c640bd063
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 13:40:33 2020 -0400
+
+    comments
+
+commit d92e88be96fbcfa2d6d433318042b1420ab6a664
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 13:37:45 2020 -0400
+
+    comments
+
+commit 9b9fc201ad0c65e2a506f231242b7bd71c12d911
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Apr 3 09:47:54 2020 -0400
+
+    bumped changelog version
+
 commit 86738cd46625423df9df26bbe628052e41db7991
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Apr 3 09:47:01 2020 -0400
