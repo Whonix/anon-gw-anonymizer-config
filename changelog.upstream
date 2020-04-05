@@ -1,3 +1,15 @@
+commit 18df4c6fedcb62c38691b2faf865c48052525e40
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Apr 5 13:55:48 2020 -0400
+
+    SocksPort 127.0.0.1:9050
+
+commit 7f9c3c732a2022db26f3abed9fa84a520a62efec
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Apr 4 06:34:38 2020 -0400
+
+    bumped changelog version
+
 commit a4e5b6fbcbfb90eba30ecdf16fcb4c7fd6e0ffff
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Apr 3 14:49:16 2020 -0400
