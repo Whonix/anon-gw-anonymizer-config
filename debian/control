@@ -16,7 +16,7 @@ Architecture: all
 Depends: helper-scripts, tor, sudo, anon-base-files, adduser,
  auditd, vanguards, ${misc:Depends}
 Recommends: onion-grater
-Replaces: ipv4-forward-disable, ipv6-disable
+Replaces: ipv4-forward-disable, ipv6-disable, anon-gw-leaktest
 Provides: ${diverted-files}
 Conflicts: ${diverted-files}
 Description: Tor Configuration and Tweaks for Anonymity Distributions
