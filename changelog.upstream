@@ -1,3 +1,27 @@
+commit b484c334a096404fea313833ccc2fdcf497f0cca
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Apr 7 12:45:45 2020 +0000
+
+    auto generate man page
+
+commit f3a7bbc54f947fce88a95a27eb039581da02e40d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Apr 7 12:45:22 2020 +0000
+
+    fix, anon-gw-leaktest.8.ronn -> man/anon-gw-leaktest.8.ronn
+
+commit c1b6eada2b54ed5c92f58e143c19b9f0ad61ee1d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Apr 7 12:44:42 2020 +0000
+
+    import from anon-gw-leaktest
+
+commit c767290587d62fea3afffd8f6d86467b25b5a1eb
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Apr 5 14:05:11 2020 -0400
+
+    bumped changelog version
+
 commit 18df4c6fedcb62c38691b2faf865c48052525e40
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Sun Apr 5 13:55:48 2020 -0400
