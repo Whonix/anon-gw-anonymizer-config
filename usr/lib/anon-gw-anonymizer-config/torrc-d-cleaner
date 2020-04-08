@@ -49,7 +49,7 @@ for file_name in /etc/torrc.d/* /usr/local/etc/torrc.d/* ; do
    true "extraneous: $file_name"
    dir_name="${file_name%/*}"
    mkdir -p "${dir_name}/backup"
-   mv --verbose --backup=numbered "$file_name" "${dir_name}/backup/"
+   mv --verbose --backup=numbered --force "$file_name" "${dir_name}/backup/"
 done
 
 echo "$0 INFO: success."
