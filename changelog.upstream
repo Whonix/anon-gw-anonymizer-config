@@ -1,3 +1,15 @@
+commit 63c706bdb1186839e4d28a5ee0c1b9a77186d808
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 9 10:23:18 2020 +0000
+
+    no longer shipping etc/default/tor.anondist
+
+commit ce553d982fa8532cf285a4497a90fa2ea6a11439
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 9 10:21:43 2020 +0000
+
+    bumped changelog version
+
 commit a204e309b56efd20ef23d6b30a5098f93f9e40e6
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Apr 9 10:18:48 2020 +0000
