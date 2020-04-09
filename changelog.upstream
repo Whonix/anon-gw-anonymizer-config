@@ -1,3 +1,15 @@
+commit 2a2eb3b2fc87022b71fb2993398db30de651a29a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 8 18:32:05 2020 +0000
+
+    mv --verbose --backup=numbered --force "$file_name" "${dir_name}/backup/"
+
+commit d44481118f7a8fb628df54af1a37ccbde02ebdfb
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 8 12:38:12 2020 +0000
+
+    bumped changelog version
+
 commit 8ddf04005e2733de03339271484512e5bb91640e
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Apr 8 12:02:39 2020 +0000
