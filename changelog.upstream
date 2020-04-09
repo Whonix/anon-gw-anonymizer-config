@@ -1,3 +1,17 @@
+commit a204e309b56efd20ef23d6b30a5098f93f9e40e6
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 9 10:18:48 2020 +0000
+
+    no longer modify /etc/default/tor.anondist
+    
+    since file is not being used for controlling Tor-startup when Tor is launched by systemd.
+
+commit 7e80c0ba5ca766d402c906154edf510ef3c614e1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 9 09:40:22 2020 +0000
+
+    bumped changelog version
+
 commit 2a2eb3b2fc87022b71fb2993398db30de651a29a
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Apr 8 18:32:05 2020 +0000
