@@ -12,4 +12,7 @@
 
 /usr/share/tor/tor-service-defaults-torrc.anondist
 
+## File is not being used for controlling Tor-startup when Tor is launched by systemd.
+/etc/default/tor.anondist
+
 #### meta end
