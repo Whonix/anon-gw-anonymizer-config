@@ -34,6 +34,8 @@ function parser() {
 
          if [ "$abs_path" = "/usr/share/tor/tor-service-defaults-torrc" ]; then
             true "good: $abs_path"
+         elif [ "$abs_path" = "/usr/share/tor/tor-service-defaults-torrc.anondist" ]; then
+            true "good: $abs_path"
          elif [ "$abs_path" = "/etc/tor/torrc" ]; then
             true "good: $abs_path"
          else
