@@ -1,3 +1,23 @@
+commit 65aff1180ae71380dd7c994800f1875aaf75290b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed May 6 15:33:47 2020 -0400
+
+    re-add missing /run/tor/socks
+    
+    SocksPort unix:/run/tor/socks WorldWritable
+
+commit c9434ce3cbab0cf3be22f3d959fa2201ae904cdb
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed May 6 15:30:30 2020 -0400
+
+    anon-verify: fix, do not suggest to remove /usr/share/tor/tor-service-defaults-torrc.anondist
+
+commit 0f799a04ac63efba540f430fc512e3c489e46622
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 16 08:19:42 2020 -0400
+
+    bumped changelog version
+
 commit f4f120466b4f2d0a183ba5e1a99cc48f8ad57849
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Apr 15 14:05:26 2020 -0400
