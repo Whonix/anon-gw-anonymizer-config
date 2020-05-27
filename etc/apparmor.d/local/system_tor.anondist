@@ -23,6 +23,7 @@
   ## Anonymity Distributions
   /etc/hosts.anondist r,
   /etc/resolv.conf.anondist r,
+  /etc/resolv.conf.whonix r,
   /run/tor r,
   /run/tor/log rwk,
 
