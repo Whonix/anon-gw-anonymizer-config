@@ -31,8 +31,6 @@
       - 'consensus/valid-after'
       - 'consensus/valid-until'
       - 'consensus/fresh-until'
-    onion_client_auth_add:
-      - '.+'
   confs:
     __owningcontrollerprocess:
   events:
