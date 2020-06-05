@@ -1,3 +1,21 @@
+commit 0624ad6c714b5254c72bc1eaae30406ebcf37e48
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 5 09:31:05 2020 -0400
+
+    Revert "permit onion v3 authentication of Tor Browser"
+    
+    This reverts commit 97ff68a6c49ecef3e79ab10e1a930a4f5e13198d.
+    
+    Allows login accross multiple VMs. Therefore potential cross VM tracking identifier.
+    
+    https://phabricator.whonix.org/T996#20096
+
+commit 729490819e3e5a5eb5de9e64c87c3a993413e67e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Jun 4 11:52:18 2020 -0400
+
+    bumped changelog version
+
 commit 97ff68a6c49ecef3e79ab10e1a930a4f5e13198d
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Jun 4 11:39:36 2020 -0400
