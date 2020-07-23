@@ -1,3 +1,17 @@
+commit 47cf0e376ab4af6a2b9f2165b6e449c2176a3afd
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Jul 23 07:23:22 2020 -0400
+
+    ClientOnionAuthDir /var/lib/tor/authdir
+    
+    https://forums.whonix.org/t/onion-services-authentication/975
+
+commit b5107c02ca50b924377cede22d390dcd31796e39
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 5 09:36:27 2020 -0400
+
+    bumped changelog version
+
 commit 0624ad6c714b5254c72bc1eaae30406ebcf37e48
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Jun 5 09:31:05 2020 -0400
