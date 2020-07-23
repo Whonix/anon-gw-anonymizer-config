@@ -99,6 +99,9 @@ echo "\
 # User configuration should go to /usr/local/etc/torrc.d/50_user.conf, not here.
 # However, deleting this file will be fine since a new plain file will be generated the next time you run $SCRIPTNAME
 
+# Also Whonix package anon-gw-anonymizer-config already ships file
+# /etc/torrc.d/65_gateway.conf which also includes
+# ClientOnionAuthDir /var/lib/tor/authdir
 ClientOnionAuthDir $client_onion_auth_dir
 " | tee "$torconffile" >/dev/null
 

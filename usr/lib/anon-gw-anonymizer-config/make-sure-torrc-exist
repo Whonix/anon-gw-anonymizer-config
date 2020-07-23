@@ -22,6 +22,8 @@
 ## * <code>/usr/local/etc/torrc.d/40_tor_control_panel.conf</code>
 ## * <code>/usr/share/anon-gw-anonymizer-config/user_torrc_template.conf /usr/local/etc/torrc.d/50_user.conf</code>
 ##
+## create folder <code>/var/lib/tor/authdir</code>
+##
 ## with correct access rights from template folder <code>/usr/share/anon-gw-anonymizer-config</code>.
 #### meta end
 
@@ -58,6 +60,15 @@ fi
 if [ ! -e /usr/local/etc/torrc.d/50_user.conf ]; then
    /usr/bin/install -Z -m 00644 -o root -g root -T /usr/share/anon-gw-anonymizer-config/user_torrc_template.conf /usr/local/etc/torrc.d/50_user.conf
 fi
+
+## /etc/torrc.d/65_gateway.conf
+## ClientOnionAuthDir /var/lib/tor/authdir
+[ -n "$tor_user" ] || tor_user="debian-tor"
+[ -n "$tor_group" ] || tor_group="debian-tor"
+[ -n "$tor_dir" ] || tor_dir="/var/lib/tor"
+[ -n "$client_onion_auth_dir" ] || client_onion_auth_dir="${tor_dir}/authdir"
+mkdir -p "$client_onion_auth_dir"
+chown "${tor_user}:${tor_group}" "$client_onion_auth_dir"
 
 ## Fix bug in Whonix 15.0.0.8.9 where anon-connection-wizard added
 ## `%include /etc/torrc.d/95_whonix.conf` to `/etc/tor/torrc` configuration
