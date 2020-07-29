@@ -1,3 +1,27 @@
+commit 4a0f3e7e7697d125d625961d53ae8e2b449ec1de
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jul 29 08:24:11 2020 -0400
+
+    restart/reload anon-gw-anonymizer-config.service first on tor@default restart/reload
+    
+    PartOf=tor@default.service
+    ReloadPropagatedFrom=tor@default.service
+
+commit cfca22e1b64804a9affbdb185c2d60b9ae7b49a3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jul 29 08:21:03 2020 -0400
+
+    restart/reload anon-gw-anonymizer-config.service first on tor restart/reload
+    
+    PartOf=tor.service
+    ReloadPropagatedFrom=tor.service
+
+commit f3e3e71f412fd8bca7d834cb57f0c03643bc9957
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Jul 23 07:24:12 2020 -0400
+
+    bumped changelog version
+
 commit 47cf0e376ab4af6a2b9f2165b6e449c2176a3afd
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Jul 23 07:23:22 2020 -0400
