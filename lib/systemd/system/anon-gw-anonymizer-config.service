@@ -20,6 +20,8 @@ Documentation=https://github.com/Whonix/anon-gw-anonymizer-config
 ConditionPathExists=!/run/qubes/this-is-templatevm
 Before=tor.service
 Before=tor@default.service
+PartOf=tor.service
+ReloadPropagatedFrom=tor.service
 
 [Service]
 Type=oneshot
