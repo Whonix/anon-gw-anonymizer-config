@@ -21,7 +21,9 @@ ConditionPathExists=!/run/qubes/this-is-templatevm
 Before=tor.service
 Before=tor@default.service
 PartOf=tor.service
+PartOf=tor@default.service
 ReloadPropagatedFrom=tor.service
+ReloadPropagatedFrom=tor@default.service
 
 [Service]
 Type=oneshot
