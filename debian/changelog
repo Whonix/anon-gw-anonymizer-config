@@ -1,3 +1,9 @@
+anon-gw-anonymizer-config (3:10.5-1) unstable; urgency=medium
+
+  * New upstream version (local package).
+
+ -- Patrick Schleizer <adrelanos@riseup.net>  Sat, 14 Nov 2020 16:52:50 +0000
+
 anon-gw-anonymizer-config (3:10.4-1) unstable; urgency=medium
 
   * New upstream version (local package).
