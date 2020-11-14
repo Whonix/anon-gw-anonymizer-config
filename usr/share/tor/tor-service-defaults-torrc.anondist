@@ -9,6 +9,8 @@
 ## configuration, which will override the defaults found here.
 ## When this package is updated, this file may be overwritten.
 
+## IP HARDCODED unfortunately.
+
 ###############################
 # Workstation Trans/Dns-Port  #
 ###############################
