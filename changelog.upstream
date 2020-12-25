@@ -1,3 +1,17 @@
+commit 520f232dd68dafd9e66f0c78a37ebc3223d691c0
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Dec 25 07:22:58 2020 -0500
+
+    install no longer no longer required auditd by default
+    
+    https://phabricator.whonix.org/T537
+
+commit c6c9ff020c1f6b07e1767a6aed1c977e740da615
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Nov 14 11:52:50 2020 -0500
+
+    bumped changelog version
+
 commit 75ff19ab66d847c7df86a0e8d105ad473632ae86
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Sat Nov 14 11:52:49 2020 -0500
