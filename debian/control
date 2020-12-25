@@ -14,7 +14,7 @@ Standards-Version: 4.3.0
 Package: anon-gw-anonymizer-config
 Architecture: all
 Depends: helper-scripts, tor, sudo, dist-base-files, adduser,
- auditd, vanguards, ${misc:Depends}
+ vanguards, ${misc:Depends}
 Recommends: onion-grater
 Replaces: ipv4-forward-disable, ipv6-disable, anon-gw-leaktest
 Provides: ${diverted-files}

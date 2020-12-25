@@ -5,3 +5,5 @@ rm_conffile /etc/torrc.d/torrc.examples
 rm_conffile /etc/torrc.d/40_anon_connection_wizard.torrc
 rm_conffile /etc/torrc.d/50_user.torrc
 rm_conffile /etc/torrc.d/95_whonix.torrc
+
+rm_conffile /etc/audit/rules.d/30_anon-gw-anonymizer-config.rules
