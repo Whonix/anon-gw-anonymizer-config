@@ -11,11 +11,15 @@
 ## Tor log parsing command line utility.
 #### meta end
 
-cmd="journalctl -b --no-pager --output cat -u tor.service -u tor@default.service -u vanguards.service"
+cmd="journalctl -b --no-pager --output cat -u tor.service"
+log1="$($cmd)"
 
-log="$($cmd)"
+cmd="cat /run/tor/log"
+log2="$($cmd)"
 
-if [ "$log" = "" ]; then
+cmd="journalctl -b --no-pager --output cat -u vanguards.service"
+log3="$($cmd)"
+if [ "$log3" = "" ]; then
    echo "ERROR: Running command:
 
 $cmd
@@ -32,25 +36,38 @@ Exiting."
    exit 1
 fi
 
+log_full="\
+tor.service:
+
+$log1
+
+/run/tor/log:
+
+$log2
+
+vanguards.service:
+
+$log3"
+
 ## https://www.whonix.org/wiki/Tor#Non-Issues
-log="$(echo "$log" | grep --invert-match "\[notice\] Opening HTTP tunnel listener")"
-log="$(echo "$log" | grep --invert-match "\[notice\] Opened HTTP tunnel listener")"
-log="$(echo "$log" | grep --invert-match "\[notice\] Opened Socks listener")"
-log="$(echo "$log" | grep --invert-match "\[notice\] Opening Socks listener")"
-log="$(echo "$log" | grep --invert-match "\[notice\] Opening DNS listener")"
-log="$(echo "$log" | grep --invert-match "\[notice\] Opened DNS listener")"
-log="$(echo "$log" | grep --invert-match "\[notice\] Opening Transparent pf/netfilter listener")"
-log="$(echo "$log" | grep --invert-match "\[notice\] Opened Transparent pf/netfilter listener")"
-log="$(echo "$log" | grep --invert-match "\[notice\] You configured a non-loopback address")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opening HTTP tunnel listener")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opened HTTP tunnel listener")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opened Socks listener")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opening Socks listener")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opening DNS listener")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opened DNS listener")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opening Transparent pf/netfilter listener")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opened Transparent pf/netfilter listener")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] You configured a non-loopback address")"
 
 ## Use anon-verify instead.
 ## https://www.whonix.org/wiki/Tor#Configuration_Check
-log="$(echo "$log" | grep --invert-match "\[notice\] Read configuration file")"
-log="$(echo "$log" | grep --invert-match "\[notice\] Including configuration file")"
-log="$(echo "$log" | grep --invert-match "\[notice\] Processing configuration path")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Read configuration file")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Including configuration file")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Processing configuration path")"
 
-log="$(echo "$log" | grep --invert-match "\[notice\] Option 'DisableNetwork' used more than once; all but the last value will be ignored.")"
-log="$(echo "$log" | grep --invert-match "\[warn\] Option 'ClientOnionAuthDir' used more than once; all but the last value will be ignored.")"
-log="$(echo "$log" | grep --invert-match "\[warn\] Option 'DisableNetwork' used more than once; all but the last value will be ignored.")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Option 'DisableNetwork' used more than once; all but the last value will be ignored.")"
+log_full="$(echo "$log_full" | grep --invert-match "\[warn\] Option 'ClientOnionAuthDir' used more than once; all but the last value will be ignored.")"
+log_full="$(echo "$log_full" | grep --invert-match "\[warn\] Option 'DisableNetwork' used more than once; all but the last value will be ignored.")"
 
-echo "$log"
+echo "$log_full"
