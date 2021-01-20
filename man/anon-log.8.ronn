@@ -1,0 +1,21 @@
+anon-log(8) -- Tor log parser
+=============================================
+
+<span class="comment">
+# Copyright (C) 2021 - 2021 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+# See the file COPYING for copying conditions.
+</span>
+
+## SYNOPSIS
+`anon-log`
+
+## DESCRIPTION
+anon-log is a user-friendly wrapper around the journalctl in Whonix to view Tor related log entries while filtering out irrelevant log output, non-issues.
+
+## WEB
+https://www.whonix.org/wiki/Tor#Log_Analysis
+
+https://www.whonix.org/wiki/Tor#Non-Issues
+
+## AUTHOR
+This man page has been written by Patrick Schleizer (adrelanos@riseup.net)

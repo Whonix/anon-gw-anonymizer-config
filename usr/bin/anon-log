@@ -1,0 +1,56 @@
+#!/bin/bash
+
+## Copyright (C) 2021 - 2021 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+#### meta start
+#### project Whonix
+#### category tor and usability
+#### gateway_only yes
+#### description
+## Tor log parsing command line utility.
+#### meta end
+
+cmd="journalctl -b --no-pager --output cat -u tor.service -u tor@default.service -u vanguards.service"
+
+log="$($cmd)"
+
+if [ "$log" = "" ]; then
+   echo "ERROR: Running command:
+
+$cmd
+
+failed! This program needs to be run as root:
+
+sudo $0
+
+or this user '$(whoami)' needs to be a member of group 'systemd-journal'.
+
+sudo addgroup $(whoami) systemd-journal
+
+Exiting."
+   exit 1
+fi
+
+## https://www.whonix.org/wiki/Tor#Non-Issues
+log="$(echo "$log" | grep --invert-match "\[notice\] Opening HTTP tunnel listener")"
+log="$(echo "$log" | grep --invert-match "\[notice\] Opened HTTP tunnel listener")"
+log="$(echo "$log" | grep --invert-match "\[notice\] Opened Socks listener")"
+log="$(echo "$log" | grep --invert-match "\[notice\] Opening Socks listener")"
+log="$(echo "$log" | grep --invert-match "\[notice\] Opening DNS listener")"
+log="$(echo "$log" | grep --invert-match "\[notice\] Opened DNS listener")"
+log="$(echo "$log" | grep --invert-match "\[notice\] Opening Transparent pf/netfilter listener")"
+log="$(echo "$log" | grep --invert-match "\[notice\] Opened Transparent pf/netfilter listener")"
+log="$(echo "$log" | grep --invert-match "\[notice\] You configured a non-loopback address")"
+
+## Use anon-verify instead.
+## https://www.whonix.org/wiki/Tor#Configuration_Check
+log="$(echo "$log" | grep --invert-match "\[notice\] Read configuration file")"
+log="$(echo "$log" | grep --invert-match "\[notice\] Including configuration file")"
+log="$(echo "$log" | grep --invert-match "\[notice\] Processing configuration path")"
+
+log="$(echo "$log" | grep --invert-match "\[notice\] Option 'DisableNetwork' used more than once; all but the last value will be ignored.")"
+log="$(echo "$log" | grep --invert-match "\[warn\] Option 'ClientOnionAuthDir' used more than once; all but the last value will be ignored.")"
+log="$(echo "$log" | grep --invert-match "\[warn\] Option 'DisableNetwork' used more than once; all but the last value will be ignored.")"
+
+echo "$log"
