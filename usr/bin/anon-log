@@ -58,7 +58,16 @@ log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opening DNS liste
 log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opened DNS listener")"
 log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opening Transparent pf/netfilter listener")"
 log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opened Transparent pf/netfilter listener")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opening Control listener on /run/tor/control")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Opened Control listener on /run/tor/control")"
+
 log_full="$(echo "$log_full" | grep --invert-match "\[notice\] You configured a non-loopback address")"
+log_full="$(echo "$log_full" | grep --invert-match "opening log file")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Parsing GEOIP IPv4 file /usr/share/tor/geoip.")"
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] Parsing GEOIP IPv6 file /usr/share/tor/geoip6.")"
+
+log_full="$(echo "$log_full" | grep --invert-match "\[notice\] New control connection opened.")"
+log_full="$(echo "$log_full" | grep --invert-match "\[warn\] Socks version 71 not recognized. (This port is not an HTTP proxy; did you want to use HTTPTunnelPort?)")"
 
 ## Use anon-verify instead.
 ## https://www.whonix.org/wiki/Tor#Configuration_Check
