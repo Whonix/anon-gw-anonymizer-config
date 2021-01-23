@@ -1,3 +1,47 @@
+commit 8eacf8c174da6e0acdac19d26ff714561f839f02
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jan 23 02:54:24 2021 -0500
+
+    genmkfile manpages
+
+commit 56be83b84b9533ada66dd6d84105d1184d0cbb93
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jan 23 02:53:58 2021 -0500
+
+    add anon-consensus-delete
+
+commit 5e165f6806f71e7308412f9399b2f5907012105d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 20 06:51:42 2021 -0500
+
+    improve anon-log
+
+commit e57d0671259954a647f9193a515aff0f07fd1ade
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 20 06:45:25 2021 -0500
+
+    improve anon-log
+
+commit b945c9aa89c511672be21209a011d9eda71d6ef9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 20 06:24:25 2021 -0500
+
+    genmkfile manpages
+
+commit 406abc931bc69596f0b1502d37df51b2e1fde964
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jan 20 06:12:59 2021 -0500
+
+    add anon-log
+    
+    anon-log is a user-friendly wrapper around the journalctl in Whonix to view Tor related log entries while filtering out irrelevant log output, non-issues.
+
+commit c35eced67cea4c5f192c0f6d06525c032dc067cc
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Dec 25 07:28:22 2020 -0500
+
+    bumped changelog version
+
 commit 520f232dd68dafd9e66f0c78a37ebc3223d691c0
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Dec 25 07:22:58 2020 -0500
