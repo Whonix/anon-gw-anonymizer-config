@@ -8,7 +8,7 @@
 ## Whonix onion-grater default configuration file.
 ##
 ## TODO: would be cleaner to split this file and to move snippets to covered
-## applications sdwdate, whonixcheck and tb-starter.
+## applications sdwdate, systemcheck and tb-starter.
 #### meta end
 
 ---

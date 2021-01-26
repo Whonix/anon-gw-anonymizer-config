@@ -111,7 +111,7 @@ function generate_report() {
    echo "\\===================================================================/"
    echo "$tor_verify_config_output"
 
-   ## TODO: $anon_verify_report_html is used by whonixcheck
+   ## TODO: $anon_verify_report_html is used by systemcheck
    ## we need to find a way to merge it with $anon_verify_report
    tor_verify_config_output_html="$(/usr/lib/msgcollector/br_add "$tor_verify_config_output")"
    anon_verify_report_html="<p>Tor Config Check Result:

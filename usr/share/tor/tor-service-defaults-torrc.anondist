@@ -72,7 +72,7 @@ DnsPort 10.152.152.10:5300 IsolateDestPort
 # SOCKS_PORT_GIT="9107"
 # SOCKS_PORT_SDWDATE="9108"
 # SOCKS_PORT_WGET="9109"
-# SOCKS_PORT_WHONIXCHECK="9110"
+# SOCKS_PORT_SYSTEMCHECK="9110"
 # SOCKS_PORT_BITCOIN="9111"
 # SOCKS_PORT_PRIVOXY="9112"
 # SOCKS_PORT_POLIPO="9113"
@@ -145,7 +145,7 @@ SocksPort 10.152.152.10:9108 IsolateDestAddr IsolateDestPort
 # expected.
 SocksPort 10.152.152.10:9109 IsolateDestAddr IsolateDestPort
 
-# whonixcheck
+# systemcheck
 # Only connects to https://check.torproject.org and checks IP
 # and Tor Browser version.
 # Only one server and only one port.
