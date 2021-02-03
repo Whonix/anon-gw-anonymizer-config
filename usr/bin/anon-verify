@@ -14,7 +14,7 @@
 
 SCRIPTNAME="$(basename "$BASH_SOURCE")"
 
-## parse_cmd_options is based on code in whonix_repository by Patrick
+## parse_cmd_options is based on code in repository-dist by Patrick
 parse_cmd_options() {
    ## Thanks to:
    ## http://mywiki.wooledge.org/BashFAQ/035
