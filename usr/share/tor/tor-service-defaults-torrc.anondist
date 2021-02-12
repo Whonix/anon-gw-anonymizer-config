@@ -74,16 +74,16 @@ DnsPort 10.152.152.10:5300 IsolateDestPort
 # SOCKS_PORT_WGET="9109"
 # SOCKS_PORT_SYSTEMCHECK="9110"
 # SOCKS_PORT_BITCOIN="9111"
-# SOCKS_PORT_PRIVOXY="9112"
-# SOCKS_PORT_POLIPO="9113"
+## 9112
+## 9113
 # SOCKS_PORT_WHONIX_NEWS="9114"
 # SOCKS_PORT_TBB_DOWNLOAD="9115"
-# SOCKS_PORT_TBB_GPG="9116"
+## 9116
 # SOCKS_PORT_CURL="9117"
 # SOCKS_PORT_RSS="9118"
-# SOCKS_PORT_TORCHAT="9119"
-# SOCKS_PORT_MIXMASTERUPDATE="9120"
-# SOCKS_PORT_MIXMASTER="9121"
+## 9119
+## 9120
+## 9121
 # SOCKS_PORT_KDE="9122"
 # SOCKS_PORT_GNOME="9123"
 # SOCKS_PORT_APTITUDE="9124"
@@ -159,19 +159,8 @@ SocksPort 10.152.152.10:9110 IsolateDestAddr IsolateDestPort
 # hurt if they get through the same circuit.
 SocksPort 10.152.152.10:9111
 
-# http to socks converter: privoxy
-# Not in use for anything preinstalled.
-# Not using IsolateDestAddr IsolateDestPort for the same reasons
-# as mentioned under Web: Tor Browser.
-# Only used for Thunderbird with TorBirdy, which is not
-# preinstalled.
-SocksPort 10.152.152.10:9112
-
-# http to socks converter: polipo
-# Not in use for anything preinstalled.
-# Not using IsolateDestAddr IsolateDestPort for the same reasons
-# as mentioned under Web: Tor Browser.
-SocksPort 10.152.152.10:9113
+#SocksPort 10.152.152.10:9112
+#SocksPort 10.152.152.10:9113
 
 # Whonix news download
 # Only connects to the Whonix homepage and downloads a small file with
@@ -188,12 +177,7 @@ SocksPort 10.152.152.10:9114 IsolateDestAddr IsolateDestPort
 # but add it anyway to have less exceptions.
 SocksPort 10.152.152.10:9115 IsolateDestAddr IsolateDestPort
 
-# Tor Browser gpg public key download
-# Rarely used.
-# Only one server and only one port.
-# Would be fine without IsolateDestAddr IsolateDestPort,
-# but add it anyway to have less exceptions.
-SocksPort 10.152.152.10:9116 IsolateDestAddr IsolateDestPort
+#SocksPort 10.152.152.10:9116
 
 # Curl
 # Only manually and by very few applications used. Should not
@@ -206,25 +190,11 @@ SocksPort 10.152.152.10:9117 IsolateDestAddr IsolateDestPort
 # Few users expected to add their own feeds.
 SocksPort 10.152.152.10:9118 IsolateDestAddr IsolateDestPort
 
-# TorChat
-# Not using IsolateDestAddr or IsolateDestPort, because upstream
-# TorChat also does not do it. Since it only connects to
-# hidden services it would perhaps not make a difference anyway.
-SocksPort 10.152.152.10:9119
+#SocksPort 10.152.152.10:9119
 
-# mixmaster-update
-# Few users expected to use it.
-# Since it only connects to one or very few servers using
-# IsolateDestAddr IsolateDestPort.
-SocksPort 10.152.152.10:9120 IsolateDestAddr IsolateDestPort
+#SocksPort 10.152.152.10:9120
 
-# mixmaster
-# This port is currently not in use. See Whonix mixmaster integration.
-# https://www.whonix.org/wiki/Dev/Mixmaster
-# Few users expected to use it.
-# Since it only connects to one or very few servers using
-# IsolateDestAddr IsolateDestPort.
-SocksPort 10.152.152.10:9121 IsolateDestAddr IsolateDestPort
+#SocksPort 10.152.152.10:9121
 
 # KDE application wide proxy.
 # Not using IsolateDestAddr or IsolateDestPort, because also browsers
@@ -259,15 +229,10 @@ SocksPort 10.152.152.10:9125
 # https://trac.torproject.org/projects/tor/ticket/3455
 SocksPort 10.152.152.10:9150 IPv6Traffic PreferIPv6 KeepAliveIsolateSOCKSAuth ExtendedErrors
 
-# Tor Messenger's default port
-# This port gets used if someone uses the default Tor Messenger.
-# (anon-ws-disable-stacked-tor runs on Workstation and forwards connections from
-#  127.0.0.1:9152 to 10.152.152.10:9152.)
-SocksPort 10.152.152.10:9152 IsolateDestAddr IsolateDestPort
-
 # Custom Ports #1:
 # without IsolateDestAddr
 # without IsolateDestPort
+SocksPort 10.152.152.10:9152
 SocksPort 10.152.152.10:9153
 SocksPort 10.152.152.10:9154
 SocksPort 10.152.152.10:9155
