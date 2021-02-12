@@ -102,13 +102,13 @@ SocksPort 10.152.152.10:9100
 # so they can use one circuit per server.
 SocksPort 10.152.152.10:9101 IsolateDestAddr IsolateDestPort
 
-# Mail: Thunderbird with TorBirdy
-# Not preinstalled.
+# Mail: Thunderbird (previously with TorBirdy)
+# (Mentioning TorBirdy so this can be discovered through search.)
 # Not used by too many people. Most users do not connect to
 # too many servers.
 SocksPort 10.152.152.10:9102 IsolateDestAddr IsolateDestPort
 
-# Instant Messenger
+# Instant Messenger (IM)
 # People are normally not connected to too many IM servers,
 # so they can use one circuit per server.
 SocksPort 10.152.152.10:9103 IsolateDestAddr IsolateDestPort
@@ -135,7 +135,7 @@ SocksPort 10.152.152.10:9106 IsolateDestAddr IsolateDestPort
 # too many servers.
 SocksPort 10.152.152.10:9107 IsolateDestAddr IsolateDestPort
 
-# Network Time Synchronization
+# sdwdate Network Time Synchronization
 # There are only three different connections.
 SocksPort 10.152.152.10:9108 IsolateDestAddr IsolateDestPort
 
@@ -146,14 +146,13 @@ SocksPort 10.152.152.10:9108 IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9109 IsolateDestAddr IsolateDestPort
 
 # systemcheck
-# Only connects to https://check.torproject.org and checks IP
-# and Tor Browser version.
+# Only connects to https://check.torproject.org and checks IP.
 # Only one server and only one port.
 # Would be fine without IsolateDestAddr IsolateDestPort,
 # but add it anyway to have less exceptions.
 SocksPort 10.152.152.10:9110 IsolateDestAddr IsolateDestPort
 
-# BitCoin
+# Bitcoin electrum wallet
 # Not using IsolateDestAddr IsolateDestPort.
 # Makes too many connections to different servers. Should not
 # hurt if they get through the same circuit.
@@ -186,8 +185,6 @@ SocksPort 10.152.152.10:9115 IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9117 IsolateDestAddr IsolateDestPort
 
 # RSS
-# By default only for the Whonix Blog and for the torproject.org blog.
-# Few users expected to add their own feeds.
 SocksPort 10.152.152.10:9118 IsolateDestAddr IsolateDestPort
 
 #SocksPort 10.152.152.10:9119
