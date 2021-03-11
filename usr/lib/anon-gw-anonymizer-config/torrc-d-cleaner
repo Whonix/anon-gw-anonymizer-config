@@ -16,13 +16,13 @@
 set -e
 set -o pipefail
 
-trap error_handler ERR
-
 error_handler() {
    local exit_code="$?"
    echo "$0 ERROR: exit_code: $exit_code | BASH_COMMAND: $BASH_COMMAND"
    exit 1
 }
+
+trap error_handler ERR
 
 shopt -s nullglob
 shopt -s dotglob
