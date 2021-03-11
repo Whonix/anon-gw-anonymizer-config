@@ -1,3 +1,39 @@
+commit f7e0284b92760c4765a7767e3b4ffb3477fcd202
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Mar 11 13:24:57 2021 -0500
+
+    output
+
+commit 231f008895a00d7a94ac0ade635b70c9a53c2625
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Mar 11 13:23:36 2021 -0500
+
+    show output of `debsums -ce | grep torrc` during postinst
+
+commit 1e035d0dac02f32f974ad0c787e69f4116a28609
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Mar 11 12:58:11 2021 -0500
+
+    refactoring
+
+commit 97baabc4b71abf6395ef0d1815cd63e74b7da050
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Mar 11 12:57:10 2021 -0500
+
+    /usr/lib/anon-gw-anonymizer-config/torrc-d-cleaner: fix
+    
+    Avoid moving
+    `/etc/torrc.d/95_whonix.conf`
+    to
+    `/etc/torrc.d/backup/95_whonix.conf.dpkg-new`
+    during `anon-gw-anonymizer-config` package upgrades.
+
+commit 4845ebd87d58c30b1ff51366439121a4e63bdddb
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Feb 15 09:23:13 2021 -0500
+
+    bumped changelog version
+
 commit 61d52e17e0a6f1501a5e0804baa5954c9859f5d7
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Mon Feb 15 09:23:12 2021 -0500
