@@ -46,6 +46,15 @@ for file_name in /etc/torrc.d/* /usr/local/etc/torrc.d/* ; do
       true "good: $file_name"
       continue
    fi
+   ## Avoid moving
+   ## /etc/torrc.d/95_whonix.conf
+   ## to
+   ## /etc/torrc.d/backup/95_whonix.conf.dpkg-new
+   ## during anon-gw-anonymizer-config package upgrades.
+   if [ "$file_extension" = "dpkg-new" ]; then
+      echo "INFO: dpkg-new file found: $file_name"
+      continue
+   fi
    true "extraneous: $file_name"
    dir_name="${file_name%/*}"
    mkdir -p "${dir_name}/backup"
