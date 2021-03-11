@@ -24,6 +24,8 @@ error_handler() {
 
 trap error_handler ERR
 
+echo "$0 INFO: start."
+
 shopt -s nullglob
 shopt -s dotglob
 
