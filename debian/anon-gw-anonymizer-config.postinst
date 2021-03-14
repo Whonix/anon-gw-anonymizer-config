@@ -77,11 +77,12 @@ true "INFO: debhelper beginning here."
 
 true "INFO: Done with debhelper."
 
-debsums_output="$(debsums -ce | grep torrc)" || true
-if [ ! "$debsums_output" = "" ]; then
-    echo "$0: INFO: output of command 'debsums -ce | grep torrc':"
-    echo "$debsums_output"
-fi
+## Too slow.
+# debsums_output="$(debsums -ce | grep torrc)" || true
+# if [ ! "$debsums_output" = "" ]; then
+#     echo "$0: INFO: output of command 'debsums -ce | grep torrc':"
+#     echo "$debsums_output"
+# fi
 
 true "
 #####################################################################
