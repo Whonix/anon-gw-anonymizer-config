@@ -1,3 +1,15 @@
+commit 9665b4936d94e53265b600b86fb7dc520470464d
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Mar 14 06:20:50 2021 -0400
+
+    disable debsums during postinst since too slow
+
+commit 1804e44c6951b69a0daed46967335f6d6bad79c0
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Mar 11 16:48:54 2021 -0500
+
+    bumped changelog version
+
 commit 89da9639fac2b71a0766e2ea2336d50966031a19
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Thu Mar 11 16:48:36 2021 -0500
