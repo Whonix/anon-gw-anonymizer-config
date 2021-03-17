@@ -2,7 +2,7 @@ anon-info(8) -- shows Tor apt repository status and Tor package version
 =============================================
 
 <span class="comment">
-# Copyright (C) 2012 - 2020 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+# Copyright (C) 2012 - 2021 ENCRYPTED SUPPORT LP <adrelanos@whonix.org>
 # See the file COPYING for copying conditions.
 </span>
 
@@ -14,4 +14,4 @@ Shows non-comment deb lines in /etc/apt/sources.list.d/ and the version
 number of the 'tor' package.
 
 ## AUTHOR
-This man page has been written by Patrick Schleizer (adrelanos@riseup.net).
+This man page has been written by Patrick Schleizer (adrelanos@whonix.org).

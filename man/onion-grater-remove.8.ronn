@@ -2,7 +2,7 @@ onion-grater-remove(8) -- remove onion-grater profile form onion-grater configur
 =============================================
 
 <span class="comment">
-# Copyright (C) 2012 - 2020 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+# Copyright (C) 2012 - 2021 ENCRYPTED SUPPORT LP <adrelanos@whonix.org>
 # See the file COPYING for copying conditions.
 </span>
 
@@ -21,4 +21,4 @@ Folder `/etc/onion-grater-merger.d/` is ignored.
 `sudo onion-grater-remove onionshare`
 
 ## AUTHOR
-This man page has been written by Patrick Schleizer (adrelanos@riseup.net).
+This man page has been written by Patrick Schleizer (adrelanos@whonix.org).

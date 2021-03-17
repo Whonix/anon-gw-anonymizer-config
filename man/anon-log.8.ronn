@@ -2,7 +2,7 @@ anon-log(8) -- Tor log parser
 =============================================
 
 <span class="comment">
-# Copyright (C) 2021 - 2021 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+# Copyright (C) 2021 - 2021 ENCRYPTED SUPPORT LP <adrelanos@whonix.org>
 # See the file COPYING for copying conditions.
 </span>
 
@@ -18,4 +18,4 @@ https://www.whonix.org/wiki/Tor#Log_Analysis
 https://www.whonix.org/wiki/Tor#Non-Issues
 
 ## AUTHOR
-This man page has been written by Patrick Schleizer (adrelanos@riseup.net)
+This man page has been written by Patrick Schleizer (adrelanos@whonix.org)

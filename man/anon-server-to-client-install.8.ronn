@@ -2,7 +2,7 @@ anon-server-to-client-install(8) -- Tor Authenticated Onion Service ".auth_priva
 =============================================
 
 <span class="comment">
-# Copyright (C) 2019 - 2020 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+# Copyright (C) 2019 - 2021 ENCRYPTED SUPPORT LP <adrelanos@whonix.org>
 # See the file COPYING for copying conditions.
 </span>
 
@@ -33,4 +33,4 @@ By default copies `/home/user/1.auth_private` to
 `sudo sourcefile=~/user.auth_private anon-server-to-client-install`
 
 ## AUTHOR
-This man page has been written by Patrick Schleizer (adrelanos@riseup.net).
+This man page has been written by Patrick Schleizer (adrelanos@whonix.org).
