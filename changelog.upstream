@@ -1,3 +1,33 @@
+commit 57e1b3a3678b3026a2ab30b031f42f4ca7f4f173
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Apr 7 18:28:57 2021 -0400
+
+    reload apparmor profiles after installation
+    
+    to make package work after installation
+    
+    no longer requiring reboot
+
+commit 3242a0fc37b24847a6168cd7563af9ab582dbb4a
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Apr 7 16:44:34 2021 -0400
+
+    part of fixing meek lite in Whonix
+    
+    add /usr/lib/anon-gw-anonymizer-config/edit-etc-resolv-conf
+    
+    https://forums.whonix.org/t/censorship-circumvention-tor-pluggable-transports/2601/9
+    
+    https://forums.whonix.org/t/whonix-gateway-cli-15-0-1-5-4-meek-azure-bridge-tls-error/11383
+    
+    Thanks to @Bl3ckJ4ck for the bug report!
+
+commit 74ad7f44fde4094c895d2c42c4e2d7cea96b4804
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Mar 18 08:59:20 2021 -0400
+
+    bumped changelog version
+
 commit cd05f7d30a4109fb0415ef77ab2f5a9dc2b64797
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Thu Mar 18 08:57:17 2021 -0400
