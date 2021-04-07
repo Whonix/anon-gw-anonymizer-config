@@ -8,6 +8,11 @@
 %:
 	dh $@ --with=config-package
 
+override_dh_install:
+	dh_apparmor --profile-name=system_tor
+	dh_apparmor --profile-name=usr.bin.obfsproxy
+	dh_install
+
 override_dh_installman:
 	dh_installman $(CURDIR)/auto-generated-man-pages/*
 
