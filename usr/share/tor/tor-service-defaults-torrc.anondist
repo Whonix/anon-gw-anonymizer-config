@@ -9,7 +9,15 @@
 ## configuration, which will override the defaults found here.
 ## When this package is updated, this file may be overwritten.
 
+#### meta start
+#### project Whonix
+#### category tor and networking
+#### gateway_only yes
+#### description
+## Tor settings for Workstation: `SocksPort`s, `TransPort`,
+## `DnsPort`, `HTTPTunnelPort`s and stream isolation settings.
 ## IP HARDCODED unfortunately.
+#### meta end
 
 ###############################
 # Workstation Trans/Dns-Port  #
