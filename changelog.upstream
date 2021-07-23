@@ -1,3 +1,25 @@
+commit b35428a33f790b60fda382658eb85f2062f2622e
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Jul 23 05:35:30 2021 -0400
+
+    actually `ControlPort 9052`
+
+commit 8648d8ad040d965f8018b542b033e3c6bcf8e498
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Jul 23 05:34:10 2021 -0400
+
+    `ControlPort 9052`
+    
+    Required for onion-grater updates.
+    
+    https://gitlab.torproject.org/tpo/core/tor/-/issues/25173
+
+commit bcaf2266858070a27d50c23955c111d8f2bf4034
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed May 5 08:31:07 2021 -0400
+
+    bumped changelog version
+
 commit 83af7c4a09d1309ddb0c01ca3d621d5a838cb328
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Wed May 5 08:27:00 2021 -0400
