@@ -1,10 +1,10 @@
 anon-server-to-client-install(8) -- Tor Authenticated Onion Service ".auth_private" file (private key) Server to Client Installer
 =============================================
 
-<span class="comment">
+<!--
 # Copyright (C) 2019 - 2021 ENCRYPTED SUPPORT LP <adrelanos@whonix.org>
 # See the file COPYING for copying conditions.
-</span>
+-->
 
 ## SYNOPSIS
 `variable=content anon-server-to-client-install`
