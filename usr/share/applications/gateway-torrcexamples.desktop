@@ -12,7 +12,7 @@
 
 [Desktop Entry]
 Type=Application
-Exec=/usr/lib/gateway-shortcuts/torrcexamples
+Exec=/usr/libexec/gateway-shortcuts/torrcexamples
 Name=Tor Examples
 GenericName=Tor Configuration Examples
 Comment=Show Tor options

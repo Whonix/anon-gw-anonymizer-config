@@ -12,7 +12,7 @@
 
 [Desktop Entry]
 Type=Application
-Exec=/usr/libexec/helper-scripts/terminal-wrapper /usr/lib/gateway-shortcuts/stoptor
+Exec=/usr/libexec/helper-scripts/terminal-wrapper /usr/libexec/gateway-shortcuts/stoptor
 Name=Stop Tor
 GenericName=Stop Tor
 Comment=Stop Tor

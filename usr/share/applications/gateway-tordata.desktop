@@ -8,12 +8,12 @@
 #### description
 ## desktop file
 ## Tor Data - Open /var/lib/tor folder in file manager
-## <code>/usr/lib/gateway-shortcuts/tordata</code>
+## <code>/usr/libexec/gateway-shortcuts/tordata</code>
 #### meta end
 
 [Desktop Entry]
 Type=Application
-Exec=/usr/lib/gateway-shortcuts/tordata
+Exec=/usr/libexec/gateway-shortcuts/tordata
 Name=Tor Data
 GenericName=Tor Data
 Comment=Open /var/lib/tor folder in file manager
