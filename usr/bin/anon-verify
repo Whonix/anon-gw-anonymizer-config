@@ -113,7 +113,7 @@ function generate_report() {
 
    ## TODO: $anon_verify_report_html is used by systemcheck
    ## we need to find a way to merge it with $anon_verify_report
-   tor_verify_config_output_html="$(/usr/lib/msgcollector/br_add "$tor_verify_config_output")"
+   tor_verify_config_output_html="$(/usr/libexec/msgcollector/br_add "$tor_verify_config_output")"
    anon_verify_report_html="<p>Tor Config Check Result:
 <br></br><b>Your Tor config files contain at least one error.</b></p>
 
