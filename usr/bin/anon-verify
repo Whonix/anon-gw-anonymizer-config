@@ -143,7 +143,7 @@ $start_menu_instructions_system_first_part Terminal
 
    ## torrc-parser will grep the invalid option for user and specify
    ## which file is corrupted for better fixing suggestion
-   source /usr/lib/anon-gw-anonymizer-config/torrc-parser
+   source /usr/libexec/anon-gw-anonymizer-config/torrc-parser
 
    ## extract default_torrc file and -f torrc file
    if [[ "$tor_start_command" =~ (--defaults-torrc )([^ ]*) ]]; then

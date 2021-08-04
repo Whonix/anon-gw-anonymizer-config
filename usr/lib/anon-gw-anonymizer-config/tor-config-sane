@@ -3,5 +3,5 @@
 ## Copyright (C) 2020 - 2021 ENCRYPTED SUPPORT LP <adrelanos@whonix.org>
 ## See the file COPYING for copying conditions.
 
-/usr/lib/anon-gw-anonymizer-config/make-sure-torrc-exist
-/usr/lib/anon-gw-anonymizer-config/torrc-d-cleaner
+/usr/libexec/anon-gw-anonymizer-config/make-sure-torrc-exist
+/usr/libexec/anon-gw-anonymizer-config/torrc-d-cleaner
