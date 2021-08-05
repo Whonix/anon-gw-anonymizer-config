@@ -1,3 +1,69 @@
+commit 0311c382dc74ec25eb777dbac0917829cbdc358a
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 4 15:04:38 2021 -0400
+
+    lintian FHS
+
+commit ac262118ab2dd3982a2f642b9706dd08c2faaff6
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 4 15:03:58 2021 -0400
+
+    lintian FHS
+
+commit df71a2ef5e8152ce9e1cb0e09b883615848207bd
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 4 14:54:38 2021 -0400
+
+    lintian FHS
+
+commit a379633a894d0f61d4adcfda6415df7f30195d6b
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 4 14:54:09 2021 -0400
+
+    lintian FHS
+
+commit 48daa4c8e6e8341323e87ed8804f62e15d2b7fa4
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 4 06:42:11 2021 -0400
+
+    move /usr/lib/msgcollector to /usr/libexec/msgcollector as per lintian FHS
+
+commit 2503701404c7caa5f87ace2fe70b5df418ac7b1e
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Aug 3 12:48:50 2021 -0400
+
+    move /usr/lib/helper-scripts and /usr/lib/curl-scripts to /usr/libexec/helper-scripts as per lintian FHS
+
+commit b8beae11f260f0b80dfed7dc8e3eb66316956ec9
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Aug 3 11:47:31 2021 -0400
+
+    re-generate man pages (generated using "genmkfile manpages")
+
+commit c95a91c53a52b175cbbe95baba7568cb75b41e04
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Aug 3 11:41:26 2021 -0400
+
+    man page
+
+commit b91ae0a34dff0603c323444b774f66ad40f79ccc
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Aug 3 05:48:15 2021 -0400
+
+    bullseye
+
+commit f38183132bd74c011635bf1a85eea7d526b8da5e
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Aug 1 16:24:16 2021 -0400
+
+    readme
+
+commit 48c4e4189eadcdca688d21c40fe0a90294a21fc0
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Jul 23 06:49:20 2021 -0400
+
+    bumped changelog version
+
 commit b35428a33f790b60fda382658eb85f2062f2622e
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Fri Jul 23 05:35:30 2021 -0400
