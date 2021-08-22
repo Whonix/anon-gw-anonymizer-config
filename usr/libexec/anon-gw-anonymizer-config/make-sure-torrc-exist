@@ -83,6 +83,6 @@ replace="%include /etc/torrc.d/"
 
 file_name="/etc/tor/torrc"
 
-str_replace "$search" "$replace" "$file_name"
+LANG=C str_replace "$search" "$replace" "$file_name"
 
 true $?
