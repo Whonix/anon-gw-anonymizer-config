@@ -1,3 +1,15 @@
+commit a4977845b00c43253bbcd7972bf91ddf88497f0f
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Sep 23 10:16:36 2021 -0400
+
+    moved anon-consensus-delete to helper-scripts (as anon-consensus-del)
+
+commit b0490ad34cde3ca9350d625f641e6fff1fb0ca19
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Sep 11 18:30:41 2021 -0400
+
+    bumped changelog version
+
 commit 0a2cc618c7cb993515018d6126fbc9d3a23835a6
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Sat Sep 11 16:31:03 2021 -0400
