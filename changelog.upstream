@@ -1,3 +1,21 @@
+commit 822fe4e4f79dc9f0a3b24ce8a78d6908edbc5985
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Jan 2 05:45:39 2022 -0500
+
+    fix onion-grater-remove
+
+commit af6ae453c1423cc66a038da7a331e43b525e8a20
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Nov 9 14:32:27 2021 -0500
+
+    readme
+
+commit ff1cca0ad4fb3464365df895edba0ee1fabdd9ee
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Sep 23 10:58:35 2021 -0400
+
+    bumped changelog version
+
 commit a4977845b00c43253bbcd7972bf91ddf88497f0f
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Thu Sep 23 10:16:36 2021 -0400
