@@ -36,6 +36,10 @@ fi
 
 if [ -f "/usr/local/etc/onion-grater-merger.d/${profile_name}.yml" ]; then
    profile_file_target="/usr/local/etc/onion-grater-merger.d/${profile_name}.yml"
+   if unlink "$profile_file_target" &>/dev/null ; then
+      removed=true
+      echo "OK: Removed profile_file_target: '$profile_file_target'."
+   fi
 else
    for file_name in "/usr/local/etc/onion-grater-merger.d/"*"_${profile_name}.yml" ; do
       profile_file_target="$file_name"
