@@ -16,5 +16,5 @@ Name=Nyx - Status Monitor for Tor
 GenericName=Status Monitor for Tor (Nyx)
 Comment=Status Monitor for Tor (Nyx)
 Categories=System
-Icon=/usr/share/icons/anon-icon-pack/arm.ico
+Icon=/usr/share/icons/anon-icon-pack/nyx.ico
 Keywords=system;tor;controller;Arm;Nyx;
