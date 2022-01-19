@@ -1,5 +1,5 @@
 ## usr/libexec/helper-scripts/terminal-wrapper gets by helper-scripts
-anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-arm.desktop usr/libexec/helper-scripts/terminal-wrapper
+anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-nyx.desktop usr/libexec/helper-scripts/terminal-wrapper
 anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-reloadtor.desktop usr/libexec/helper-scripts/terminal-wrapper
 anon-gw-anonymizer-config: desktop-command-not-in-package usr/share/applications/gateway-stoptor.desktop usr/libexec/helper-scripts/terminal-wrapper
 
