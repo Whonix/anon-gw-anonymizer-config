@@ -1,3 +1,21 @@
+commit 2ee2f10eb0115f6b49d6c10df33b35ef9c1db12d
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Jan 19 07:55:37 2022 -0500
+
+    arm -> nyx
+
+commit 531ed3602fb0df5ed159e6eed32726ea0c30bf9a
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Jan 19 07:54:40 2022 -0500
+
+    lintian
+
+commit d37cdaf3357619784a9e7bb23b1afd8074611850
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Jan 19 07:51:52 2022 -0500
+
+    bumped changelog version
+
 commit 0ac977c2ba3b636ed8402e2bf76b3214276bec3a
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Wed Jan 19 07:45:55 2022 -0500
