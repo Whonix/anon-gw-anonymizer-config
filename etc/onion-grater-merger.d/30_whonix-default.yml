@@ -34,6 +34,8 @@
   confs:
     __owningcontrollerprocess:
   events:
+    STREAM:
+      suppress: true
     SIGNAL:
       suppress: true
     CONF_CHANGED:
