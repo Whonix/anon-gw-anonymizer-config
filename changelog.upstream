@@ -1,3 +1,24 @@
+commit 39f623f968bb1e143e3c402f008e7c0f7b71a817
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Feb 10 13:58:57 2022 -0500
+
+    fix Tor Browser 11.06 - New Identity function error message
+    
+    suppressed subscription to event 'STREAM
+    
+    related to:
+    https://www.whonix.org/wiki/Tor_Browser#New_Tor_Circuit_Function
+    
+    Thanks to @torjunkie to the bug report!
+    
+    https://forums.whonix.org/t/tb-v11-06-new-identity-function-error-message/13326
+
+commit 59e5d82385062fa827aa4191911cdd6e928c3231
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Jan 19 07:58:33 2022 -0500
+
+    bumped changelog version
+
 commit 2ee2f10eb0115f6b49d6c10df33b35ef9c1db12d
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Wed Jan 19 07:55:37 2022 -0500
