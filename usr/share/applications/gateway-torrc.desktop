@@ -17,5 +17,5 @@ Name=Tor User Config
 GenericName=Torrc
 Comment=Open /usr/local/etc/torrc.d/50_user.conf configuration file in editor
 Categories=System
-Icon=/usr/share/icons/anon-icon-pack/text_x_makefile.ico
+Icon=/usr/share/icons/icon-pack-dist/text_x_makefile.ico
 Keywords=system;tor;

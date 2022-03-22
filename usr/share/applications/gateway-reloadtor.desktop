@@ -17,5 +17,5 @@ Name=Reload Tor
 GenericName=Reload Tor
 Comment=Reload Tor
 Categories=System
-Icon=/usr/share/icons/anon-icon-pack/power_restart.ico
+Icon=/usr/share/icons/icon-pack-dist/power_restart.ico
 Keywords=system;tor;

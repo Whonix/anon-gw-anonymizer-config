@@ -17,5 +17,5 @@ Name=Stop Tor
 GenericName=Stop Tor
 Comment=Stop Tor
 Categories=System
-Icon=/usr/share/icons/anon-icon-pack/Saki-NuoveXT-2-Actions-stop.ico
+Icon=/usr/share/icons/icon-pack-dist/Saki-NuoveXT-2-Actions-stop.ico
 Keywords=system;tor;

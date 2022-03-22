@@ -17,5 +17,5 @@ Name=Tor Examples
 GenericName=Tor Configuration Examples
 Comment=Show Tor options
 Categories=System
-Icon=/usr/share/icons/anon-icon-pack/text_x_makefile.ico
+Icon=/usr/share/icons/icon-pack-dist/text_x_makefile.ico
 Keywords=system;tor;
