@@ -2,7 +2,7 @@ onion-grater-remove(8) -- remove onion-grater profile form onion-grater configur
 =============================================
 
 <!--
-# Copyright (C) 2012 - 2021 ENCRYPTED SUPPORT LP <adrelanos@whonix.org>
+# Copyright (C) 2012 - 2022 ENCRYPTED SUPPORT LP <adrelanos@whonix.org>
 # See the file COPYING for copying conditions.
 -->
 
