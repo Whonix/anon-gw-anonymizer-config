@@ -1,3 +1,25 @@
+commit 3dd761b7a745496e9ad27ef4b8275262175aa1a6
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri May 27 11:07:34 2022 -0400
+
+    only `%include` config files ending with `*.conf`
+    
+    https://www.whonix.org/wiki/Dev/Tor
+
+commit 0c083154890edf39829ab9038ba5d556f4295395
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri May 27 11:04:45 2022 -0400
+
+    cleanup, remove workaround for old bug
+    
+    https://forums.whonix.org/t/configuring-onion-service/9042
+
+commit 3d9ba1f191963748bc38469357b536b2cfdd5495
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri May 27 10:56:05 2022 -0400
+
+    bumped changelog version
+
 commit e8189b7b9cf72eae1d6dcffd863edd4eb8a79ec1
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Fri May 27 10:54:34 2022 -0400
