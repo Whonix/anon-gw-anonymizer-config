@@ -1,3 +1,17 @@
+commit 032aedbdba67fcf2697d946afdf2c980957bba0b
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri May 27 10:23:55 2022 -0400
+
+    workaround for Tor Duplicate Config File Restart Bug
+    
+    https://www.whonix.org/wiki/Dev/Tor#Tor_Duplicate_Config_File_Restart_Bug
+
+commit 3b3ad2c9aa74e5c3c1a11bc85526d0391af8e291
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed May 25 06:07:36 2022 -0400
+
+    bumped changelog version
+
 commit e88aadb71a63a6e4e5d2f2fb138bcbae798adaaf
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Fri May 20 15:27:13 2022 -0400
