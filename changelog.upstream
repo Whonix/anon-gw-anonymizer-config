@@ -1,3 +1,24 @@
+commit decc367b9412c6171a18a496744353637353cc8c
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri May 27 12:59:35 2022 -0400
+
+    remove torrc-d-cleaner
+    
+    since no longer required because Tor now has wildcard support
+    and is configured to parse config files ending with `*.conf` only.
+
+commit 827c46e6ec1899ca78200ca626961ebb9aa1e914
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri May 27 12:53:48 2022 -0400
+
+    run repair-torrc from tor-config-sane
+
+commit b96e06df7152c19756744f06e0e7aee1fd94a2f6
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri May 27 12:36:36 2022 -0400
+
+    bumped changelog version
+
 commit 3dd761b7a745496e9ad27ef4b8275262175aa1a6
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Fri May 27 11:07:34 2022 -0400
