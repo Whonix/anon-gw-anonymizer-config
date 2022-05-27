@@ -55,6 +55,28 @@ for file_name in /etc/torrc.d/* /usr/local/etc/torrc.d/* ; do
    ## during anon-gw-anonymizer-config package upgrades.
    if [ "$file_extension" = "dpkg-new" ]; then
       echo "INFO: dpkg-new file found: $file_name"
+
+      ## workaround for:
+      ## https://www.whonix.org/wiki/Dev/Tor#Tor_Duplicate_Config_File_Restart_Bug
+      ## Only wait once up to 60 seconds.
+      ## Do not wait 60 seconds for every dpkg-new file.
+      if [ ! "$dpkg_new_file_found_try_to_wait" = "true" ]; then
+         max_wait=60
+         for (( i=1 ; i<=$max_wait ; i++)) ; do
+            if test -f "$file_name" ; then
+               echo "INFO: waiting for dpkg-new file to vanish $i / $max_wait..."
+               sleep 1
+            else
+               echo "INFO: dpkg-new file to vanished, ok."
+               break
+            fi
+         done
+         if test -f "$file_name" ; then
+            echo "INFO: dpkg-new still exists. Therefore Tor restart will probably fail."
+         fi
+      fi
+
+      dpkg_new_file_found_try_to_wait=true
       continue
    fi
    true "extraneous: $file_name"
