@@ -8,9 +8,8 @@
 #### description
 ## Runs <code>/usr/libexec/anon-gw-anonymizer-config/make-sure-torrc-exist</code>
 ## to Make Sure Torrc Files Exist and runs
-## <code>/usr/libexec/anon-gw-anonymizer-config/torrc-d-cleaner</code> to remove
-## files not ending with '.conf' from folders <code>/etc/torrc.d</code> and
-## <code>/usr/local/etc/torrc.d</code>. Runs <code>Before=tor.service</code>
+## <code>/usr/libexec/helper-scripts/repair-torrc</code> to repair Tor config files.
+## Runs <code>Before=tor.service</code>
 ## and <code>Before=tor@default.service</code>.
 #### meta end
 
