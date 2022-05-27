@@ -70,19 +70,4 @@ fi
 mkdir -p "$client_onion_auth_dir"
 chown "${tor_user}:${tor_group}" "$client_onion_auth_dir"
 
-## Fix bug in Whonix 15.0.0.8.9 where anon-connection-wizard added
-## `%include /etc/torrc.d/95_whonix.conf` to `/etc/tor/torrc` configuration
-## file even though Whonix was already ported to `%include /etc/torrc.d/`.
-## https://forums.whonix.org/t/configuring-onion-service/9042
-
-search="\
-%include /etc/torrc.d/
-%include /etc/torrc.d/95_whonix.conf"
-
-replace="%include /etc/torrc.d/"
-
-file_name="/etc/tor/torrc"
-
-LANG=C str_replace "$search" "$replace" "$file_name"
-
 true $?
