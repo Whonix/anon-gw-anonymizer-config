@@ -4,4 +4,5 @@
 ## See the file COPYING for copying conditions.
 
 /usr/libexec/anon-gw-anonymizer-config/make-sure-torrc-exist
+/usr/libexec/helper-scripts/repair-torrc
 /usr/libexec/anon-gw-anonymizer-config/torrc-d-cleaner
