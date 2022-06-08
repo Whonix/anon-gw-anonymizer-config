@@ -146,7 +146,7 @@ $tor_user_sudo openssl pkey -in "$private_key_file" -pubout -outform PEM -out "$
 
 ## Now that you have both the private and public parts of your keypair,
 ## first convert the private part from its PEM-encoded format into a Base32
-## encoded string for use in your Tor client’s .auth_private file:
+## encoded string for use in your Tor client's .auth_private file:
 cat "$private_key_file" | \
    grep -v " PRIVATE KEY" | \
    basez --base64pem --decode | \
