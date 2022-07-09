@@ -51,9 +51,16 @@ function parser() {
          echo "===> Start parsing file $abs_path" | tee -a "$temp_verbose_torrc" >/dev/null
          torrc_files+=("$abs_path")
 
-         ## only show comments in torrc files when $VERY_VERBOSE is "1"
          while read -r line ; do
             true "line: '$line'"
+            if [ "$line" = "" ]; then
+               ## show empty lines only when $VERY_VERBOSE is "1"
+               if [ ! "$VERY_VERBOSE" = "1" ]; then
+                  true "Skipping empty line."
+                  continue
+               fi
+            fi
+            ## only show comments in torrc files when $VERY_VERBOSE is "1"
             if [[ "$line" =~ ^[[:space:]]*# ]]; then
                true "line is a comment: yes"
                if [ "$VERY_VERBOSE" = "1" ]; then
