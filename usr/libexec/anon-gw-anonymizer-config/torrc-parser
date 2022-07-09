@@ -120,8 +120,7 @@ function extraneous_torrc_files(){
    echo "\\===================================================================/"
    echo "${#extraneous_torrc[@]} files are do not end with file extension '.conf': "
    echo "${extraneous_torrc[@]}"
-   echo "These should be probably removed. To do so, run:"
-   echo "sudo systemctl restart anon-gw-anonymizer-config.service"
+   echo "These should be probably removed."
 }
 
 #parser $@
