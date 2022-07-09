@@ -29,6 +29,8 @@
 
 set -x
 
+true "$0: START"
+
 ## folders:
 
 if [ ! -d /etc/tor ]; then
@@ -71,3 +73,5 @@ mkdir -p "$client_onion_auth_dir"
 chown "${tor_user}:${tor_group}" "$client_onion_auth_dir"
 
 true $?
+
+true "$0: END"
