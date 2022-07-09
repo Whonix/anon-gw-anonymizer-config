@@ -3,6 +3,8 @@
 ## Copyright (C) 2020 - 2022 ENCRYPTED SUPPORT LP <adrelanos@whonix.org>
 ## See the file COPYING for copying conditions.
 
+set -x
+
 true "$0: START"
 
 /usr/libexec/anon-gw-anonymizer-config/make-sure-torrc-exist
