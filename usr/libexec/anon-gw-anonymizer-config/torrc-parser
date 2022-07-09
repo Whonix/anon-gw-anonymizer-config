@@ -95,7 +95,7 @@ function parser() {
          done
          echo "===> Done parsing folder : $abs_path" | tee -a "$temp_verbose_torrc" >/dev/null
       else
-         echo "ERROR: invalid file: '$abs_path'"
+         echo "ERROR: invalid file system object (fso) (abs_path): '$abs_path'"
       fi
    done
 }
