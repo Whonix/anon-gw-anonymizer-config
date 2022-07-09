@@ -1,3 +1,35 @@
+commit 313a86edefdbdb060e4a130703f3d2321b1124f1
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Jul 9 08:28:29 2022 -0400
+
+    output
+
+commit d619a1bf3edeb463dfb75dde15f870e910da6965
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Jul 9 08:26:20 2022 -0400
+
+    improve anon-verify output
+
+commit f36573aadb188820cdbd1be569bd595070b466df
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Jul 9 08:20:14 2022 -0400
+
+    output
+
+commit 02f368f72e03e202f1b4e749678d48c4b6396eba
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Jul 9 08:18:39 2022 -0400
+
+    anon-verify: fix enumeration of all Tor config drop-in snippets
+    
+    for new `%include /etc/torrc.d/*.conf` syntax
+
+commit d1d1aa012b4ea628029d1b2e9d73589e332056aa
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Jun 8 11:11:48 2022 -0400
+
+    bumped changelog version
+
 commit a0a967d4905ef58be9e32627c62cf8fb0665ad9c
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Wed Jun 8 09:04:54 2022 -0400
