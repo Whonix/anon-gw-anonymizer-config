@@ -21,6 +21,7 @@ declare -a torrc_files
 function parser() {
    local abs_path
    for abs_path in "$@"; do
+      true "abs_path: '$abs_path'"
       if [[ -f "$abs_path" ]]; then
          local base_name first_character file_extension
          base_name="${abs_path##*/}"
@@ -28,7 +29,7 @@ function parser() {
          file_extension="${base_name##*.}"
 
          if [ "$first_character" = "." ]; then
-            echo "===> Ignoring file name starting with '.': $abs_path (Quote Tor manual: 'Files starting with a dot are ignored.')" >> "$temp_verbose_torrc"
+            echo "===> Ignoring file name starting with '.': $abs_path (Quote Tor manual: 'Files starting with a dot are ignored.')" | tee -a "$temp_verbose_torrc" >/dev/null
             continue
          fi
 
@@ -47,35 +48,45 @@ function parser() {
             fi
          fi
 
-         echo "===> Start parsing file $abs_path" >> "$temp_verbose_torrc"
+         echo "===> Start parsing file $abs_path" | tee -a "$temp_verbose_torrc" >/dev/null
          torrc_files+=("$abs_path")
-         local file_content
-         file_content="$(cat "$abs_path")"
-         IFS=$'\n'
+
          ## only show comments in torrc files when $VERY_VERBOSE is "1"
-         for line in $file_content; do
-            if [[ "$line" =~ ^[[:space:]]*# && "$VERY_VERBOSE" != "1" ]]; then
-               continue
+         while read -r line ; do
+            true "line: '$line'"
+            if [[ "$line" =~ ^[[:space:]]*# ]]; then
+               true "line is a comment: yes"
+               if [ "$VERY_VERBOSE" = "1" ]; then
+                  echo "$line" | tee -a "$temp_verbose_torrc" >/dev/null
+               fi
             else
-               echo "$line" >> "$temp_verbose_torrc"
+               true "line is a comment: no"
+               echo "$line" | tee -a "$temp_verbose_torrc" >/dev/null
             fi
 
-            if [[ "$line" =~ ^[[:space:]]*%include ]]; then
-               parser "$(echo "$line" | awk '{print $2;}')"
+            true "Checking if the line includes '%include'..."
+            if echo "$line" | grep -q "%include" ; then
+               true "Yes, the line includes '%include'."
+               local second_word files_list
+               second_word="$(echo "$line" | awk '{print $2;}')"
+               ## Do not quote because /etc/torrc.d/*.conf needs to be expanded.
+               parser $second_word
+            else
+               true "No, the line does not include '%include'."
             fi
-         done
-         echo "===> Done parsing file $abs_path" >> "$temp_verbose_torrc"
+         done < "$abs_path"
+         echo "===> Done parsing file $abs_path" | tee -a "$temp_verbose_torrc" >/dev/null
       elif [[ -d "$abs_path" ]]; then
-         echo "===> Start parsing folder: $abs_path" >> "$temp_verbose_torrc"
+         echo "===> Start parsing folder: $abs_path" | tee -a "$temp_verbose_torrc" >/dev/null
          local fso
          for fso in $(find "$abs_path" -mindepth 1 -maxdepth 1 | sort -g) ; do
             if [ -d "$fso" ]; then
-               echo "===> Ignoring subfolder: $abs_path (Quote Tor manual: 'Files on subfolders are ignored.')" >> "$temp_verbose_torrc"
+               echo "===> Ignoring subfolder: $abs_path (Quote Tor manual: 'Files on subfolders are ignored.')" | tee -a "$temp_verbose_torrc" >/dev/null
                continue
             fi
             parser "$fso"
          done
-         echo "===> Done parsing folder : $abs_path" >> "$temp_verbose_torrc"
+         echo "===> Done parsing folder : $abs_path" | tee -a "$temp_verbose_torrc" >/dev/null
       else
          echo "ERROR: invalid file: '$abs_path'"
       fi
