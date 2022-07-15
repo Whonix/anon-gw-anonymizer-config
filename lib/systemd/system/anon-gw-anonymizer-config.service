@@ -6,15 +6,17 @@
 #### category tor
 #### gateway_only yes
 #### description
-## Runs <code>/usr/libexec/anon-gw-anonymizer-config/make-sure-torrc-exist</code>
+## Runs <code>/usr/libexec/anon-gw-anonymizer-config/tor-config-sane</code>
 ## to Make Sure Torrc Files Exist and runs
+## <code>/usr/libexec/anon-gw-anonymizer-config/make-sure-torrc-exist</code>
+## to make sure Tor config files exist and
 ## <code>/usr/libexec/helper-scripts/repair-torrc</code> to repair Tor config files.
 ## Runs <code>Before=tor.service</code>
 ## and <code>Before=tor@default.service</code>.
 #### meta end
 
 [Unit]
-Description=Make Sure Torrc Files Exist and Clean Tor Config Folders
+Description=Make Sure Torrc Files Exist
 Documentation=https://github.com/Whonix/anon-gw-anonymizer-config
 ConditionPathExists=!/run/qubes/this-is-templatevm
 Before=tor.service
