@@ -30,7 +30,7 @@ sudo $0
 
 or this user '$(whoami)' needs to be a member of group 'systemd-journal'.
 
-sudo addgroup $(whoami) systemd-journal
+sudo adduser $(whoami) systemd-journal
 
 Exiting."
    exit 1
