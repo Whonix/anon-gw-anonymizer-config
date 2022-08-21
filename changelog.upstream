@@ -1,3 +1,15 @@
+commit 32368cbbcc4f09302836fba67a58f927514ac141
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Aug 21 14:37:46 2022 -0400
+
+    fix AppArmor
+
+commit 026bc29997ef9d76bfbabfc542416d930ef349f4
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Aug 13 11:40:47 2022 -0400
+
+    bumped changelog version
+
 commit 3e16fad210bc03b18320bf740238966d85c504cb
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Sat Aug 13 11:36:05 2022 -0400
