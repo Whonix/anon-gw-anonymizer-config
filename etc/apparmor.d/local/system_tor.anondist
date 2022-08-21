@@ -54,6 +54,7 @@
   #/usr/bin/obfsproxy rix,
 
   ## snowflake
-  /usr/bin/snowflake-client ix,
+  ## Nowadays already done in upstream /etc/apparmor.d/abstractions/tor file.
+  #/usr/bin/snowflake-client ix,
 
 ## End Tor Local AppArmor Profile for Anonymity Distributions
