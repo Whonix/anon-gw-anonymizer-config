@@ -18,19 +18,8 @@ trap error_handler ERR
 
 SCRIPTNAME="$(basename "$BASH_SOURCE")"
 
-if test -n "${1}" && [ "${1}" != "show" ]; then
-  echo "ERROR: only accepted argument is 'show'"
-  exit 1
-fi
-
-show="$1"
-
-for profile in \
-  /etc/onion-grater-merger.d/*.yml \
-  /usr/local/etc/onion-grater-merger.d/*.yml
-do
-  [ "${profile}" = "*" ] && continue
-  if [ "$show" = "show" ]; then
+print_profile(){
+  if [ "$show" = "--show" ]; then
     echo "===================================================================="
     echo "BEGIN PROFILE: ${profile}"
     echo "--------------------------------------------------------------------"
@@ -41,6 +30,32 @@ do
   else
     echo "${profile}"
   fi
-done
+}
 
+usage(){
+  echo "usage: ${0##*/}: --available|--used [--show]"
+  exit 0
+}
+
+option="$1"
+show="$2"
+
+if [ "$option" = "--used" ]; then
+  for profile in \
+    /etc/onion-grater-merger.d/*.yml \
+    /usr/local/etc/onion-grater-merger.d/*.yml
+  do
+    echo "${profile}" | grep -F "*" && continue
+    print_profile
+  done
+elif [ "$option" = "--available" ]; then
+  for profile in \
+    /usr/share/doc/onion-grater-merger/examples/*.yml
+  do
+    echo "${profile}" | grep -F "*" && continue
+    print_profile
+  done
+else
+  usage
+fi
 
