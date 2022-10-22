@@ -1,3 +1,31 @@
+commit e34f55f43c76c291a7e4fc4be4e11af966493d6c
+Merge: aba31a9 4ada934
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Oct 22 10:59:00 2022 -0400
+
+    Merge remote-tracking branch 'github-whonix/master'
+
+commit 4ada934ccc89c2d3bb4e6417e8f70a3aa75558d5
+Merge: aba31a9 6ca9097
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Oct 22 10:58:06 2022 -0400
+
+    Merge pull request #3 from nyxnor/listing
+    
+    improve onion-grater-list
+
+commit 6ca9097f099d8848858793d6c5e56b2da183522e
+Author: nyxnor <nyxnor@protonmail.com>
+Date:   Fri Oct 21 12:38:07 2022 +0000
+
+    improve onion-grater-list
+
+commit aba31a97afefaa8688ca60e06f1be6473a5a6f7c
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Oct 20 18:33:16 2022 -0400
+
+    bumped changelog version
+
 commit 573c9b5f590590f53c9920854f408358c2ac6622
 Merge: 5734431 6fed802
 Author: Patrick Schleizer <adrelanos@whonix.org>
