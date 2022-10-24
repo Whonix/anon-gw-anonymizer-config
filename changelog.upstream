@@ -1,3 +1,37 @@
+commit 978da2e244b27983e3dc51368f88d204effbe2ff
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Oct 24 09:59:29 2022 -0400
+
+    genmkfile manpages
+
+commit 341baf0be08362b9caf40b9c99bedfb0bf54fa3d
+Merge: 562aab7 0abecd9
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Oct 24 09:58:57 2022 -0400
+
+    Merge remote-tracking branch 'github-whonix/master'
+
+commit 0abecd9f2f77b41e53971aad7a6cc673aeff0fa2
+Merge: 562aab7 6a531fd
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Oct 24 09:58:34 2022 -0400
+
+    Merge pull request #4 from nyxnor/listing
+    
+    add onion-grater-list manpage
+
+commit 6a531fd46f07f79b9dfb564f2cf7b1fd867c2fda
+Author: nyxnor <nyxnor@protonmail.com>
+Date:   Mon Oct 24 12:15:32 2022 +0000
+
+    add onion-grater-list manpage
+
+commit 562aab7f7495cec98c0eb8846cdfb203ccb3a654
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Oct 22 11:02:39 2022 -0400
+
+    bumped changelog version
+
 commit e34f55f43c76c291a7e4fc4be4e11af966493d6c
 Merge: aba31a9 4ada934
 Author: Patrick Schleizer <adrelanos@whonix.org>
