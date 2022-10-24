@@ -1,0 +1,20 @@
+onion-grater-list(8) -- list onion-grater profile to onion-grater configuration
+=============================================
+
+<!--
+# Copyright (C) 2012 - 2022 ENCRYPTED SUPPORT LP <adrelanos@whonix.org>
+# See the file COPYING for copying conditions.
+-->
+
+## SYNOPSIS
+`onion-grater-list` [--available|--used] --show
+
+## DESCRIPTION
+List onion-grater profiles available or in use, optinally print file contents.
+
+## EXAMPLE
+`sudo onion-grater-list --available --show`
+`sudo onion-grater-list --used --show`
+
+## AUTHOR
+This man page has been written by Patrick Schleizer (adrelanos@whonix.org).
