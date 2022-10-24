@@ -1,3 +1,21 @@
+commit 51807728b1dbba9bd21612d9bc87b585a539140d
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Oct 24 10:04:46 2022 -0400
+
+    genmkfile manpages
+
+commit 1d8749bb024c75629de79afd7eb227d27fdf6f3b
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Oct 24 10:04:34 2022 -0400
+
+    typo
+
+commit de2512647c8490e149de3dd7b812e9becc56a858
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Oct 24 09:59:45 2022 -0400
+
+    bumped changelog version
+
 commit 978da2e244b27983e3dc51368f88d204effbe2ff
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Mon Oct 24 09:59:29 2022 -0400
