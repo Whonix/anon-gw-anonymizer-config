@@ -32,7 +32,7 @@ or this user '$(whoami)' needs to be a member of group 'systemd-journal'.
 
 sudo adduser $(whoami) systemd-journal
 
-Exiting."
+Exiting." >&2
    exit 1
 fi
 
