@@ -11,13 +11,13 @@
 ## Tor log parsing command line utility.
 #### meta end
 
-cmd="journalctl -b --no-pager --output cat -u tor.service"
+cmd="journalctl --boot --no-pager --output cat -u tor.service"
 log1="$($cmd)"
 
 cmd="cat /run/tor/log"
 log2="$($cmd)"
 
-cmd="journalctl -b --no-pager --output cat -u vanguards.service"
+cmd="journalctl --boot --no-pager --output cat -u vanguards.service"
 log3="$($cmd)"
 if [ "$log3" = "" ]; then
    echo "ERROR: Running command:
