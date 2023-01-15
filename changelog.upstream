@@ -1,3 +1,27 @@
+commit b2a4539afd403ca9558db95a638282845350c67d
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Jan 15 03:38:17 2023 -0500
+
+    anon-log: minor fix, output errors to stderr instead of stdout
+
+commit 31121526c5456a4bc8dd98dceb67a588661593e2
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Jan 15 03:37:37 2023 -0500
+
+    anon-log: use journalctl instead of /run/tor/log
+
+commit b7c5b859f64f7a2ecd07eb13d96d221ec5cc8d0f
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Jan 15 03:36:01 2023 -0500
+
+    refactoring
+
+commit 2825d6af98e5c83489f0527d9eacb1db1e59d5e7
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Oct 24 10:05:00 2022 -0400
+
+    bumped changelog version
+
 commit 51807728b1dbba9bd21612d9bc87b585a539140d
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Mon Oct 24 10:04:46 2022 -0400
