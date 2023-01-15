@@ -14,7 +14,7 @@
 cmd="journalctl --boot --no-pager --output cat -u tor.service"
 log1="$($cmd)"
 
-cmd="cat /run/tor/log"
+cmd="journalctl --boot --no-pager --output cat -u tor@default.service"
 log2="$($cmd)"
 
 cmd="journalctl --boot --no-pager --output cat -u vanguards.service"
@@ -41,7 +41,7 @@ tor.service:
 
 $log1
 
-/run/tor/log:
+tor@default.service:
 
 $log2
 
