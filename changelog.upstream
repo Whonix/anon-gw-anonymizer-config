@@ -1,3 +1,21 @@
+commit a4d20b8d295aa56dc25d381f7cc4cc12417a8d11
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Jan 24 08:56:41 2023 -0500
+
+    systemctl --system daemon-reload
+
+commit a8e22fcd67a925bbd71b52743b75541a963b3dad
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Jan 24 08:53:39 2023 -0500
+
+    cleanup
+
+commit 795ccd642611e3cc9814be84b78a499777cf3e95
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Jan 24 08:47:10 2023 -0500
+
+    bumped changelog version
+
 commit cf35a5025573c2f2052c7c6baecfeae4f071d00c
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Tue Jan 24 08:45:39 2023 -0500
