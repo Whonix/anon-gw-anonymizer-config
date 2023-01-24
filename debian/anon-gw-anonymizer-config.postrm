@@ -23,8 +23,6 @@ case "$1" in
       service_tor_status_exit_code="0"
       systemctl --no-pager --no-block status tor@default >/dev/null 2>&1 || { service_tor_status_exit_code="$?" ; true; };
       if [ "$service_tor_status_exit_code" = "0" ]; then
-         ## || true to avoid an error in case Tor's init script has been
-         ## chmodded -x in meanwhile or
          systemctl --no-pager --no-block force-reload tor@default || true
       fi
 
