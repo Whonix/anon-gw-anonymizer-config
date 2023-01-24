@@ -1,3 +1,18 @@
+commit cf35a5025573c2f2052c7c6baecfeae4f071d00c
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Jan 24 08:45:39 2023 -0500
+
+    add workaround for upstream bug Tor fails to start a few times before succeeding to start
+    
+    https://forums.whonix.org/t/failed-to-start-anonymizing-overlay-network-for-tcp-tor-fails-to-start-a-few-times-before-succeeding-to-start/16289/12
+    https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1029554
+
+commit 72d9a3afbf90fac2b81a066eee0ee512b194eb9a
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Jan 15 03:44:57 2023 -0500
+
+    bumped changelog version
+
 commit b2a4539afd403ca9558db95a638282845350c67d
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Sun Jan 15 03:38:17 2023 -0500
