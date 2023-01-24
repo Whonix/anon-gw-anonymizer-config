@@ -55,6 +55,11 @@ configure_function() {
    fi
 }
 
+## Make systemd drop-in config snippets take effect.
+if [ -d /run/systemd/system ]; then
+        systemctl --system daemon-reload >/dev/null || true
+fi
+
 case "$1" in
    configure)
       true "INFO: Configuring $DPKG_MAINTSCRIPT_PACKAGE..."
