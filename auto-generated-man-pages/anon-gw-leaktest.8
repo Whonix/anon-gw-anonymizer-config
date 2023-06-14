@@ -10,7 +10,15 @@ Anonymity Distribution Gateway specific leaktest\.
 .P
 Advanced users, developers and auditors only!
 .P
-First configures tshark, then comments in \fBReachableDirAddresses *:80\fR, \fBReachableORAddresses *:443\fR and \fBFascistFirewall 1\fR in /usr/share/tor/tor\-service\-defaults\-torrc, reloads Tor, checks Tor's status, and finally runs tshark and waits until you abort using \fBCTRL + C\fR\. After aborting it resets /usr/share/tor/tor\-service\-defaults\-torrc back to normal (comments out \fBReachableDirAddresses *:80\fR, \fBReachableORAddresses *:443\fR and \fBFascistFirewall 1\fR) and reloads Tor and checks its status again\. See /usr/bin/leaktest for implementation details\.
+First configures tshark, then comments in \fBReachableDirAddresses *:80\fR, \fBReachableORAddresses *:443\fR and \fBFascistFirewall 1\fR in /usr/share/tor/tor\-service\-defaults\-torrc
+.P
+then reloads Tor, checks Tor's status,
+.P
+and finally runs tshark and waits until you abort using \fBCTRL + C\fR
+.P
+After aborting it resets /usr/share/tor/tor\-service\-defaults\-torrc back to normal (comments out \fBReachableDirAddresses *:80\fR, \fBReachableORAddresses *:443\fR and \fBFascistFirewall 1\fR) and reloads Tor and checks its status again\.
+.P
+See /usr/bin/leaktest for implementation details\.
 .P
 As long as it's running, it writes tshark's output to standard output\.
 .P
