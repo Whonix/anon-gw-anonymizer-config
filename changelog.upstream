@@ -1,3 +1,15 @@
+commit ef1f27974fcd59773f679ed17e5a4d293b72ea2e
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Jul 3 12:01:45 2023 -0400
+
+    fix, run replace-ips in Qubes when Tor is restarted
+
+commit 208405f8f9c2a90fdabcc271d2d9c445840e2696
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Jun 21 09:41:24 2023 +0000
+
+    bumped changelog version
+
 commit ff9f3d4d03c272146facc8fa553e104d639d32d4
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Wed Jun 21 09:11:33 2023 +0000
