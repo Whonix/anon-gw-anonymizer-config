@@ -42,3 +42,5 @@
       suppress: true
     STATUS_SERVER:
       suppress: true
+    CIRC:
+      suppress: true
