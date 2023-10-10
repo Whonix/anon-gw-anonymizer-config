@@ -11,6 +11,10 @@
 ## TODO
 #### meta end
 
+## $1 is either:
+## add
+## remove
+
 set -x
 set -e
 
