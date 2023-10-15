@@ -1,3 +1,19 @@
+commit 14790ece543d86532cd88558f5e2d375f7d7d03a
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Oct 15 10:37:01 2023 -0400
+
+    set `CookieAuthentication 1`
+    
+    to fix a the following warning even if inapplicable:
+    
+    Oct 15 14:04:17.408 [warn] ControlPort is open, but no authentication method has been configured.  This means that any program on your computer can reconfigure your Tor.  That's bad!  You should upgrade your Tor controller as soon as possible.
+
+commit 1a225d86b63856b8e7afd0a200a5657098ad1622
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Oct 11 09:09:40 2023 -0400
+
+    bumped changelog version
+
 commit 03323d4ce4529ca604842a673fa35c74e2ec7175
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Wed Oct 11 08:56:05 2023 -0400
