@@ -1,3 +1,20 @@
+commit ef45061ce0cc74c143c4502e88555e3217d676d1
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Feb 17 07:24:34 2024 -0500
+
+    disable vanguards because broken in combination with Tor 0.4.8.9
+    
+    https://forums.whonix.org/t/connections-drop-on-tor-0-4-8-9/17702
+    https://gitlab.torproject.org/tpo/core/tor/-/issues/40892
+    https://github.com/mikeperry-tor/vanguards/issues/100
+    https://github.com/QubesOS/qubes-issues/issues/8726
+
+commit 01fb5c7ee09b95e3e94993c3b43981ce3b06cd0d
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Feb 2 12:39:48 2024 +0000
+
+    bumped changelog version
+
 commit 6a62edcd38dbebb2ecfc91b7f3430dd98bfa460e
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Fri Feb 2 07:32:54 2024 -0500
