@@ -36,6 +36,20 @@ vanguards_enable_and_start_once() {
    touch "/var/lib/anon-dist/do_once/${FUNCNAME}_version_1"
 }
 
+vanguards_disable_and_stop_once() {
+   if [ -f "/var/lib/anon-dist/do_once/${FUNCNAME}_version_1" ]; then
+      return 0
+   fi
+   ## https://forums.whonix.org/t/connections-drop-on-tor-0-4-8-9/17702
+   ## https://gitlab.torproject.org/tpo/core/tor/-/issues/40892
+   ## https://github.com/mikeperry-tor/vanguards/issues/100
+   ## https://github.com/QubesOS/qubes-issues/issues/8726
+   systemctl --no-pager --no-block disable vanguards || true
+   systemctl --no-pager --no-block stop vanguards || true
+   mkdir --parents "/var/lib/anon-dist/do_once"
+   touch "/var/lib/anon-dist/do_once/${FUNCNAME}_version_1"
+}
+
 configure_function() {
    mkdir -p /usr/local/etc/torrc.d
 
@@ -45,7 +59,8 @@ configure_function() {
    ## User "user" already exists thanks to the dist-base-files package.
    adduser --quiet user debian-tor
 
-   vanguards_enable_and_start_once
+   #vanguards_enable_and_start_once
+   vanguards_disable_and_stop_once
 
    ## force-reload Tor, if running.
    service_tor_status_exit_code="0"
