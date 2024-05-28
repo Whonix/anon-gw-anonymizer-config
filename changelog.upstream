@@ -1,3 +1,38 @@
+commit b8b7739bd0775dce8a8e1443ed5b608f00a911d8
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue May 28 10:01:17 2024 -0400
+
+    comment
+
+commit 426830dbb6da8efa100a73db23ddcb0de5e4fdae
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue May 28 10:00:35 2024 -0400
+
+    no longer disabling IPv6
+    
+    because whonix-firewall has been ported to nftables,
+    which covers both, IPv4 and IPv6
+
+commit 5e3cfad435c7f93bff33ed8d7cad05cc999e4eb3
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue May 28 09:59:34 2024 -0400
+
+    make sure that IPv6 forwarding is disabled
+    
+    by setting sysctl `net.ipv6.conf.all.forwarding = 0`
+
+commit f8c03cf135c500c33e5e6dbe86fa4e330eddbbea
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue May 28 09:56:17 2024 -0400
+
+    fix comment
+
+commit e1a07cbf154ff25e476d1f26fda65579e3d6c564
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Mar 20 16:17:29 2024 +0000
+
+    bumped changelog version
+
 commit 1c145302ef1ba30082889268a5a632accb66c0a5
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Wed Mar 20 12:15:36 2024 -0400
