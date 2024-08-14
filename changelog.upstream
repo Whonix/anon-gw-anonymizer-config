@@ -1,3 +1,51 @@
+commit 258513132b8005553dab279ac859cc960680da13
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 14 08:03:11 2024 -0400
+
+    improve output for anon-log (use bold)
+
+commit 764f58b6ede6dcb366cbfa9d91a5f4f98d58625f
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 14 08:01:01 2024 -0400
+
+    improve anon-log
+
+commit 3322f3bb227724e05194b34863a141de4bea157e
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 14 07:58:51 2024 -0400
+
+    improve anon-log
+
+commit 3c3ce4b8af7ecee0a18f11008e8979e175f4cd38
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 14 07:58:30 2024 -0400
+
+    refactoring
+
+commit 2d158ca71e51ab6726c34623b7596bb79e63e43c
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 14 07:55:41 2024 -0400
+
+    fix
+
+commit 602ab74cc84cb5dd71e543f12f8ec6066b5ec744
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 14 07:54:40 2024 -0400
+
+    refactoring
+
+commit b4696ab148a9e296dc14725cc49d348669d74c6d
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Aug 14 07:51:51 2024 -0400
+
+    minor
+
+commit a9d10d4bbfc0d45db4b0cd8634a87c9c5a619ade
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue May 28 18:45:11 2024 +0000
+
+    bumped changelog version
+
 commit d668727858715dcdfe0b8df9f50c35fb7b6f4876
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Tue May 28 14:44:50 2024 -0400
