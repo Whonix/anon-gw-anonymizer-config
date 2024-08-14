@@ -20,10 +20,10 @@ log2="$($cmd2)"
 cmd3="journalctl --boot --no-pager --output cat -u vanguards.service"
 log3="$($cmd3)"
 
-if [ "$log3" = "" ]; then
+if [ "$log2" = "" ]; then
    echo "ERROR: Running command:
 
-$cmd
+$cmd2
 
 failed! This program needs to be run as root:
 
