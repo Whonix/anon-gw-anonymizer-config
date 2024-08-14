@@ -19,6 +19,7 @@ log2="$($cmd)"
 
 cmd="journalctl --boot --no-pager --output cat -u vanguards.service"
 log3="$($cmd)"
+
 if [ "$log3" = "" ]; then
    echo "ERROR: Running command:
 
