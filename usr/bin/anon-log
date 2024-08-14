@@ -20,8 +20,20 @@ log2="$($cmd2)"
 cmd3="journalctl --boot --no-pager --output cat -u vanguards.service"
 log3="$($cmd3)"
 
-if [ "$log2" = "" ]; then
-   echo "ERROR: Running command:
+if [ -z "$log1" ]; then
+  log1="empty"
+fi
+
+if [ -z "$log2" ]; then
+  log2="empty"
+fi
+
+if [ -z "$log3" ]; then
+  log3="empty"
+fi
+
+if [ "$log2" = "empty" ]; then
+  echo "ERROR: Running command:
 
 $cmd2
 
