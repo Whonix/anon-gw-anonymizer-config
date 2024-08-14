@@ -51,6 +51,7 @@ vanguards.service:
 $log3"
 
 ## https://www.whonix.org/wiki/Tor#Non-Issues
+log_full="$(echo "$log_full" | grep --invert-match --fixed-strings -- "New control connection opened.")"
 log_full="$(echo "$log_full" | grep --invert-match --fixed-strings -- "[notice] Opening HTTP tunnel listener")"
 log_full="$(echo "$log_full" | grep --invert-match --fixed-strings -- "[notice] Opened HTTP tunnel listener")"
 log_full="$(echo "$log_full" | grep --invert-match --fixed-strings -- "[notice] Opened Socks listener")"
