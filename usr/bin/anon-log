@@ -11,6 +11,10 @@
 ## Tor log parsing command line utility.
 #### meta end
 
+if [ -f /usr/libexec/helper-scripts/pre.bsh ]; then
+  source /usr/libexec/helper-scripts/pre.bsh
+fi
+
 cmd1="journalctl --boot --no-pager --output cat -u tor.service"
 log1="$($cmd1)"
 
@@ -50,15 +54,15 @@ Exiting." >&2
 fi
 
 log_full="\
-tor.service:
+${bold}tor.service:${reset}
 
 $log1
 
-tor@default.service:
+${bold}tor@default.service:${reset}
 
 $log2
 
-vanguards.service:
+${bold}vanguards.service:${reset}
 
 $log3"
 
