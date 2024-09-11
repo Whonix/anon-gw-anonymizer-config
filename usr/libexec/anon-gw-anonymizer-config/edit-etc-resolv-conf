@@ -79,6 +79,7 @@ $comment
 $line_to_add_maybe
 $end_marker"
 
-echo "$etc_resolv_conf_addition" | tee -a /etc/resolv.conf >/dev/null
+## provided by: helper-scripts
+append-once /etc/resolv.conf "$etc_resolv_conf_addition"
 
 true "INFO: add OK"
