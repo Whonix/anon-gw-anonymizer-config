@@ -40,7 +40,7 @@ if ! test -e /etc/resolv.conf ; then
 fi
 
 if ! test -w /etc/resolv.conf ; then
-   echo "$0: ERROR: /etc/resolv.conf not writeable!"
+   echo "$0: ERROR: /etc/resolv.conf not writeable!" >&2
    exit 1
 fi
 
