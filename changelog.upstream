@@ -1,3 +1,27 @@
+commit 3242f498f660e5ebbdd9bd5c1b477cb91999485f
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Sep 11 04:17:32 2024 -0400
+
+    move /usr/libexec/anon-gw-anonymizer-config/edit-etc-resolv-conf to /usr/bin/anon-dns
+
+commit fd88928ac93d661fa59ed236540f1f1b774be057
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Sep 11 03:56:45 2024 -0400
+
+    output
+
+commit 3477dd35f85fcde1dfbd7e55173e92eec1f392a1
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Sep 11 03:55:52 2024 -0400
+
+    port to append-once
+
+commit 15dbcc21b6b9bee6533edab118a14b570549bb89
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Sep 2 21:24:10 2024 +0000
+
+    bumped changelog version
+
 commit 3a9b791555e9d1a2a1dbe57645772e33a2162edd
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Mon Sep 2 17:12:45 2024 -0400
