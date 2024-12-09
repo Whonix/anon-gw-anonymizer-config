@@ -47,6 +47,7 @@
 # * SOCKSPort/HTTPTunnelPort are recommended, they include DNS requests in each connection's outgoing data
 # respectively.
 TransPort 10.152.152.10:9040
+TransPort [fd19:c33d:88bc::10]:9040
 
 # (comment mirrored from /usr/bin/whonix_firewall)
 # DNS_PORT_WORKSTATION="5300"
@@ -62,6 +63,7 @@ TransPort 10.152.152.10:9040
 # Not sure about IsolateDestAddr.
 # IsolateDestPort has probably very little effect, since most DNS servers listen on port 53.
 DnsPort 10.152.152.10:5300 IsolateDestPort
+DnsPort [fd19:c33d:88bc::10]:5300 IsolateDestPort
 
 ###########################
 # Workstation SocksPorts #
@@ -101,57 +103,68 @@ DnsPort 10.152.152.10:5300 IsolateDestPort
 # Tor Default Port
 # Only for applications, which expect Tor to be running on port 9050.
 SocksPort 10.152.152.10:9050 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9050 IPv6Traffic
 
 # legacy
 SocksPort 10.152.152.10:9100 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9100 IPv6Traffic
 
 # IRC: HexChat
 # People are normally not connected to too many IRC servers,
 # so they can use one circuit per server.
 SocksPort 10.152.152.10:9101 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9101 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 # Mail: Thunderbird (previously with TorBirdy)
 # (Mentioning TorBirdy so this can be discovered through search.)
 # Not used by too many people. Most users do not connect to
 # too many servers.
 SocksPort 10.152.152.10:9102 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9102 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 # Instant Messenger (IM)
 # People are normally not connected to too many IM servers,
 # so they can use one circuit per server.
 SocksPort 10.152.152.10:9103 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9103 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 # Operating system updates: apt-get
 # Not using IsolateDestAddr IsolateDestPort, because too much
 # performance loss, too much load on Tor network and no gain
 # in security.
 SocksPort 10.152.152.10:9104 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9104 IPv6Traffic
 
 # gpg
 # Not used by too many people. Most users do not connect to
 # too many servers.
 SocksPort 10.152.152.10:9105 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9105 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 # ssh
 # Not used by too many people. Most users do not connect to
 # too many servers.
 SocksPort 10.152.152.10:9106 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9106 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 # git
 # Not preinstalled.
 # Not used by too many people. Most users do not connect to
 # too many servers.
 SocksPort 10.152.152.10:9107 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9107 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 # sdwdate Network Time Synchronization
 # There are only three different connections.
 SocksPort 10.152.152.10:9108 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9108 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 # command line downloader: wget
 # Only manually and by very few applications used. Should not
 # hurt performance or Tor network. Very few connections are
 # expected.
 SocksPort 10.152.152.10:9109 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9109 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 # systemcheck
 # Only connects to https://check.torproject.org and checks IP.
@@ -159,15 +172,19 @@ SocksPort 10.152.152.10:9109 IPv6Traffic IsolateDestAddr IsolateDestPort
 # Would be fine without IsolateDestAddr IsolateDestPort,
 # but add it anyway to have less exceptions.
 SocksPort 10.152.152.10:9110 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9110 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 # Bitcoin electrum wallet
 # Not using IsolateDestAddr IsolateDestPort.
 # Makes too many connections to different servers. Should not
 # hurt if they get through the same circuit.
 SocksPort 10.152.152.10:9111 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9111 IPv6Traffic
 
 #SocksPort 10.152.152.10:9112 IPv6Traffic
+#SocksPort [fd19:c33d:88bc::10]:9112 IPv6Traffic
 #SocksPort 10.152.152.10:9113 IPv6Traffic
+#SocksPort [fd19:c33d:88bc::10]:9113 IPv6Traffic
 
 # Whonix news download
 # Only connects to the Whonix homepage and downloads a small file with
@@ -176,6 +193,7 @@ SocksPort 10.152.152.10:9111 IPv6Traffic
 # Would be fine without IsolateDestAddr IsolateDestPort,
 # but add it anyway to have less exceptions.
 SocksPort 10.152.152.10:9114 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9114 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 # Tor Browser bundle download
 # Rarely used.
@@ -183,46 +201,57 @@ SocksPort 10.152.152.10:9114 IPv6Traffic IsolateDestAddr IsolateDestPort
 # Would be fine without IsolateDestAddr IsolateDestPort,
 # but add it anyway to have less exceptions.
 SocksPort 10.152.152.10:9115 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9115 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 #SocksPort 10.152.152.10:9116 IPv6Traffic
+#SocksPort [fd19:c33d:88bc::10]:9116 IPv6Traffic
 
 # Curl
 # Only manually and by very few applications used. Should not
 # hurt performance or Tor network. Very few connections are
 # expected.
 SocksPort 10.152.152.10:9117 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9117 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 # RSS
 SocksPort 10.152.152.10:9118 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9118 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 #SocksPort 10.152.152.10:9119 IPv6Traffic
+#SocksPort [fd19:c33d:88bc::10]:9119 IPv6Traffic
 
 #SocksPort 10.152.152.10:9120 IPv6Traffic
+#SocksPort [fd19:c33d:88bc::10]:9120 IPv6Traffic
 
 #SocksPort 10.152.152.10:9121 IPv6Traffic
+#SocksPort [fd19:c33d:88bc::10]:9121 IPv6Traffic
 
 # KDE application wide proxy.
 # Not using IsolateDestAddr or IsolateDestPort, because also browsers
 # could use this port.
 SocksPort 10.152.152.10:9122 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9122 IPv6Traffic
 
 # GNOME application wide proxy.
 # This port is currently not in use.
 # Not using IsolateDestAddr or IsolateDestPort, because also browsers
 # could use this port.
 SocksPort 10.152.152.10:9123 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9123 IPv6Traffic
 
 # Operating system updates: aptitude
 # Not using IsolateDestAddr IsolateDestPort, because too much
 # performance loss, too much load on Tor network and no gain
 # in security.
 SocksPort 10.152.152.10:9124 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9124 IPv6Traffic
 
 # Operating system updates: yum
 # Not using IsolateDestAddr IsolateDestPort, because too much
 # performance loss, too much load on Tor network and no gain
 # in security.
 SocksPort 10.152.152.10:9125 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9125 IPv6Traffic
 
 # Tor Browser Bundle Default Port
 # This port gets used if someone uses the default Tor Browser Bundle.
@@ -233,60 +262,99 @@ SocksPort 10.152.152.10:9125 IPv6Traffic
 # Instead Tor Browser sets SOCKS username for a request based on first party domain.
 # https://trac.torproject.org/projects/tor/ticket/3455
 SocksPort 10.152.152.10:9150 IPv6Traffic PreferIPv6 KeepAliveIsolateSOCKSAuth ExtendedErrors
+SocksPort [fd19:c33d:88bc::10]:9150 IPv6Traffic PreferIPv6 KeepAliveIsolateSOCKSAuth ExtendedErrors
 
 # Custom Ports #1:
 # without IsolateDestAddr
 # without IsolateDestPort
 SocksPort 10.152.152.10:9152 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9152 IPv6Traffic
 SocksPort 10.152.152.10:9153 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9153 IPv6Traffic
 SocksPort 10.152.152.10:9154 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9154 IPv6Traffic
 SocksPort 10.152.152.10:9155 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9155 IPv6Traffic
 SocksPort 10.152.152.10:9156 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9156 IPv6Traffic
 SocksPort 10.152.152.10:9157 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9157 IPv6Traffic
 SocksPort 10.152.152.10:9158 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9158 IPv6Traffic
 SocksPort 10.152.152.10:9159 IPv6Traffic
+SocksPort [fd19:c33d:88bc::10]:9159 IPv6Traffic
 
 # Custom Ports #2:
 # with IsolateDestAddr
 # without IsolateDestPort
 SocksPort 10.152.152.10:9160 IPv6Traffic IsolateDestAddr
+SocksPort [fd19:c33d:88bc::10]:9160 IPv6Traffic IsolateDestAddr
 SocksPort 10.152.152.10:9161 IPv6Traffic IsolateDestAddr
+SocksPort [fd19:c33d:88bc::10]:9161 IPv6Traffic IsolateDestAddr
 SocksPort 10.152.152.10:9162 IPv6Traffic IsolateDestAddr
+SocksPort [fd19:c33d:88bc::10]:9162 IPv6Traffic IsolateDestAddr
 SocksPort 10.152.152.10:9163 IPv6Traffic IsolateDestAddr
+SocksPort [fd19:c33d:88bc::10]:9163 IPv6Traffic IsolateDestAddr
 SocksPort 10.152.152.10:9164 IPv6Traffic IsolateDestAddr
+SocksPort [fd19:c33d:88bc::10]:9164 IPv6Traffic IsolateDestAddr
 SocksPort 10.152.152.10:9165 IPv6Traffic IsolateDestAddr
+SocksPort [fd19:c33d:88bc::10]:9165 IPv6Traffic IsolateDestAddr
 SocksPort 10.152.152.10:9166 IPv6Traffic IsolateDestAddr
+SocksPort [fd19:c33d:88bc::10]:9166 IPv6Traffic IsolateDestAddr
 SocksPort 10.152.152.10:9167 IPv6Traffic IsolateDestAddr
+SocksPort [fd19:c33d:88bc::10]:9167 IPv6Traffic IsolateDestAddr
 SocksPort 10.152.152.10:9168 IPv6Traffic IsolateDestAddr
+SocksPort [fd19:c33d:88bc::10]:9168 IPv6Traffic IsolateDestAddr
 SocksPort 10.152.152.10:9169 IPv6Traffic IsolateDestAddr
+SocksPort [fd19:c33d:88bc::10]:9169 IPv6Traffic IsolateDestAddr
 
 # Custom Ports #3:
 # without IsolateDestAddr
 # with IsolateDestPort
 SocksPort 10.152.152.10:9170 IPv6Traffic IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9170 IPv6Traffic IsolateDestPort
 SocksPort 10.152.152.10:9171 IPv6Traffic IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9171 IPv6Traffic IsolateDestPort
 SocksPort 10.152.152.10:9172 IPv6Traffic IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9172 IPv6Traffic IsolateDestPort
 SocksPort 10.152.152.10:9173 IPv6Traffic IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9173 IPv6Traffic IsolateDestPort
 SocksPort 10.152.152.10:9174 IPv6Traffic IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9174 IPv6Traffic IsolateDestPort
 SocksPort 10.152.152.10:9175 IPv6Traffic IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9175 IPv6Traffic IsolateDestPort
 SocksPort 10.152.152.10:9176 IPv6Traffic IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9176 IPv6Traffic IsolateDestPort
 SocksPort 10.152.152.10:9177 IPv6Traffic IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9177 IPv6Traffic IsolateDestPort
 SocksPort 10.152.152.10:9178 IPv6Traffic IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9178 IPv6Traffic IsolateDestPort
 SocksPort 10.152.152.10:9179 IPv6Traffic IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9179 IPv6Traffic IsolateDestPort
 
 # Custom Ports #4:
 # with IsolateDestAddr
 # with IsolateDestPort
 SocksPort 10.152.152.10:9180 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9180 IPv6Traffic IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9181 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9181 IPv6Traffic IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9182 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9182 IPv6Traffic IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9183 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9183 IPv6Traffic IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9184 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9184 IPv6Traffic IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9185 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9185 IPv6Traffic IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9186 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9186 IPv6Traffic IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9187 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9187 IPv6Traffic IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9188 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9188 IPv6Traffic IsolateDestAddr IsolateDestPort
 SocksPort 10.152.152.10:9189 IPv6Traffic IsolateDestAddr IsolateDestPort
+SocksPort [fd19:c33d:88bc::10]:9189 IPv6Traffic IsolateDestAddr IsolateDestPort
 
 ##############################
 # Workstation HTTPTunnelPort #
@@ -295,51 +363,91 @@ SocksPort 10.152.152.10:9189 IPv6Traffic IsolateDestAddr IsolateDestPort
 # without IsolateDestAddr
 # without IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9190
+HTTPTunnelPort [fd19:c33d:88bc::10]:9190
 HTTPTunnelPort 10.152.152.10:9191
+HTTPTunnelPort [fd19:c33d:88bc::10]:9191
 HTTPTunnelPort 10.152.152.10:9192
+HTTPTunnelPort [fd19:c33d:88bc::10]:9192
 HTTPTunnelPort 10.152.152.10:9193
+HTTPTunnelPort [fd19:c33d:88bc::10]:9193
 HTTPTunnelPort 10.152.152.10:9194
+HTTPTunnelPort [fd19:c33d:88bc::10]:9194
 HTTPTunnelPort 10.152.152.10:9195
+HTTPTunnelPort [fd19:c33d:88bc::10]:9195
 HTTPTunnelPort 10.152.152.10:9196
+HTTPTunnelPort [fd19:c33d:88bc::10]:9196
 HTTPTunnelPort 10.152.152.10:9197
+HTTPTunnelPort [fd19:c33d:88bc::10]:9197
 HTTPTunnelPort 10.152.152.10:9198
+HTTPTunnelPort [fd19:c33d:88bc::10]:9198
 HTTPTunnelPort 10.152.152.10:9199
+HTTPTunnelPort [fd19:c33d:88bc::10]:9199
 
 # with IsolateDestAddr
 # without IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9200 IsolateDestAddr
+HTTPTunnelPort [fd19:c33d:88bc::10]:9200 IsolateDestAddr
 HTTPTunnelPort 10.152.152.10:9201 IsolateDestAddr
+HTTPTunnelPort [fd19:c33d:88bc::10]:9201 IsolateDestAddr
 HTTPTunnelPort 10.152.152.10:9202 IsolateDestAddr
+HTTPTunnelPort [fd19:c33d:88bc::10]:9202 IsolateDestAddr
 HTTPTunnelPort 10.152.152.10:9203 IsolateDestAddr
+HTTPTunnelPort [fd19:c33d:88bc::10]:9203 IsolateDestAddr
 HTTPTunnelPort 10.152.152.10:9204 IsolateDestAddr
+HTTPTunnelPort [fd19:c33d:88bc::10]:9204 IsolateDestAddr
 HTTPTunnelPort 10.152.152.10:9205 IsolateDestAddr
+HTTPTunnelPort [fd19:c33d:88bc::10]:9205 IsolateDestAddr
 HTTPTunnelPort 10.152.152.10:9206 IsolateDestAddr
+HTTPTunnelPort [fd19:c33d:88bc::10]:9206 IsolateDestAddr
 HTTPTunnelPort 10.152.152.10:9207 IsolateDestAddr
+HTTPTunnelPort [fd19:c33d:88bc::10]:9207 IsolateDestAddr
 HTTPTunnelPort 10.152.152.10:9208 IsolateDestAddr
+HTTPTunnelPort [fd19:c33d:88bc::10]:9208 IsolateDestAddr
 HTTPTunnelPort 10.152.152.10:9209 IsolateDestAddr
+HTTPTunnelPort [fd19:c33d:88bc::10]:9209 IsolateDestAddr
 
 # without IsolateDestAddr
 # with IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9210 IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9210 IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9211 IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9211 IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9212 IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9212 IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9213 IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9213 IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9214 IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9214 IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9215 IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9215 IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9216 IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9216 IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9217 IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9217 IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9218 IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9218 IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9219 IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9219 IsolateDestPort
 
 # with IsolateDestAddr
 # with IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9220 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9220 IsolateDestAddr IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9221 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9221 IsolateDestAddr IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9222 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9222 IsolateDestAddr IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9223 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9223 IsolateDestAddr IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9224 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9224 IsolateDestAddr IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9225 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9225 IsolateDestAddr IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9226 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9226 IsolateDestAddr IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9227 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9227 IsolateDestAddr IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9228 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9228 IsolateDestAddr IsolateDestPort
 HTTPTunnelPort 10.152.152.10:9229 IsolateDestAddr IsolateDestPort
+HTTPTunnelPort [fd19:c33d:88bc::10]:9229 IsolateDestAddr IsolateDestPort
