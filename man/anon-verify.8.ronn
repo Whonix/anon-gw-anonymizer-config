@@ -2,7 +2,7 @@ anon-verify(8) -- Tor configuration verification tool
 =============================================
 
 <!--
-# Copyright (C) 2018 - 2023 ENCRYPTED SUPPORT LP <adrelanos@whonix.org>
+# Copyright (C) 2018 - 2025 ENCRYPTED SUPPORT LLC <adrelanos@whonix.org>
 # Copyright (C) 2018 Iry Koon <iry@riseup.net>
 # See the file COPYING for copying conditions.
 -->
@@ -29,7 +29,7 @@ anon-verify is a user-friendly wrapper around the Tor --verify-config in Whonix.
 This man page has been written by Iry Koon (iry@riseup.net).
 
 ## COPYRIGHT
-Copyright (C) 2018 - 2023 ENCRYPTED SUPPORT LP <adrelanos@whonix.org>
+Copyright (C) 2018 - 2025 ENCRYPTED SUPPORT LLC <adrelanos@whonix.org>
 
 Copyright (C) 2018 Iry Koon <iry@riseup.net>
 
