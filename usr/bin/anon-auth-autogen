@@ -125,7 +125,7 @@ sleep "$sleep_seconds_after_reload"
 
 onion_url="$(cat "$onion_url_file")"
 
-onionname="$(echo "$onion_url" | LANG=C str_replace ".onion" "")"
+onionname="$(echo "$onion_url" | str_replace ".onion" "")"
 
 mkdir -p "$tor_autogen_root_folder"
 chown "${tor_user}:${tor_group}" "$tor_autogen_root_folder"

@@ -40,7 +40,7 @@ FascistFirewall 1"
 #ReachableORAddresses *:443
 #FascistFirewall 1"
 
-   LANG=C str_replace "$search" "$replace" "$config_file"
+   str_replace "$search" "$replace" "$config_file"
 
    true "INFO: Reloading Tor, using normal settings again"
    systemctl --no-pager reload tor@default
@@ -63,7 +63,7 @@ ReachableDirAddresses *:80
 ReachableORAddresses *:443
 FascistFirewall 1"
 
-LANG=C str_replace "$search" "$replace" "$config_file"
+str_replace "$search" "$replace" "$config_file"
 
 true "INFO: Restarting Tor, only using port 80 and 443..."
 systemctl --no-pager reload tor@default
