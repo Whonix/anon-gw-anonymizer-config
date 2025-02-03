@@ -69,19 +69,22 @@ parse_cmd_options() {
 ## used in Whonix to start Tor. If it did not successfully extract the
 ## command, it will exit with exit code 1. If Whonix get rid of
 ## systemd for Tor control in the future, we simply change the content
-## in the tor_start_command
-function get_tor_start_command() {
-   ## Tor use systemd to start
-   tor_start_command=$(grep -i "ExecStart=" /lib/systemd/system/tor@default.service | sed s/ExecStart=//g)
-
-   if [ -z "$tor_start_command" ]; then
-      echo "[error] Failed to extra commands used to start Tor." >&2
-      return 1
-   fi
-
-   ## Tor is run as root, we need to simulate this, too.
-   tor_start_command="sudo $tor_start_command"
-}
+## in the tor_start_command.
+##
+## This is incompatible with privleap, thus out-commented to allow
+## Whonix-Gateway to operate sudoless.
+#function get_tor_start_command() {
+#   ## Tor use systemd to start
+#   tor_start_command=$(grep -i "ExecStart=" /lib/systemd/system/tor@default.service | sed s/ExecStart=//g)
+#
+#   if [ -z "$tor_start_command" ]; then
+#      echo "[error] Failed to extra commands used to start Tor." >&2
+#      return 1
+#   fi
+#
+#   ## Tor is run as root, we need to simulate this, too.
+#   tor_start_command="sudo $tor_start_command"
+#}
 
 ## generate_report will generate a user-friendly report based on
 ## $tor_verify_config_output and $tor_verify_config_exit_code
@@ -193,17 +196,16 @@ $start_menu_instructions_system_first_part Terminal
 
 parse_cmd_options "$@"
 
-get_tor_start_command
+#get_tor_start_command
 
 ## since we should use exactly the same arguments to examine if Tor
 ## can start, we simply append the --verify-config arguments behind it
 ## (and run as root)
-tor_verify="$tor_start_command --verify-config"
+#tor_verify="$tor_start_command --verify-config"
 
 ## execute the verification
-## This should have a /etc/sudoers.d exception.
 tor_verify_config_exit_code="0"
-tor_verify_config_output="$($tor_verify)" || { tor_verify_config_exit_code="$?" ; true; };
+tor_verify_config_output="$(leaprun tor-verify-config)" || { tor_verify_config_exit_code="$?" ; true; };
 
 ## generate the report
 generate_report

@@ -15,9 +15,9 @@ set -x
 
 cat /etc/motd
 
-sudo systemctl --no-pager restart tor@default
+leaprun restart-tor
 
-sudo systemctl --no-pager status tor@default
+leaprun tor-status
 
 true "$?"
 
