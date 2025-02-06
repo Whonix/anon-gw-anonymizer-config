@@ -15,9 +15,9 @@ set -x
 
 cat /etc/motd
 
-sudo systemctl --no-pager stop tor@default
+leaprun stop-tor
 
-sudo systemctl --no-pager status tor@default
+leaprun tor-status
 true "$?"
 
 true "Feel free to close this window."

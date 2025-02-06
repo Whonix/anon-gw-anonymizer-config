@@ -16,12 +16,12 @@ set -x
 cat /etc/motd
 
 if sudo /usr/sbin/service tor@default status &>/dev/null ; then
-   sudo systemctl --no-pager reload tor@default
+   leaprun reload-tor
 else
-   sudo systemctl --no-pager restart tor@default
+   leaprun restart-tor
 fi
 
-sudo systemctl --no-pager status tor@default
+leaprun tor-status
 true "$?"
 
 true "Feel free to close this window."
