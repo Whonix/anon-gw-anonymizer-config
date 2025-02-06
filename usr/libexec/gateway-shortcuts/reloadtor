@@ -15,7 +15,7 @@ set -x
 
 cat /etc/motd
 
-if sudo /usr/sbin/service tor@default status &>/dev/null ; then
+if leaprun tor-status &>/dev/null ; then
    leaprun reload-tor
 else
    leaprun restart-tor
