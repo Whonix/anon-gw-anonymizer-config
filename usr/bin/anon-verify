@@ -205,7 +205,7 @@ parse_cmd_options "$@"
 
 ## execute the verification
 tor_verify_config_exit_code="0"
-tor_verify_config_output="$(leaprun tor-verify-config)" || { tor_verify_config_exit_code="$?" ; true; };
+tor_verify_config_output="$(leaprun anonymizer-tor-verify-config)" || { tor_verify_config_exit_code="$?" ; true; };
 
 ## generate the report
 generate_report
