@@ -1,3 +1,15 @@
+commit e70b26cb3ff57918b544cb8576a93491ff012238
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Feb 21 06:10:14 2025 -0500
+
+    fix: remove superfluous use of sudo from privleap configuration
+
+commit 53c7322ddf7ed02cdde4d5b80e3e84ea32a7da0f
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Feb 21 09:57:56 2025 +0000
+
+    bumped changelog version
+
 commit fde23b460740157c48fb6d7757884f225e2c962b
 Merge: f964d62 7d2bec9
 Author: Patrick Schleizer <adrelanos@whonix.org>
