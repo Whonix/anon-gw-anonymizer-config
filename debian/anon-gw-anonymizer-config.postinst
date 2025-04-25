@@ -8,8 +8,8 @@
 #### category tor
 #### gateway_only yes
 #### description
-## Add user "user" to the group "debian-tor", so user "user" can access Tor's control port.
-## User "user" already exists thanks to the dist-base-files package.
+## Add account "user" to the group "debian-tor", so account "user" can access Tor's control port.
+## Account "user" already exists thanks to the dist-base-files package.
 #### meta end
 
 if [ -f /usr/libexec/helper-scripts/pre.bsh ]; then
@@ -55,8 +55,8 @@ configure_function() {
 
    addgroup --quiet debian-tor 2>/dev/null || true
 
-   ## Add user "user" to the group "debian-tor", so user "user" can access Tor's control port.
-   ## User "user" already exists thanks to the dist-base-files package.
+   ## Add account "user" to the group "debian-tor", so account "user" can access Tor's control port.
+   ## Account "user" already exists thanks to the dist-base-files package.
    adduser --quiet user debian-tor
 
    #vanguards_enable_and_start_once
