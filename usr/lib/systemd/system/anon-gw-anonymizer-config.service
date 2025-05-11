@@ -11,6 +11,7 @@
 ## <code>/usr/libexec/anon-gw-anonymizer-config/make-sure-torrc-exist</code>
 ## to make sure Tor config files exist and
 ## <code>/usr/libexec/helper-scripts/repair-torrc</code> to repair Tor config files.
+## Qubes-Whonix. Also runs <code>/usr/lib/qubes-whonix/replace-ips</code>.
 ## Runs <code>Before=tor.service</code>
 ## and <code>Before=tor@default.service</code>.
 #### meta end
