@@ -29,7 +29,7 @@ function parser() {
          file_extension="${base_name##*.}"
 
          if [ "$first_character" = "." ]; then
-            echo "===> Ignoring file name starting with '.': $abs_path (Quote Tor manual: 'Files starting with a dot are ignored.')" | tee -a "$temp_verbose_torrc" >/dev/null
+            printf '%s\n' "===> Ignoring file name starting with '.': $abs_path (Quote Tor manual: 'Files starting with a dot are ignored.')" | tee -a -- "$temp_verbose_torrc" >/dev/null
             continue
          fi
 
@@ -48,7 +48,7 @@ function parser() {
             fi
          fi
 
-         echo "===> Start parsing file $abs_path" | tee -a "$temp_verbose_torrc" >/dev/null
+         printf '%s\n' "===> Start parsing file $abs_path" | tee -a -- "$temp_verbose_torrc" >/dev/null
          torrc_files+=("$abs_path")
 
          while read -r line ; do
@@ -64,57 +64,57 @@ function parser() {
             if [[ "$line" =~ ^[[:space:]]*# ]]; then
                true "line is a comment: yes"
                if [ "$VERY_VERBOSE" = "1" ]; then
-                  echo "$line" | tee -a "$temp_verbose_torrc" >/dev/null
+                  printf '%s\n' "$line" | tee -a -- "$temp_verbose_torrc" >/dev/null
                fi
             else
                true "line is a comment: no"
-               echo "$line" | tee -a "$temp_verbose_torrc" >/dev/null
+               printf '%s\n' "$line" | tee -a -- "$temp_verbose_torrc" >/dev/null
             fi
 
             true "Checking if the line includes '%include'..."
-            if echo "$line" | grep -q "%include" ; then
+            if printf '%s\n' "$line" | grep -- "%include" &>/dev/null ; then
                true "Yes, the line includes '%include'."
                local second_word files_list
-               second_word="$(echo "$line" | awk '{print $2;}')"
+               second_word="$(printf '%s\n' "$line" | awk '{print $2;}')"
                ## Do not quote because /etc/torrc.d/*.conf needs to be expanded.
                parser $second_word
             else
                true "No, the line does not include '%include'."
             fi
          done < "$abs_path"
-         echo "===> Done parsing file $abs_path" | tee -a "$temp_verbose_torrc" >/dev/null
+         printf '%s\n' "===> Done parsing file $abs_path" | tee -a -- "$temp_verbose_torrc" >/dev/null
       elif [[ -d "$abs_path" ]]; then
-         echo "===> Start parsing folder: $abs_path" | tee -a "$temp_verbose_torrc" >/dev/null
+         printf '%s\n' "===> Start parsing folder: $abs_path" | tee -a -- "$temp_verbose_torrc" >/dev/null
          local fso
          for fso in $(find "$abs_path" -mindepth 1 -maxdepth 1 | sort -g) ; do
             if [ -d "$fso" ]; then
-               echo "===> Ignoring subfolder: $abs_path (Quote Tor manual: 'Files on subfolders are ignored.')" | tee -a "$temp_verbose_torrc" >/dev/null
+               printf '%s\n' "===> Ignoring subfolder: $abs_path (Quote Tor manual: 'Files on subfolders are ignored.')" | tee -a -- "$temp_verbose_torrc" >/dev/null
                continue
             fi
             parser "$fso"
          done
-         echo "===> Done parsing folder : $abs_path" | tee -a "$temp_verbose_torrc" >/dev/null
+         printf '%s\n' "===> Done parsing folder : $abs_path" | tee -a -- "$temp_verbose_torrc" >/dev/null
       else
-         echo "ERROR: invalid file system object (fso) (abs_path): '$abs_path'"
+         printf '%s\n' "ERROR: invalid file system object (fso) (abs_path): '$abs_path'"
       fi
    done
 }
 
 function parsing_order_verbose(){
-   echo "The Tor configuration files are parsed in such order: "
-   cat "$temp_verbose_torrc"
+   printf '%s\n' "The Tor configuration files are parsed in such order: "
+   cat -- "$temp_verbose_torrc"
 }
 
 function used_torrc_files(){
-   echo "${#torrc_files[@]} files are used as Tor configuration files: "
-   echo "${torrc_files[@]}"
+   printf '%s\n' "${#torrc_files[@]} files are used as Tor configuration files: "
+   printf '%s\n' "${torrc_files[@]}"
 }
 
 function unknown_option_specifier(){
    for unknown_option in "$@"; do
-      echo "The following files contain unkown option '$unknown_option': "
-      grep -iHnE --color "^([[:space:]])*$unknown_option" "${torrc_files[@]}"
-      echo "Please modify these files to fix the problem."
+      printf '%s\n' "The following files contain unkown option '$unknown_option': "
+      grep -iHnE --color -- "^([[:space:]])*$unknown_option" "${torrc_files[@]}"
+      printf '%s\n' "Please modify these files to fix the problem."
    done
 }
 
@@ -122,12 +122,12 @@ function extraneous_torrc_files(){
    if [ "$extraneous_torrc" = "" ]; then
       return 0
    fi
-   echo "/===================================================================\\"
-   echo "|                 Extraneous Tor Configuration Files                |"
-   echo "\\===================================================================/"
-   echo "${#extraneous_torrc[@]} files are do not end with file extension '.conf': "
-   echo "${extraneous_torrc[@]}"
-   echo "These should be probably removed."
+   printf '%s\n' "/===================================================================\\"
+   printf '%s\n' "|                 Extraneous Tor Configuration Files                |"
+   printf '%s\n' "\\===================================================================/"
+   printf '%s\n' "${#extraneous_torrc[@]} files are do not end with file extension '.conf': "
+   printf '%s\n' "${extraneous_torrc[@]}"
+   printf '%s\n' "These should be probably removed."
 }
 
 #parser $@
