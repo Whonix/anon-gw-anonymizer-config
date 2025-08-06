@@ -60,7 +60,7 @@ configure_function() {
    adduser --quiet user debian-tor
 
    #vanguards_enable_and_start_once
-   vanguards_disable_and_stop_once
+   #vanguards_disable_and_stop_once
 
    ## force-reload Tor, if running.
    service_tor_status_exit_code="0"
