@@ -11,11 +11,11 @@
 ## Tor apt sources and version info command line tool.
 #### meta end
 
-if [ ! -e /etc/apt/sources.list.d/torproject.list ]; then
-   echo "INFO: /etc/apt/sources.list.d/torproject.list does not exist."
+if [ ! -e /etc/apt/sources.list.d/torproject.sources ]; then
+   echo "INFO: /etc/apt/sources.list.d/torproject.sources does not exist."
 else
-   uncommented_lines="$(cat /etc/apt/sources.list.d/torproject.list | grep -v '#' | grep deb)"
-   echo "INFO: /etc/apt/sources.list.d/torproject.list uncommented lines:
+   uncommented_lines="$(cat /etc/apt/sources.list.d/torproject.sources | grep -v '#' | grep deb)"
+   echo "INFO: /etc/apt/sources.list.d/torproject.sources uncommented lines:
 $uncommented_lines"
 fi
 
