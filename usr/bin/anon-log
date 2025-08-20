@@ -21,8 +21,9 @@ log1="$($cmd1)"
 cmd2="journalctl --boot --no-pager --output cat -u tor@default.service"
 log2="$($cmd2)"
 
-cmd3="journalctl --boot --no-pager --output cat -u vanguards.service"
-log3="$($cmd3)"
+## Vanguards does not exist in Trixie any longer.
+#cmd3="journalctl --boot --no-pager --output cat -u vanguards.service"
+#log3="$($cmd3)"
 
 if [ -z "$log1" ]; then
   log1="empty"
@@ -53,6 +54,19 @@ Exiting." >&2
    exit 1
 fi
 
+#log_full="\
+#${bold}tor.service:${reset}
+#
+#$log1
+#
+#${bold}tor@default.service:${reset}
+#
+#$log2
+#
+#${bold}vanguards.service:${reset}
+#
+#$log3"
+
 log_full="\
 ${bold}tor.service:${reset}
 
@@ -60,11 +74,7 @@ $log1
 
 ${bold}tor@default.service:${reset}
 
-$log2
-
-${bold}vanguards.service:${reset}
-
-$log3"
+$log2"
 
 ## https://www.whonix.org/wiki/Tor#Non-Issues
 log_full="$(echo "$log_full" | grep --invert-match --fixed-strings -- "New control connection opened.")"
