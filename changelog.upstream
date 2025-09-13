@@ -1,3 +1,25 @@
+commit d0e62bd922e68968e5d86ff4d98c4acb372dab7b
+Merge: 22891af 0e71b5c
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Sep 13 06:41:15 2025 -0400
+
+    Merge remote-tracking branch 'github-whonix/master'
+
+commit 0e71b5cd7ded326a8d24242ad6552593c25183e7
+Merge: 22891af 083dbf4
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Sep 13 05:02:24 2025 -0400
+
+    Merge pull request #5 from DanWin/ip6
+    
+    Enable IPv6
+
+commit 22891afc77840430fd5e140b89851eafcdd6f5a2
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Sep 2 15:32:40 2025 +0000
+
+    bumped changelog version
+
 commit f1fd54b308ecb9bb7587cb3cb43e69cb33608ba4
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Tue Aug 26 09:27:50 2025 +0000
@@ -40,6 +62,12 @@ Author: Aaron Rainbolt <arraybolt3@ubuntu.com>
 Date:   Tue Aug 5 22:58:21 2025 -0500
 
     Port to Trixie.
+
+commit 083dbf45182b320c0a0ea6af528662444fc18fe7
+Author: Daniel Winzen <daniel@danwin1210.de>
+Date:   Sat Jul 5 16:13:59 2025 +0200
+
+    Add IPv6 ports to 65_gateway.conf
 
 commit 24eeeec7138e00ee24a97d4403d5c5e5d574de12
 Author: Patrick Schleizer <adrelanos@whonix.org>
@@ -187,6 +215,24 @@ Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Tue Dec 31 13:26:24 2024 -0500
 
     copyright
+
+commit 620c608ffd7258be77f5ac3dfc64497925315e13
+Author: Daniel Winzen <daniel@danwin1210.de>
+Date:   Mon Dec 9 18:53:40 2024 +0100
+
+    Add VirtualAddrNetworkIPv6
+
+commit a411a149f57d224c1177f3bfee8fde0e02066379
+Author: Daniel Winzen <daniel@danwin1210.de>
+Date:   Mon Dec 9 18:32:05 2024 +0100
+
+    Update comments to reflect config changes
+
+commit 5604b17392601f71e7b8a59c3119bd5271a3d672
+Author: Daniel Winzen <daniel@danwin1210.de>
+Date:   Fri Oct 11 19:13:21 2024 +0200
+
+    Enable IPv6
 
 commit 1a9806c857a0f020a714c32b77f48889b9ea1dee
 Author: Patrick Schleizer <adrelanos@whonix.org>
