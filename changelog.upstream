@@ -1,3 +1,40 @@
+commit 4c905c73f4407e6e239949ea7ae7eb6297430945
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Sep 17 10:20:13 2025 -0400
+
+    end-of-options
+
+commit 82900c9f77163502eb0604f37039a299f5a4c630
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Sep 17 10:19:57 2025 -0400
+
+    output
+
+commit ecfdebdbe5616f11381731637c3fbeea6a9029b7
+Merge: c2f79da 45e60c9
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed Sep 17 09:49:58 2025 -0400
+
+    Merge remote-tracking branch 'ArrayBolt3/arraybolt3/trixie'
+
+commit 45e60c9820ead96eb68b1846d38e43b890864050
+Author: Aaron Rainbolt <arraybolt3@ubuntu.com>
+Date:   Tue Sep 16 21:22:26 2025 -0500
+
+    Avoid having Tor listen on IPv6 addresses if IPv6 is not available
+
+commit 588d4d235b2991968e08c21613e27ec50731e6e6
+Author: Aaron Rainbolt <arraybolt3@ubuntu.com>
+Date:   Mon Sep 15 20:07:24 2025 -0500
+
+    Give the network enough time to initialize before starting Tor
+
+commit c2f79da9763575917d1533a27966313549292b3e
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Sep 13 10:50:29 2025 +0000
+
+    bumped changelog version
+
 commit d0e62bd922e68968e5d86ff4d98c4acb372dab7b
 Merge: 22891af 0e71b5c
 Author: Patrick Schleizer <adrelanos@whonix.org>
