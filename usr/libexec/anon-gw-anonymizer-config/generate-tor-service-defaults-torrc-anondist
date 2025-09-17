@@ -13,7 +13,7 @@ printf '%s\n' "$0: BEGIN"
 orig_file='/usr/share/tor/tor-service-defaults-torrc.anondist.base'
 new_file='/usr/share/tor/tor-service-defaults-torrc.anondist'
 
-if ! cp "${orig_file}" "${new_file}"; then
+if ! cp -- "${orig_file}" "${new_file}"; then
   printf '%s\n' "$0: ERROR: Failed to copy '${orig_file}' to '${new_file}'!"
   exit 1
 fi
