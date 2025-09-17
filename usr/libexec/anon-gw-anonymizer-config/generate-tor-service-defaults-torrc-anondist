@@ -1,0 +1,53 @@
+#!/bin/bash
+
+## Copyright (C) 2025 - 2025 ENCRYPTED SUPPORT LLC <adrelanos@whonix.org>
+## See the file COPYING for copying conditions.
+
+set -o errexit
+set -o nounset
+set -o errtrace
+set -o pipefail
+
+printf '%s\n' "$0: BEGIN"
+
+orig_file='/usr/share/tor/tor-service-defaults-torrc.anondist.base'
+new_file='/usr/share/tor/tor-service-defaults-torrc.anondist'
+
+if ! cp "${orig_file}" "${new_file}"; then
+  printf '%s\n' "$0: ERROR: Could not copy '${orig_file}' to '${new_file}'!"
+  exit 1
+fi
+
+ipv6_route_data="$(ip -6 -o addr show scope global)"
+ipv6_route_data="$(awk '{print $4}' <<< "${ipv6_route_data}")"
+if [ -z "${ipv6_route_data}" ]; then
+  printf '%s\n' "$0: INFO: No IPv6 routes available, assuming IPv6 disabled."
+  printf '%s\n' "$0: INFO: Commenting out IPv6 configuration in '${new_file}'."
+
+  ## Explanation of the sed command used below:
+  ## s/             - Sed replace command, begin the "search" segment
+  ## \(             - Begin capturing group, we want to capture all lines that
+  ##                  contain IPv6 addresses
+  ## ^\s*[^#]       - Only match uncommented lines
+  ## .*             - Match everything up to the beginning of the IPv6 address
+  ## \[             - Match the starting bracket of an IPv6 address
+  ## [0-9a-fA-F:]\+ - Match all the hextets in the IPv6 address, this could
+  ##                  be made stricter, but it is likely unnecessary to do so
+  ## \]             - Match the ending bracket of an IPv6 address
+  ## .*$            - Match the rest of the line after the IPv6 address
+  ## \)             - End capturing group
+  ## /              - Sed replace command, end the "search" segment and begin
+  ##                  the "replace" segment
+  ## #\1            - Replace the line with a hashtag-prefixed version of
+  ##                  itself, to comment it out
+  ## /              - Sed replace command, end the "replace" segment
+  if ! sed -i \
+    's/\(^\s*[^#].*\[[0-9a-fA-F:]\+\]:[0-9]\+.*$\)/#\1/' \
+    "${new_file}"; then
+    printf '%s\n' "$0: ERROR: Could not comment out IPv6 addresses in '${new_file}'!"
+    exit 1
+  fi
+  printf '%s\n' "$0: INFO: Commented out IPv6 configuration in '${new_file}'."
+fi
+
+printf '%s\n' "$0: End"

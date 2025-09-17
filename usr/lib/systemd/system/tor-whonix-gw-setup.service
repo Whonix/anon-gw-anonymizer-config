@@ -2,14 +2,15 @@
 ## See the file COPYING for copying conditions.
 
 [Unit]
-Description=Slows down Tor startup so the network has time to initialize
+Description=Waits for the network to come up and prepares Tor configuration before Tor startup
 Wants=network.target
 After=network.target
 
 [Service]
 Type=oneshot
 RemainAfterExit=true
-ExecStart=/usr/bin/sleep 10
+ExecStartPre=/usr/bin/sleep 10
+ExecStart=/usr/libexec/anon-gw-anonymizer-config/generate-tor-service-defaults-torrc-anondist
 
 [Install]
 WantedBy=multi-user.target
