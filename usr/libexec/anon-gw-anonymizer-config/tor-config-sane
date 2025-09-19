@@ -7,8 +7,10 @@ set -x
 
 true "$0: START"
 
+sleep 10
 /usr/libexec/anon-gw-anonymizer-config/make-sure-torrc-exist
 /usr/libexec/helper-scripts/repair-torrc
+/usr/libexec/anon-gw-anonymizer-config/generate-tor-service-defaults-torrc-anondist
 
 if ! test -f /usr/share/qubes/marker-vm ; then
    ## Do none of the following if not running inside Qubes.
