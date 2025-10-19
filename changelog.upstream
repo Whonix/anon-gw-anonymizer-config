@@ -1,3 +1,15 @@
+commit 5b56a4469b8bbff2a46adc33dacb208f0d342dc8
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sun Oct 19 06:55:47 2025 -0400
+
+    fix: Do not wait always as other programs are using 'tor-config-sane' internally.
+
+commit dc9e4e3059bb4d191f0adfa3a962501a98005fe2
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Sep 19 18:11:36 2025 +0000
+
+    bumped changelog version
+
 commit e87f61503c8a8568fd5a1eebeb4a2c30dc249126
 Merge: 706cffd 1af8bca
 Author: Patrick Schleizer <adrelanos@whonix.org>
