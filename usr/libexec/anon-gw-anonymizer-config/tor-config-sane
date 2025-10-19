@@ -7,7 +7,6 @@ set -x
 
 true "$0: START"
 
-sleep 10
 /usr/libexec/anon-gw-anonymizer-config/make-sure-torrc-exist
 /usr/libexec/helper-scripts/repair-torrc
 /usr/libexec/anon-gw-anonymizer-config/generate-tor-service-defaults-torrc-anondist
@@ -26,5 +25,7 @@ fi
 ## Replace IP addresses in known configuration files / scripts with
 ## currently discovered IP address.
 /usr/lib/qubes-whonix/replace-ips
+
+/usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network
 
 true "$0: END"

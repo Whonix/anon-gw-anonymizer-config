@@ -1,0 +1,28 @@
+#!/bin/bash
+
+## Copyright (C) 2025 - 2025 ENCRYPTED SUPPORT LLC <adrelanos@whonix.org>
+## See the file COPYING for copying conditions.
+
+#### meta start
+#### project Whonix
+#### category tor
+#### gateway_only yes
+#### description
+## Wait for network to become available so Tor can bind on it.
+#### meta end
+
+set -x
+
+true "$0: START"
+
+if test -f /run/anon-gw-anonymizer-config/initial-wait-at-boot ; then
+  ## Do not wait always as other programs are using 'tor-config-sane' internally.
+  exit 0
+fi
+
+sleep 10
+
+mkdir --parents -- /run/anon-gw-anonymizer-config
+touch -- /run/anon-gw-anonymizer-config/initial-wait-at-boot
+
+true "$0: END"
