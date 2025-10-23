@@ -10,6 +10,16 @@ tor-wait-for-network - Waits to see if a hardcoded IPv6 address Tor will want
 to listen on becomes available. The script will exit 0 if IPv6 is disabled,
 the IPv6 address becomes available, or ten seconds passes, whichever is
 detected first.
+
+This is necessary, because Whonix-Gateway's internal network interface's IPv6
+address doesn't show up immediately. If Tor starts before the IPv6 address
+appears, and it attempts to listen on that address, it will crash on startup.
+Tor is reconfigured by generate-tor-service-defaults-torrc-anondist to not
+listen on the IPv6 address if it doesn't exist, but that would result in Tor
+never listening on the IPv6 address even if it became available shortly later.
+This script allows Tor to wait for the minimum amount of time necessary to
+be able to bind to the IPv6 address, while not waiting forever for an IPv6
+address that will never appear.
 """
 
 #### meta start
