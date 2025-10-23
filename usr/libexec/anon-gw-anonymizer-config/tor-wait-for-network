@@ -1,7 +1,16 @@
-#!/bin/bash
+#!/usr/bin/python3 -su
 
-## Copyright (C) 2025 - 2025 ENCRYPTED SUPPORT LLC <adrelanos@whonix.org>
-## See the file COPYING for copying conditions.
+# Copyright (C) 2025 - 2025 ENCRYPTED SUPPORT LLC <adrelanos@whonix.org>
+# See the file COPYING for copying conditions.
+
+# pylint: disable=broad-exception-caught,invalid-name
+
+"""
+tor-wait-for-network - Waits to see if a hardcoded IPv6 address Tor will want
+to listen on becomes available. The script will exit 0 if IPv6 is disabled,
+the IPv6 address becomes available, or ten seconds passes, whichever is
+detected first.
+"""
 
 #### meta start
 #### project Whonix
@@ -11,18 +20,132 @@
 ## Wait for network to become available so Tor can bind on it.
 #### meta end
 
-set -x
+import sys
+import time
+import traceback
+from typing import NoReturn, TextIO
+from pathlib import Path
 
-true "$0: START"
 
-if test -f /run/anon-gw-anonymizer-config/initial-wait-at-boot ; then
-  ## Do not wait always as other programs are using 'tor-config-sane' internally.
-  exit 0
-fi
+# pylint: disable=too-few-public-methods
+class GlobalData:
+    """
+    Global data for the script.
+    """
 
-sleep 10
+    ipv6_addr_file_str: str = "/proc/net/if_inet6"
+    hardcoded_ipv6_addr: str = "fd19c33d88bc00000000000000000010"
+    initial_wait_done_dir_path: Path = Path("/run/anon-gw-anonymizer-config")
+    ipv6_disabled_file_path: Path = Path(
+        "/proc/sys/net/ipv6/conf/all/disable_ipv6"
+    )
+    initial_wait_done_path: Path = (
+        initial_wait_done_dir_path / "initial-wait-at-boot"
+    )
 
-mkdir --parents -- /run/anon-gw-anonymizer-config
-touch -- /run/anon-gw-anonymizer-config/initial-wait-at-boot
 
-true "$0: END"
+def suppress_wait_and_exit() -> NoReturn:
+    """
+    Creates an empty file at GlobalData.initial_wait_done_path, and exits the
+    script.
+    """
+
+    try:
+        GlobalData.initial_wait_done_dir_path.mkdir(parents=True)
+        GlobalData.initial_wait_done_path.touch()
+    except Exception:
+        print(
+            f"WARNING: Unable to touch '{GlobalData.initial_wait_done_path}'! "
+            "Details:",
+            file=sys.stderr,
+        )
+        traceback.print_exc()
+
+    ## Exit with 0 even if we can't touch the file. We can limp along even if
+    ## the file can't be touched.
+    sys.exit(0)
+
+
+def scan_ipv6_addrs(ipv6_addr_file: TextIO) -> None:
+    """
+    Checks for the existence of the hardcoded IPv6 address in GlobalData.
+    Exits the program if found.
+    """
+
+    ipv6_addr_file.seek(0)
+    file_contents_list: list[str] = ipv6_addr_file.read().split("\n")
+    for line in file_contents_list:
+        if line.startswith(f"{GlobalData.hardcoded_ipv6_addr} "):
+            print(
+                "INFO: Internal interface IPv6 address found. Exiting.",
+                file=sys.stderr,
+            )
+            suppress_wait_and_exit()
+
+
+def main() -> NoReturn:
+    """
+    Main function.
+    """
+
+    check_interval: float = 0.2
+    check_max_count: int = 50
+    ipv6_addr_file: TextIO | None = None
+
+    if GlobalData.initial_wait_done_path.is_file():
+        print("INFO: Initial wait already done. Exiting.", file=sys.stderr)
+        sys.exit(0)
+
+    try:
+        if (
+            GlobalData.ipv6_disabled_file_path.read_text(
+                encoding="utf-8"
+            ).strip()
+            == "1"
+        ):
+            print(
+                "INFO: IPv6 is disabled "
+                f"('{GlobalData.ipv6_disabled_file_path}' contained '1'). "
+                "Exiting.",
+                file=sys.stderr,
+            )
+            sys.exit(0)
+    except Exception:
+        print(
+            "WARNING: Could not read "
+            f"'{GlobalData.ipv6_disabled_file_path}'! Continuing regardless.",
+            file=sys.stderr,
+        )
+
+    try:
+        # pylint: disable=consider-using-with
+        ipv6_addr_file = open(
+            GlobalData.ipv6_addr_file_str, "r", encoding="utf-8"
+        )
+    except Exception:
+        print(
+            f"INFO: Cannot open '{GlobalData.ipv6_addr_file_str}'. Exiting.",
+            file=sys.stderr,
+        )
+        suppress_wait_and_exit()
+
+    assert ipv6_addr_file is not None
+    scan_ipv6_addrs(ipv6_addr_file)
+
+    ## Unfortunately, the if_inet6 file is not pollable the way
+    ## /proc/self/mounts is (listening for POLLIN results in a busy-loop,
+    ## listening for POLLPRI results in a hang because polling if_inet6 never
+    ## results in a POLLPRI event), so we have to poll manually.
+    for _ in range(0, check_max_count):
+        time.sleep(check_interval)
+        scan_ipv6_addrs(ipv6_addr_file)
+
+    print(
+        "WARNING: Internal interface IPv6 address was not found! Exiting.",
+        file=sys.stderr,
+    )
+    suppress_wait_and_exit()
+
+
+if __name__ == "__main__":
+    main()
