@@ -30,6 +30,7 @@ address that will never appear.
 ## Wait for network to become available so Tor can bind on it.
 #### meta end
 
+import os
 import sys
 import time
 import traceback
@@ -97,6 +98,10 @@ def main() -> NoReturn:
     """
     Main function.
     """
+
+    if not os.getuid() == 0:
+        print("ERROR: Must be run as root!", file=sys.stderr)
+        sys.exit(1)
 
     check_interval: float = 0.2
     check_max_count: int = 50
