@@ -3,6 +3,9 @@
 ## Copyright (C) 2012 - 2025 ENCRYPTED SUPPORT LLC <adrelanos@whonix.org>
 ## See the file COPYING for copying conditions.
 
+source /usr/libexec/helper-scripts/use_sudo.sh
+sudo_error_exit_if_unavailable
+
 set -x
 
 #### meta start
