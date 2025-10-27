@@ -156,7 +156,7 @@ def main() -> NoReturn:
         scan_ipv6_addrs(ipv6_addr_file)
 
     print(
-        "tor-wait-for-network: WARNING: Internal interface IPv6 address was not found! Exiting.",
+        "tor-wait-for-network: INFO: Internal interface IPv6 address was not found. Exiting.",
         file=sys.stderr,
     )
     suppress_wait_and_exit()
