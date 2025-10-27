@@ -66,7 +66,7 @@ def suppress_wait_and_exit() -> NoReturn:
         GlobalData.initial_wait_done_path.touch()
     except Exception:
         print(
-            f"WARNING: Unable to touch '{GlobalData.initial_wait_done_path}'! "
+            f"tor-wait-for-network: WARNING: Unable to touch '{GlobalData.initial_wait_done_path}'! "
             "Details:",
             file=sys.stderr,
         )
@@ -88,7 +88,7 @@ def scan_ipv6_addrs(ipv6_addr_file: TextIO) -> None:
     for line in file_contents_list:
         if line.startswith(f"{GlobalData.hardcoded_ipv6_addr} "):
             print(
-                "INFO: Internal interface IPv6 address found. Exiting.",
+                "tor-wait-for-network: INFO: Internal interface IPv6 address found. Exiting.",
                 file=sys.stderr,
             )
             suppress_wait_and_exit()
@@ -100,7 +100,7 @@ def main() -> NoReturn:
     """
 
     if not os.getuid() == 0:
-        print("ERROR: Must be run as root!", file=sys.stderr)
+        print("tor-wait-for-network: ERROR: Must be run as root!", file=sys.stderr)
         sys.exit(1)
 
     check_interval: float = 0.2
@@ -108,7 +108,7 @@ def main() -> NoReturn:
     ipv6_addr_file: TextIO | None = None
 
     if GlobalData.initial_wait_done_path.is_file():
-        print("INFO: Initial wait already done. Exiting.", file=sys.stderr)
+        print("tor-wait-for-network: INFO: Initial wait already done. Exiting.", file=sys.stderr)
         sys.exit(0)
 
     try:
@@ -119,7 +119,7 @@ def main() -> NoReturn:
             == "1"
         ):
             print(
-                "INFO: IPv6 is disabled "
+                "tor-wait-for-network: INFO: IPv6 is disabled "
                 f"('{GlobalData.ipv6_disabled_file_path}' contained '1'). "
                 "Exiting.",
                 file=sys.stderr,
@@ -127,7 +127,7 @@ def main() -> NoReturn:
             sys.exit(0)
     except Exception:
         print(
-            "WARNING: Could not read "
+            "tor-wait-for-network: WARNING: Could not read "
             f"'{GlobalData.ipv6_disabled_file_path}'! Continuing regardless.",
             file=sys.stderr,
         )
@@ -139,7 +139,7 @@ def main() -> NoReturn:
         )
     except Exception:
         print(
-            f"INFO: Cannot open '{GlobalData.ipv6_addr_file_str}'. Exiting.",
+            f"tor-wait-for-network: INFO: Cannot open '{GlobalData.ipv6_addr_file_str}'. Exiting.",
             file=sys.stderr,
         )
         suppress_wait_and_exit()
@@ -156,7 +156,7 @@ def main() -> NoReturn:
         scan_ipv6_addrs(ipv6_addr_file)
 
     print(
-        "WARNING: Internal interface IPv6 address was not found! Exiting.",
+        "tor-wait-for-network: WARNING: Internal interface IPv6 address was not found! Exiting.",
         file=sys.stderr,
     )
     suppress_wait_and_exit()
