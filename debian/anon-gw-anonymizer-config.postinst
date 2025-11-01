@@ -59,6 +59,9 @@ configure_function() {
    ## Account "user" already exists thanks to the dist-base-files package.
    adduser --quiet user debian-tor
 
+   ## Account 'sysmaint' may not exist at this time.
+   adduser --quiet sysmaint debian-tor 2>/dev/null || true
+
    #vanguards_enable_and_start_once
    #vanguards_disable_and_stop_once
 
