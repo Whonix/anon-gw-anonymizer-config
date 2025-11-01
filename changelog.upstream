@@ -1,3 +1,28 @@
+commit bc38954ae0d3d8f01311dc54a0db0ac534aeb7bc
+Merge: ffb9aa3 8e4b999
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Nov 1 04:13:24 2025 -0400
+
+    Merge remote-tracking branch 'ArrayBolt3/arraybolt3/trixie'
+
+commit ffb9aa3fb00905301b22d046efc74abe81c6bdae
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Nov 1 03:35:50 2025 -0400
+
+    no longer depend on sudo
+
+commit 8e4b999f0785e670ac47e1fa81141b49ce635de7
+Author: Aaron Rainbolt <arraybolt3@ubuntu.com>
+Date:   Fri Oct 31 13:27:45 2025 -0500
+
+    Fix privleap config
+
+commit a6ff95148ce2578b3ed24eaee6677bc9a1c7141b
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Oct 27 13:16:19 2025 +0000
+
+    bumped changelog version
+
 commit f06887c71096f8a0585acb2e8fb36784ef5b5573
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Mon Oct 27 08:22:47 2025 -0400
