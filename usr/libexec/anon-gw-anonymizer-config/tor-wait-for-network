@@ -150,7 +150,8 @@ def scan_ipv6_addrs(ipv6_addr_file: TextIO) -> None:
             print(f"tor-wait-for-network: INFO: Non-loopback IPv6 addres '{addr_text}' dev '{dev}' is bindable. Exiting.", file=sys.stderr)
             suppress_wait_and_exit()
         else:
-            print(f"tor-wait-for-network: INFO: Non-loopback IPv6 address '{addr_text}' dev '{dev}' present but not bindable yet.", file=sys.stderr)
+            #print(f"tor-wait-for-network: INFO: Non-loopback IPv6 address '{addr_text}' dev '{dev}' present but not bindable yet.", file=sys.stderr)
+            pass
 
         return
 
