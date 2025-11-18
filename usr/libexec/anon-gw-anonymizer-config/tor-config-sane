@@ -12,10 +12,12 @@ qubes_replace_ips_maybe() {
     true "$0: INFO: Do not run replace-ips since not running inside Qubes."
     return 0
   fi
+  true "$0: INFO: Running inside Qubes."
   if test -f /run/qubes/this-is-templatevm ; then
     true "$0: INFO: Do not run replace-ips since running inside Qubes Template."
     return 0
   fi
+  true "$0: INFO: Not running inside Qubes Template."
   ## XXX: duplicated in qubes-whonix-postinit.service
   ## Replace IP addresses in known configuration files / scripts with
   ## currently discovered IP address.
@@ -24,9 +26,10 @@ qubes_replace_ips_maybe() {
 
 tor_wait_for_network_maybe() {
   if test -f /run/qubes/this-is-templatevm ; then
-    true "$0: INFO Do not run tor-wait-for-network inside Qubes Template."
+    true "$0: INFO: Do not run tor-wait-for-network inside Qubes Template."
     return 0
   fi
+  true "$0: INFO: Not running inside Qubes Template."
   /usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network
 }
 
