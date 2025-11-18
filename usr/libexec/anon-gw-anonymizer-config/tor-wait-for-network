@@ -6,10 +6,10 @@
 # pylint: disable=broad-exception-caught,invalid-name
 
 """
-tor-wait-for-network - Waits to see if a hardcoded IPv6 address Tor will want
-to listen on becomes available. The script will exit 0 if IPv6 is disabled,
-the IPv6 address becomes available, or ten seconds passes, whichever is
-detected first.
+tor-wait-for-network - Waits to see if an IPv6 address Tor will want
+to listen on becomes available and bindable. The script will exit 0 if IPv6
+is disabled, an IPv6 address becomes bindable, or ten seconds passes,
+whichever is detected first.
 
 This is necessary, because Whonix-Gateway's internal network interface's IPv6
 address doesn't show up immediately. If Tor starts before the IPv6 address
@@ -17,9 +17,9 @@ appears, and it attempts to listen on that address, it will crash on startup.
 Tor is reconfigured by generate-tor-service-defaults-torrc-anondist to not
 listen on the IPv6 address if it doesn't exist, but that would result in Tor
 never listening on the IPv6 address even if it became available shortly later.
-This script allows Tor to wait for the minimum amount of time necessary to
-be able to bind to the IPv6 address, while not waiting forever for an IPv6
-address that will never appear.
+This script allows Tor to wait for the minimum amount of time necessary to be
+able to bind to the IPv6 address, while not waiting forever for an IPv6 address
+that will never appear.
 """
 
 #### meta start
@@ -31,9 +31,11 @@ address that will never appear.
 #### meta end
 
 import os
+import socket
 import sys
 import time
 import traceback
+import ipaddress
 from typing import NoReturn, TextIO
 from pathlib import Path
 
@@ -45,7 +47,6 @@ class GlobalData:
     """
 
     ipv6_addr_file_str: str = "/proc/net/if_inet6"
-    hardcoded_ipv6_addr: str = "fd19c33d88bc00000000000000000010"
     initial_wait_done_dir_path: Path = Path("/run/anon-gw-anonymizer-config")
     ipv6_disabled_file_path: Path = Path(
         "/proc/sys/net/ipv6/conf/all/disable_ipv6"
@@ -62,7 +63,7 @@ def suppress_wait_and_exit() -> NoReturn:
     """
 
     try:
-        GlobalData.initial_wait_done_dir_path.mkdir(parents=True)
+        GlobalData.initial_wait_done_dir_path.mkdir(parents=True, exist_ok=True)
         GlobalData.initial_wait_done_path.touch()
     except Exception:
         print(
@@ -77,21 +78,81 @@ def suppress_wait_and_exit() -> NoReturn:
     sys.exit(0)
 
 
+def can_bind_ipv6(addr_text: str, dev: str, scope_hex: str) -> bool:
+    """
+    Try to bind a TCP/IPv6 socket to the given address on an ephemeral port.
+    Returns True if bind succeeds, False otherwise.
+    """
+    s = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
+    try:
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
+        scope_id = 0
+        try:
+            scope = int(scope_hex, 16)
+        except ValueError:
+            scope = 0
+
+        if scope != 0 or addr_text.startswith("fe80:"):
+            try:
+                scope_id = socket.if_nametoindex(dev)
+            except OSError:
+                scope_id = 0
+
+        s.bind((addr_text, 0, 0, scope_id))
+        return True
+    except:
+        return False
+    finally:
+        s.close()
+
+
 def scan_ipv6_addrs(ipv6_addr_file: TextIO) -> None:
     """
-    Checks for the existence of the hardcoded IPv6 address in GlobalData.
-    Exits the program if found.
+    Checks IPv6 addresses in /proc/net/if_inet6.
+    For the first non-loopback address found, checks if we can actually
+    bind() to it.
+
+    Exits the program when bind() succeeds. If no non-loopback IPv6 address
+    is present or bindable yet, the function returns and the caller should
+    try again later.
     """
 
     ipv6_addr_file.seek(0)
     file_contents_list: list[str] = ipv6_addr_file.read().split("\n")
     for line in file_contents_list:
-        if line.startswith(f"{GlobalData.hardcoded_ipv6_addr} "):
-            print(
-                "tor-wait-for-network: INFO: Internal interface IPv6 address found. Exiting.",
-                file=sys.stderr,
-            )
+        line = line.strip()
+        if not line:
+            continue
+
+        parts = line.split()
+        if len(parts) < 6:
+            continue
+
+        addr_hex, _ifindex, _plen, scope_hex, _flags, dev = parts
+
+        ## Skip loopback; ::1 is usually bindable early and would defeat the
+        ## purpose of waiting for the real interface.
+        if dev == "lo":
+            continue
+
+        ## HARDCODED: network interface eth1
+        if not dev == "eth1":
+            continue
+
+        try:
+            addr_int = int(addr_hex, 16)
+            addr_text = str(ipaddress.IPv6Address(addr_int))
+        except ValueError:
+            continue
+
+        if can_bind_ipv6(addr_text, dev, scope_hex):
+            print(f"tor-wait-for-network: INFO: Non-loopback IPv6 addres '{addr_text}' dev '{dev}' is bindable. Exiting.", file=sys.stderr)
             suppress_wait_and_exit()
+        else:
+            print(f"tor-wait-for-network: INFO: Non-loopback IPv6 address '{addr_text}' dev '{dev}' present but not bindable yet.", file=sys.stderr)
+
+        return
 
 
 def main() -> NoReturn:
@@ -156,7 +217,7 @@ def main() -> NoReturn:
         scan_ipv6_addrs(ipv6_addr_file)
 
     print(
-        "tor-wait-for-network: INFO: Internal interface IPv6 address was not found. Exiting.",
+        "tor-wait-for-network: INFO: Non-loopback IPv6 address was not found or not bindable within timeout. Exiting.",
         file=sys.stderr,
     )
     suppress_wait_and_exit()
