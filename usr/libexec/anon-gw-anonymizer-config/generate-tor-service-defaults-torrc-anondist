@@ -50,4 +50,4 @@ if [ -z "${ipv6_route_data}" ]; then
   printf '%s\n' "$0: INFO: Commented out IPv6 configuration in '${new_file}'."
 fi
 
-printf '%s\n' "$0: End"
+printf '%s\n' "$0: END"
