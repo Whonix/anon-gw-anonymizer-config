@@ -18,7 +18,7 @@ qubes_replace_ips_maybe() {
     return 0
   fi
   true "$0: INFO: Not running inside Qubes Template."
-  ## XXX: duplicated in qubes-whonix-postinit.service
+  ## XXX: duplicated in 'qubes-whonix-postinit.service'
   ## Replace IP addresses in known configuration files / scripts with
   ## currently discovered IP address.
   /usr/lib/qubes-whonix/replace-ips
