@@ -1,3 +1,15 @@
+commit e989e91de2dfcb9ca2fdf7157bd7837ad2592d32
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Nov 18 04:59:15 2025 -0500
+
+    run `/usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network` also inside non-Qubes
+
+commit 2087a3394bf007e7e7009d25ad23a628f5aa401f
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Nov 1 12:38:49 2025 +0000
+
+    bumped changelog version
+
 commit eb0b0cacbc7b83d301d5681f00819dc895a41b7d
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Sat Nov 1 07:24:12 2025 -0400
