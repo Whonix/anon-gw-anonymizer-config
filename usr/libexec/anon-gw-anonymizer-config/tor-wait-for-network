@@ -136,6 +136,8 @@ def scan_ipv6_addrs(ipv6_addr_file: TextIO) -> None:
         if dev == "lo":
             continue
 
+        ## TODO: Transform this into a standalone script. Move to helper-scripts.
+        ##       Supply network interface name on the command line.
         ## HARDCODED: network interface eth1
         if not dev == "eth1":
             continue
