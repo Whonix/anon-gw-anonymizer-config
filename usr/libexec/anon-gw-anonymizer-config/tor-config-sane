@@ -34,9 +34,13 @@ tor_wait_for_network_maybe() {
 }
 
 /usr/libexec/anon-gw-anonymizer-config/make-sure-torrc-exist
+
 /usr/libexec/helper-scripts/repair-torrc
+
 /usr/libexec/anon-gw-anonymizer-config/generate-tor-service-defaults-torrc-anondist
+
 qubes_replace_ips_maybe
+
 tor_wait_for_network_maybe
 
 true "$0: END"
