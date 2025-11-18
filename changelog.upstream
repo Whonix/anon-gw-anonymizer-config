@@ -1,3 +1,27 @@
+commit 345b4477a2ba9826dadf160a1a0fc0fce5982a65
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Nov 18 05:28:36 2025 -0500
+
+    fix: conditionally disable IPv6 only after waiting for IPv6 to become available
+
+commit 69237a45700b891a98c73e7f26ad1c00eb790828
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Nov 18 05:26:39 2025 -0500
+
+    minor
+
+commit d6da99fd88eaa48713dd17d3c489ea73beb118b4
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Nov 18 05:25:42 2025 -0500
+
+    comment
+
+commit 1991e16c9c86c186ffde017cd9e62ceffa5aa971
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Nov 18 10:23:56 2025 +0000
+
+    bumped changelog version
+
 commit 8d923ad8e9cc28b6d61c552c47929bb24d110741
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Tue Nov 18 05:21:52 2025 -0500
