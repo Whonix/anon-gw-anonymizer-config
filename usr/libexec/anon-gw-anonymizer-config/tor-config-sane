@@ -37,10 +37,12 @@ tor_wait_for_network_maybe() {
 
 /usr/libexec/helper-scripts/repair-torrc
 
+true "$0: INFO: Wait for IPv6..."
+tor_wait_for_network_maybe
+
+true "$0: INFO: Conditionally disable IPv6, if unavailable..."
 /usr/libexec/anon-gw-anonymizer-config/generate-tor-service-defaults-torrc-anondist
 
 qubes_replace_ips_maybe
-
-tor_wait_for_network_maybe
 
 true "$0: END"
