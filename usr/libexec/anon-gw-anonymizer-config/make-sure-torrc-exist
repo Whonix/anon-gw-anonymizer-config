@@ -27,7 +27,7 @@
 ## with correct access rights from template folder <code>/usr/share/anon-gw-anonymizer-config</code>.
 #### meta end
 
-set -x
+#set -x
 
 true "$0: START"
 
