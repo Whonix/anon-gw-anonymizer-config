@@ -1,3 +1,15 @@
+commit 94b352c74e6b9c58e055de3a8e855f744fb6875b
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Nov 18 07:19:24 2025 -0500
+
+    `/usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network`: fix, check that network interface is actually bindable
+
+commit cc49efaa4e8ec347528a1eebc5e0f0d2eea9b419
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Nov 18 10:29:07 2025 +0000
+
+    bumped changelog version
+
 commit 345b4477a2ba9826dadf160a1a0fc0fce5982a65
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Tue Nov 18 05:28:36 2025 -0500
