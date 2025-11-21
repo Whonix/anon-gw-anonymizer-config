@@ -69,8 +69,8 @@ fi
 [ -n "$tor_group" ] || tor_group="debian-tor"
 [ -n "$tor_dir" ] || tor_dir="/var/lib/tor"
 [ -n "$client_onion_auth_dir" ] || client_onion_auth_dir="${tor_dir}/authdir"
-mkdir -p "$client_onion_auth_dir"
-chown "${tor_user}:${tor_group}" "$client_onion_auth_dir"
+mkdir --parents -- "$client_onion_auth_dir"
+chown "${tor_user}:${tor_group}" -- "$client_onion_auth_dir"
 
 true $?
 
