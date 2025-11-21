@@ -42,6 +42,8 @@ tor_wait_for_network_maybe() {
   ## Therefore also use 'tor-wait-for-network'.
   /usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network
 
+  ## Folder '/run/anon-gw-anonymizer-config' is expected to already have been
+  ## created by '/usr/lib/tmpfiles.d/anon-gw-anonymizer-config.conf'.
   if ! test -d /run/anon-gw-anonymizer-config; then
     mkdir --parents -- /run/anon-gw-anonymizer-config
   fi
