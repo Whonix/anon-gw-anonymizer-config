@@ -45,37 +45,14 @@ class GlobalData:
     """
     Global data for the script.
     """
-
     ipv6_addr_file_str: str = "/proc/net/if_inet6"
-    initial_wait_done_dir_path: Path = Path("/run/anon-gw-anonymizer-config")
     ipv6_disabled_file_path: Path = Path(
         "/proc/sys/net/ipv6/conf/all/disable_ipv6"
-    )
-    initial_wait_done_path: Path = (
-        initial_wait_done_dir_path / "initial-wait-at-boot"
     )
     bindable_ipv6_addrs: set[str] = set()
 
 
 def suppress_wait_and_exit() -> NoReturn:
-    """
-    Creates an empty file at GlobalData.initial_wait_done_path, and exits the
-    script.
-    """
-
-    try:
-        GlobalData.initial_wait_done_dir_path.mkdir(parents=True, exist_ok=True)
-        GlobalData.initial_wait_done_path.touch()
-    except Exception:
-        print(
-            f"tor-wait-for-network: WARNING: Unable to touch '{GlobalData.initial_wait_done_path}'! "
-            "Details:",
-            file=sys.stderr,
-        )
-        traceback.print_exc()
-
-    ## Exit with 0 even if we can't touch the file. We can limp along even if
-    ## the file can't be touched.
     sys.exit(0)
 
 
@@ -202,10 +179,6 @@ def main() -> NoReturn:
     check_interval: float = 0.2
     check_max_count: int = 50
     ipv6_addr_file: TextIO | None = None
-
-    if GlobalData.initial_wait_done_path.is_file():
-        print("tor-wait-for-network: INFO: Initial wait already done. Exiting.", file=sys.stderr)
-        sys.exit(0)
 
     try:
         if (
