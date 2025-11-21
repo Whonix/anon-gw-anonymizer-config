@@ -1,3 +1,33 @@
+commit 4edf2fbe67c75997151310efde555c8b164c3c0c
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Nov 21 12:02:15 2025 -0500
+
+    `anon-gw-anonymizer-config.service`: `After=qubes-whonix-network.service`
+
+commit c826ca7d933fd0216f6675dc5699526a35f23ed5
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Nov 21 11:49:24 2025 -0500
+
+    move to helper-scripts repair-torrc
+
+commit e59cc7de210c0260ac686cd6fbefb819ffa9fdec
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Nov 21 11:44:20 2025 -0500
+
+    minor
+
+commit 3983898b8905d06c77eec17ad313b9c00e9c94b1
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Nov 21 11:43:30 2025 -0500
+
+    refactoring
+
+commit 2b2e5657e350cdabd152cb5febe639ad340ae97d
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Nov 21 16:16:54 2025 +0000
+
+    bumped changelog version
+
 commit 194e7ab5682b7604c2565cee619ecbf9f01a40d6
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Fri Nov 21 11:16:09 2025 -0500
