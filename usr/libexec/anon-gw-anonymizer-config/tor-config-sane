@@ -53,8 +53,6 @@ tor_wait_for_network_maybe() {
   true "$0: INFO: IPv6 eth1 done."
 }
 
-/usr/libexec/anon-gw-anonymizer-config/make-sure-torrc-exist
-
 /usr/libexec/helper-scripts/repair-torrc
 
 tor_wait_for_network_maybe
