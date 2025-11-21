@@ -17,11 +17,12 @@ qubes_replace_ips_maybe() {
     true "$0: INFO: Do not run replace-ips since running inside Qubes Template."
     return 0
   fi
-  true "$0: INFO: Not running inside Qubes Template."
+  true "$0: INFO: Not running inside Qubes Template. Running Qubes replace-ips..."
   ## XXX: duplicated in 'qubes-whonix-postinit.service'
   ## Replace IP addresses in known configuration files / scripts with
   ## currently discovered IP address.
   /usr/lib/qubes-whonix/replace-ips
+  true "$0: INFO: Qubes replace-ips done."
 }
 
 tor_wait_for_network_maybe() {
@@ -29,19 +30,21 @@ tor_wait_for_network_maybe() {
     true "$0: INFO: Do not run tor-wait-for-network inside Qubes Template."
     return 0
   fi
-  true "$0: INFO: Not running inside Qubes Template."
-  /usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network
+  true "$0: INFO: Not running inside Qubes Template. Waiting for IPv6 on eth1... Waiting for systemd-networkd-wait-online..."
+  #/usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network
+  /usr/lib/systemd/systemd-networkd-wait-online --interface eth1 --ipv6
+  true "$0: INFO: IPv6 eth1 done... systemd-networkd-wait-online done."
 }
 
 /usr/libexec/anon-gw-anonymizer-config/make-sure-torrc-exist
 
 /usr/libexec/helper-scripts/repair-torrc
 
-true "$0: INFO: Wait for IPv6..."
 tor_wait_for_network_maybe
 
-true "$0: INFO: Conditionally disable IPv6, if unavailable..."
+true "$0: INFO: Conditionally disable IPv6, if unavailable... Running generate-tor-service-defaults-torrc-anondist..."
 /usr/libexec/anon-gw-anonymizer-config/generate-tor-service-defaults-torrc-anondist
+true "$0: INFO: generate-tor-service-defaults-torrc-anondist done."
 
 qubes_replace_ips_maybe
 
