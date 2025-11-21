@@ -54,6 +54,7 @@ class GlobalData:
     initial_wait_done_path: Path = (
         initial_wait_done_dir_path / "initial-wait-at-boot"
     )
+    bindable_ipv6_addrs: set[str] = set()
 
 
 def suppress_wait_and_exit() -> NoReturn:
@@ -120,6 +121,21 @@ def scan_ipv6_addrs(ipv6_addr_file: TextIO) -> None:
 
     ipv6_addr_file.seek(0)
     file_contents_list: list[str] = ipv6_addr_file.read().split("\n")
+
+    """
+    file_contents_list = [
+        "00000000000000000000000000000001 01 80 10 80 lo",
+        "fd17625cf03700020a0027fffe987619 02 40 00 00 eth0",
+        "fe800000000000000a0027fffe987619 02 40 20 80 eth0",
+        "fe800000000000000a0027fffe2dded2 03 40 20 80 eth1",
+        "fd19c33d88bc00000000000000000010 03 60 00 80 eth1",
+    ]
+    """
+
+    any_candidate: bool = False
+    all_bindable: bool = True
+    newly_bindable: list[tuple[str, str]] = []
+
     for line in file_contents_list:
         line = line.strip()
         if not line:
@@ -142,6 +158,8 @@ def scan_ipv6_addrs(ipv6_addr_file: TextIO) -> None:
         if not dev == "eth1":
             continue
 
+        any_candidate = True
+
         try:
             addr_int = int(addr_hex, 16)
             addr_text = str(ipaddress.IPv6Address(addr_int))
@@ -149,13 +167,27 @@ def scan_ipv6_addrs(ipv6_addr_file: TextIO) -> None:
             continue
 
         if can_bind_ipv6(addr_text, dev, scope_hex):
-            print(f"tor-wait-for-network: INFO: Non-loopback IPv6 addres '{addr_text}' dev '{dev}' is bindable. Exiting.", file=sys.stderr)
-            suppress_wait_and_exit()
+            if addr_text not in GlobalData.bindable_ipv6_addrs:
+                GlobalData.bindable_ipv6_addrs.add(addr_text)
+                newly_bindable.append((addr_text, dev))
         else:
-            #print(f"tor-wait-for-network: INFO: Non-loopback IPv6 address '{addr_text}' dev '{dev}' present but not bindable yet.", file=sys.stderr)
-            pass
+            print(f"tor-wait-for-network: INFO: Non-loopback IPv6 address '{addr_text}' dev '{dev}' present but not bindable yet.", file=sys.stderr)
+            all_bindable = False
 
-        return
+    for addr_text, dev in newly_bindable:
+        print(
+            f"tor-wait-for-network: INFO: Non-loopback IPv6 address '{addr_text}' dev '{dev}' is bindable.",
+            file=sys.stderr,
+        )
+
+    if any_candidate and all_bindable and GlobalData.bindable_ipv6_addrs:
+        print(
+            f"tor-wait-for-network: INFO: All non-loopback IPv6 addresses on dev '{dev}' are bindable. Exiting.",
+            file=sys.stderr,
+        )
+        suppress_wait_and_exit()
+
+    return
 
 
 def main() -> NoReturn:
@@ -203,10 +235,33 @@ def main() -> NoReturn:
         )
     except Exception:
         print(
-            f"tor-wait-for-network: INFO: Cannot open '{GlobalData.ipv6_addr_file_str}'. Exiting.",
+            f"tor-wait-for-network: INFO: Cannot open GlobalData.ipv6_addr_file_str '{GlobalData.ipv6_addr_file_str}'. Exiting.",
             file=sys.stderr,
         )
         suppress_wait_and_exit()
+
+    ## Debugging.
+    #file_contents_list: list[str] = ipv6_addr_file.read().strip()
+    #print(f"tor-wait-for-network: INFO: GlobalData.ipv6_addr_file_str '{GlobalData.ipv6_addr_file_str}' contents:\n{file_contents_list}")
+    ## example file_contents_list:
+    """
+    fe8000000000000002163efffe5e6c00 02 40 20 80     eth0
+    00000000000000000000000000000001 01 80 10 80       lo
+    """
+    ## or:
+    """
+    fe8000000000000045ae4b6de18be6f3 02 40 20 80     eth0
+    fd17625cf0370002065789e9a43f2cfe 02 40 00 00     eth0
+    00000000000000000000000000000001 01 80 10 80       lo
+    """
+    ## or:
+    """
+    00000000000000000000000000000001 01 80 10 80       lo
+    fd17625cf03700020a0027fffe987619 02 40 00 00     eth0
+    fe800000000000000a0027fffe987619 02 40 20 80     eth0
+    fe800000000000000a0027fffe2dded2 03 40 20 80     eth1
+    fd19c33d88bc00000000000000000010 03 60 00 80     eth1
+    """
 
     assert ipv6_addr_file is not None
     scan_ipv6_addrs(ipv6_addr_file)
