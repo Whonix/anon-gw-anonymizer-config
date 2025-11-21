@@ -1,3 +1,15 @@
+commit 73e25c7583d0293ca7d71ed26103d2810dcb6820
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Nov 21 10:17:58 2025 -0500
+
+    use `systemd-networkd-wait-online` instead of `tor-wait-for-network`
+
+commit 68e245d624357546809426a7b2b37f4494f5d15f
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Nov 21 10:04:29 2025 +0000
+
+    bumped changelog version
+
 commit c347562cd19204711707da2a42d3abf7021c704b
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Fri Nov 21 05:03:44 2025 -0500
