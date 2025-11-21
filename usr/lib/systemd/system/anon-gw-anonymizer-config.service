@@ -6,11 +6,9 @@
 #### category tor
 #### gateway_only yes
 #### description
-## Runs <code>/usr/libexec/anon-gw-anonymizer-config/tor-config-sane</code>
-## to Make Sure Torrc Files Exist and runs
-## <code>/usr/libexec/anon-gw-anonymizer-config/make-sure-torrc-exist</code>
-## to make sure Tor config files exist and
+## Runs <code>/usr/libexec/anon-gw-anonymizer-config/tor-config-sane</code> which runs
 ## <code>/usr/libexec/helper-scripts/repair-torrc</code> to repair Tor config files.
+##
 ## Qubes-Whonix. Also runs <code>/usr/lib/qubes-whonix/replace-ips</code>.
 ## Runs <code>Before=tor.service</code>
 ## and <code>Before=tor@default.service</code>.
@@ -20,6 +18,10 @@
 Description=Make Sure Torrc Files Exist
 Documentation=https://github.com/Whonix/anon-gw-anonymizer-config
 ConditionPathExists=!/run/qubes/this-is-templatevm
+
+## Sets up network interface 'eth1'.
+After=qubes-whonix-network.service
+
 Before=tor.service
 Before=tor@default.service
 PartOf=tor.service
