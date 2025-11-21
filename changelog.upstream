@@ -1,3 +1,15 @@
+commit c347562cd19204711707da2a42d3abf7021c704b
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Nov 21 05:03:44 2025 -0500
+
+    `/usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network`: fix, wait for all IPv6 addresses on an interface to be bindable
+
+commit 25f41f1fb12f11ab9f0652990c137c759d805d8c
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Nov 18 12:27:38 2025 +0000
+
+    bumped changelog version
+
 commit 7f685af54d242a50846ee886c2403d56cbaf38e7
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Tue Nov 18 07:27:21 2025 -0500
