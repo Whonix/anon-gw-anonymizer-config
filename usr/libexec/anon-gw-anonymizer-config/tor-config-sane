@@ -31,8 +31,10 @@ tor_wait_for_network_maybe() {
     return 0
   fi
   true "$0: INFO: Not running inside Qubes Template. Waiting for IPv6 on eth1... Waiting for systemd-networkd-wait-online..."
-  #/usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network
-  /usr/lib/systemd/systemd-networkd-wait-online --interface eth1 --ipv6
+  ## Insufficient inside Qubes 'sys-whonix'...
+  timeout --kill-after 1 10 /usr/lib/systemd/systemd-networkd-wait-online --interface eth1 --ipv6
+  ## Therefore also use 'tor-wait-for-network'.
+  /usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network
   true "$0: INFO: IPv6 eth1 done... systemd-networkd-wait-online done."
 }
 
