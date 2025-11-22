@@ -1,3 +1,22 @@
+commit 46c7f1d97c770189301f54b15d89bb86a0bec16e
+Merge: 0ebad90 64e56d3
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Nov 22 02:52:22 2025 -0500
+
+    Merge remote-tracking branch 'ArrayBolt3/arraybolt3/trixie'
+
+commit 64e56d338192adbad4f3c10625c9bf2368726742
+Author: Aaron Rainbolt <arraybolt3@ubuntu.com>
+Date:   Fri Nov 21 16:32:15 2025 -0600
+
+    Try to use systemd-networkd-wait-online for ipv6 detection solely
+
+commit 0ebad907e4c41ca148d425d66ba398f378dbb744
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Nov 21 17:06:29 2025 +0000
+
+    bumped changelog version
+
 commit 4edf2fbe67c75997151310efde555c8b164c3c0c
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Fri Nov 21 12:02:15 2025 -0500
