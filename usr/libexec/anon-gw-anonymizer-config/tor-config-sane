@@ -36,12 +36,11 @@ tor_wait_for_network_maybe() {
   fi
 
   true "$0: INFO: Not running inside Qubes Template. Waiting for IPv6 on eth1... Waiting for IPv6 eth1..."
-  ## Functional in Non-Qubes-Whonix.
-  ## Insufficient inside Qubes 'sys-whonix'...
-  timeout --kill-after 1 10 /usr/lib/systemd/systemd-networkd-wait-online --interface eth1 --ipv6
-  ## Therefore also use 'tor-wait-for-network'.
+  timeout --kill-after 1 10 /usr/lib/systemd/systemd-networkd-wait-online --interface eth1 --ipv6 --operational-state=routable
+  ## Also use 'tor-wait-for-network'.
   ## 'tor-wait-for-network' has its own timeout functionality built-in.
-  /usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network
+  ## May be unnecessary, disabling for now.
+  # /usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network
 
   ## Folder '/run/anon-gw-anonymizer-config' is expected to already have been
   ## created by '/usr/lib/tmpfiles.d/anon-gw-anonymizer-config.conf'.
