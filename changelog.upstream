@@ -1,3 +1,15 @@
+commit 88f75611cecf436d54c9bd309938c3cf8333cc8c
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Nov 28 01:32:33 2025 -0500
+
+    Tor configuration: `DormantTimeoutEnabled 0`
+
+commit 576486f1bd34d7161c6ab2b88ad5fd9ca9269185
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Nov 22 11:42:30 2025 +0000
+
+    bumped changelog version
+
 commit 46c7f1d97c770189301f54b15d89bb86a0bec16e
 Merge: 0ebad90 64e56d3
 Author: Patrick Schleizer <adrelanos@whonix.org>
