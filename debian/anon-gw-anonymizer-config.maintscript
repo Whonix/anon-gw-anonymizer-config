@@ -7,3 +7,7 @@ rm_conffile /etc/torrc.d/50_user.torrc
 rm_conffile /etc/torrc.d/95_whonix.torrc
 
 rm_conffile /etc/audit/rules.d/30_anon-gw-anonymizer-config.rules
+
+## tor-service-defaults-torrc.anondist.base now contains config for both
+## workstation and gateway
+rm_conffile /etc/torrc.d/70_workstation.conf
