@@ -1,3 +1,9 @@
+anon-gw-anonymizer-config (3:20.6-1) unstable; urgency=medium
+
+  * New upstream version (local package).
+
+ -- Patrick Schleizer <adrelanos@whonix.org>  Thu, 01 Jan 2026 17:29:13 +0000
+
 anon-gw-anonymizer-config (3:20.5-1) unstable; urgency=medium
 
   * New upstream version (local package).
