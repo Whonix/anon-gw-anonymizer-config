@@ -12,7 +12,7 @@
 
 [Desktop Entry]
 Type=Application
-Exec=/usr/libexec/gateway-shortcuts/torrc
+Exec=/usr/libexec/helper-scripts/terminal-wrapper /usr/libexec/gateway-shortcuts/torrc
 Name=Tor User Config
 GenericName=Torrc
 Comment=Open /usr/local/etc/torrc.d/50_user.conf configuration file in editor
