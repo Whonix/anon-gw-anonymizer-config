@@ -1,7 +1,9 @@
-## usr/libexec/helper-scripts/terminal-wrapper gets by helper-scripts
+## usr/libexec/helper-scripts/terminal-wrapper is part of dependency package helper-scripts
 anon-gw-anonymizer-config: desktop-command-not-in-package usr/libexec/helper-scripts/terminal-wrapper [usr/share/applications/gateway-nyx.desktop]
 anon-gw-anonymizer-config: desktop-command-not-in-package usr/libexec/helper-scripts/terminal-wrapper [usr/share/applications/gateway-reloadtor.desktop]
 anon-gw-anonymizer-config: desktop-command-not-in-package usr/libexec/helper-scripts/terminal-wrapper [usr/share/applications/gateway-stoptor.desktop]
+anon-gw-anonymizer-config: desktop-command-not-in-package usr/libexec/helper-scripts/terminal-wrapper [usr/share/applications/gateway-torrc.desktop]
+anon-gw-anonymizer-config: desktop-command-not-in-package usr/libexec/helper-scripts/terminal-wrapper [usr/share/applications/gateway-tordata.desktop]
 
 ## Due to lack of Debian / systemd feature there is no other way to implement this.
 anon-gw-anonymizer-config: maintainer-script-calls-systemctl
