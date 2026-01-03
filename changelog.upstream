@@ -1,3 +1,15 @@
+commit 513940e54a33603861b12ae87f02cc4989947c97
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Jan 3 00:11:47 2026 -0500
+
+    fix: more helpful output in case attempting to run tordata or torrc start menu entry in user session
+
+commit d485d6306c2c5cb5f3ab6ad58985f1379d463bce
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Jan 1 17:29:13 2026 +0000
+
+    bumped changelog version
+
 commit 57035eceae614af331281704f14d0b2015583d4f
 Merge: 624d570 69bf91c
 Author: Patrick Schleizer <adrelanos@whonix.org>
