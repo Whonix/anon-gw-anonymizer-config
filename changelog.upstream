@@ -1,3 +1,25 @@
+commit 1f1331c70d1cfcd3d8d067f910fdabe8e498c9c0
+Merge: 50e74db 04c26de
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Jan 5 03:42:33 2026 -0500
+
+    Merge remote-tracking branch 'github-whonix/master'
+
+commit 04c26de2cd817a7fd241b2c63a987d9acefdbde7
+Merge: 50e74db 4202b66
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Jan 5 03:21:36 2026 -0500
+
+    Merge pull request #6 from Nurmagoz/patch-1
+    
+    Link fixing
+
+commit 50e74db68172c8efd4bce6c9bff348eee8c67497
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Jan 3 12:36:13 2026 +0000
+
+    bumped changelog version
+
 commit 4b608a5e1f24b95fc3b2512c22b2d59f5b02d4b4
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Sat Jan 3 07:35:26 2026 -0500
@@ -34,6 +56,12 @@ Author: Aaron Rainbolt <arraybolt3@ubuntu.com>
 Date:   Wed Dec 31 17:53:51 2025 -0600
 
     Move a lot more Tor settings into tor-service-defaults-torrc.anondist.base
+
+commit 4202b66bf020ac84ced005949d9feb32eb9a2857
+Author: Nurmagoz <11895339+Nurmagoz@users.noreply.github.com>
+Date:   Mon Dec 29 18:01:12 2025 +0000
+
+    Link fixing
 
 commit 624d5701f2ed9139bb399c5ecc5846ca8899a24b
 Author: Patrick Schleizer <adrelanos@whonix.org>
