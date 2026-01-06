@@ -49,7 +49,7 @@ DnsPort [::1]:5400
 # are the same as in section Workstation SocksPorts.
 
 ## https://www.whonix.org/wiki/Tor#Additional_SocksPorts
-## https://trac.torproject.org/projects/tor/ticket/15261
+## https://gitlab.torproject.org/tpo/core/tor/-/issues/15261
 SocksPort unix:/run/tor/socks IPv6Traffic WorldWritable
 
 SocksPort 127.0.0.1:9050 IPv6Traffic
