@@ -1,3 +1,31 @@
+commit c642dd3b1be8e169dc5c6971fdf2c2cb8ee3c084
+Merge: 1af3840 becdf1a
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Jan 6 10:27:19 2026 -0500
+
+    Merge remote-tracking branch 'github-whonix/master'
+
+commit becdf1a50e78e7a7f736bb93bc05f123647edfca
+Merge: 1af3840 31390a1
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Jan 6 09:16:27 2026 -0500
+
+    Merge pull request #8 from Nurmagoz/patch-3
+    
+    Update tor-service-defaults-torrc.anondist.base link
+
+commit 31390a1fb14be49997ace9901157e1a1b552a5b3
+Author: Nurmagoz <11895339+Nurmagoz@users.noreply.github.com>
+Date:   Mon Jan 5 12:50:53 2026 +0000
+
+    Update tor-service-defaults-torrc.anondist.base link
+
+commit 1af384099c24cddebcdcd400b4a2ff21f5f6e854
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Jan 5 10:32:38 2026 +0000
+
+    bumped changelog version
+
 commit 1f1331c70d1cfcd3d8d067f910fdabe8e498c9c0
 Merge: 50e74db 04c26de
 Author: Patrick Schleizer <adrelanos@whonix.org>
