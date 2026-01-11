@@ -112,7 +112,7 @@ function used_torrc_files(){
 
 function unknown_option_specifier(){
    for unknown_option in "$@"; do
-      printf '%s\n' "The following files contain unkown option '$unknown_option': "
+      printf '%s\n' "The following files contain unknown option '$unknown_option': "
       grep -iHnE --color -- "^([[:space:]])*$unknown_option" "${torrc_files[@]}"
       printf '%s\n' "Please modify these files to fix the problem."
    done
