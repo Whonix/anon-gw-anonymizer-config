@@ -3,6 +3,24 @@
 ## Copyright (C) 2020 - 2025 ENCRYPTED SUPPORT LLC <adrelanos@whonix.org>
 ## See the file COPYING for copying conditions.
 
+#### meta start
+#### project Whonix
+#### category tor
+#### gateway_only yes
+#### description
+## helper script to:
+##
+## * run <code>/usr/libexec/helper-scripts/repair-torrc</code>
+## * wait for IPv6 on <code>eth1</code> at boot (once, outside Qubes TemplateVM)
+## * run <code>/usr/libexec/anon-gw-anonymizer-config/generate-tor-service-defaults-torrc-anondist</code>
+## * run <code>/usr/lib/qubes-whonix/replace-ips</code> when inside Qubes (but not in TemplateVM)
+##
+## notes:
+##
+## * creates state file <code>/run/anon-gw-anonymizer-config/initial-wait-at-boot</code>
+##   to skip repeated initial wait logic during the same boot
+#### meta end
+
 set -x
 
 true "$0: START"
@@ -40,7 +58,7 @@ tor_wait_for_network_maybe() {
   ## Also use 'tor-wait-for-network'.
   ## 'tor-wait-for-network'. has its own timeout functionality built in.
   ## May be unnecessary. Disabled for now.
-  # /usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network
+  #/usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network
 
   ## Folder '/run/anon-gw-anonymizer-config' is expected to have already been
   ## created by '/usr/lib/tmpfiles.d/anon-gw-anonymizer-config.conf'.
