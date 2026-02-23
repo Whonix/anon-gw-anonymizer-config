@@ -18,9 +18,9 @@ qubes_replace_ips_maybe() {
     return 0
   fi
   true "$0: INFO: Not running inside Qubes Template. Running Qubes replace-ips..."
-  ## XXX: duplicated in 'qubes-whonix-postinit.service'
-  ## Replace IP addresses in known configuration files / scripts with
-  ## currently discovered IP address.
+  ## XXX: Duplicated in 'qubes-whonix-postinit.service'.
+  ## Replace IP addresses in known configuration files / scripts with the
+  ## currently discovered IP addresses.
   /usr/lib/qubes-whonix/replace-ips
   true "$0: INFO: Qubes replace-ips done."
 }
@@ -38,11 +38,11 @@ tor_wait_for_network_maybe() {
   true "$0: INFO: Not running inside Qubes Template. Waiting for IPv6 on eth1... Waiting for IPv6 eth1..."
   timeout --kill-after 1 10 /usr/lib/systemd/systemd-networkd-wait-online --interface eth1 --ipv6 --operational-state=routable
   ## Also use 'tor-wait-for-network'.
-  ## 'tor-wait-for-network' has its own timeout functionality built-in.
-  ## May be unnecessary, disabling for now.
+  ## 'tor-wait-for-network'. has its own timeout functionality built in.
+  ## May be unnecessary. Disabled for now.
   # /usr/libexec/anon-gw-anonymizer-config/tor-wait-for-network
 
-  ## Folder '/run/anon-gw-anonymizer-config' is expected to already have been
+  ## Folder '/run/anon-gw-anonymizer-config' is expected to have already been
   ## created by '/usr/lib/tmpfiles.d/anon-gw-anonymizer-config.conf'.
   if ! test -d /run/anon-gw-anonymizer-config; then
     mkdir --parents -- /run/anon-gw-anonymizer-config
