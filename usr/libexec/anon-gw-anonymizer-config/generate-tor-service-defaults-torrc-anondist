@@ -3,6 +3,19 @@
 ## Copyright (C) 2025 - 2025 ENCRYPTED SUPPORT LLC <adrelanos@whonix.org>
 ## See the file COPYING for copying conditions.
 
+#### meta start
+#### project Whonix
+#### category tor
+#### gateway_only yes
+#### description
+## helper script to generate <code>/usr/share/tor/tor-service-defaults-torrc.anondist</code>
+## from <code>/usr/share/tor/tor-service-defaults-torrc.anondist.base</code>
+##
+## if no global IPv6 address is available, comment out uncommented lines in
+## the generated file that contain bracketed IPv6 addresses and ports
+## (for example <code>[IPv6]:port</code>)
+#### meta end
+
 set -o errexit
 set -o nounset
 set -o errtrace
